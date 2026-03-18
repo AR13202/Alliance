@@ -1,16 +1,17 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "1234 Industrial Park Drive\nSuite 200, Houston, TX 77001" },
   { icon: Phone, label: "Phone", value: "+1 (713) 555-0142" },
   { icon: Mail, label: "Email", value: "sales@powergridsolutions.com" },
-  { icon: Clock, label: "Business Hours", value: "Mon – Fri: 8:00 AM – 6:00 PM CST\nSat: 9:00 AM – 1:00 PM CST" },
+  { icon: Clock, label: "Business Hours", value: "Mon - Fri: 8:00 AM - 6:00 PM CST\nSat: 9:00 AM - 1:00 PM CST" },
 ];
 
-const Contact = () => {
+export default function ContactScreen() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -23,7 +24,6 @@ const Contact = () => {
           </p>
 
           <div className="mt-10 grid gap-10 lg:grid-cols-2">
-            {/* Contact Info */}
             <div className="space-y-6">
               {contactInfo.map((item) => (
                 <div key={item.label} className="flex gap-4 rounded-lg border border-border bg-card p-5">
@@ -38,14 +38,14 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Form */}
             <div className="rounded-lg border border-border bg-card p-6 md:p-8">
               <h2 className="mb-6 text-xl font-semibold text-foreground">Send Us a Message</h2>
-              <ContactForm />
+              <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-secondary/40" />}>
+                <ContactForm />
+              </Suspense>
             </div>
           </div>
 
-          {/* Map placeholder */}
           <div className="mt-12 overflow-hidden rounded-lg border border-border">
             <div className="flex h-64 items-center justify-center bg-secondary text-muted-foreground">
               <div className="text-center">
@@ -60,6 +60,4 @@ const Contact = () => {
       <Footer />
     </div>
   );
-};
-
-export default Contact;
+}

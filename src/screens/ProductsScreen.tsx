@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
 import { categories, getProductsByCategory } from "@/data/products";
 
-const Products = () => {
+export default function ProductsScreen() {
   const [active, setActive] = useState("All");
   const filtered = getProductsByCategory(active);
 
@@ -21,19 +23,18 @@ const Products = () => {
             </p>
           </div>
 
-          {/* Filter tabs */}
           <div className="mb-8 flex flex-wrap gap-2">
-            {categories.map((cat) => (
+            {categories.map((category) => (
               <button
-                key={cat}
-                onClick={() => setActive(cat)}
+                key={category}
+                onClick={() => setActive(category)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                  active === cat
+                  active === category
                     ? "bg-primary text-primary-foreground shadow-[0_0_15px_hsl(var(--primary)/0.3)]"
                     : "border border-border bg-card text-muted-foreground hover:border-primary/50 hover:text-foreground"
                 }`}
               >
-                {cat}
+                {category}
               </button>
             ))}
           </div>
@@ -43,8 +44,8 @@ const Products = () => {
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((p) => (
-              <ProductCard key={p.id} product={p} />
+            {filtered.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
@@ -53,6 +54,4 @@ const Products = () => {
       <Footer />
     </div>
   );
-};
-
-export default Products;
+}

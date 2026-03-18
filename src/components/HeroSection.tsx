@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -23,13 +23,13 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/products"
+              href="/products"
               className="inline-flex h-11 items-center rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
             >
               View Our Products
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex h-11 items-center rounded-md border border-primary px-6 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
             >
               Contact Us

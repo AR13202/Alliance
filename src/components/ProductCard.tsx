@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { Product } from "@/data/products";
 
 interface Props {
@@ -23,7 +23,7 @@ const ProductCard = ({ product }: Props) => {
         <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
         <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
         <Link
-          to={`/products/${product.id}`}
+          href={`/products/${product.id}`}
           className="inline-flex h-9 items-center rounded-md border border-primary bg-transparent px-4 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
         >
           View Details

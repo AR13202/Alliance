@@ -44,7 +44,7 @@ export const products: Product[] = [
       { parameter: "Rated Secondary Current", specification: "5", unit: "A" },
       { parameter: "Insulation Level", specification: "0.72 / 3.0", unit: "kV" },
       { parameter: "Frequency Range", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=CT+Side",
@@ -76,7 +76,7 @@ export const products: Product[] = [
       { parameter: "Rated Secondary Current", specification: "5", unit: "A" },
       { parameter: "Insulation Level", specification: "0.72 / 3.0", unit: "kV" },
       { parameter: "Frequency Range", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=CT100+Side",
@@ -108,7 +108,7 @@ export const products: Product[] = [
       { parameter: "Contact Rating", specification: "5", unit: "A" },
       { parameter: "Operating Time", specification: "< 30", unit: "ms" },
       { parameter: "Power Consumption", specification: "< 5", unit: "W" },
-      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=Relay+Front",
@@ -140,7 +140,7 @@ export const products: Product[] = [
       { parameter: "Current Range", specification: "0.05 - 6", unit: "A" },
       { parameter: "Frequency", specification: "50 / 60", unit: "Hz" },
       { parameter: "Accuracy Class", specification: "0.5S", unit: "" },
-      { parameter: "Operating Temperature", specification: "-25 to +70", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-25 to +70", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=Meter+Front",
@@ -236,7 +236,7 @@ export const products: Product[] = [
       { parameter: "Trip Class", specification: "10 / 20", unit: "" },
       { parameter: "Rated Voltage", specification: "690", unit: "V AC" },
       { parameter: "Aux Contacts", specification: "1NO + 1NC", unit: "" },
-      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=TR100+Front",
@@ -268,7 +268,7 @@ export const products: Product[] = [
       { parameter: "Current Range", specification: "5 - 80", unit: "A" },
       { parameter: "Frequency", specification: "50 / 60", unit: "Hz" },
       { parameter: "Accuracy Class", specification: "1.0", unit: "" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "°C" },
+      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
     ],
     thumbnails: [
       "https://placehold.co/200x200/111827/06b6d4?text=SM1000+Front",

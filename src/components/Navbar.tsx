@@ -1,5 +1,8 @@
+"use client";
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
@@ -11,12 +14,12 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Zap className="h-7 w-7 text-primary" />
           <span className="text-lg font-bold text-foreground">PowerGrid Solutions</span>
         </Link>
@@ -26,9 +29,9 @@ const Navbar = () => {
           {navLinks.map((l) => (
             <Link
               key={l.to}
-              to={l.to}
+              href={l.to}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                pathname === l.to ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {l.label}
@@ -37,7 +40,7 @@ const Navbar = () => {
         </div>
 
         <Link
-          to="/contact"
+          href="/contact"
           className="hidden md:inline-flex h-9 items-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)] transition-all"
         >
           Get a Quote
@@ -59,17 +62,17 @@ const Navbar = () => {
           {navLinks.map((l) => (
             <Link
               key={l.to}
-              to={l.to}
+              href={l.to}
               onClick={() => setMobileOpen(false)}
               className={`block py-3 text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                pathname === l.to ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {l.label}
             </Link>
           ))}
           <Link
-            to="/contact"
+            href="/contact"
             onClick={() => setMobileOpen(false)}
             className="mt-2 inline-flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground"
           >

@@ -1,22 +1,20 @@
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import TrustBar from "@/components/TrustBar";
+import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
+import TrustBar from "@/components/TrustBar";
 import { products } from "@/data/products";
-import { ArrowRight } from "lucide-react";
 
-const Index = () => {
+export default function HomeScreen() {
   const featured = products.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-
       <HeroSection />
 
-      {/* Primary Categories */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 flex items-end justify-between">
@@ -24,7 +22,7 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-foreground">Primary Categories</h2>
               <p className="mt-2 text-muted-foreground">Explore our most popular product categories</p>
             </div>
-            <Link to="/products" className="hidden md:flex items-center gap-1 text-sm text-primary hover:underline">
+            <Link href="/products" className="hidden items-center gap-1 text-sm text-primary hover:underline md:flex">
               View all categories <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -35,7 +33,7 @@ const Index = () => {
             ].map((cat) => (
               <Link
                 key={cat.title}
-                to="/products"
+                href="/products"
                 className="group relative overflow-hidden rounded-lg border border-border"
               >
                 <img
@@ -54,18 +52,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-16 bg-secondary/30">
+      <section className="bg-secondary/30 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8 flex items-end justify-between">
             <h2 className="text-3xl font-bold text-foreground">Featured Products</h2>
-            <Link to="/products" className="hidden md:flex items-center gap-1 text-sm text-primary hover:underline">
+            <Link href="/products" className="hidden items-center gap-1 text-sm text-primary hover:underline md:flex">
               View all <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((p) => (
-              <ProductCard key={p.id} product={p} />
+            {featured.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
@@ -73,7 +70,6 @@ const Index = () => {
 
       <TrustBar />
 
-      {/* CTA Banner */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="rounded-xl border border-border bg-gradient-to-r from-primary/10 to-card p-10 text-center md:p-16">
@@ -82,7 +78,7 @@ const Index = () => {
               Our engineering team can design and manufacture custom electrical components tailored to your exact specifications.
             </p>
             <Link
-              to="/contact"
+              href="/contact"
               className="mt-6 inline-flex h-11 items-center rounded-md bg-primary px-8 text-sm font-semibold text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
             >
               Get in Touch
@@ -94,6 +90,4 @@ const Index = () => {
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}

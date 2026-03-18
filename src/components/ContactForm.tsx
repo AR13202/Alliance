@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Send, CheckCircle } from "lucide-react";
 
 const ContactForm = () => {
-  const [searchParams] = useSearchParams();
-  const prefilledProduct = searchParams.get("product") || "";
+  const searchParams = useSearchParams();
+  const prefilledProduct = searchParams?.get("product") || "";
 
   const [form, setForm] = useState({
     name: "",
@@ -15,6 +17,11 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (!prefilledProduct) return;
+    setForm((prev) => (prev.subject ? prev : { ...prev, subject: prefilledProduct }));
+  }, [prefilledProduct]);
 
   const validate = () => {
     const errs: Record<string, string> = {};
