@@ -3,7 +3,7 @@ import Providers from "./providers";
 import "../index.css";
 
 export const metadata: Metadata = {
-  title: "PowerGrid Solutions",
+  title: "Alliance Engineering Company",
   description: "Industrial electrical components catalog built with Next.js.",
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="bg-[#0d1118] text-slate-100 antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>

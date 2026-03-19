@@ -61,3 +61,19 @@
     font-family: 'Inter', sans-serif;
   }
 }
+
+@layer utilities {
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee-left 26s linear infinite;
+  }
+}

@@ -1,89 +1,87 @@
 import Link from "next/link";
-import { Facebook, Linkedin, Mail, Twitter, Zap } from "lucide-react";
+import { ArrowRight, Headphones, Zap } from "lucide-react";
+
+const footerColumns = [
+  {
+    title: "Products",
+    links: ["Current Transformers", "Voltage Transformers", "Control Systems", "Electrical Products"],
+  },
+  {
+    title: "Support",
+    links: ["Datasheets", "Installation Guides", "Warranty Terms", "Knowledge Base"],
+  },
+  {
+    title: "Treasury",
+    links: ["Terms of Use", "Notice Office", "Investor Office", "Sustainability"],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-4">
+    <footer className="border-t border-slate-900 bg-[#101621]">
+      <div className="container mx-auto px-4 py-8 sm:px-5 lg:px-6">
+        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_0.75fr_0.75fr_1fr]">
+          <div>
             <Link href="/" className="flex items-center gap-2">
-              <Zap className="h-6 w-6 text-primary" />
-              <span className="text-lg font-bold text-foreground">PowerGrid Solutions</span>
+              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#243857] text-sky-300">
+                <Zap className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-xs font-semibold text-white">Alliance Engineering Company</span>
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Leading the industry in precision electrical components since 1998. Dedicated to innovation, safety, and customer excellence.
+            <p className="mt-4 max-w-xs text-[11px] leading-6 text-slate-500">
+              Leading the industry in precision power systems, metering infrastructure, and monitoring solutions.
             </p>
-            <div className="flex gap-3">
-              {[Facebook, Twitter, Linkedin, Mail].map((Icon, index) => (
-                <a
+            <div className="mt-4 flex gap-2">
+              {[Headphones].map((Icon, index) => (
+                <div
                   key={index}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-slate-800 text-slate-500"
                 >
-                  <Icon className="h-4 w-4" />
-                </a>
+                  <Icon className="h-3.5 w-3.5" />
+                </div>
               ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Products</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {["Current Transformers", "Smart Meters", "Protection Relays", "Power Supplies", "Circuit Breakers"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link href="/products" className="transition-colors hover:text-primary">
-                      {item}
-                    </Link>
+          {footerColumns.map((column) => (
+            <div key={column.title}>
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">{column.title}</h3>
+              <ul className="mt-4 space-y-2.5">
+                {column.links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-[11px] text-slate-500 transition-colors hover:text-slate-300">
+                      {link}
+                    </a>
                   </li>
-                ),
-              )}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Support</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {["Technical Documentation", "Product Datasheets", "Installation Guides", "FAQs"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="transition-colors hover:text-primary">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link href="/about" className="transition-colors hover:text-primary">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="transition-colors hover:text-primary">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-primary">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-primary">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Newsletter</h3>
+            <p className="mt-4 text-[11px] leading-6 text-slate-500">
+              Receive the latest updates on power grid technology.
+            </p>
+            <div className="mt-4 flex overflow-hidden rounded-lg border border-slate-800 bg-[#121b29]">
+              <input
+                placeholder="Email"
+                className="h-10 flex-1 bg-transparent px-3 text-xs text-slate-200 outline-none placeholder:text-slate-600"
+              />
+              <button className="flex h-10 w-12 items-center justify-center bg-[#243857] text-slate-100">
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-          Copyright {new Date().getFullYear()} PowerGrid Solutions. All rights reserved.
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-slate-900 pt-4 text-[10px] text-slate-600">
+          <div>Copyright 2026 Alliance Engineering Company. All rights reserved.</div>
+          <div className="flex gap-4">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Notice</a>
+          </div>
         </div>
       </div>
     </footer>
