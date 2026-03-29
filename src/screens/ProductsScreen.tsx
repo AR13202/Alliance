@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { products } from "@/data/products";
+import { Product, products } from "@/data/products";
 
 type CategoryKey = "current-transformers" | "other-electrical-products";
 
@@ -50,64 +50,24 @@ const categoryCards: Array<{
   },
 ];
 
-const cardMeta: Record<
-  string,
-  {
-    badge: string;
-    price: string;
-    subtitle: string;
-    features: string[];
-  }
-> = {
-  "ct-50-5": {
-    badge: "Top Rated",
-    price: "$45.00",
-    subtitle: "Ratio 50/5A | Class 0.5",
-    features: ["Compact split-core case", "DIN-rail mount ready"],
-  },
-  "ct-100-5": {
-    badge: "Top Rated",
-    price: "$62.50",
-    subtitle: "Ratio 100/5A | Class 0.2S",
-    features: ["Resin molded", "High thermal stability"],
-  },
-  "relay-pr200": {
-    badge: "Premium",
-    price: "$89.00",
-    subtitle: "Protection relay | Class 0.5S",
-    features: ["Wiring groove cover", "Wide frequency range"],
-  },
-  "ps-500w": {
-    badge: "Industrial",
-    price: "$120.00",
-    subtitle: "Split-core | Retrofit ready",
-    features: ["Clip-on installation", "No cable disconnection"],
-  },
-  "mcb-63a": {
-    badge: "Outdoor",
-    price: "$155.00",
-    subtitle: "Protection housing | IP65 rated",
-    features: ["Weatherproof casing", "UV resistant coating"],
-  },
-  "relay-tr100": {
-    badge: "Low Burden",
-    price: "$38.00",
-    subtitle: "Ratio 50/5A | Low burden",
-    features: ["Minimal voltage drop", "Ultra-thin design"],
-  },
-  "sm-3000": {
-    badge: "Metering",
-    price: "$199.00",
-    subtitle: "Smart monitoring enclosure",
-    features: ["Real-time diagnostics", "Panel-ready module"],
-  },
-  "sm-1000": {
-    badge: "Compact",
-    price: "$78.00",
-    subtitle: "Single phase metering unit",
-    features: ["Space-saving body", "Fast setup terminals"],
-  },
-};
+function getCardMeta(product: Product) {
+  return {
+    badge:
+      product.category === "Current Transformers"
+        ? "Top Rated"
+        : product.brand === "ALECS"
+          ? "ALECS"
+          : "Industrial",
+    price: "Custom Quote",
+    // ✅ specs is now { parameter, specification, unit } — format as "Parameter: Specification"
+    subtitle: product.specs
+      .slice(0, 2)
+      .map((s) => `${s.parameter}: ${s.specification}`)
+      .join(" | "),
+    // ✅ customizations.option is already a plain string label — no split needed
+    features: product.customizations.slice(0, 2).map((item) => item.option),
+  };
+}
 
 const excellenceCards = [
   {
@@ -161,8 +121,9 @@ export default function ProductsScreen() {
   const filteredProducts = useMemo(() => {
     if (!selectedCategory) return [];
     if (selectedClass === "All Classes") return categoryProducts;
+    // ✅ specs is now objects — check against specification string
     return categoryProducts.filter((product) =>
-      product.specs.some((spec) => spec.includes(selectedClass)),
+      product.specs.some((spec) => spec.specification.includes(selectedClass)),
     );
   }, [categoryProducts, selectedCategory, selectedClass]);
 
@@ -375,7 +336,7 @@ export default function ProductsScreen() {
 
                 <div className="grid gap-5 sm:grid-cols-2 2xl:grid-cols-3">
                   {displayedProducts.map((product) => {
-                    const meta = cardMeta[product.id];
+                    const meta = getCardMeta(product);
 
                     return (
                       <Link
@@ -397,6 +358,7 @@ export default function ProductsScreen() {
                         <div className="space-y-3 p-4">
                           <div>
                             <h3 className="text-base font-semibold text-slate-100">{product.name}</h3>
+                            {/* ✅ subtitle is pre-formatted in getCardMeta as a string */}
                             <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-slate-500">{meta.subtitle}</p>
                           </div>
 

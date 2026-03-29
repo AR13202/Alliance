@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 
 const featuredProducts = [
   {
-    id: "ct-50-5",
+    id: "ring-type-current-transformer",
     title: "Electric Solid State Meter",
     subtitle: "Industrial Utility",
     label: "Protection",
@@ -22,7 +22,7 @@ const featuredProducts = [
     badge: "New",
   },
   {
-    id: "sm-1000",
+    id: "battery-chargers",
     title: "Precision Digital Multimeter",
     subtitle: "Field Test Equipment",
     label: "Measurement",
@@ -31,7 +31,7 @@ const featuredProducts = [
     badge: "",
   },
   {
-    id: "mcb-63a",
+    id: "bus-bar-insulators",
     title: "Monitor Power Station Unit",
     subtitle: "Industrial Monitoring",
     label: "Distribution",
@@ -40,7 +40,7 @@ const featuredProducts = [
     badge: "",
   },
   {
-    id: "relay-pr200",
+    id: "led-indicator",
     title: "Solid Air Power Analyzer 300",
     subtitle: "Portable Sensor",
     label: "Conversion",
@@ -51,12 +51,90 @@ const featuredProducts = [
 ];
 
 const trustedCompanies = [
-  "VoltEdge Industries",
-  "NexaGrid Power",
-  "Astra Utilities",
-  "IronCore Systems",
-  "Northline Energy",
-  "Axis Control Works",
+  {
+    name: "Power Grid Corporation of India Ltd.",
+    shortName: "POWERGRID",
+    sector: "Transmission Utility",
+    accent: "from-sky-400/20 to-cyan-300/10",
+    logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg",
+  },
+  {
+    name: "JSW Group",
+    shortName: "JSW",
+    sector: "Industrial Group",
+    accent: "from-blue-400/20 to-slate-200/10",
+    logo: "/client_logos/JSW_Group_Logo.png",
+  },
+  {
+    name: "HDFC Bank",
+    shortName: "HDFC",
+    sector: "Banking",
+    accent: "from-emerald-400/20 to-teal-300/10",
+    logo: "/client_logos/hdfc_bank_logo.svg",
+  },
+  {
+    name: "Reliance Jio",
+    shortName: "JIO",
+    sector: "Telecommunications",
+    accent: "from-indigo-400/20 to-sky-300/10",
+    logo: "/client_logos/jio.png",
+  },
+  {
+    name: "ESAB India",
+    shortName: "ESAB",
+    sector: "Engineering",
+    accent: "from-amber-300/20 to-orange-300/10",
+    logo: "/client_logos/esab_logo.png",
+  },
+  {
+    name: "Haryana Vidyut Prasaran Nigam Limited",
+    shortName: "HVPNL",
+    sector: "Power Transmission",
+    accent: "from-cyan-300/20 to-blue-300/10",
+    logo: "/client_logos/hvpn.jpeg",
+  },
+  {
+    name: "Uttar Haryana Bijli Vitran Nigam",
+    shortName: "UHBVN",
+    sector: "Power Distribution",
+    accent: "from-violet-300/20 to-slate-300/10",
+    logo: "/client_logos/uhbvn.png",
+  },
+  {
+    name: "Chandigarh Power Distribution Limited",
+    shortName: "CPDL",
+    sector: "Utility Services",
+    accent: "from-fuchsia-300/20 to-rose-300/10",
+    logo: "/client_logos/Chandigarh_Power_Distribution_Limited.png",
+  },
+  {
+    name: "Indian School of Business",
+    shortName: "ISB",
+    sector: "Education",
+    accent: "from-yellow-300/20 to-amber-200/10",
+    logo: "/client_logos/isb.svg",
+  },
+  {
+    name: "Panjab University",
+    shortName: "PU",
+    sector: "University",
+    accent: "from-lime-300/20 to-green-300/10",
+    logo: "/client_logos/pu_logo.png",
+  },
+  {
+    name: "Cheema Boilers",
+    shortName: "CB",
+    sector: "Boiler Systems",
+    accent: "from-orange-400/20 to-red-300/10",
+    logo: "/client_logos/cbl.png",
+  },
+  {
+    name: "HMT Machine Tools",
+    shortName: "HMT",
+    sector: "Machine Tools",
+    accent: "from-slate-300/20 to-zinc-300/10",
+    logo: "/client_logos/hmt_india_logo.png",
+  },
 ];
 
 const categories = [
@@ -179,13 +257,13 @@ export default function HomeScreen() {
           <div className="container mx-auto px-4 sm:px-5 lg:px-6">
             <div className="mb-8 sm:mb-10">
               <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-300/80">
-                Trusted By Companies
+                Our Clients
               </div>
               <h2 className="mt-3 text-[28px] font-semibold tracking-tight text-slate-100 sm:text-[32px]">
-                Preferred by industrial teams worldwide
+                Trusted by leading organizations across India
               </h2>
               <p className="mt-2 max-w-[620px] text-[13px] leading-6 text-slate-500">
-                Utilities, automation partners, and manufacturing operators rely on our components for dependable performance across critical infrastructure.
+                Our products support utilities, manufacturers, institutions, and enterprises that rely on dependable electrical systems every day.
               </p>
             </div>
 
@@ -196,21 +274,15 @@ export default function HomeScreen() {
               <div className="marquee-track flex w-max gap-4">
                 {[...trustedCompanies, ...trustedCompanies].map((company, index) => (
                   <div
-                    key={`${company}-${index}`}
-                    className="flex min-w-[220px] items-center gap-4 rounded-[12px] border border-slate-800 bg-[#131b27] px-5 py-4 shadow-[0_12px_30px_rgba(2,8,23,0.16)]"
+                    key={`${company.name}-${index}`}
+                    className="flex min-w-[220px] items-center justify-center px-4 py-3"
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1a2534] text-sm font-semibold text-sky-300">
-                      {company
-                        .split(" ")
-                        .slice(0, 2)
-                        .map((part) => part[0])
-                        .join("")}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-100">{company}</div>
-                      <div className="mt-1 text-[11px] uppercase tracking-[0.14em] text-slate-500">
-                        Industry Partner
-                      </div>
+                    <div className="flex h-24 w-[180px] items-center justify-center rounded-xl bg-white p-4 shadow-[0_10px_30px_rgba(255,255,255,0.08)]">
+                      <img
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        className="h-full w-full object-contain"
+                      />
                     </div>
                   </div>
                 ))}

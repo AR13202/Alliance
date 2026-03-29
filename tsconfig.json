@@ -37,7 +37,8 @@
   ],
   "exclude": [
     "node_modules",
-    "playwright.config.ts",
-    "playwright-fixture.ts"
+    "**/* copy.ts",
+    "**/* copy.tsx",
+    "**/* copy.json"
   ]
 }

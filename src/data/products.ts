@@ -1,296 +1,254 @@
-export interface Product {
-  id: string;
-  name: string;
-  category: string;
-  image: string;
-  description: string;
-  specs: string[];
-  applications: string[];
-  technicalSpecs: { parameter: string; specification: string; unit: string }[];
-  thumbnails: string[];
+import productCatalog from "./product.json";
+
+export interface ProductMedia {
+  images: {
+    id: string;
+    url: string;
+    alt: string;
+    isPrimary: boolean;
+    label: string;
+  }[];
+  datasheet: { label: string; url: string };
+  brochure: { label: string; url: string };
 }
 
-export const categories = [
-  "All",
-  "Current Transformers",
-  "Relays",
-  "Smart Meters",
-  "Power Supplies",
-  "Breakers",
+export interface ProductHighlight {
+  label: string;
+  value: string;
+}
+
+export interface ProductApplication {
+  label: string;
+  verified: boolean;
+}
+
+export interface ProductCustomization {
+  option: string;
+  description: string;
+  details: string[];
+  standards: string[];
+  applications: string[];
+}
+
+export interface ProductSeo {
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+}
+
+export interface Product {
+  id: string;
+  slug: string;
+  serialNumber: string;
+  modelId: string;
+  standard: string;
+  status: string;
+  name: string;
+  shortDescription: string;
+  description: string;
+  categories: string[];
+  brand: string;
+  media: ProductMedia;
+  highlights: ProductHighlight[];
+  specs: { parameter: string; specification: string; unit: string }[];
+  technicalSpecs: { parameter: string; specification: string; unit: string }[];
+  applications: ProductApplication[];
+  applicationNote: string;
+  standards: string[];
+  customizations: ProductCustomization[];
+  relatedProducts: string[];
+  seo: ProductSeo;
+  // Legacy compat fields consumed by existing UI components
+  image: string;
+  thumbnails: string[];
+  sourceCategory: string;
+  category: string;
+}
+
+type RawProduct = (typeof productCatalog.products)[number];
+
+const imageThemes = [
+  ["0f172a", "38bdf8"],
+  ["1e293b", "14b8a6"],
+  ["111827", "f59e0b"],
+  ["1f2937", "60a5fa"],
 ];
 
-export const products: Product[] = [
-  {
-    id: "ct-50-5",
-    name: "CT 50/5 Current Transformer",
-    category: "Current Transformers",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=CT+50/5",
-    description:
-      "High-precision split-core 50/5A current transformer designed for industrial energy monitoring and billing metering applications. Provides accurate current sensing up to 50A for heavy-duty industrial environments.",
-    specs: [
-      "Ratio: 50/5A",
-      "Accuracy Class: 0.5S",
-      "Burden: 5VA",
-      "Frequency: 50/60Hz",
-    ],
-    applications: [
-      "Switchgear Panels & Distribution Boards",
-      "Industrial Energy Management Systems",
-      "Motor Protection Units",
-      "Revenue Metering Applications",
-    ],
-    technicalSpecs: [
-      { parameter: "Rated Primary Current", specification: "50", unit: "A" },
-      { parameter: "Rated Secondary Current", specification: "5", unit: "A" },
-      { parameter: "Insulation Level", specification: "0.72 / 3.0", unit: "kV" },
-      { parameter: "Frequency Range", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=CT+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=CT+Top",
-      "https://placehold.co/200x200/111827/06b6d4?text=CT+Detail",
-    ],
-  },
-  {
-    id: "ct-100-5",
-    name: "CT 100/5 Industrial Transformer",
-    category: "Current Transformers",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=CT+100/5",
-    description:
-      "Heavy-duty 100/5A wound-type current transformer with enhanced accuracy for industrial power monitoring and protection relay systems.",
-    specs: [
-      "Ratio: 100/5A",
-      "Accuracy Class: 0.2S",
-      "Burden: 10VA",
-      "Frequency: 50/60Hz",
-    ],
-    applications: [
-      "Power Distribution Monitoring",
-      "Protection Relay Systems",
-      "SCADA Integration",
-      "Load Management Systems",
-    ],
-    technicalSpecs: [
-      { parameter: "Rated Primary Current", specification: "100", unit: "A" },
-      { parameter: "Rated Secondary Current", specification: "5", unit: "A" },
-      { parameter: "Insulation Level", specification: "0.72 / 3.0", unit: "kV" },
-      { parameter: "Frequency Range", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=CT100+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=CT100+Top",
-      "https://placehold.co/200x200/111827/06b6d4?text=CT100+Detail",
-    ],
-  },
-  {
-    id: "relay-pr200",
-    name: "PR-200 Protection Relay",
-    category: "Relays",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=PR-200+Relay",
-    description:
-      "Microprocessor-based digital protection relay with overcurrent, earth fault, and thermal overload protection for medium voltage applications.",
-    specs: [
-      "Type: Overcurrent/Earth Fault",
-      "Rated Voltage: 220V AC",
-      "Contact Rating: 5A/250V",
-      "Communication: RS485 Modbus",
-    ],
-    applications: [
-      "Medium Voltage Switchgear",
-      "Transformer Protection",
-      "Motor Protection Circuits",
-      "Feeder Protection",
-    ],
-    technicalSpecs: [
-      { parameter: "Rated Voltage", specification: "220", unit: "V AC" },
-      { parameter: "Contact Rating", specification: "5", unit: "A" },
-      { parameter: "Operating Time", specification: "< 30", unit: "ms" },
-      { parameter: "Power Consumption", specification: "< 5", unit: "W" },
-      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=Relay+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=Relay+Back",
-      "https://placehold.co/200x200/111827/06b6d4?text=Relay+Side",
-    ],
-  },
-  {
-    id: "sm-3000",
-    name: "SM-3000 Smart Meter",
-    category: "Smart Meters",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=SM-3000",
-    description:
-      "Three-phase digital smart meter with real-time energy monitoring, power quality analysis, and cloud connectivity for industrial facilities.",
-    specs: [
-      "Phases: 3-Phase 4-Wire",
-      "Accuracy: Class 0.5S",
-      "Display: LCD Backlit",
-      "Communication: Wi-Fi + RS485",
-    ],
-    applications: [
-      "Industrial Energy Auditing",
-      "Building Management Systems",
-      "Demand Side Management",
-      "Sub-metering Applications",
-    ],
-    technicalSpecs: [
-      { parameter: "Voltage Range", specification: "3x57.7/100 - 277/480", unit: "V" },
-      { parameter: "Current Range", specification: "0.05 - 6", unit: "A" },
-      { parameter: "Frequency", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Accuracy Class", specification: "0.5S", unit: "" },
-      { parameter: "Operating Temperature", specification: "-25 to +70", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=Meter+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=Meter+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=Meter+LCD",
-    ],
-  },
-  {
-    id: "ps-500w",
-    name: "PS-500W Industrial Power Supply",
-    category: "Power Supplies",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=PS-500W",
-    description:
-      "500W DIN-rail mount industrial switching power supply with wide input range, overcurrent protection, and high MTBF for 24/7 operation.",
-    specs: [
-      "Output: 24V DC / 20A",
-      "Input: 85-264V AC",
-      "Efficiency: >93%",
-      "Protection: OVP/OCP/SCP",
-    ],
-    applications: [
-      "PLC & Automation Systems",
-      "Control Panel Power",
-      "Industrial IoT Gateways",
-      "DCS System Power",
-    ],
-    technicalSpecs: [
-      { parameter: "Output Voltage", specification: "24", unit: "V DC" },
-      { parameter: "Output Current", specification: "20", unit: "A" },
-      { parameter: "Input Range", specification: "85 - 264", unit: "V AC" },
-      { parameter: "Efficiency", specification: "> 93", unit: "%" },
-      { parameter: "MTBF", specification: "> 300,000", unit: "Hours" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=PSU+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=PSU+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=PSU+DIN",
-    ],
-  },
-  {
-    id: "mcb-63a",
-    name: "MCB 63A Miniature Circuit Breaker",
-    category: "Breakers",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=MCB+63A",
-    description:
-      "63A thermal-magnetic miniature circuit breaker with C-curve tripping characteristics, suitable for motor and transformer protection in industrial panels.",
-    specs: [
-      "Rating: 63A",
-      "Poles: 3P",
-      "Breaking Capacity: 10kA",
-      "Curve: C",
-    ],
-    applications: [
-      "Motor Protection Circuits",
-      "Industrial Panel Boards",
-      "Transformer Secondary Protection",
-      "Commercial Building Distribution",
-    ],
-    technicalSpecs: [
-      { parameter: "Rated Current", specification: "63", unit: "A" },
-      { parameter: "Rated Voltage", specification: "415", unit: "V AC" },
-      { parameter: "Breaking Capacity", specification: "10", unit: "kA" },
-      { parameter: "Number of Poles", specification: "3P", unit: "" },
-      { parameter: "Tripping Curve", specification: "C", unit: "" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=MCB+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=MCB+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=MCB+DIN",
-    ],
-  },
-  {
-    id: "relay-tr100",
-    name: "TR-100 Thermal Overload Relay",
-    category: "Relays",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=TR-100+Relay",
-    description:
-      "Adjustable thermal overload relay with trip class 10/20 selection, phase loss sensitivity, and manual/auto reset for motor protection.",
-    specs: [
-      "Current Range: 63-100A",
-      "Trip Class: 10/20",
-      "Reset: Manual/Auto",
-      "Mounting: DIN Rail",
-    ],
-    applications: [
-      "Motor Overload Protection",
-      "Pump Control Circuits",
-      "Conveyor Motor Protection",
-      "HVAC Compressor Protection",
-    ],
-    technicalSpecs: [
-      { parameter: "Adjustment Range", specification: "63 - 100", unit: "A" },
-      { parameter: "Trip Class", specification: "10 / 20", unit: "" },
-      { parameter: "Rated Voltage", specification: "690", unit: "V AC" },
-      { parameter: "Aux Contacts", specification: "1NO + 1NC", unit: "" },
-      { parameter: "Operating Temperature", specification: "-20 to +60", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=TR100+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=TR100+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=TR100+Back",
-    ],
-  },
-  {
-    id: "sm-1000",
-    name: "SM-1000 Single Phase Smart Meter",
-    category: "Smart Meters",
-    image: "https://placehold.co/600x400/111827/06b6d4?text=SM-1000",
-    description:
-      "Compact single-phase smart energy meter with Modbus communication, harmonic measurement, and tamper detection for commercial metering.",
-    specs: [
-      "Phase: Single Phase",
-      "Accuracy: Class 1.0",
-      "Display: LED Segment",
-      "Communication: RS485 Modbus",
-    ],
-    applications: [
-      "Commercial Sub-metering",
-      "Tenant Billing Systems",
-      "Solar Inverter Monitoring",
-      "EV Charging Stations",
-    ],
-    technicalSpecs: [
-      { parameter: "Voltage Range", specification: "180 - 280", unit: "V AC" },
-      { parameter: "Current Range", specification: "5 - 80", unit: "A" },
-      { parameter: "Frequency", specification: "50 / 60", unit: "Hz" },
-      { parameter: "Accuracy Class", specification: "1.0", unit: "" },
-      { parameter: "Operating Temperature", specification: "-25 to +55", unit: "deg C" },
-    ],
-    thumbnails: [
-      "https://placehold.co/200x200/111827/06b6d4?text=SM1000+Front",
-      "https://placehold.co/200x200/111827/06b6d4?text=SM1000+Side",
-      "https://placehold.co/200x200/111827/06b6d4?text=SM1000+LCD",
-    ],
-  },
-];
+function makePlaceholderImage(name: string, index = 0) {
+  const [bg, fg] = imageThemes[index % imageThemes.length];
+  return `https://placehold.co/800x800/${bg}/${fg}?text=${encodeURIComponent(name)}`;
+}
+
+/**
+ * Resolve the primary image for a product.
+ * Uses the media.images array from JSON if available,
+ * falling back to a placeholder when images are not yet uploaded.
+ */
+function resolvePrimaryImage(product: RawProduct, index: number): string {
+  const images = product.media?.images ?? [];
+  const primary = images.find((img) => img.isPrimary) ?? images[0];
+  if (primary?.url) return primary.url;
+  return makePlaceholderImage(product.name, index);
+}
+
+/**
+ * Resolve thumbnail images (all non-primary images, or placeholders).
+ */
+function resolveThumbnails(product: RawProduct, index: number): string[] {
+  const images = product.media?.images ?? [];
+  if (images.length > 0) {
+    return images.map((img) => img.url);
+  }
+  return [
+    makePlaceholderImage(`${product.name} View 1`, index + 1),
+    makePlaceholderImage(`${product.name} View 2`, index + 2),
+    makePlaceholderImage(`${product.name} View 3`, index + 3),
+  ];
+}
+
+/**
+ * technicalSpecifications in the new JSON is already structured as
+ * { parameter, specification, unit }. Map it directly, normalising
+ * null units to empty string for TypeScript compatibility.
+ */
+function mapTechSpecs(
+  specs: RawProduct["technicalSpecifications"],
+): { parameter: string; specification: string; unit: string }[] {
+  return specs.map((s) => ({
+    parameter: s.parameter,
+    specification: s.specification,
+    unit: s.unit ?? "",
+  }));
+}
+
+/**
+ * applications in the new JSON is an array of { label, verified }.
+ * Map it directly.
+ */
+function mapApplications(
+  apps: RawProduct["applications"],
+): ProductApplication[] {
+  return apps.map((a) => ({
+    label: a.label,
+    verified: a.verified,
+  }));
+}
+
+/**
+ * Primary display category: first entry in the categories array that
+ * isn't "Manufactured Products" or "ALECS Brand Products", so the UI
+ * shows the most specific category. Falls back to first category.
+ */
+function resolvePrimaryCategory(categories: string[]): string {
+  const generic = new Set(["Manufactured Products", "ALECS Brand Products"]);
+  return categories.find((c) => !generic.has(c)) ?? categories[0] ?? "Other";
+}
+
+function mapProduct(product: RawProduct, index: number): Product {
+  const image = resolvePrimaryImage(product, index);
+  const thumbnails = resolveThumbnails(product, index);
+  const technicalSpecs = mapTechSpecs(product.technicalSpecifications);
+  const applications = mapApplications(product.applications);
+  const primaryCategory = resolvePrimaryCategory(product.categories);
+
+  return {
+    // Core identity
+    id: product.id,
+    slug: product.slug,
+    serialNumber: product.serialNumber,
+    modelId: product.modelId,
+    standard: product.standard,
+    status: product.status,
+
+    // Content
+    name: product.name,
+    shortDescription: product.shortDescription,
+    description: product.description,
+    brand: product.brand,
+
+    // Categories
+    categories: product.categories,
+    category: primaryCategory,           // primary category for filtering UI
+    sourceCategory: product.categories[0], // top-level catalog category
+
+    // Media
+    media: product.media,
+    image,                               // resolved primary image URL
+    thumbnails,                          // all image URLs
+
+    // Specs
+    highlights: product.highlights,
+    specs: technicalSpecs.slice(0, 4),   // short list for cards
+    technicalSpecs,                      // full table for product page
+
+    // Applications
+    applications,
+    applicationNote: product.applicationNote,
+
+    // Standards & customizations
+    standards: product.standards,
+    customizations: product.customizations,
+
+    // Related & SEO
+    relatedProducts: product.relatedProducts,
+    seo: product.seo,
+  };
+}
+
+// ─── Derived category list from JSON ────────────────────────────────────────
+
+const genericCategories = new Set([
+  "Manufactured Products",
+  "ALECS Brand Products",
+]);
+
+const specificCategories = Array.from(
+  new Set(
+    productCatalog.products.flatMap((p) =>
+      p.categories.filter((c) => !genericCategories.has(c)),
+    ),
+  ),
+);
+
+export const categories = ["All", ...specificCategories];
+
+// ─── Mapped products ─────────────────────────────────────────────────────────
+
+export const products: Product[] = productCatalog.products.map(mapProduct);
+
+// ─── Lookup helpers ───────────────────────────────────────────────────────────
 
 export function getProductById(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
+  return products.find((product) => product.id === id);
 }
 
 export function getProductsByCategory(category: string): Product[] {
   if (category === "All") return products;
-  return products.filter((p) => p.category === category);
+  return products.filter((product) => product.categories.includes(category));
 }
 
+/**
+ * Returns related products using the explicit relatedProducts ID list from
+ * JSON first, then falls back to same-category products if needed.
+ */
 export function getRelatedProducts(id: string, count = 3): Product[] {
   const product = getProductById(id);
   if (!product) return products.slice(0, count);
-  const sameCat = products.filter((p) => p.category === product.category && p.id !== id);
-  const others = products.filter((p) => p.category !== product.category && p.id !== id);
-  return [...sameCat, ...others].slice(0, count);
+
+  // Use the curated list from JSON
+  const fromJson = product.relatedProducts
+    .map((relId) => getProductById(relId))
+    .filter((p): p is Product => p !== undefined);
+
+  if (fromJson.length >= count) return fromJson.slice(0, count);
+
+  // Top up with same-category products if the list is short
+  const usedIds = new Set([id, ...fromJson.map((p) => p.id)]);
+  const topUp = products.filter(
+    (p) =>
+      !usedIds.has(p.id) &&
+      p.categories.some((c) => product.categories.includes(c)),
+  );
+
+  return [...fromJson, ...topUp].slice(0, count);
 }

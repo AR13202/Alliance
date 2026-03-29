@@ -51,10 +51,10 @@ export default function ProductDetailScreen({
 
   const related = getRelatedProducts(product.id, 4);
   const allImages = [product.image, ...product.thumbnails];
-  const primarySpecs = product.specs.slice(0, 2).map((item) => {
-    const [label, value] = item.split(":").map((part) => part.trim());
-    return { label: label?.toUpperCase() || item.toUpperCase(), value: value || item };
-  });
+  const primarySpecs = product.highlights.slice(0, 2).map((item) => ({
+    label: item.label.toUpperCase(),
+    value: item.value,
+  }));
 
   const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -176,9 +176,9 @@ export default function ProductDetailScreen({
               <h2 className="mb-5 text-lg font-semibold text-slate-100">Common Applications</h2>
               <div className="space-y-4 rounded-xl border border-slate-900 bg-[#0d141f] p-5">
                 {product.applications.map((application) => (
-                  <div key={application} className="flex items-start gap-3 text-sm text-slate-400">
+                  <div key={application.label} className="flex items-start gap-3 text-sm text-slate-400">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-                    <span>{application}</span>
+                    <span>{application.label}</span>
                   </div>
                 ))}
                 <div className="flex items-start gap-3 border-t border-slate-900 pt-4 text-sm text-slate-500">
