@@ -6,44 +6,122 @@
 
 @layer base {
   :root {
-    --background: 220 30% 7%;
-    --foreground: 0 0% 100%;
+    --background: 204 33% 97%;
+    --foreground: 210 35% 20%;
 
-    --card: 220 26% 11%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 35% 20%;
 
-    --popover: 220 26% 11%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 35% 20%;
 
-    --primary: 187 94% 43%;
-    --primary-foreground: 220 30% 7%;
+    --primary: 212 48% 18%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 20% 16%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 203 27% 93%;
+    --secondary-foreground: 211 31% 24%;
 
-    --muted: 220 20% 16%;
-    --muted-foreground: 218 11% 65%;
+    --muted: 202 25% 94%;
+    --muted-foreground: 212 15% 45%;
 
-    --accent: 187 94% 43%;
-    --accent-foreground: 220 30% 7%;
+    --accent: 42 86% 58%;
+    --accent-foreground: 212 48% 18%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 26%;
-    --input: 220 13% 26%;
-    --ring: 187 94% 43%;
+    --border: 208 23% 85%;
+    --input: 208 23% 85%;
+    --ring: 208 48% 38%;
 
     --radius: 0.5rem;
 
+    --sidebar-background: 204 33% 97%;
+    --sidebar-foreground: 210 35% 20%;
+    --sidebar-primary: 212 48% 18%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 203 27% 93%;
+    --sidebar-accent-foreground: 210 35% 20%;
+    --sidebar-border: 208 23% 85%;
+    --sidebar-ring: 208 48% 38%;
+
+    --site-bg: #f3f6f9;
+    --site-bg-soft: #edf3f8;
+    --site-panel: #e9f0f5;
+    --site-surface: #ffffff;
+    --site-surface-muted: #f6f9fc;
+    --site-surface-strong: #dde8f0;
+    --site-text: #294154;
+    --site-text-soft: #6c8091;
+    --site-heading: #193349;
+    --site-border: #d4e0ea;
+    --site-border-strong: #bccfdd;
+    --site-primary: #163049;
+    --site-primary-hover: #24435f;
+    --site-primary-contrast: #f8fbfd;
+    --site-secondary: #eef4f8;
+    --site-secondary-hover: #e1ebf2;
+    --site-accent: #d5a54a;
+    --site-radial: rgba(125, 154, 178, 0.22);
+    --site-hero-overlay: rgba(243, 246, 249, 0.58);
+    --site-shadow: 0 16px 38px rgba(32, 58, 79, 0.08);
+  }
+
+  .dark {
+    --background: 220 30% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 220 26% 11%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 220 26% 11%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 203 78% 62%;
+    --primary-foreground: 220 30% 7%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 218 11% 65%;
+
+    --accent: 42 86% 58%;
+    --accent-foreground: 220 30% 7%;
+
+    --border: 220 13% 26%;
+    --input: 220 13% 26%;
+    --ring: 203 78% 62%;
+
     --sidebar-background: 220 30% 7%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 187 94% 43%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 203 78% 62%;
     --sidebar-primary-foreground: 220 30% 7%;
     --sidebar-accent: 220 20% 16%;
-    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-accent-foreground: 210 40% 96%;
     --sidebar-border: 220 13% 26%;
-    --sidebar-ring: 187 94% 43%;
+    --sidebar-ring: 203 78% 62%;
+
+    --site-bg: #0d1118;
+    --site-bg-soft: #0f141c;
+    --site-panel: #111722;
+    --site-surface: #121924;
+    --site-surface-muted: #131b27;
+    --site-surface-strong: #1a2230;
+    --site-text: #e6edf5;
+    --site-text-soft: #93a3b3;
+    --site-heading: #f8fbff;
+    --site-border: #2b3746;
+    --site-border-strong: #43607c;
+    --site-primary: #e9f0fa;
+    --site-primary-hover: #d9e5f4;
+    --site-primary-contrast: #0f1725;
+    --site-secondary: #111b2a;
+    --site-secondary-hover: #152033;
+    --site-accent: #d5a54a;
+    --site-radial: rgba(59, 130, 246, 0.08);
+    --site-hero-overlay: rgba(15, 22, 35, 0.5);
+    --site-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
   }
 }
 
@@ -59,6 +137,74 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+}
+
+@layer components {
+  .site-page {
+    background-color: var(--site-bg);
+    color: var(--site-text);
+  }
+
+  .site-main {
+    background:
+      radial-gradient(circle at top, var(--site-radial), transparent 34%),
+      linear-gradient(180deg, var(--site-bg-soft) 0%, var(--site-bg) 100%);
+  }
+
+  .site-band {
+    background-color: var(--site-panel);
+    border-color: var(--site-border);
+  }
+
+  .site-card {
+    background-color: var(--site-surface);
+    border-color: var(--site-border);
+    box-shadow: var(--site-shadow);
+  }
+
+  .site-card-soft {
+    background-color: var(--site-surface-muted);
+    border-color: var(--site-border);
+  }
+
+  .site-card-strong {
+    background-color: var(--site-surface-strong);
+    border-color: var(--site-border-strong);
+  }
+
+  .site-heading {
+    color: var(--site-heading);
+  }
+
+  .site-copy {
+    color: var(--site-text-soft);
+  }
+
+  .site-chip {
+    background-color: var(--site-surface-muted);
+    border-color: var(--site-border);
+    color: var(--site-heading);
+  }
+
+  .site-button-primary {
+    background-color: var(--site-primary);
+    color: var(--site-primary-contrast);
+  }
+
+  .site-button-primary:hover {
+    background-color: var(--site-primary-hover);
+  }
+
+  .site-button-secondary {
+    background-color: var(--site-secondary);
+    border-color: var(--site-border);
+    color: var(--site-heading);
+  }
+
+  .site-button-secondary:hover {
+    background-color: var(--site-secondary-hover);
   }
 }
 

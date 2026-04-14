@@ -1,0 +1,24 @@
+<svg width="360" height="220" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="alliancePurple" x1="22" y1="92" x2="304" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A43A7"/>
+      <stop offset="1" stop-color="#39318C"/>
+    </linearGradient>
+    <linearGradient id="allianceBlue" x1="250" y1="102" x2="330" y2="188" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4C45B6"/>
+      <stop offset="1" stop-color="#2F297B"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M112 40L152 40L306 190L266 190L112 40Z" fill="#22202A"/>
+  <path d="M28 162L126 66L198 66L138 126L118 126L98 106L72 132L214 132L274 190L40 190L28 162Z" fill="url(#alliancePurple)"/>
+  <path d="M84 66L112 40L196 40L236 82L208 82L180 54L112 54L84 66Z" fill="url(#alliancePurple)"/>
+  <path d="M234 40L280 40L300 82L254 82L234 40Z" fill="url(#alliancePurple)"/>
+  <path d="M248 102L282 102L334 190L300 190L248 102Z" fill="url(#allianceBlue)"/>
+  <path d="M234 90L268 90L286 102L252 102L234 90Z" fill="#22202A"/>
+
+  <circle cx="301" cy="26" r="17" fill="white" stroke="#111111" stroke-width="4"/>
+  <path d="M292 20H306" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M299 20V33" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M306 20V27" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

@@ -93,11 +93,11 @@ export default function ClientScreen() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0d1118] text-slate-100">
+    <div className="site-page min-h-screen">
       <Navbar />
 
-      <main className="bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.06),_transparent_34%),linear-gradient(180deg,_#0f141c_0%,_#0c1017_100%)]">
-        <section className="border-b border-slate-800/80">
+      <main className="site-main">
+        <section className="border-b" style={{ borderColor: "var(--site-border)" }}>
           <div className="container mx-auto px-4 py-14 sm:px-5 lg:px-6 lg:py-18">
             <div className="max-w-3xl">
               <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300/80">
@@ -106,34 +106,34 @@ export default function ClientScreen() {
               <h1 className="mt-4 text-[2.4rem] font-semibold leading-tight text-white sm:text-[3.2rem]">
                 Organizations we have proudly served
               </h1>
-              <p className="mt-4 max-w-2xl text-[15px] leading-8 text-slate-400">
+              <p className="site-copy mt-4 max-w-2xl text-[15px] leading-8">
                 Our work supports utilities, industrial groups, institutions,
                 enterprises, and infrastructure developments across India.
               </p>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-[12px] border border-slate-800 bg-[#131b27] px-5 py-6">
+              <div className="site-card rounded-[12px] border px-5 py-6">
                 <div className="text-[28px] font-semibold text-white">
                   {totalClients}+
                 </div>
-                <p className="mt-2 text-[12px] uppercase tracking-[0.14em] text-slate-500">
+                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
                   Client Organizations
                 </p>
               </div>
-              <div className="rounded-[12px] border border-slate-800 bg-[#131b27] px-5 py-6">
+              <div className="site-card rounded-[12px] border px-5 py-6">
                 <div className="text-[28px] font-semibold text-white">
                   {clientCategories.length}
                 </div>
-                <p className="mt-2 text-[12px] uppercase tracking-[0.14em] text-slate-500">
+                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
                   Industry Segments
                 </p>
               </div>
-              <div className="rounded-[12px] border border-slate-800 bg-[#131b27] px-5 py-6">
+              <div className="site-card rounded-[12px] border px-5 py-6">
                 <div className="text-[28px] font-semibold text-white">
                   India
                 </div>
-                <p className="mt-2 text-[12px] uppercase tracking-[0.14em] text-slate-500">
+                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
                   Primary Market
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function ClientScreen() {
               {clientCategories.map((category) => (
                 <section
                   key={category.title}
-                  className="rounded-[20px] border border-slate-800/80 bg-[#101722]/85 p-6 sm:p-8"
+                  className="site-card rounded-[20px] border p-6 sm:p-8"
                 >
                   <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
@@ -157,11 +157,11 @@ export default function ClientScreen() {
                       <h2 className="mt-2 text-[1.7rem] font-semibold text-white sm:text-[2rem]">
                         {category.title}
                       </h2>
-                      <p className="mt-3 text-sm leading-7 text-slate-400">
+                      <p className="site-copy mt-3 text-sm leading-7">
                         {category.description}
                       </p>
                     </div>
-                    <div className="text-[11px] uppercase tracking-[0.16em] text-slate-500">
+                    <div className="site-copy text-[11px] uppercase tracking-[0.16em]">
                       {category.clients.length} organizations
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function ClientScreen() {
                     {category.clients.map((client) => (
                       <div
                         key={client.name}
-                        className="group rounded-[14px] border border-slate-800 bg-[#0f1623] p-4 transition-colors hover:border-slate-700"
+                        className="site-card group rounded-[14px] border p-4 transition-colors"
                       >
                         <div className="flex h-24 items-center justify-center rounded-[12px] bg-white p-4">
                           {client.logo ? (
@@ -180,12 +180,12 @@ export default function ClientScreen() {
                               className="h-full w-full object-contain"
                             />
                           ) : (
-                            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[linear-gradient(135deg,#dbeafe_0%,#f8fafc_100%)] text-[1.4rem] font-semibold tracking-[0.18em] text-slate-700">
+                            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[linear-gradient(135deg,#dbeafe_0%,#f8fafc_100%)] text-[1.4rem] font-semibold tracking-[0.18em]" style={{ color: "var(--site-primary)" }}>
                               {getInitials(client.name)}
                             </div>
                           )}
                         </div>
-                        <div className="mt-4 text-sm font-medium leading-6 text-slate-200">
+                        <div className="site-heading mt-4 text-sm font-medium leading-6">
                           {client.name}
                         </div>
                       </div>

@@ -96,13 +96,14 @@ export default function ProductsScreen() {
   const searchParams = useSearchParams();
 
   const selectedCategory = searchParams?.get("category") as CategoryKey | null;
+  const searchQuery = searchParams?.get("query")?.trim() ?? "";
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedClass, setSelectedClass] = useState("All Classes");
 
   useEffect(() => {
     setVisibleCount(6);
     setSelectedClass("All Classes");
-  }, [selectedCategory]);
+  }, [selectedCategory, searchQuery]);
 
   const categoryMeta = useMemo(() => {
     if (selectedCategory === "other-electrical-products") {
@@ -117,6 +118,25 @@ export default function ProductsScreen() {
     }
     return products.filter((product) => product.category === "Current Transformers");
   }, [selectedCategory]);
+
+  const searchedProducts = useMemo(() => {
+    if (!searchQuery) return [];
+
+    const normalizedQuery = searchQuery.toLowerCase();
+    return products.filter((product) => {
+      const haystack = [
+        product.name,
+        product.shortDescription,
+        product.description,
+        product.category,
+        ...product.categories,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(normalizedQuery);
+    });
+  }, [searchQuery]);
 
   const filteredProducts = useMemo(() => {
     if (!selectedCategory) return [];
@@ -141,20 +161,20 @@ export default function ProductsScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c1017] text-slate-100">
+    <div className="site-page min-h-screen">
       <Navbar />
 
-      {!selectedCategory ? (
-        <main className="bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.05),_transparent_42%),linear-gradient(180deg,_#0d1219_0%,_#0b1017_100%)]">
+      {!selectedCategory && !searchQuery ? (
+        <main className="site-main">
           <div className="container mx-auto px-4 py-8 sm:px-5 lg:px-6">
             <div className="mb-8 flex flex-wrap items-start justify-between gap-5">
               <div className="max-w-2xl">
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">Product Categories</h1>
-                <p className="mt-3 text-sm leading-7 text-slate-400">
+                <h1 className="site-heading text-3xl font-semibold tracking-tight sm:text-4xl">Product Categories</h1>
+                <p className="site-copy mt-3 text-sm leading-7">
                   Precision-engineered electrical components built for the future of power infrastructure. Explore our comprehensive range of high-performance solutions.
                 </p>
               </div>
-              <button className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-800 bg-[#141d2b] px-4 text-xs font-medium text-slate-200">
+              <button className="site-button-secondary inline-flex h-10 items-center gap-2 rounded-lg border px-4 text-xs font-medium">
                 View All Catalog
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -165,7 +185,7 @@ export default function ProductsScreen() {
                 <button
                   key={category.key}
                   onClick={() => selectCategory(category.key)}
-                  className="group overflow-hidden rounded-2xl border border-slate-900 bg-[#111826] text-left transition-all hover:-translate-y-0.5 hover:border-slate-700 hover:shadow-[0_20px_44px_rgba(2,8,23,0.3)]"
+                  className="site-card group overflow-hidden rounded-2xl border text-left transition-all hover:-translate-y-0.5"
                 >
                   <div className="overflow-hidden">
                     <img
@@ -176,13 +196,13 @@ export default function ProductsScreen() {
                   </div>
                   <div className="space-y-4 p-5">
                     <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-                      <h2 className="text-xl font-semibold text-slate-100 sm:text-2xl">{category.title}</h2>
-                      <span className="rounded-full border border-slate-700 bg-[#172131] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                      <h2 className="site-heading text-xl font-semibold sm:text-2xl">{category.title}</h2>
+                      <span className="site-chip rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
                         {category.badge}
                       </span>
                     </div>
-                    <p className="text-sm leading-7 text-slate-400">{category.description}</p>
-                    <div className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#f3f6fb] px-4 text-sm font-medium text-slate-900">
+                    <p className="site-copy text-sm leading-7">{category.description}</p>
+                    <div className="site-button-primary inline-flex h-10 items-center gap-2 rounded-lg px-4 text-sm font-medium">
                       Explore Collection
                       <ArrowRight className="h-4 w-4" />
                     </div>
@@ -192,15 +212,15 @@ export default function ProductsScreen() {
             </div>
 
             <section className="py-16">
-              <h2 className="mb-8 text-center text-2xl font-semibold text-slate-100">Engineered for Excellence</h2>
+              <h2 className="site-heading mb-8 text-center text-2xl font-semibold">Engineered for Excellence</h2>
               <div className="grid gap-5 md:grid-cols-3">
                 {excellenceCards.map((item) => (
-                  <div key={item.title} className="rounded-2xl border border-slate-900 bg-[#111826] p-6 text-center">
-                    <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#162233] text-sky-300">
+                  <div key={item.title} className="site-card rounded-2xl border p-6 text-center">
+                    <div className="site-card-soft mx-auto flex h-11 w-11 items-center justify-center rounded-full border" style={{ color: "var(--site-primary)" }}>
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-100">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-500">{item.description}</p>
+                    <h3 className="site-heading mt-4 text-base font-semibold">{item.title}</h3>
+                    <p className="site-copy mt-3 text-sm leading-7">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -208,33 +228,127 @@ export default function ProductsScreen() {
           </div>
         </main>
       ) : (
-        <main className="bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.05),_transparent_38%),linear-gradient(180deg,_#0d1219_0%,_#0b1017_100%)]">
+        <main className="site-main">
           <div className="container mx-auto px-4 py-8 sm:px-5 lg:px-6">
-            <nav className="mb-6 flex items-center gap-1.5 text-[11px] text-slate-500">
-              <Link href="/" className="hover:text-slate-300">
+            {searchQuery ? (
+              <>
+                <nav className="site-copy mb-6 flex items-center gap-1.5 text-[11px]">
+                  <Link href="/" className="hover:opacity-80">
+                    Home
+                  </Link>
+                  <span>/</span>
+                  <Link href="/products" className="hover:opacity-80">
+                    Products
+                  </Link>
+                  <span>/</span>
+                  <span className="site-heading">Search</span>
+                </nav>
+
+                <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <div className="site-chip mb-3 inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
+                      Product Search
+                    </div>
+                    <h1 className="site-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+                      Results for "{searchQuery}"
+                    </h1>
+                    <p className="site-copy mt-3 max-w-2xl text-sm leading-7">
+                      {searchedProducts.length} matching products found in the catalog.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => router.push("/products")}
+                    className="site-button-secondary inline-flex h-10 items-center gap-2 rounded-lg border px-4 text-xs font-medium transition-colors"
+                  >
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                    Back to Categories
+                  </button>
+                </div>
+
+                {searchedProducts.length > 0 ? (
+                  <div className="grid gap-5 sm:grid-cols-2 2xl:grid-cols-3">
+                    {searchedProducts.map((product) => {
+                      const meta = getCardMeta(product);
+
+                      return (
+                        <Link
+                          key={product.id}
+                          href={`/products/${product.id}`}
+                          className="site-card group overflow-hidden rounded-xl border transition-all hover:-translate-y-0.5"
+                        >
+                          <div className="relative bg-[linear-gradient(180deg,#f8fafc_0%,#d9e7f8_100%)]">
+                            <div className="site-button-primary absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-[9px] font-bold uppercase tracking-[0.18em]">
+                              {meta.badge}
+                            </div>
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+
+                          <div className="space-y-3 p-4">
+                            <div>
+                              <h3 className="site-heading text-base font-semibold">{product.name}</h3>
+                              <p className="site-copy mt-1 text-[11px] uppercase tracking-[0.12em]">
+                                {meta.subtitle}
+                              </p>
+                            </div>
+
+                            <div className="site-copy space-y-2 text-xs">
+                              {meta.features.map((feature) => (
+                                <div key={feature} className="flex items-center gap-2">
+                                  <Sparkles className="h-3 w-3" />
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+
+                            <div className="flex items-center justify-between border-t pt-3" style={{ borderColor: "var(--site-border)" }}>
+                              <div className="site-heading text-lg font-semibold">{meta.price}</div>
+                              <div className="site-copy text-xs font-medium uppercase tracking-[0.14em]">View Product</div>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="site-card rounded-2xl border px-6 py-12 text-center">
+                    <h2 className="site-heading text-xl font-semibold">No matching products found</h2>
+                    <p className="site-copy mx-auto mt-3 max-w-xl text-sm leading-7">
+                      Try a different product name, category keyword, or browse the full catalog instead.
+                    </p>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+            <nav className="site-copy mb-6 flex items-center gap-1.5 text-[11px]">
+              <Link href="/" className="hover:opacity-80">
                 Home
               </Link>
               <span>/</span>
-              <Link href="/products" className="hover:text-slate-300">
+              <Link href="/products" className="hover:opacity-80">
                 Electrical Components
               </Link>
               <span>/</span>
-              <span className="text-slate-300">{categoryMeta.title}</span>
+              <span className="site-heading">{categoryMeta.title}</span>
             </nav>
 
             <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
               <div>
-                <div className="mb-3 inline-flex rounded-full border border-slate-800 bg-[#141d2b] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                <div className="site-chip mb-3 inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
                   Selected Category: {categoryMeta.title}
                 </div>
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">{categoryMeta.title}</h1>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
+                <h1 className="site-heading text-3xl font-semibold tracking-tight sm:text-4xl">{categoryMeta.title}</h1>
+                <p className="site-copy mt-3 max-w-2xl text-sm leading-7">
                   {categoryMeta.description}
                 </p>
               </div>
               <button
                 onClick={clearCategory}
-                className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-800 bg-[#141d2b] px-4 text-xs font-medium text-slate-200 transition-colors hover:border-slate-600"
+                className="site-button-secondary inline-flex h-10 items-center gap-2 rounded-lg border px-4 text-xs font-medium transition-colors"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
                 Back to Categories
@@ -250,17 +364,17 @@ export default function ProductsScreen() {
                     onClick={() => selectCategory(category.key)}
                     className={`rounded-xl border p-4 text-left transition-all ${
                       active
-                        ? "border-sky-500/50 bg-[#142133] shadow-[0_0_0_1px_rgba(56,189,248,0.15)]"
-                        : "border-slate-900 bg-[#101621] hover:border-slate-700"
+                        ? "border-[color:var(--site-border-strong)] bg-[color:var(--site-surface-strong)]"
+                        : "border-[color:var(--site-border)] bg-[color:var(--site-surface)]"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div>
-                        <div className="text-sm font-semibold text-slate-100">{category.title}</div>
-                        <div className="mt-1 text-xs text-slate-500">{category.badge}</div>
+                        <div className="site-heading text-sm font-semibold">{category.title}</div>
+                        <div className="site-copy mt-1 text-xs">{category.badge}</div>
                       </div>
                       {active && (
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/15 text-sky-300">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full" style={{ backgroundColor: "color-mix(in srgb, var(--site-primary) 12%, transparent)", color: "var(--site-primary)" }}>
                           <CheckCircle2 className="h-4 w-4" />
                         </div>
                       )}
@@ -273,8 +387,8 @@ export default function ProductsScreen() {
             <div className="grid gap-8 lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)]">
               <aside className="space-y-7">
                 <div>
-                  <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Filters</div>
-                  <div className="space-y-6 rounded-xl border border-slate-900 bg-[#101621] p-4 sm:p-5">
+                  <div className="site-copy mb-4 text-[11px] font-semibold uppercase tracking-[0.18em]">Filters</div>
+                  <div className="site-card space-y-6 rounded-xl border p-4 sm:p-5">
                     <FilterSection title="Primary Ratio" options={ratioOptions} />
                     <FilterSection title="Construction Type" options={constructionOptions} />
 
@@ -314,20 +428,20 @@ export default function ProductsScreen() {
 
               <section>
                 <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-xs text-slate-500">
+                  <p className="site-copy text-xs">
                     Showing 1-{displayedProducts.length} of {Math.max(filteredProducts.length, displayedProducts.length)} products in {categoryMeta.title}
                   </p>
 
                   <div className="flex w-full flex-wrap items-center justify-between gap-3 sm:w-auto sm:justify-end sm:gap-4">
-                    <button className="flex items-center gap-2 text-xs text-slate-400 hover:text-slate-200">
+                    <button className="site-copy flex items-center gap-2 text-xs hover:opacity-80">
                       <SlidersHorizontal className="h-3.5 w-3.5" />
                       Sort by Recommended
                     </button>
-                    <div className="flex items-center gap-1 rounded-md border border-slate-800 bg-[#141d2b] p-1">
-                      <button className="flex h-7 w-7 items-center justify-center rounded bg-[#22324d] text-slate-200">
+                    <div className="site-card-soft flex items-center gap-1 rounded-md border p-1">
+                      <button className="site-button-primary flex h-7 w-7 items-center justify-center rounded">
                         <Grid2x2 className="h-3.5 w-3.5" />
                       </button>
-                      <button className="flex h-7 w-7 items-center justify-center rounded text-slate-500">
+                      <button className="site-copy flex h-7 w-7 items-center justify-center rounded">
                         <ListFilter className="h-3.5 w-3.5" />
                       </button>
                     </div>
@@ -342,10 +456,10 @@ export default function ProductsScreen() {
                       <Link
                         key={product.id}
                         href={`/products/${product.id}`}
-                        className="group overflow-hidden rounded-xl border border-slate-900 bg-[#111826] transition-all hover:-translate-y-0.5 hover:border-slate-700 hover:shadow-[0_18px_40px_rgba(2,8,23,0.28)]"
+                        className="site-card group overflow-hidden rounded-xl border transition-all hover:-translate-y-0.5"
                       >
                         <div className="relative bg-[linear-gradient(180deg,#f8fafc_0%,#d9e7f8_100%)]">
-                          <div className="absolute left-3 top-3 z-10 rounded-md bg-[#243857] px-2 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-slate-100">
+                          <div className="site-button-primary absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-[9px] font-bold uppercase tracking-[0.18em]">
                             {meta.badge}
                           </div>
                           <img
@@ -357,23 +471,23 @@ export default function ProductsScreen() {
 
                         <div className="space-y-3 p-4">
                           <div>
-                            <h3 className="text-base font-semibold text-slate-100">{product.name}</h3>
+                            <h3 className="site-heading text-base font-semibold">{product.name}</h3>
                             {/* ✅ subtitle is pre-formatted in getCardMeta as a string */}
-                            <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-slate-500">{meta.subtitle}</p>
+                            <p className="site-copy mt-1 text-[11px] uppercase tracking-[0.12em]">{meta.subtitle}</p>
                           </div>
 
-                          <div className="space-y-2 text-xs text-slate-500">
+                          <div className="site-copy space-y-2 text-xs">
                             {meta.features.map((feature) => (
                               <div key={feature} className="flex items-center gap-2">
-                                <Sparkles className="h-3 w-3 text-slate-600" />
+                                <Sparkles className="h-3 w-3" />
                                 <span>{feature}</span>
                               </div>
                             ))}
                           </div>
 
-                          <div className="flex items-center justify-between border-t border-slate-900 pt-3">
-                            <div className="text-lg font-semibold text-white">{meta.price}</div>
-                            <div className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">View Product</div>
+                          <div className="flex items-center justify-between border-t pt-3" style={{ borderColor: "var(--site-border)" }}>
+                            <div className="site-heading text-lg font-semibold">{meta.price}</div>
+                            <div className="site-copy text-xs font-medium uppercase tracking-[0.14em]">View Product</div>
                           </div>
                         </div>
                       </Link>
@@ -382,27 +496,29 @@ export default function ProductsScreen() {
                 </div>
 
                 <div className="mt-8 flex flex-col items-center">
-                  <p className="mb-3 text-xs text-slate-500">
+                  <p className="site-copy mb-3 text-xs">
                     Showing {displayedProducts.length} of {filteredProducts.length} products
                   </p>
-                  <div className="h-[2px] w-36 overflow-hidden rounded-full bg-slate-900">
-                    <div className="h-full rounded-full bg-[#36598b]" style={{ width: `${progress}%` }} />
+                  <div className="h-[2px] w-36 overflow-hidden rounded-full" style={{ backgroundColor: "var(--site-border)" }}>
+                    <div className="h-full rounded-full" style={{ width: `${progress}%`, backgroundColor: "var(--site-primary)" }} />
                   </div>
                   {visibleCount < filteredProducts.length ? (
                     <button
                       onClick={() => setVisibleCount((count) => count + 3)}
-                      className="mt-5 inline-flex h-10 items-center justify-center rounded-lg border border-slate-700 bg-transparent px-6 text-sm font-medium text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+                      className="site-button-secondary mt-5 inline-flex h-10 items-center justify-center rounded-lg border px-6 text-sm font-medium transition-colors"
                     >
                       Load More Products
                     </button>
                   ) : (
-                    <button className="mt-5 inline-flex h-10 items-center justify-center rounded-lg border border-slate-700 bg-transparent px-6 text-sm font-medium text-slate-300">
+                    <button className="site-button-secondary mt-5 inline-flex h-10 items-center justify-center rounded-lg border px-6 text-sm font-medium">
                       Load More Products
                     </button>
                   )}
                 </div>
               </section>
             </div>
+            </>
+            )}
           </div>
         </main>
       )}
@@ -421,11 +537,11 @@ function FilterSection({
 }) {
   return (
     <div>
-      <div className="mb-3 text-xs font-semibold text-slate-300">{title}</div>
+      <div className="site-heading mb-3 text-xs font-semibold">{title}</div>
       <div className="space-y-2.5">
         {options.map((option) => (
-          <label key={option} className="flex items-center gap-2 text-xs text-slate-500">
-            <input type="checkbox" className="h-3.5 w-3.5 rounded border-slate-700 bg-transparent" />
+          <label key={option} className="site-copy flex items-center gap-2 text-xs">
+            <input type="checkbox" className="h-3.5 w-3.5 rounded bg-transparent" style={{ borderColor: "var(--site-border-strong)" }} />
             <span>{option}</span>
           </label>
         ))}
