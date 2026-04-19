@@ -4,12 +4,15 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import {
   AlertTriangle,
+  ArrowRight,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Download,
   FileText,
+  Plus,
   ShieldCheck,
+  Zap,
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -17,16 +20,8 @@ import { getProductById, getRelatedProducts } from "@/data/products";
 
 type InquiryFormState = {
   name: string;
-  company: string;
+  email: string;
   message: string;
-};
-
-const relatedMeta: Record<string, string> = {
-  "Current Transformers": "Precision Series",
-  Relays: "Protection Class",
-  "Smart Meters": "Monitoring Suite",
-  "Power Supplies": "Industrial Line",
-  Breakers: "Safety Module",
 };
 
 export default function ProductDetailScreen({
@@ -39,22 +34,26 @@ export default function ProductDetailScreen({
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<InquiryFormState>({
     name: "",
-    company: "",
+    email: "",
     message: "",
   });
 
   const productCode = useMemo(() => product?.id.toUpperCase().replace(/-/g, "-"), [product?.id]);
 
   if (!product) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center font-inter">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-secondary mb-4">Product Not Found</h1>
+          <Link href="/products" className="text-primary hover:underline">Return to Catalog</Link>
+        </div>
+      </div>
+    );
   }
 
   const related = getRelatedProducts(product.id, 4);
-  const allImages = [product.image, ...product.thumbnails];
-  const primarySpecs = product.highlights.slice(0, 2).map((item) => ({
-    label: item.label.toUpperCase(),
-    value: item.value,
-  }));
+  const allImages = product.thumbnails.length > 0 ? product.thumbnails : [product.image];
+  const primarySpecs = product.highlights.slice(0, 3);
 
   const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -62,245 +61,342 @@ export default function ProductDetailScreen({
   };
 
   return (
-    <div className="site-page min-h-screen">
+    <div className="bg-white min-h-screen font-inter flex flex-col">
       <Navbar />
 
-      <main className="site-main border-t" style={{ borderColor: "var(--site-border)" }}>
-        <div className="container mx-auto px-4 py-4 sm:px-5 lg:px-6">
-          <nav className="site-copy mb-5 flex items-center gap-1.5 text-[11px]">
-            <Link href="/" className="transition-colors hover:opacity-80">
-              Home
-            </Link>
-            <ChevronRight className="h-3 w-3" />
-            <Link href="/products" className="transition-colors hover:opacity-80">
-              Components
-            </Link>
-            <ChevronRight className="h-3 w-3" />
-            <span className="site-heading truncate">{productCode}</span>
+      <main className="flex-grow pt-8 pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Breadcrumbs */}
+          <nav className="mb-10 flex items-center gap-2 text-[10px] uppercase font-black tracking-[0.2em] text-secondary/40">
+            <Link href="/" className="hover:text-primary transition-colors">HOME</Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link href="/products" className="hover:text-primary transition-colors">CATALOG</Link>
+            <ChevronRight className="w-3 h-3 text-primary/30" />
+            <span className="text-primary">{product.category}</span>
           </nav>
 
-          <section className="grid gap-8 pb-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
-            <div>
-              <div className="site-card overflow-hidden rounded-xl border">
-                <div className="bg-[linear-gradient(180deg,#42b3ff_0%,#2489d6_100%)] p-6 sm:p-8">
-                  <img
-                    src={allImages[selectedImg]}
-                    alt={product.name}
-                    className="mx-auto aspect-square w-full max-w-[420px] object-contain drop-shadow-[0_18px_30px_rgba(2,8,23,0.4)]"
-                  />
+          {/* Product Hero Section */}
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 mb-20">
+            {/* Gallery */}
+            <div className="space-y-6">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-[#f8fafc] to-[#eef2ff] rounded-2xl border border-outline-variant/10 overflow-hidden flex items-center justify-center p-12 group">
+                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                  <span className="bg-primary text-white text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] shadow-lg">
+                    {product.status}
+                  </span>
+                  {product.standard && (
+                    <span className="bg-white/80 backdrop-blur-sm text-secondary text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] border border-outline-variant/20">
+                      {product.standard}
+                    </span>
+                  )}
                 </div>
+                
+                <img
+                  src={allImages[selectedImg]}
+                  alt={product.name}
+                  className="max-h-full max-w-full object-contain drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
 
-              <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
-                {allImages.map((image, index) => (
-                  <button
-                    key={image}
-                    onClick={() => setSelectedImg(index)}
-                    className={`group flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-lg border transition-all sm:h-20 sm:w-20 ${
-                      selectedImg === index
-                        ? "border-[color:var(--site-border-strong)]"
-                        : "border-[color:var(--site-border)]"
-                    }`}
-                    style={{ backgroundColor: "var(--site-surface)" }}
-                    aria-label={`View product image ${index + 1}`}
-                  >
-                    <img src={image} alt="" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-1">
-              <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.24em]" style={{ color: "var(--site-accent)" }}>
-                In Stock
-              </div>
-              <h1 className="site-heading max-w-xl text-[1.9rem] font-semibold leading-tight sm:text-[2.15rem]">
-                {product.name}
-              </h1>
-              <p className="site-copy mt-2 text-xs">
-                Model ID: {productCode} | IEC 60044
-              </p>
-              <p className="site-copy mt-4 max-w-xl text-sm leading-7">{product.description}</p>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {primarySpecs.map((spec) => (
-                  <div key={spec.label} className="site-card rounded-lg border px-4 py-3">
-                    <div className="site-copy text-[10px] font-semibold uppercase tracking-[0.18em]">
-                      {spec.label}
-                    </div>
-                    <div className="site-heading mt-2 text-sm font-semibold">{spec.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <button className="site-button-primary inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-medium transition-colors">
-                  <Download className="h-4 w-4" />
-                  Download Datasheet
-                </button>
-                <button className="site-button-secondary inline-flex h-11 items-center justify-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors">
-                  <AlertTriangle className="h-4 w-4" />
-                  View Brochure
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <div className="border-t" style={{ borderColor: "var(--site-border)" }} />
-
-          <section className="py-10">
-            <h2 className="site-heading mb-5 text-lg font-semibold">Technical Specifications</h2>
-            <div className="site-card overflow-x-auto rounded-xl border">
-              <table className="w-full text-sm">
-                <thead style={{ backgroundColor: "var(--site-surface-muted)" }}>
-                  <tr className="site-copy text-[10px] uppercase tracking-[0.16em]">
-                    <th className="px-5 py-4 text-left font-semibold">Parameter</th>
-                    <th className="px-5 py-4 text-left font-semibold">Specification</th>
-                    <th className="px-5 py-4 text-left font-semibold">Unit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {product.technicalSpecs.map((spec, index) => (
-                    <tr key={spec.parameter} className={index === 0 ? "" : "border-t"} style={index === 0 ? undefined : { borderColor: "var(--site-border)" }}>
-                      <td className="site-copy px-5 py-4">{spec.parameter}</td>
-                      <td className="site-heading px-5 py-4 font-medium">{spec.specification}</td>
-                      <td className="site-copy px-5 py-4">{spec.unit || "-"}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className="grid gap-6 border-t py-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,1.05fr)]" style={{ borderColor: "var(--site-border)" }}>
-            <div>
-              <h2 className="site-heading mb-5 text-lg font-semibold">Common Applications</h2>
-              <div className="site-card space-y-4 rounded-xl border p-5">
-                {product.applications.map((application) => (
-                  <div key={application.label} className="site-copy flex items-start gap-3 text-sm">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "var(--site-primary)" }} />
-                    <span>{application.label}</span>
-                  </div>
-                ))}
-                <div className="site-copy flex items-start gap-3 border-t pt-4 text-sm" style={{ borderColor: "var(--site-border)" }}>
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "var(--site-accent)" }} />
-                  <span>Verified for industrial distribution and metering installations.</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="site-heading mb-5 text-lg font-semibold">Request an Inquiry</h2>
-              <div className="site-card rounded-xl border p-5">
-                <p className="site-copy mb-4 text-sm">
-                  Have questions about bulk pricing or custom specifications? Contact our engineering team.
-                </p>
-
-                {submitted ? (
-                  <div className="rounded-lg border px-4 py-5 text-sm" style={{ borderColor: "var(--site-border-strong)", backgroundColor: "var(--site-surface-muted)", color: "var(--site-heading)" }}>
-                    Your inquiry has been captured for {productCode}. Our team will follow up shortly.
-                  </div>
-                ) : (
-                  <form onSubmit={handleInquirySubmit} className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <label className="block">
-                        <span className="site-copy mb-1.5 block text-[11px] font-medium uppercase tracking-[0.14em]">
-                          Full Name
-                        </span>
-                        <input
-                          value={form.name}
-                          onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-                          className="h-10 w-full rounded-md border px-3 text-sm outline-none transition-colors"
-                          style={{ borderColor: "var(--site-border)", backgroundColor: "var(--site-surface-muted)", color: "var(--site-heading)" }}
-                          placeholder="John Doe"
-                          required
-                        />
-                      </label>
-                      <label className="block">
-                        <span className="site-copy mb-1.5 block text-[11px] font-medium uppercase tracking-[0.14em]">
-                          Company/Email
-                        </span>
-                        <input
-                          value={form.company}
-                          onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
-                          className="h-10 w-full rounded-md border px-3 text-sm outline-none transition-colors"
-                          style={{ borderColor: "var(--site-border)", backgroundColor: "var(--site-surface-muted)", color: "var(--site-heading)" }}
-                          placeholder="help@company.com"
-                          required
-                        />
-                      </label>
-                    </div>
-                    <label className="block">
-                      <span className="site-copy mb-1.5 block text-[11px] font-medium uppercase tracking-[0.14em]">
-                        Message
-                      </span>
-                      <textarea
-                        value={form.message}
-                        onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-                        rows={4}
-                        className="w-full rounded-md border px-3 py-2.5 text-sm outline-none transition-colors"
-                        style={{ borderColor: "var(--site-border)", backgroundColor: "var(--site-surface-muted)", color: "var(--site-heading)" }}
-                        placeholder="Tell us about your project requirements..."
-                        required
-                      />
-                    </label>
+              {allImages.length > 1 && (
+                <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-none">
+                  {allImages.map((image, index) => (
                     <button
-                      type="submit"
-                      className="site-button-primary inline-flex h-10 w-full items-center justify-center rounded-md text-sm font-medium transition-colors"
+                      key={index}
+                      onClick={() => setSelectedImg(index)}
+                      className={`relative w-24 aspect-square rounded-xl border-2 transition-all duration-300 overflow-hidden flex-shrink-0 bg-surface-container-low ${
+                        selectedImg === index ? "border-primary shadow-lg scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                      }`}
                     >
-                      Send Inquiry
+                      <img src={image} alt="" className="w-full h-full object-contain p-2" />
                     </button>
-                  </form>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Product Details */}
+            <div className="flex flex-col">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="h-[2px] w-8 bg-primary"></span>
+                  <span className="text-primary text-[11px] font-black tracking-[0.3em] uppercase">Industrial Series</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-black text-secondary tracking-tight leading-none mb-4">
+                  {product.name}
+                </h1>
+                <p className="text-secondary/60 text-sm font-medium tracking-wide">
+                  Model Ref: <span className="text-primary font-bold">{productCode}</span> | {product.brand}
+                </p>
+              </div>
+
+              <p className="text-secondary/70 text-base leading-relaxed mb-10 max-w-xl">
+                {product.description}
+              </p>
+
+              {/* Highlights Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+                {primarySpecs.map((spec) => (
+                  <div key={spec.label} className="bg-surface-container-low/50 border border-outline-variant/10 rounded-xl p-4 flex flex-col items-center text-center">
+                    <span className="text-[10px] font-black tracking-[0.15em] text-secondary/40 uppercase mb-2">{spec.label}</span>
+                    <span className="text-lg font-black text-secondary">{spec.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
+                <button className="flex-1 bg-primary text-white font-black text-xs tracking-[0.2em] uppercase py-5 rounded-xl shadow-xl shadow-primary/20 hover:bg-secondary transition-colors group flex items-center justify-center gap-3">
+                  <Download className="w-4 h-4" />
+                  Request Datasheet
+                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="flex-1 border-2 border-outline-variant/10 text-secondary font-black text-xs tracking-[0.2em] uppercase py-5 rounded-xl hover:border-primary/30 transition-colors flex items-center justify-center gap-3">
+                  <FileText className="w-4 h-4" />
+                  Technical Brochure
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* Detailed Content Tabs/Sections */}
+          <div className="space-y-32">
+            
+            {/* Technical Specifications */}
+            <section>
+              <div className="flex items-end justify-between mb-12 border-l-4 border-primary pl-6">
+                <div>
+                  <h2 className="text-3xl font-black text-secondary tracking-tight">Technical Specifications</h2>
+                  <p className="text-secondary/50 text-sm font-medium mt-2 uppercase tracking-widest">Engineering Data Sheet</p>
+                </div>
+                <Zap className="w-10 h-10 text-primary/10" />
+              </div>
+
+              <div className="bg-white border border-outline-variant/10 rounded-2xl shadow-sm overflow-hidden overflow-x-auto">
+                <table className="w-full text-left border-collapse whitespace-nowrap md:whitespace-normal">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-secondary to-secondary/90 text-white">
+                      <th className="px-8 py-5 text-[11px] font-black tracking-[0.2em] uppercase">Parameter</th>
+                      <th className="px-8 py-5 text-[11px] font-black tracking-[0.2em] uppercase">Specification</th>
+                      <th className="px-8 py-5 text-[11px] font-black tracking-[0.2em] uppercase">Unit</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-outline-variant/10">
+                    {product.technicalSpecs.map((spec, index) => (
+                      <tr key={index} className="hover:bg-primary/5 transition-colors group">
+                        <td className="px-8 py-5 text-sm font-bold text-secondary/40 uppercase tracking-wider group-hover:text-primary transition-colors">{spec.parameter}</td>
+                        <td className="px-8 py-5 text-base font-black text-secondary">{spec.specification}</td>
+                        <td className="px-8 py-5 text-sm font-medium text-secondary/60">{spec.unit || "—"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Application & Standards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <section>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-black text-secondary tracking-tight">Verified Applications</h2>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {product.applications.map((app, i) => (
+                    <div key={i} className="bg-surface-container-low border border-outline-variant/5 rounded-xl p-5 flex items-start gap-4 hover:border-primary/20 transition-colors">
+                      <div className="mt-1 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(35,34,116,0.3)]"></div>
+                      <span className="text-secondary font-bold text-sm uppercase tracking-wide">{app.label}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                {product.applicationNote && (
+                  <div className="mt-8 p-6 bg-gradient-to-r from-[#eef2ff] to-[#f8fafc] rounded-2xl border border-primary/5 flex items-start gap-4">
+                    <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
+                    <p className="text-secondary/70 text-sm font-medium leading-relaxed italic">
+                      "{product.applicationNote}"
+                    </p>
+                  </div>
                 )}
-              </div>
-            </div>
-          </section>
+              </section>
 
-          <section className="border-t py-10" style={{ borderColor: "var(--site-border)" }}>
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div>
-                <h2 className="site-heading text-lg font-semibold">Related Components</h2>
-                <p className="site-copy mt-1 text-sm">Products frequently reviewed alongside this model.</p>
-              </div>
-              <div className="hidden items-center gap-2 sm:flex">
-                <button className="site-card-soft site-copy flex h-8 w-8 items-center justify-center rounded-full border">
-                  <ChevronLeft className="h-4 w-4" />
-                </button>
-                <button className="site-card-soft site-heading flex h-8 w-8 items-center justify-center rounded-full border">
-                  <ChevronRight className="h-4 w-4" />
-                </button>
-              </div>
+              <section>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <ShieldCheck className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h2 className="text-2xl font-black text-secondary tracking-tight">Compliance & Standards</h2>
+                </div>
+                
+                <div className="flex flex-wrap gap-3">
+                  {product.standards.map((std, i) => (
+                    <div key={i} className="bg-white border-2 border-outline-variant/10 rounded-xl px-6 py-4 flex flex-col items-center justify-center min-w-[120px] hover:border-secondary/40 transition-colors">
+                      <span className="text-[9px] font-black text-secondary/30 tracking-[0.2em] mb-1">STANDARD</span>
+                      <span className="text-sm font-black text-secondary uppercase tracking-[0.1em]">{std}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {related.map((relatedProduct) => (
-                <Link
-                  key={relatedProduct.id}
-                  href={`/products/${relatedProduct.id}`}
-                  className="site-card group overflow-hidden rounded-xl border transition-all hover:-translate-y-0.5"
-                >
-                  <div className="flex h-44 items-center justify-center bg-[linear-gradient(180deg,#f8fafc_0%,#e5edf7_100%)] p-5">
-                    <img
-                      src={relatedProduct.image}
-                      alt={relatedProduct.name}
-                      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                    />
+            {/* Customization Options */}
+            {product.customizations.length > 0 && (
+              <section className="bg-secondary rounded-[2.5rem] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 transform translate-x-1/2"></div>
+                
+                <div className="relative z-10">
+                  <div className="mb-12">
+                     <span className="text-primary text-[11px] font-black tracking-[0.4em] uppercase block mb-4">Engineered Variations</span>
+                     <h2 className="text-4xl font-black tracking-tight leading-none mb-4">Industrial Customizations</h2>
+                     <p className="text-white/60 max-w-2xl font-medium">Tailor this component to your infrastructure requirements with our modular engineering options.</p>
                   </div>
-                  <div className="space-y-2 p-4">
-                    <div className="site-chip inline-flex rounded-md border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]">
-                      {relatedMeta[relatedProduct.category] || "Component"}
-                    </div>
-                    <h3 className="site-heading line-clamp-2 text-sm font-semibold">{relatedProduct.name}</h3>
-                    <div className="site-copy text-xs">{relatedProduct.category}</div>
-                    <div className="site-copy flex items-center gap-2 pt-1 text-xs">
-                      <FileText className="h-3.5 w-3.5" />
-                      View Details
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {product.customizations.map((opt, i) => (
+                      <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
+                        <div className="flex items-center justify-between mb-6">
+                          <span className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary font-black">0{i+1}</span>
+                          <Plus className="w-5 h-5 opacity-30 group-hover:opacity-100 group-hover:rotate-90 transition-all" />
+                        </div>
+                        <h3 className="text-lg font-black uppercase tracking-wider mb-3 leading-tight">{opt.option}</h3>
+                        <p className="text-white/50 text-sm leading-relaxed font-medium">{opt.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Inquiry Section */}
+            <section id="inquiry" className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 border-2 border-outline-variant/10 rounded-[2.5rem] overflow-hidden">
+               <div className="bg-primary p-12 lg:p-16 text-white flex flex-col justify-center">
+                  <h2 className="text-4xl font-black tracking-tight leading-none mb-6">Engineering Consultation</h2>
+                  <p className="text-white/70 font-medium mb-12 text-lg">
+                    Speak with our technical specialists for bulk procurement or specific engineering requirements.
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                        <ArrowRight className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <span className="block text-white/40 text-[10px] font-black tracking-[0.2em] uppercase">Ready to ship</span>
+                        <span className="block font-bold">Standard 4-6 Weeks</span>
+                      </div>
                     </div>
                   </div>
+               </div>
+
+               <div className="p-12 lg:p-16 bg-white">
+                 {submitted ? (
+                   <div className="h-full flex flex-col items-center justify-center text-center space-y-6">
+                      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                        <CheckCircle2 className="w-10 h-10 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-black text-secondary tracking-tight">Inquiry Received</h3>
+                        <p className="text-secondary/50 font-medium mt-2">Reference ID: {productCode?.slice(0, 8)}</p>
+                      </div>
+                      <button 
+                        onClick={() => setSubmitted(false)}
+                        className="text-primary font-black text-xs tracking-widest uppercase hover:underline"
+                      >
+                        Send Another message
+                      </button>
+                   </div>
+                 ) : (
+                   <form onSubmit={handleInquirySubmit} className="space-y-8">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                       <div className="space-y-4">
+                         <label className="block text-[10px] font-black tracking-[0.2em] text-secondary/40 uppercase">Full Name</label>
+                         <input 
+                           required
+                           type="text"
+                           placeholder="Enter your name"
+                           className="w-full bg-surface-container-low border-b-2 border-outline-variant/20 focus:border-primary px-0 py-3 text-secondary font-bold placeholder:text-secondary/20 outline-none transition-all"
+                           value={form.name}
+                           onChange={e => setForm({...form, name: e.target.value})}
+                         />
+                       </div>
+                       <div className="space-y-4">
+                         <label className="block text-[10px] font-black tracking-[0.2em] text-secondary/40 uppercase">Business Email</label>
+                         <input 
+                           required
+                           type="email"
+                           placeholder="name@company.com"
+                           className="w-full bg-surface-container-low border-b-2 border-outline-variant/20 focus:border-primary px-0 py-3 text-secondary font-bold placeholder:text-secondary/20 outline-none transition-all"
+                           value={form.email}
+                           onChange={e => setForm({...form, email: e.target.value})}
+                         />
+                       </div>
+                     </div>
+
+                     <div className="space-y-4">
+                       <label className="block text-[10px] font-black tracking-[0.2em] text-secondary/40 uppercase">Technical Requirements</label>
+                       <textarea 
+                         required
+                         rows={4}
+                         placeholder="Describe your specifications..."
+                         className="w-full bg-surface-container-low border-b-2 border-outline-variant/20 focus:border-primary px-0 py-3 text-secondary font-bold placeholder:text-secondary/20 outline-none transition-all resize-none"
+                         value={form.message}
+                         onChange={e => setForm({...form, message: e.target.value})}
+                       />
+                     </div>
+
+                     <button className="w-full bg-secondary text-white font-black text-[11px] tracking-[0.3em] uppercase py-6 rounded-xl hover:bg-primary transition-all shadow-xl shadow-secondary/20">
+                       Submit Technical Inquiry
+                     </button>
+                   </form>
+                 )}
+               </div>
+            </section>
+
+            {/* Related Products Grid */}
+            <section>
+              <div className="flex items-center justify-between mb-12">
+                <div>
+                   <h2 className="text-3xl font-black text-secondary tracking-tight">Related Components</h2>
+                   <p className="text-secondary/50 font-medium uppercase tracking-[0.2em] text-[10px] mt-2">Frequently specified together</p>
+                </div>
+                <Link href="/products" className="text-primary font-black text-xs tracking-widest uppercase hover:underline flex items-center gap-2">
+                  View Catalog
+                  <ChevronRight className="w-4 h-4" />
                 </Link>
-              ))}
-            </div>
-          </section>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {related.map((relProduct) => (
+                  <Link 
+                    key={relProduct.id}
+                    href={`/products/${relProduct.id}`}
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-outline-variant/10 group h-full flex flex-col"
+                  >
+                    <div className="aspect-[4/3] bg-gradient-to-b from-[#f8fafc] to-white flex items-center justify-center p-8 relative overflow-hidden">
+                       <img 
+                        src={relProduct.image} 
+                        alt={relProduct.name}
+                        className="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                       />
+                       <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <span className="text-primary text-[9px] font-black tracking-[0.3em] uppercase mb-2 block">{relProduct.category}</span>
+                      <h3 className="text-secondary font-black text-lg leading-tight mb-4 group-hover:text-primary transition-colors">{relProduct.name}</h3>
+                      <div className="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
+                         <span className="text-secondary/40 text-[10px] font-bold uppercase tracking-widest">{relProduct.status}</span>
+                         <Plus className="w-5 h-5 text-primary/30 group-hover:text-primary transition-colors" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+          </div>
         </div>
       </main>
 

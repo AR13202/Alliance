@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300..700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-tint": "#5556a5",
+                "on-primary-fixed": "#0f095f",
+                "surface-container-highest": "#e2e2e2",
+                "on-primary-fixed-variant": "#3d3d8b",
+                "secondary-container": "#e4e2e1",
+                "on-secondary-container": "#656464",
+                "on-background": "#1a1c1c",
+                "error": "#ba1a1a",
+                "on-error": "#ffffff",
+                "inverse-surface": "#2f3131",
+                "surface-dim": "#dadada",
+                "tertiary-fixed-dim": "#c7c6c6",
+                "tertiary-fixed": "#e4e2e2",
+                "outline-variant": "#c7c5d3",
+                "inverse-primary": "#c1c1ff",
+                "surface": "#f9f9f9",
+                "on-surface-variant": "#464651",
+                "on-primary": "#ffffff",
+                "tertiary-container": "#474747",
+                "surface-bright": "#f9f9f9",
+                "error-container": "#ffdad6",
+                "outline": "#777682",
+                "on-primary-container": "#aeafff",
+                "secondary-fixed": "#e4e2e1",
+                "primary-fixed-dim": "#c1c1ff",
+                "on-tertiary-fixed": "#1b1c1c",
+                "on-secondary-fixed": "#1b1c1c",
+                "surface-container-high": "#e8e8e8",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-surface": "#1a1c1c",
+                "on-error-container": "#93000a",
+                "background": "#f9f9f9",
+                "primary-fixed": "#e2dfff",
+                "secondary": "#5f5e5e",
+                "on-tertiary": "#ffffff",
+                "tertiary": "#303131",
+                "surface-variant": "#e2e2e2",
+                "inverse-on-surface": "#f1f1f1",
+                "on-secondary-fixed-variant": "#474746",
+                "surface-container-low": "#f3f3f3",
+                "on-tertiary-container": "#b6b5b5",
+                "primary": "#272674",
+                "on-tertiary-fixed-variant": "#464747",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#eeeeee",
+                "primary-container": "#3e3e8c",
+                "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 dark:bg-slate-900/80 backdrop-blur-md">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Alliance Engineering Logo" class="h-8 w-auto" data-alt="precise geometric logo of Alliance Engineering with industrial blue and architectural gray tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIx7IZLmYdd3-B-XIzx3lYYJ80nQmtDTs3V_g5GDNc4DbtGs0OeJbAzyLMTo3_6a8eOezlv1q1KdZrzp7hXNItpIS5OtbmFW7hTRC4g5HXXBmsD9IIQmMBNe0DHX9FIZRozue0ePGpkwOhKypallyOybpBXAnABPImc4WUZAkPd1dEOeVdYCa_EFRMQ8zjDAYW8cxAkRfjU8sdOHWdo9_8IPTn1AyR3k6QMg3-5-c36-B0FML-agBFSUUhXMoZL1s-FzFJRwS0zUU"/>
+<span class="text-xl font-bold tracking-tighter text-[#272674] dark:text-white font-['Manrope']">Alliance Engineering</span>
+</div>
+<div class="hidden md:flex items-center gap-10 font-['Manrope'] tracking-tight">
+<a class="text-[#5f5e5e] dark:text-slate-400 font-medium hover:text-[#272674] dark:hover:text-white transition-colors duration-200" href="#">Home</a>
+<a class="text-[#272674] dark:text-white font-bold border-b-2 border-[#272674] dark:border-indigo-400 pb-1" href="#">About</a>
+<a class="text-[#5f5e5e] dark:text-slate-400 font-medium hover:text-[#272674] dark:hover:text-white transition-colors duration-200" href="#">Products</a>
+<a class="text-[#5f5e5e] dark:text-slate-400 font-medium hover:text-[#272674] dark:hover:text-white transition-colors duration-200" href="#">Clients</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#5f5e5e] hover:text-[#272674] transition-colors p-2 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-[#272674] text-white px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:opacity-90 active:scale-95 transition-all">
+                Contact Us
+            </button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="architectural blueprint overlaying a modern industrial facility with clean lines and soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqABXwPhwYbqZUh7fUB1DOKI9HZCLTROGLGWK6P3WvALX6AP6BJldwKbsZsmAVYKnPBTIG3mmSiKSjA9ENepTdWgBc_Hbtp1hVBKi1XTbrECyYiDR_Vh3cJdzAdUF5Ugepev7TePPH5pgxNAvCYCtlp0fR-FvhT_BgKSsmt-2ZDOUc6AB_IvI7UYx70VUwxDwrrrPJwOMHSlEckCwd3RYR1wstGJttRLAY87ySUhExma8bOUnCAs1P4w2T2yX08h3LzjtWTCExIaM"/>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-20 w-full">
+<div class="max-w-2xl">
+<span class="text-[#272674] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Established 1992</span>
+<h1 class="text-[3.5rem] leading-[1.1] font-extrabold text-primary tracking-tighter mb-6">
+                    Engineering a <br/>Better Future.
+                </h1>
+<p class="text-secondary text-lg leading-relaxed mb-8">
+                    For over three decades, Alliance Engineering has stood as a pillar of structural integrity and electrical precision. We don't just build systems; we engineer reliability into the very fabric of industrial growth.
+                </p>
+<div class="flex gap-4">
+<div class="h-1 w-24 bg-primary self-center"></div>
+<span class="font-headline font-bold text-primary italic">Precision in every detail.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Company History -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5">
+<h2 class="text-4xl font-extrabold text-primary tracking-tight mb-8">Three Decades of Structural Excellence</h2>
+<p class="text-secondary mb-6 leading-relaxed">
+                        Founded in Chandigarh in 1992, Alliance Engineering began with a singular vision: to bring world-class electrical engineering standards to regional infrastructure projects. 
+                    </p>
+<p class="text-secondary mb-12 leading-relaxed">
+                        Through a commitment to rigorous testing and architectural clarity, we have expanded from a local consultancy to a national leader in high-voltage systems and industrial design.
+                    </p>
+<div class="p-8 bg-surface-container-lowest rounded-xl border-l-4 border-primary">
+<p class="text-primary font-bold italic text-lg">"Our history is written in the stability of the grids we build and the trust of the partners we serve."</p>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 gap-4">
+<div class="group relative bg-surface-container-lowest p-8 rounded-xl transition-all hover:bg-surface-bright">
+<div class="flex items-start gap-6">
+<span class="text-3xl font-black text-primary/20 group-hover:text-primary transition-colors">1992</span>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">The Foundation</h4>
+<p class="text-secondary text-sm">Inception in Chandigarh with a focus on regional electrical contracting and design precision.</p>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-8 rounded-xl transition-all hover:bg-surface-bright">
+<div class="flex items-start gap-6">
+<span class="text-3xl font-black text-primary/20 group-hover:text-primary transition-colors">2005</span>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">Industrial Pivot</h4>
+<p class="text-secondary text-sm">Expansion into large-scale industrial projects and specialized electrical automation systems.</p>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-8 rounded-xl transition-all hover:bg-surface-bright">
+<div class="flex items-start gap-6">
+<span class="text-3xl font-black text-primary/20 group-hover:text-primary transition-colors">2015</span>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">Quality Benchmark</h4>
+<p class="text-secondary text-sm">Achieved ISO 9001:2015 certification, setting a new standard for operational excellence in the sector.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision (Asymmetric) -->
+<section class="py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col lg:flex-row gap-24 items-center">
+<div class="w-full lg:w-1/2 relative">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="close up of sophisticated electrical components and wiring with high tech industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4mAi_iMSNteOWOGzBfU6w0mbSZdbibFJKi2kxvbMVa50VbS0FT-mCDaXN7EaUjRmFtEsa848wWSx2AlKadR6Fglbro545sQ9Xn_Tyui6_8CRBYoOgWgv2-UY6PCSnYB4epZqIDnOHBBoyOwDPP8oxNFbYSVzLfpYDEupbjQ3oufHYHRCFvX7wYI6OEedggIjRODINmdnMPt_LDyrBOuUQUm0qBB51fsSeS0Fp2-qMkTRB5btAbaI1l917vrdhtFVJP4q6XyuK8fw"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-primary text-white p-12 rounded-xl hidden lg:block">
+<p class="text-2xl font-bold leading-tight">30+ Years of<br/>Unmatched<br/>Expertise.</p>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="mb-16">
+<h3 class="text-primary font-bold tracking-[0.1em] text-xs uppercase mb-4 flex items-center gap-2">
+<span class="w-8 h-[1px] bg-primary"></span> Our Mission
+                        </h3>
+<h2 class="text-4xl font-extrabold text-tertiary mb-6">Uncompromising Precision.</h2>
+<p class="text-secondary leading-relaxed">To deliver engineered solutions that surpass global safety standards, ensuring that every project we touch is a benchmark for reliability and efficiency.</p>
+</div>
+<div>
+<h3 class="text-primary font-bold tracking-[0.1em] text-xs uppercase mb-4 flex items-center gap-2">
+<span class="w-8 h-[1px] bg-primary"></span> Our Vision
+                        </h3>
+<h2 class="text-4xl font-extrabold text-tertiary mb-6">Structural Integrity.</h2>
+<p class="text-secondary leading-relaxed">To be the most trusted name in electrical engineering by 2030, known for our architectural clarity and sustainable industrial practices.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values (Bento Grid) -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-primary mb-4">Foundation of Values</h2>
+<p class="text-secondary max-w-xl mx-auto">Our work is guided by four industrial pillars that ensure every project meets the Alliance standard.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+<div class="md:col-span-3 lg:col-span-4 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="lightbulb">lightbulb</span>
+<h4 class="text-xl font-bold text-primary mb-4">Innovation</h4>
+<p class="text-secondary text-sm">Constantly refining our methods and adopting cutting-edge electrical technologies.</p>
+</div>
+</div>
+<div class="md:col-span-3 lg:col-span-4 bg-primary text-white p-10 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-white/50 text-4xl mb-6" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h4 class="text-xl font-bold mb-4">ISO Quality</h4>
+<p class="text-on-primary-container text-sm">Certified ISO 9001:2015. Quality is not a goal; it is our operational baseline.</p>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-4 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="groups">groups</span>
+<h4 class="text-xl font-bold text-primary mb-4">Customer Centricity</h4>
+<p class="text-secondary text-sm">We build partnerships, not just projects. Your operational uptime is our priority.</p>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-8 bg-surface-container-lowest p-10 rounded-xl flex items-center gap-8">
+<div class="hidden sm:block">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-primary mb-2">Technical Mastery</h4>
+<p class="text-secondary text-sm">Decades of on-field experience translated into flawless electrical blueprints and execution.</p>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-4 bg-secondary-container p-10 rounded-xl flex flex-col justify-center">
+<p class="text-primary font-bold text-center text-2xl tracking-tighter">Zero Defects.<br/>Zero Accidents.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Team -->
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-4xl font-extrabold text-primary mb-4">Leadership &amp; Expertise</h2>
+<p class="text-secondary">The technical minds behind Alliance Engineering.</p>
+</div>
+<div class="h-[2px] w-24 bg-outline-variant/20 mb-4 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="portrait of a professional male engineer in business attire with a confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANC3y_LwMY0PKKAWMLn4H59IZ60yGDNr_c-GjNEC52U3t9_5OBNj2S74bsKsag9wtjZNAD9GhB749mhofx9MCRdm8VFgo1jtFfRuyPXflSoyFnOzjdvzwW36sBXdaCI4fTsRlG8Xvn7MH8PuU5iM27JyEtE1B1J1JmIRh-FpUCqQ9_yLmAcIhq8793i_YDrRpKXT_4HTBrjRjSk0ZU8EDfvDbW05Iu5TYuHgvhZBajlZAt6cDMYIDxGvBAfXdKp4isOiDvqS5fdrI"/>
+</div>
+<h4 class="text-lg font-bold text-primary">Er. Rajesh Khanna</h4>
+<p class="text-secondary text-xs uppercase tracking-widest font-bold">Founder &amp; Managing Director</p>
+</div>
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="portrait of a professional female structural engineer in high end office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0FoKoNjkvzN_aIEdQ8oeMwqSBQPzAo7mCPLdkBuWyx3tXjBH1Usm-WwLvnIUbK6kA0af3qmZTqf69AEXHIdljBuNiBnLD1pSXShx2QF_ZXwWS0vzm8jPiZcRNVtMJmmCDKas04OFQ7EHR-nsmQS0t_gEDtFiJ3lo_8VrEQdDv_dw4NGeP8bkBfQOYuD6eiTP7kWGcodJehD6jExGRIT8siCbFVW2WNKK481jI8FPJVLn6b12MlAtfO9as5qEiAFX6E7T-yP3n5Gw"/>
+</div>
+<h4 class="text-lg font-bold text-primary">Anjali Sharma</h4>
+<p class="text-secondary text-xs uppercase tracking-widest font-bold">Director of Operations</p>
+</div>
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="middle aged professional engineer with glasses looking focused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApfEWC-F9SOfsbzuVxtpoHidmp4uvVKN2Ny34WCbjQw_se94KTE1ovMolWIZOrkZ1G1jgxOXge8D-R_Pxv5s11Q_sZWEK-DWYKkIZMv91QC7ddcFCqGE_Nr9qnEah58PKZWQ_JX5DVE9RMAFl_OQKgiGs2hiSbtf09GqWHtV4tUE4Ln1Q_YhbKK3D8I0sGw8m3Xi51kgaZxPbG_fzWiy2CyttisfSbOb9cEdWk0lj1xSqRN_EzjvNEwtfXPOjry6CdEYvToMHtUPE"/>
+</div>
+<h4 class="text-lg font-bold text-primary">Sandeep Verma</h4>
+<p class="text-secondary text-xs uppercase tracking-widest font-bold">Head of Electrical Design</p>
+</div>
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="young professional engineer in modern workspace with technical charts in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk4iY_1CbzxE3mWmqInUdE5NbvDB-EloL5P3a9ook-9e7H8rNvcdql8w-D270nwtmUy1lf7b0mQNedt9JXMkMeTL1pgIM63YOR-mZLnt_8p_KFhhu0KRHaSaTVkDrZkwayAobqAQFij-Oe9OExOaRyQBwfj0ikS4exAi3bYDGOt0e6ZZaC1jQZ7wg5ibQDBS1oUOhyOjsc2fspB-sp8sKji5oKz7M_dtpkFJsCIA8K-pvE7ArXkbS5CWmF9pTsithDXn7bz4harT0"/>
+</div>
+<h4 class="text-lg font-bold text-primary">Priya Das</h4>
+<p class="text-secondary text-xs uppercase tracking-widest font-bold">Quality Assurance Lead</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / Certifications -->
+<section class="py-24 bg-primary text-white">
+<div class="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="text-4xl font-extrabold mb-6 tracking-tight">Committed to Global Standards.</h2>
+<p class="text-primary-container text-lg leading-relaxed mb-8">Every Alliance Engineering project is backed by our ISO 9001:2015 certification and a legacy of absolute precision.</p>
+<div class="flex gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-xs font-bold uppercase tracking-widest">ISO 9001:2015</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+<span class="text-xs font-bold uppercase tracking-widest">Certified Safety</span>
+</div>
+</div>
+</div>
+<button class="bg-surface text-primary px-10 py-4 rounded-lg font-black text-sm uppercase tracking-widest hover:bg-surface-bright transition-all">
+                View Our Certifications
+            </button>
+</div>
+</section>
+</main>
+<!-- New Footer as per {{DATA:IMAGE:IMAGE_41}} -->
+<footer class="bg-[#f9f9f9] pt-24 pb-12 font-['Inter']">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-12 mb-20">
+<!-- Logo Column -->
+<div class="lg:col-span-3">
+<div class="flex items-center gap-2 mb-8">
+<img alt="Alliance Engineering Company" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIx7IZLmYdd3-B-XIzx3lYYJ80nQmtDTs3V_g5GDNc4DbtGs0OeJbAzyLMTo3_6a8eOezlv1q1KdZrzp7hXNItpIS5OtbmFW7hTRC4g5HXXBmsD9IIQmMBNe0DHX9FIZRozue0ePGpkwOhKypallyOybpBXAnABPImc4WUZAkPd1dEOeVdYCa_EFRMQ8zjDAYW8cxAkRfjU8sdOHWdo9_8IPTn1AyR3k6QMg3-5-c36-B0FML-agBFSUUhXMoZL1s-FzFJRwS0zUU"/>
+<div class="flex flex-col">
+<span class="text-2xl font-black text-[#272674] leading-none tracking-tighter">ALLIANCE</span>
+<span class="text-[10px] font-bold text-[#272674] tracking-[0.2em] mt-0.5">ENGINEERING COMPANY</span>
+</div>
+</div>
+<p class="text-[#5f5e5e] text-sm leading-relaxed max-w-[240px]">
+                Leading the global industrial sector through architectural clarity and machined precision.
+            </p>
+</div>
+<!-- Solutions Column -->
+<div class="lg:col-span-3">
+<h4 class="text-[#272674] font-bold text-xs uppercase tracking-[0.2em] mb-8">Solutions</h4>
+<ul class="space-y-4">
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Grid Monitoring</a></li>
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Factory Automation</a></li>
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Safety Systems</a></li>
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Custom Fabrication</a></li>
+</ul>
+</div>
+<!-- Documentation Column -->
+<div class="lg:col-span-3">
+<h4 class="text-[#272674] font-bold text-xs uppercase tracking-[0.2em] mb-8">Documentation</h4>
+<ul class="space-y-4">
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Global Safety Standards</a></li>
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">ISO Certification</a></li>
+<li><a class="text-[#5f5e5e] text-sm hover:text-[#272674] transition-colors" href="#">Technical Documentation</a></li>
+</ul>
+</div>
+<!-- Offices Column -->
+<div class="lg:col-span-3">
+<h4 class="text-[#272674] font-bold text-xs uppercase tracking-[0.2em] mb-8">Offices</h4>
+<div class="mb-6">
+<p class="text-[#272674] text-sm font-bold mb-2">Global HQ</p>
+<p class="text-[#5f5e5e] text-sm leading-relaxed">
+                    1200 Industrial Park, Silicon Valley, CA<br/>
+                    T: +1 (800) ALLIANCE
+                </p>
+</div>
+<div>
+<p class="text-[#272674] text-sm font-bold mb-2">European Hub</p>
+<p class="text-[#5f5e5e] text-sm leading-relaxed">
+                    Friedrichstraße 15, 10117 Berlin, DE<br/>
+                    T: +49 (0) 30 2000
+                </p>
+</div>
+</div>
+</div>
+<!-- Bottom Copyright Bar -->
+<div class="max-w-7xl mx-auto px-8 pt-12 border-t border-[#e2e2e2] flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[#5f5e5e] text-xs">© 2024 Alliance Industrial Engineering. Engineered for precision and architectural clarity.</p>
+<div class="flex gap-8">
+<a class="text-[#5f5e5e] text-xs hover:text-[#272674] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#5f5e5e] text-xs hover:text-[#272674] transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

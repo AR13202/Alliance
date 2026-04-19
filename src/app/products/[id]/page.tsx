@@ -6,14 +6,16 @@ export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
 }
 
-export default function ProductDetailPage({
+export default async function ProductDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  if (!getProductById(params.id)) {
+  const { id } = await params;
+  
+  if (!getProductById(id)) {
     notFound();
   }
 
-  return <ProductDetailScreen productId={params.id} />;
+  return <ProductDetailScreen productId={id} />;
 }

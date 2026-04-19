@@ -1,0 +1,516 @@
+ 
+ALLIANCE ENGINEERING COMPANY 
+Website Content & SEO Strategy Document 
+Current Transformers · Control Transformers · Battery Chargers · Industrial Electrical 
+Equipment 
+Panchkula / Chandigarh, India 
+ISO 9001:2015 Certified · GeM Registered · Udyam MSME · IREPS 
+  
+SECTION 1: TARGET SEO KEYWORDS 
+Use these keywords strategically across all pages. High-priority keywords should appear in H1 
+tags, meta titles, and first 100 words of body copy. Secondary keywords go in H2s, alt text, and 
+body paragraphs. 
+ 
+1.1 Primary Keywords (High Intent — Target Buyers) 
+Keyword Intent Est. Volume (India) 
+current transformer manufacturer India Commercial 1,000–5,000/mo 
+current transformer manufacturer 
+Chandigarh 
+Commercial 100–500/mo 
+CT manufacturer in India ISO certified Commercial 100–500/mo 
+control transformer manufacturer India Commercial 500–2,000/mo 
+control transformer supplier Panchkula Commercial 50–200/mo 
+industrial battery charger manufacturer 
+India 
+Commercial 500–1,000/mo 
+FCBC battery charger manufacturer Commercial 200–500/mo 
+current transformer for railway RDSO Commercial 100–500/mo 
+GeM registered electrical equipment 
+supplier 
+Commercial 100–300/mo 
+IS 2705 current transformer manufacturer Commercial 50–200/mo 
+ 
+1.2 Long-Tail Keywords (Lower Competition, High Conversion) 
+Keyword Intent Est. Volume (India) 
+buy current transformer online India B2B Transactional 100–500/mo 
+current transformer 5VA 0.5 class India Transactional 50–200/mo 
+multi-tap control transformer manufacturer Commercial 50–200/mo 
+metering class CT manufacturer IS 2705 Informational/Commercial 50–200/mo 
+industrial battery charger 24V 48V India Transactional 200–500/mo 
+electrical equipment manufacturer North 
+India 
+Commercial 100–500/mo 
+MSME electrical equipment supplier India Commercial 100–300/mo 
+current transformer supplier for HVPN Commercial 10–50/mo 
+control transformer for CNC machine 
+India 
+Commercial 50–200/mo 
+transformer manufacturer for power 
+utilities India 
+Commercial 200–500/mo 
+ 
+1.3 Informational / Blog Keywords (Build Authority & Organic Traffic) 
+Keyword Intent Est. Volume (India) 
+how does a current transformer work Informational 1,000–5,000/mo 
+difference between CT and PT 
+transformer 
+Informational 500–2,000/mo 
+IS 2705 standard for current transformers Informational 100–500/mo 
+how to select control transformer for panel Informational 100–500/mo 
+RDSO vendor approval process India Informational 100–300/mo 
+GeM portal electrical equipment 
+registration 
+Informational 200–500/mo 
+what is FCBC battery charger Informational 100–300/mo 
+transformer accuracy class 0.1 0.2 0.5 1 Informational 500–2,000/mo 
+current transformer for energy meter India Informational 200–500/mo 
+ISO 9001 certified transformer 
+manufacturer India 
+Commercial 200–500/mo 
+ 
+  
+SECTION 2: HOME PAGE 
+URL: / | Priority: HIGHEST — this page carries the most SEO weight 
+ 
+2.1 SEO Meta Tags 
+Meta Title Current Transformer Manufacturer in India | Alliance Engineering 
+Company 
+Meta Description Alliance Engineering Company — ISO 9001:2015 certified manufacturer 
+of current transformers, control transformers & industrial battery chargers 
+in Chandigarh. GeM & IREPS registered. 30+ years of precision 
+manufacturing. 
+Primary H1 Precision-Engineered Current Transformers & Industrial Electrical 
+Equipment 
+Canonical URL https://www.allianceengineering.in/ 
+Schema Type LocalBusiness + ManufacturingBusiness 
+OG Title Alliance Engineering Company — CT & Control Transformer 
+Manufacturer, India 
+ 
+2.2 Hero Section 
+Badge / Eyebrow Text 
+ISO 9001:2015 Certified Manufacturer · Est. 1992 · Chandigarh, India 
+H1 Headline 
+Precision-Engineered Electrical Equipment. Built for India's Toughest Industries. 
+Subheadline / Description 
+Alliance Engineering Company manufactures current transformers, control transformers, and 
+industrial battery chargers that power utilities, railways, and industrial plants across North India. 
+Every unit is built to IS 2705 / IS 3156 standards with 30 years of in-house expertise. 
+Primary CTA Button 
+Request a Quote → 
+Secondary CTA Button 
+View Product Catalogue 
+Trust Badges (below CTAs) 
+GeM Registered  |  IREPS Registered  |  Udyam MSME  |  ISO 9001:2015  |  30+ Years 
+ 
+2.3 Social Proof / Stats Strip 
+Stat 1 
+30+ Years of Manufacturing Excellence 
+Stat 2 
+500+ Industrial Clients Served 
+Stat 3 
+20+ Product Variants Available 
+Stat 4 
+Pan-India Supply & Support 
+SEO Tip: Wrap these numbers in <strong> tags to signal importance to Google. 
+ 
+2.4 Core Specialisations Section 
+Section Heading (H2) 
+What We Manufacture 
+Intro Copy 
+From precision metering current transformers for HVPN and Powergrid substations, to rugged 
+control transformers powering CNC and automation panels, Alliance Engineering delivers 
+engineered reliability at every voltage level. 
+Card 1: Current Transformers 
+High-accuracy measuring and protection CTs built to IS 2705. Available in wound, bar-primary, 
+and ring-core configurations. Accuracy classes 0.1 to 3, burden 2.5 to 30 VA. Suitable for 
+energy metering, SCADA, and relay protection. 
+Card 2: Control Transformers 
+Single-phase and three-phase control transformers for machine tools, CNC panels, and 
+industrial automation. Custom VA ratings from 50 VA to 10 KVA. Copper winding, laminated 
+CRGO core, conformal coated for harsh environments. 
+Card 3: Battery Chargers 
+Float-cum-boost (FCBC) industrial battery chargers for substations, UPS systems, and telecom 
+applications. Input: 230V AC ±10%. Output: 12V–220V DC, up to 200A. Compliant with IS 1869. 
+Card 4: Potential Transformers 
+Metering and protection class PTs as per IS 3156. Voltage ratios to 33 kV. Suitable for power 
+metering panels, energy audit systems, and protection relays. 
+ 
+2.5 Why Alliance Engineering Section 
+Section Heading (H2) 
+Why Industrial Buyers Choose Alliance Engineering 
+Point 1 — ISO Quality 
+ISO 9001:2015 certified manufacturing process. Every transformer is tested as per IS standards 
+before dispatch — accuracy, insulation resistance, and polarity. 
+Point 2 — GeM & IREPS Ready 
+Registered on GeM and IREPS portals. Government departments and railway divisions can 
+procure directly via tender without additional documentation delays. 
+Point 3 — MSME Pricing 
+Udyam-registered MSME manufacturer. Competitive pricing without compromising on copper 
+winding quality, CRGO core grade, or IS compliance. 
+Point 4 — Custom Engineering 
+Non-standard ratios, multi-tap configurations, special burdens — we engineer to your 
+specifications. Prototypes typically dispatched within 10–15 working days. 
+Point 5 — North India's Fastest Delivery 
+Manufacturing base in Panchkula/Chandigarh. Same-day dispatch for standard stock items. 
+PAN-India logistics with express delivery to Delhi, Punjab, Haryana, HP, and UP. 
+ 
+2.6 Clients / Logos Strip 
+Section Heading (H2) 
+Trusted by India's Leading Industrial Organisations 
+Client Categories to List 
+Government & Utilities: POWERGRID, HVPN, Chandigarh Power Distribution Ltd, UP Vivid 
+Nigam 
+Private Sector: JSW, HDFC Bank, Jio, ESAB, ABB / GE, Jay Bee Industries 
+Educational: Thapar University, Chandigarh University, Panjab University, LPU, Chitkara 
+ 
+2.7 Technical Consultation Form (Bottom of Page) 
+Section Heading (H2) 
+Request a Technical Consultation 
+Form Fields 
+Full Name | Company Name | Product Required (dropdown: Current Transformer / Control 
+Transformer / Battery Charger / Potential Transformer / Other) | Technical Requirements 
+(textarea) | Phone Number 
+Submit Button Text 
+Submit Enquiry → 
+Contact Details alongside form 
+Email: sales@allianceengineering.in | Phone: +91 172 400 1234 
+SEO Tip: Add LocalBusiness JSON-LD schema to this page with your GST city, pincode, phone, and geo 
+coordinates. 
+ 
+  
+SECTION 3: ABOUT PAGE 
+URL: /about | Goal: Build trust with procurement officers, engineers, and government buyers 
+ 
+3.1 SEO Meta Tags 
+Meta Title About Us — Alliance Engineering Company | 30+ Years of Transformer 
+Manufacturing 
+Meta Description Learn about Alliance Engineering Company — founded 1992 in 
+Chandigarh. ISO 9001:2015 certified manufacturer of current 
+transformers, control transformers & battery chargers. Trusted by 
+POWERGRID, HVPN & railways. 
+Primary H1 Engineering Excellence Since 1992 — Alliance Engineering Company 
+Schema Type AboutPage + Organization 
+ 
+3.2 Hero / Intro Section 
+H1 Headline 
+Engineering a Better Future. Manufactured in Chandigarh. 
+Established Badge 
+Est. 1992 · Panchkula, Haryana 
+Body Copy (150–200 words) 
+Alliance Engineering Company was founded in Chandigarh in 1992 with a singular purpose: to 
+manufacture electrical measurement and control equipment that Indian industry could trust 
+absolutely. 
+For over three decades, we have designed and delivered current transformers, control 
+transformers, potential transformers, and industrial battery chargers to power utilities, 
+government departments, railways, private manufacturers, and educational institutions across 
+North India. 
+We do not distribute. We do not trade. We manufacture — from copper winding to final testing 
+— in our own facility in Panchkula. Every unit that leaves our factory carries the weight of 30+ 
+years of engineering experience and an ISO 9001:2015 quality management system. 
+Our products are registered on GeM and IREPS, enabling seamless procurement by 
+government and railway buyers. We hold Udyam MSME registration, delivering enterprise-grade 
+electrical equipment at competitive Indian manufacturer pricing. 
+ 
+3.3 Timeline / Company History Section 
+Section H2 
+Three Decades of Structural Excellence 
+1992 — The Foundation 
+Alliance Engineering Company established in Chandigarh. Initial focus on current transformer 
+manufacturing for local industrial and utility clients in Punjab and Haryana. 
+2000s — Industrial Expansion 
+Expanded product range to include control transformers and battery chargers. Began supply to 
+state electricity boards, government departments, and private manufacturers in North India. 
+2015 — Quality Milestone 
+Achieved ISO 9001:2015 certification. Implemented formal quality management system for 
+design, manufacturing, testing, and dispatch of all transformer products. 
+2020s — Government & Railway Channels 
+Registered on GeM portal and IREPS for government and railway procurement. Obtained 
+Udyam MSME registration and Class 3 DSC for tender participation. Active supplier to 
+POWERGRID, HVPN, and railway contractors. 
+ 
+3.4 Mission & Vision Section 
+Mission (H3) 
+Uncompromising Precision. 
+Mission Copy 
+To deliver current transformers and industrial electrical equipment that consistently meet or 
+exceed IS 2705, IS 3156, and IS 1869 standards — ensuring measurement accuracy, 
+operational safety, and long service life for every client we serve. 
+Vision (H3) 
+Structural Integrity. Built for India. 
+Vision Copy 
+To become the most trusted name in precision transformer manufacturing in North India by 
+2030 — recognised by utilities, railways, and industrial buyers for consistent quality, reliable 
+delivery, and responsive technical support. 
+ 
+3.5 Values Section 
+Section H2 
+Foundation of Values 
+Value 1 — ISO Quality 
+ISO 9001:2015 is not a badge for us — it is our manufacturing baseline. Every process, from 
+raw material selection to final polarity testing, is documented and audited. 
+Value 2 — Zero Defects Standard 
+We operate a zero-defects dispatch policy. Every CT and PT undergoes ratio test, polarity test, 
+insulation resistance measurement, and visual inspection before leaving the factory. 
+Value 3 — Customer Centricity 
+We do not believe in off-the-shelf-only sales. If your application requires a non-standard ratio, a 
+custom burden, or a specific terminal configuration — we engineer it for you. 
+Value 4 — Technical Mastery 
+Our engineering team has hands-on experience with IS 2705, IS 3156, and IEC 61869 
+standards. We support our clients with technical consultation at no additional charge. 
+ 
+3.6 Certifications CTA Section 
+Section H2 
+Committed to Indian & International Standards 
+Copy 
+Every Alliance Engineering product is manufactured against applicable Bureau of Indian 
+Standards (BIS) specifications. Our quality system is independently audited and ISO 9001:2015 
+certified. 
+Certifications to Display 
+ISO 9001:2015 · Udyam MSME Certificate · GeM Seller Registration · IREPS Vendor 
+Registration · IS 2705 (Current Transformers) · IS 3156 (Potential Transformers) 
+CTA Button 
+View Our Certifications → 
+SEO Tip: Alt-tag certification badge images with descriptive text e.g. 'ISO 9001 2015 certificate Alliance 
+Engineering Chandigarh' 
+ 
+  
+SECTION 4: CLIENTS PAGE 
+URL: /clients | Goal: Demonstrate social proof and sector reach for B2B buyers and government 
+procurement officers 
+ 
+4.1 SEO Meta Tags 
+Meta Title Our Clients — Alliance Engineering Company | POWERGRID, HVPN, 
+JSW & More 
+Meta Description Alliance Engineering supplies current transformers & electrical equipment 
+to POWERGRID, HVPN, JSW, Thapar University and 500+ clients across 
+India. Trusted by government utilities, private enterprises & academic 
+institutions. 
+Primary H1 Trusted by India's Leading Utilities, Industries & Institutions 
+Schema Type AboutPage + Organization 
+ 
+4.2 Hero / Intro Section 
+Eyebrow Text 
+OUR GLOBAL IMPACT 
+H1 
+Built on Trust & Engineering Excellence. 
+Body Copy 
+For over 30 years, Alliance Engineering Company has been the transformer manufacturer of 
+choice for power utilities, industrial enterprises, railways, and educational institutions across 
+India. Our current transformers, control transformers, and battery chargers are in active service 
+in substations, manufacturing plants, test laboratories, and infrastructure projects that form the 
+backbone of modern India. 
+Stat 1 
+500+ Total Clients Served 
+Stat 2 
+30+ Years of Manufacturing Excellence 
+Stat 3 
+Pan-India Supply Network 
+ 
+4.3 Public Organisations & Government Sector 
+Section H2 
+Public Organisations & Government Sector 
+Intro Copy 
+Alliance Engineering is a GeM and IREPS registered vendor, enabling direct procurement by 
+government departments, public sector undertakings, and railway divisions without tendering 
+barriers. Our products meet all BIS and relevant Indian Standards required for government 
+electrical procurement. 
+Client List — Government & Utilities 
+• POWERGRID Corporation of India (Current Transformers for 33 kV/66 kV substations) 
+• HVPN — Haryana Vidyut Prasaran Nigam (Metering and protection CTs) 
+• UP Vidhyut Vitran Nigam Limited (Metering transformers for rural electrification) 
+• Chandigarh Power Distribution Ltd (Control transformers and metering CTs) 
+• NPC — National Projects Construction Corporation 
+• IOFVIA (Indian Ordnance Factories) 
+ 
+4.4 Private Sector & Industrial Enterprise 
+Section H2 
+Private Sector & Industrial Enterprise 
+Intro Copy 
+From steel plants to financial institutions, our current transformers and control transformers are 
+deployed wherever measurement accuracy and electrical reliability are non-negotiable. 
+Client List — Private Sector 
+• JSW Steel — Control transformers for plant automation 
+• HDFC Bank — UPS and battery charger systems 
+• Jio — Telecom infrastructure battery chargers 
+• ESAB India — Welding equipment control transformers 
+• ABB / GE Automation — Measurement and protection CTs 
+• EMCO, DAMCO, CBL, Gilco, Jay Bee Industries, ATHA Group, Taalin, Robins 
+ 
+4.5 Educational & Research Institutions 
+Section H2 
+Educational & Research Institutions 
+Intro Copy 
+Our transformers are trusted in educational research laboratories and infrastructure projects at 
+leading universities in North India, where accuracy and repeatability are critical. 
+Client List — Education 
+• Panjab University — Structural analysis & test lab CTs 
+• Thapar Institute of Engineering & Technology — Research & testing collaboration 
+• Indian School of Business (ISB) — Infrastructure power systems 
+• Chandigarh University — Academic infrastructure 
+• Chitkara University — Technical partnership 
+• Lovely Professional University (LPU) — Institutional grid solutions 
+ 
+4.6 Bottom CTA Section 
+H2 
+Ready to Build the Future Together? 
+Copy 
+Join 500+ organisations that trust Alliance Engineering for precision electrical equipment. 
+Whether you're a procurement manager at a power utility, an electrical contractor on a railway 
+project, or an engineer specifying equipment for an industrial panel — we have the product and 
+the paperwork to make your procurement seamless. 
+Primary CTA 
+Start a Project → 
+Secondary CTA 
+Request Case Studies 
+SEO Tip: For each major client logo, write descriptive alt text e.g. 'POWERGRID current transformer 
+supplier Alliance Engineering' — this helps rank for branded + product queries. 
+ 
+  
+SECTION 5: CONTACT PAGE 
+URL: /contact | Goal: Convert inbound enquiries. High local SEO value — target 'transformer 
+manufacturer near me' searches. 
+ 
+5.1 SEO Meta Tags 
+Meta Title Contact Alliance Engineering Company | Current Transformer 
+Manufacturer Chandigarh 
+Meta Description Contact Alliance Engineering Company for current transformers, control 
+transformers & battery chargers. Located in Industrial Area, Chandigarh. 
+Call +91 172 400 1234 or email sales@allianceengineering.in. GeM & 
+IREPS registered. 
+Primary H1 Get in Touch — Alliance Engineering Company 
+Schema Type ContactPage + LocalBusiness with geo coordinates 
+ 
+5.2 Hero Section 
+H1 
+Get in Touch with Our Engineering Team 
+Subheadline 
+Need a current transformer, control transformer, or industrial battery charger? Our technical 
+team responds to all enquiries within one business day. Share your specifications and we'll 
+provide a detailed quote with delivery timeline. 
+Phone Label 
+Direct Line 
+Phone Number 
++91 172 400 1234 
+Email Label 
+Sales & Enquiries 
+Email 
+sales@allianceengineering.in 
+Trust Badges alongside form 
+✓ ISO 9001:2015 Certified   ✓ 24/7 Technical Support   ✓ GeM & IREPS Registered 
+ 
+5.3 Contact Form Fields 
+Field 1 
+Full Name * 
+Field 2 
+Company Name * 
+Field 3 
+Product Interest * (Dropdown: Current Transformer / Control Transformer / Battery Charger / 
+Potential Transformer / Tender / Other) 
+Field 4 
+Message / Technical Requirements * (Textarea — placeholder: 'Describe your product 
+requirements, CT ratio, burden, accuracy class, quantity, delivery location...') 
+Field 5 
+Phone Number * 
+Button 
+Send Enquiry → 
+ 
+5.4 Address & Map Section 
+Section H2 
+Our Manufacturing Facility 
+Full Address 
+Alliance Engineering Company, Plot No. [INSERT], Industrial Area Phase II, Panchkula — 
+134113, Haryana, India 
+Technical Support Hours 
+Monday – Friday: 9:00 AM – 6:00 PM IST 
+Saturday 
+10:00 AM – 2:00 PM IST 
+SEO Tip: Embed a Google Maps iframe with your exact pin location. Also add LocalBusiness JSON-LD 
+schema with latitude/longitude, openingHours, telephone, and address. This is critical for ranking in 
+'transformer manufacturer near me' searches. 
+ 
+5.5 Value Propositions Below Map 
+Value 1 — Fast Response 
+All enquiries acknowledged within 4 business hours. Technical quotes within 1 working day for 
+standard products. 
+Value 2 — Secure Communications 
+Your technical specifications and project blueprints are treated with complete confidentiality 
+under our NDA policy. 
+Value 3 — Pan-India Reach 
+Manufacturing in Chandigarh. Supply across India — Delhi NCR, Punjab, Haryana, Himachal 
+Pradesh, Uttarakhand, Uttar Pradesh, and beyond. 
+SEO Tip: Fix the footer — replace 'Silicon Valley, CA' and 'Berlin, DE' with your actual Chandigarh 
+address. Inconsistent NAP (Name, Address, Phone) across pages hurts local SEO significantly. 
+ 
+  
+SECTION 6: TECHNICAL SEO & ADDITIONAL 
+RECOMMENDATIONS 
+6.1 Critical Content Fixes (Do First) 
+• FOOTER: Replace 'Global HQ — 1200 Industrial Park, Silicon Valley, CA' with actual 
+Panchkula/Chandigarh address on ALL pages. 
+• FOOTER: Remove 'European Hub — Berlin, DE' unless you have an actual European 
+office — fictitious addresses harm local SEO trust. 
+• CONTACT PAGE: Update phone from +91 172 555 0192 (placeholder) to your real 
+number. 
+• CONTACT PAGE: Update email from contact@alliance.eng to your real domain email. 
+• ABOUT PAGE: Replace placeholder staff names (Rajesh Khanna, Anjali Sharma etc.) 
+with real team or remove the section entirely. 
+• HOME PAGE: Change 'Industry Leader Since 1994' to '1992' to match your actual 
+establishment year. 
+• ALL PAGES: Change dropdown option 'Architectural Design' in contact form — not 
+relevant to an electrical manufacturer. 
+ 
+6.2 Schema Markup (JSON-LD) — Add to Every Page 
+Add the following schema types in <script type='application/ld+json'> tags: 
+• LocalBusiness / ManufacturingBusiness — Name, address, phone, geo, openingHours, 
+logo 
+• Organization — Name, URL, logo, sameAs links (IndiaMART, GeM, LinkedIn, JustDial) 
+• Product — For each product page: name, description, manufacturer, brand, offers 
+• BreadcrumbList — On all inner pages for better SERP appearance 
+• FAQPage — On product pages with common buyer questions 
+ 
+6.3 Products Page Recommendations 
+Each product (CT, Control Transformer, Battery Charger, PT) should have its own dedicated 
+page at /products/current-transformers, /products/control-transformers etc. with: 
+• Unique H1 with primary keyword (e.g. 'Current Transformer Manufacturer in India — 
+Alliance Engineering') 
+• Technical specifications table (ratio, burden, accuracy class, IS standard, dimensions) 
+• Downloadable datasheet PDF (also great for backlinks) 
+• Application list: metering, protection, energy audit, SCADA, relay 
+• Product schema markup 
+• FAQ section targeting informational keywords 
+ 
+6.4 Local SEO Checklist 
+• Create and fully verify Google Business Profile for Alliance Engineering Company, 
+Panchkula 
+• Consistent NAP (Name, Address, Phone) across website, IndiaMART, JustDial, GeM, 
+and Google Business 
+• Get reviews on Google Business and IndiaMART from actual clients 
+• Create city landing pages if you want to rank in: Delhi, Ludhiana, Ambala, Bathinda, 
+Shimla 
+• Add Chandigarh / Panchkula / Haryana geo-modifiers naturally in home and contact 
+page body copy 
+ 
+6.5 Content Marketing — Blog Topic Ideas 
+Publishing 1–2 articles per month on these topics will drive organic traffic from engineers and 
+procurement managers: 
+• How to Select the Right Current Transformer for Your Substation (IS 2705 Guide) 
+• CT Accuracy Classes Explained: 0.1, 0.2, 0.5, 1, 3 — What Do They Mean? 
+• Float-Cum-Boost (FCBC) Battery Charger: Working Principle & Applications 
+• Control Transformer vs Isolation Transformer: Key Differences 
+• How to Participate in IREPS Railway Tenders as an Electrical Equipment Manufacturer 
+• GeM Portal Registration for Electrical Equipment Manufacturers — Step by Step 
+• RDSO Vendor Approval for Transformer Manufacturers: Full Process Explained 
+• IS 2705 vs IEC 61869: Which Standard Applies to Your CT? 
+ 
+6.6 Page Speed & Technical SEO 
+• Compress all hero images — use WebP format at max 150 KB for hero, 50 KB for 
+product thumbnails 
+• Add alt text to every image with keyword-rich descriptions 
+• Ensure mobile responsiveness — especially the contact form and nav menu 
+• Add XML sitemap at /sitemap.xml and submit to Google Search Console 
+• Add robots.txt allowing all product, about, contact, and client pages 
+• Install SSL (HTTPS) — required for ranking and trust 
+• Target Core Web Vitals: LCP < 2.5s, CLS < 0.1, FID < 100ms 
+ 
+— End of Document — 
+Alliance Engineering Company · Website Content & SEO Strategy · Prepared April 2026 

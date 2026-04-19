@@ -1,473 +1,472 @@
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Clock3, Headphones, ShieldCheck, Truck } from "lucide-react";
-import Footer from "@/components/Footer";
+import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
-
-const featuredProducts = [
-  {
-    id: "ring-type-current-transformer",
-    title: "Electric Solid State Meter",
-    subtitle: "Industrial Units",
-    label: "Protection",
-    price: "Catalog pricing",
-    image: "https://placehold.co/420x420/1ed6c1/0a5a57?text=Meter",
-    badge: "New",
-  },
-  {
-    id: "battery-chargers",
-    title: "Precision Digital Multimeter",
-    subtitle: "Field Test Equipment",
-    label: "Measuring",
-    price: "Catalog pricing",
-    image: "https://placehold.co/420x420/f2d08f/6b4a18?text=Meter",
-    badge: "",
-  },
-  {
-    id: "bus-bar-insulators",
-    title: "Monitor Power Station Unit",
-    subtitle: "Station Monitoring",
-    label: "Distribution",
-    price: "Catalog pricing",
-    image: "https://placehold.co/420x420/7a8c9d/1d2a35?text=Station",
-    badge: "",
-  },
-  {
-    id: "led-indicator",
-    title: "Solid Air Power Analyser 300",
-    subtitle: "Analytics Server",
-    label: "Monitoring",
-    price: "Catalog pricing",
-    image: "https://placehold.co/420x420/57c0ff/0c3f65?text=Analyser",
-    badge: "New",
-  },
-];
-
-const trustedCompanies = [
-  {
-    name: "Power Grid Corporation of India Ltd.",
-    shortName: "POWERGRID",
-    sector: "Transmission Utility",
-    accent: "from-sky-400/20 to-cyan-300/10",
-    logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg",
-  },
-  {
-    name: "JSW Group",
-    shortName: "JSW",
-    sector: "Industrial Group",
-    accent: "from-blue-400/20 to-slate-200/10",
-    logo: "/client_logos/JSW_Group_Logo.png",
-  },
-  {
-    name: "HDFC Bank",
-    shortName: "HDFC",
-    sector: "Banking",
-    accent: "from-emerald-400/20 to-teal-300/10",
-    logo: "/client_logos/hdfc_bank_logo.svg",
-  },
-  {
-    name: "Reliance Jio",
-    shortName: "JIO",
-    sector: "Telecommunications",
-    accent: "from-indigo-400/20 to-sky-300/10",
-    logo: "/client_logos/jio.png",
-  },
-  {
-    name: "ESAB India",
-    shortName: "ESAB",
-    sector: "Engineering",
-    accent: "from-amber-300/20 to-orange-300/10",
-    logo: "/client_logos/esab_logo.png",
-  },
-  {
-    name: "Haryana Vidyut Prasaran Nigam Limited",
-    shortName: "HVPNL",
-    sector: "Power Transmission",
-    accent: "from-cyan-300/20 to-blue-300/10",
-    logo: "/client_logos/hvpn.jpeg",
-  },
-  {
-    name: "Uttar Haryana Bijli Vitran Nigam",
-    shortName: "UHBVN",
-    sector: "Power Distribution",
-    accent: "from-violet-300/20 to-slate-300/10",
-    logo: "/client_logos/uhbvn.png",
-  },
-  {
-    name: "Chandigarh Power Distribution Limited",
-    shortName: "CPDL",
-    sector: "Utility Services",
-    accent: "from-fuchsia-300/20 to-rose-300/10",
-    logo: "/client_logos/Chandigarh_Power_Distribution_Limited.png",
-  },
-  {
-    name: "Indian School of Business",
-    shortName: "ISB",
-    sector: "Education",
-    accent: "from-yellow-300/20 to-amber-200/10",
-    logo: "/client_logos/isb.svg",
-  },
-  {
-    name: "Panjab University",
-    shortName: "PU",
-    sector: "University",
-    accent: "from-lime-300/20 to-green-300/10",
-    logo: "/client_logos/pu_logo.png",
-  },
-  {
-    name: "Cheema Boilers",
-    shortName: "CB",
-    sector: "Boiler Systems",
-    accent: "from-orange-400/20 to-red-300/10",
-    logo: "/client_logos/cbl.png",
-  },
-  {
-    name: "HMT Machine Tools",
-    shortName: "HMT",
-    sector: "Machine Tools",
-    accent: "from-slate-300/20 to-zinc-300/10",
-    logo: "/client_logos/hmt_india_logo.png",
-  },
-];
-
-const categories = [
-  {
-    title: "Current Transformers",
-    href: "/products?category=current-transformers",
-    image: "https://placehold.co/800x420/c9d8d7/48545c?text=CT",
-    eyebrow: "CT",
-    description: "LT/HT resin cast, tape-wound, and polyamide CTs for metering and protection",
-  },
-  {
-    title: "Monitoring & Control",
-    href: "/products?category=other-electrical-products",
-    image: "https://placehold.co/800x420/bccfcb/53646b?text=Control",
-    eyebrow: "Control",
-    description: "Panel meters, digital displays, hooters, and control panel accessories",
-  },
-];
-
-const reliabilityPoints = [
-  {
-    title: "ISO 9001 Certified",
-    icon: ShieldCheck,
-    text: "Consistent quality standards in manufacturing.",
-  },
-  {
-    title: "Fast Pan-India Delivery",
-    icon: Truck,
-    text: "Timely dispatch of industrial-grade components.",
-  },
-  {
-    title: "Expert Technical Support",
-    icon: Headphones,
-    text: "24x7 technical hotline with certified electrical engineers.",
-  },
-  {
-    title: "5-Year Warranty",
-    icon: Clock3,
-    text: "Comprehensive protection for industrial-grade stock.",
-  },
-];
+import Footer from "@/components/Footer";
 
 export default function HomeScreen() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const { scrollLeft, clientWidth } = carouselRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      carouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
   return (
-    <div className="site-page min-h-screen">
+    <div className="min-h-screen bg-surface selection:bg-primary selection:text-white">
       <Navbar />
 
-      <main className="site-main">
-        <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--site-border)", backgroundColor: "var(--site-bg-soft)" }}>
-          <img
-            src="/hero_section.jpg"
-            alt="Industrial plant"
-            className="h-[72vh] min-h-[520px] w-full object-cover sm:h-[82vh] lg:h-[100dvh]"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--site-hero-overlay) 0%, rgba(243,246,249,0.28) 48%, rgba(243,246,249,0.08) 100%)" }} />
-          <div className="absolute inset-x-0 bottom-0 top-0 flex items-center">
-            <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-10">
-              <header className="max-w-[760px]">
-                <h1 className="site-heading max-w-[720px] text-[2.65rem] font-semibold leading-[1.02] tracking-tight sm:text-[3.55rem] lg:text-[4.1rem]">
-                  Powering Industrial Efficiency
-                  <br />
-                  with Precision
-                </h1>
-                <p className="site-copy mt-4 max-w-[520px] text-sm leading-6 sm:leading-7">
-                  High-performance electrical components engineered for monitoring, protection, and power distribution. From smart meters to current transformers, reliability starts with precision.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/products"
-                    className="site-button-primary inline-flex h-10 w-full items-center justify-center rounded-md px-4 text-sm font-medium sm:w-auto"
-                  >
-                    View Full Catalog
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="site-button-secondary inline-flex h-10 w-full items-center justify-center rounded-md border px-4 text-sm font-medium sm:w-auto"
-                  >
-                    Technical Support
-                  </Link>
-                </div>
-              </header>
-            </div>
+      <main className="pt-14">
+        {/* Hero Section */}
+        <section className="relative min-h-[100dvh] flex items-center px-6 md:px-12 py-20 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/stitch/hero.jpg"
+              alt="Industrial Precision"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
           </div>
-        </section>
-
-        <div className="container mx-auto px-4 py-12 sm:px-5 lg:px-6">
-          <section className="py-12 sm:py-16">
-            <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-stretch lg:gap-10">
-              <div className="flex flex-col justify-between">
-                <header>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--site-accent)" }}>
-                    About Us
-                  </div>
-                  <h2 className="site-heading mt-4 max-w-[620px] text-[2rem] font-semibold leading-[1.22] tracking-[-0.03em] sm:text-[2.3rem] lg:text-[2.65rem]">
-                    Leading the Industrial Revolution
-                    <br />
-                    Through Precision Engineering
-                  </h2>
-                  <p className="site-copy mt-7 max-w-[620px] text-[15px] leading-8 sm:text-[16px]">
-                    Alliance Engineering Company delivers dependable electrical components for monitoring, protection, and power distribution. Established in 1992 and headquartered in Chandigarh, we work with industrial buyers, utilities, and engineering teams that need performance, consistency, and long-term reliability across every installation.
-                  </p>
-                </header>
-
-                <aside className="mt-8 grid gap-5 sm:grid-cols-2">
-                  <div className="rounded-[18px] border bg-white px-7 py-7 shadow-[0_18px_42px_rgba(21,48,73,0.06)]" style={{ borderColor: "rgba(212,224,234,0.58)" }}>
-                    <div className="site-heading text-[2.1rem] font-semibold tracking-[-0.04em]">30+</div>
-                    <p className="site-copy mt-2 text-[11px] uppercase tracking-[0.22em]">Years Of Experience</p>
-                  </div>
-                  <div className="rounded-[18px] border bg-white px-7 py-7 shadow-[0_18px_42px_rgba(21,48,73,0.06)]" style={{ borderColor: "rgba(212,224,234,0.58)" }}>
-                    <div className="site-heading text-[2.1rem] font-semibold tracking-[-0.04em]">20+</div>
-                    <p className="site-copy mt-2 text-[11px] uppercase tracking-[0.22em]">Product Lines</p>
-                  </div>
-                  <div className="rounded-[18px] border bg-white px-7 py-7 shadow-[0_18px_42px_rgba(21,48,73,0.06)]" style={{ borderColor: "rgba(212,224,234,0.58)" }}>
-                    <div className="site-heading text-[2.1rem] font-semibold tracking-[-0.04em]">50+</div>
-                    <p className="site-copy mt-2 text-[11px] uppercase tracking-[0.22em]">Global Partners</p>
-                  </div>
-                  <div className="rounded-[18px] border bg-white px-7 py-7 shadow-[0_18px_42px_rgba(21,48,73,0.06)]" style={{ borderColor: "rgba(212,224,234,0.58)" }}>
-                    <div className="site-heading text-[2.1rem] font-semibold tracking-[-0.04em]">5+</div>
-                    <p className="site-copy mt-2 text-[11px] uppercase tracking-[0.22em]">Export Countries</p>
-                  </div>
-                </aside>
-              </div>
-
-              <aside className="relative">
-                <div
-                  className="absolute -bottom-6 left-10 right-10 h-16 rounded-full blur-2xl"
-                  style={{ background: "rgba(27, 66, 97, 0.18)" }}
-                />
-                <div
-                  className="relative h-full min-h-[420px] overflow-hidden rounded-[20px] border bg-white shadow-[0_28px_60px_rgba(21,48,73,0.16)]"
-                  style={{ borderColor: "rgba(188,207,221,0.8)" }}
-                >
-                  <img
-                    src="/section-2.png"
-                    alt="Precision industrial engineering"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,48,73,0.03)_0%,rgba(22,48,73,0.08)_100%)]" />
-                </div>
-              </aside>
-            </div>
-          </section>
-        </div>
-
-        <section className="site-band overflow-hidden border-y py-12 sm:py-16">
-          <div className="container mx-auto px-4 sm:px-5 lg:px-6">
-            <header className="mb-8 sm:mb-10">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--site-accent)" }}>
-                Our Clients
-              </div>
-              <h2 className="site-heading mt-3 text-[28px] font-semibold tracking-tight sm:text-[32px]">
-                Trusted by leading organisations across India
-              </h2>
-              <p className="site-copy mt-2 max-w-[620px] text-[13px] leading-6">
-                Our products support utilities, manufacturers, fabricators, and enterprises that rely on dependable electrical systems every day.
-              </p>
-            </header>
-
-            <div className="relative overflow-hidden">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-24" style={{ background: "linear-gradient(90deg, var(--site-panel) 0%, rgba(233,240,245,0) 100%)" }} />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-24" style={{ background: "linear-gradient(270deg, var(--site-panel) 0%, rgba(233,240,245,0) 100%)" }} />
-
-              <div className="marquee-track flex w-max gap-4">
-                {[...trustedCompanies, ...trustedCompanies].map((company, index) => (
-                  <div
-                    key={`${company.name}-${index}`}
-                    className="flex min-w-[220px] items-center justify-center px-4 py-3"
-                  >
-                    <div className="flex h-24 w-[180px] items-center justify-center rounded-xl bg-white p-4 shadow-[0_10px_30px_rgba(255,255,255,0.08)]">
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="container mx-auto px-4 py-12 sm:px-5 lg:px-6">
-          <section className="py-12 sm:py-16">
-            <header className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-              <div>
-                <h2 className="site-heading text-[30px] font-semibold">Primary Categories</h2>
-                <p className="site-copy mt-2 max-w-[520px] text-[13px] leading-6">
-                  Explore our core product families built for electrical measurement, monitoring, and industrial control.
-                </p>
-              </div>
-              <Link href="/products" className="site-copy text-[11px] transition-colors hover:opacity-80">
-                Browse All Categories
+          <div className="relative z-10 max-w-4xl mx-auto md:mx-0">
+            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-primary-container text-white rounded-full">
+              ISO 9001:2015 Certified · Est. 1992 · Chandigarh, India
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-primary leading-[1.1] mb-6 md:mb-8 font-headline">
+              Precision Electrical Equipment.<br />
+              <span className="text-tertiary">Engineered for Every Market.</span>
+            </h1>
+            <p className="text-xl text-secondary max-w-2xl mb-12 leading-relaxed">
+              Current transformers, control transformers & battery chargers — IS & IEC compliant, manufactured in India, trusted globally.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-primary text-on-primary rounded-md font-bold transition-all hover:translate-y-[-2px] shadow-xl shadow-primary/20 font-headline"
+              >
+                Request a Quote →
               </Link>
-            </header>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              {categories.map((category) => (
-                <article
-                  key={category.title}
-                  className="site-card group relative min-h-[220px] overflow-hidden rounded-[6px] border sm:min-h-[250px] md:min-h-[285px]"
-                >
-                  <Link href={category.href} className="block">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="h-[220px] w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-[250px] md:h-[285px]"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,25,36,0.04)_0%,rgba(17,25,36,0.92)_82%)]" />
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <div className="site-copy mb-2 text-[10px] uppercase tracking-[0.18em]">{category.eyebrow}</div>
-                      <h3 className="site-heading text-[22px] font-semibold">{category.title}</h3>
-                      <p className="mt-2 max-w-[340px] text-[12px] leading-6" style={{ color: "color-mix(in srgb, var(--site-heading) 78%, white)" }}>{category.description}</p>
-                    </div>
-                  </Link>
-                </article>
-              ))}
+              <Link
+                href="/products"
+                className="w-full sm:w-auto px-8 py-4 border-2 border-outline-variant/30 text-primary rounded-md font-bold hover:bg-surface-container transition-all font-headline text-center"
+              >
+                View Product Catalogue
+              </Link>
             </div>
-          </section>
-        </div>
+            <div className="mt-12 flex flex-wrap gap-4 items-center text-sm font-bold text-secondary">
+              <span>GeM Registered</span><span className="opacity-30">|</span>
+              <span>IREPS Registered</span><span className="opacity-30">|</span>
+              <span>Udyam MSME</span><span className="opacity-30">|</span>
+              <span>ISO 9001:2015</span><span className="opacity-30">|</span>
+              <span>30+ Years</span>
+            </div>
+          </div>
+        </section>
 
-        <section className="site-band border-y py-12 sm:py-16">
-          <div className="container mx-auto px-4 sm:px-5 lg:px-6">
-            <header className="mb-8 flex flex-col items-start justify-between gap-5 sm:mb-10 sm:flex-row sm:items-center sm:gap-8">
-              <div>
-                <h2 className="site-heading text-[30px] font-semibold tracking-tight sm:text-[32px]">Featured Products</h2>
-                <p className="site-copy mt-2 max-w-[520px] text-[13px] leading-6">
-                  A curated selection of high-performance components chosen for reliability, accuracy, and field-proven performance.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 self-end sm:self-auto">
-                <button className="site-card-soft site-copy flex h-9 w-9 items-center justify-center rounded-md border">
-                  <ChevronLeft className="h-3.5 w-3.5" />
-                </button>
-                <button className="site-card-soft flex h-9 w-9 items-center justify-center rounded-md border site-heading">
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </header>
+        {/* Clients Marquee Section */}
+        <section className="bg-surface-container-low py-6 border-y border-outline-variant/10 overflow-hidden group">
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:gap-5 xl:grid-cols-4">
-              {featuredProducts.map((product) => (
-                <article
-                  key={product.id}
-                  className="site-card group flex min-h-[390px] flex-col overflow-hidden rounded-[10px] border transition-all hover:-translate-y-0.5 sm:min-h-[420px]"
-                >
-                  <Link href={`/products/${product.id}`} className="flex h-full flex-col">
-                    <div className="relative mx-3 mt-3 overflow-hidden rounded-[8px] bg-[linear-gradient(180deg,#e7f0f5_0%,#d4e0ea_100%)]">
-                      {product.badge && (
-                        <div className="absolute right-3 top-3 rounded-md px-2 py-1 text-[9px] font-bold uppercase tracking-[0.18em]" style={{ backgroundColor: "var(--site-accent)", color: "var(--site-primary)" }}>
-                          {product.badge}
-                        </div>
-                      )}
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="h-[220px] w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-[260px]"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col justify-between px-3 pb-4 pt-4">
-                      <div>
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color: "var(--site-text-soft)" }}>
-                          {product.label}
-                        </div>
-                        <h3 className="site-heading mt-2 text-[15px] font-semibold leading-6">{product.title}</h3>
-                        <p className="site-copy mt-2 text-[11px]">{product.subtitle}</p>
-                      </div>
-                      <div className="mt-5 flex items-center justify-between border-t pt-4" style={{ borderColor: "var(--site-border)" }}>
-                        <div className="site-heading text-[15px] font-semibold">{product.price}</div>
-                        <div className="site-copy text-[11px] font-medium uppercase tracking-[0.14em]">View Product</div>
-                      </div>
-                    </div>
-                  </Link>
-                </article>
+
+          <div className="relative flex overflow-hidden">
+            <div className="flex marquee-track gap-8 md:gap-12 items-center py-4 group-hover:[animation-play-state:paused]">
+              {[
+                { name: "PowerGrid", logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg" },
+                { name: "JSW Group", logo: "/client_logos/JSW_Group_Logo.png" },
+                { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
+                { name: "Reliance Jio", logo: "/client_logos/jio.png" },
+                { name: "BHEL", logo: "/stitch/clients/bhel.png" },
+                { name: "NTPC", logo: "/stitch/clients/ntpc.png" },
+                { name: "NHPC", logo: "/stitch/clients/nhpc.png" },
+                { name: "ESAB", logo: "/client_logos/esab_logo.png" },
+                { name: "Panjab University", logo: "/client_logos/pu_logo.png" },
+                { name: "ISB", logo: "/client_logos/isb.svg" },
+              ].concat([
+                { name: "PowerGrid", logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg" },
+                { name: "JSW Group", logo: "/client_logos/JSW_Group_Logo.png" },
+                { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
+                { name: "Reliance Jio", logo: "/client_logos/jio.png" },
+                { name: "BHEL", logo: "/stitch/clients/bhel.png" },
+                { name: "NTPC", logo: "/stitch/clients/ntpc.png" },
+                { name: "NHPC", logo: "/stitch/clients/nhpc.png" },
+                { name: "ESAB", logo: "/client_logos/esab_logo.png" },
+                { name: "Panjab University", logo: "/client_logos/pu_logo.png" },
+                { name: "ISB", logo: "/client_logos/isb.svg" },
+              ]).map((client, idx) => (
+                <div key={idx} className="flex-shrink-0 w-32 sm:w-40 md:w-48 h-16 md:h-20 flex items-center justify-center transition-all duration-500">
+                  <img src={client.logo} alt={client.name} className="max-h-full max-w-full object-contain" />
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-6 sm:px-5 lg:px-6">
-          <section className="grid gap-8 py-12 sm:py-14 lg:grid-cols-[1fr_1.02fr] lg:items-center">
-            <div className="pt-2">
-              <h2 className="site-heading max-w-lg text-[2.3rem] font-semibold leading-[1.12] tracking-tight sm:text-[2.75rem]">
-                Built for Industrial Reliability
-              </h2>
-              <p className="site-copy mt-5 max-w-[560px] text-[15px] leading-7 sm:text-[16px] sm:leading-8">
-                Every product in our catalogue undergoes rigorous stress testing at 120% load capacity. Our manufacturing partners adhere to strict ISO standards, ensuring that when you install an Alliance Electrical component, you are installing peace of mind.
-              </p>
-
-              <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                {reliabilityPoints.map((item) => (
-                  <article key={item.title} className="site-card rounded-[8px] border px-5 py-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full" style={{ color: "var(--site-primary)" }}>
-                      <item.icon className="h-4 w-4" />
-                    </div>
-                    <h3 className="site-heading mt-3 text-[18px] font-semibold">{item.title}</h3>
-                    <p className="site-copy mt-1.5 max-w-[220px] text-[13px] leading-6">{item.text}</p>
-                  </article>
-                ))}
+        {/* About Section */}
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-surface">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div className="relative">
+              <div className="aspect-square bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/stitch/about.jpg"
+                  alt="Industrial Precision Component"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 md:-bottom-12 md:-right-12 p-6 md:p-8 bg-primary text-white rounded-xl shadow-2xl">
+                <p className="text-[10px] md:text-sm font-label uppercase tracking-widest mb-1 md:mb-2 opacity-80">
+                  Established
+                </p>
+                <p className="text-3xl md:text-5xl font-extrabold font-headline">1992</p>
               </div>
             </div>
-
-            <aside className="relative mx-auto w-full max-w-[470px]">
-              <div className="absolute -left-3 top-5 h-16 w-16 rounded-[10px]" style={{ backgroundColor: "var(--site-surface-strong)" }} />
-              <div className="absolute -bottom-3 -right-3 h-16 w-16 rounded-[10px]" style={{ backgroundColor: "var(--site-surface-strong)" }} />
-              <div className="relative overflow-hidden rounded-[10px] border shadow-[var(--site-shadow)]" style={{ borderColor: "var(--site-border-strong)", background: "radial-gradient(circle at center, rgba(213,165,74,0.2) 0%, rgba(46,88,118,0.92) 56%, rgba(22,48,73,1) 100%)" }}>
-                <div className="flex min-h-[320px] flex-col items-center justify-center px-6 text-center sm:min-h-[420px] sm:px-8 lg:min-h-[460px]">
-                  <div className="mb-6 flex h-24 w-24 items-center justify-center text-white">
-                    <ShieldCheck className="h-20 w-20 stroke-[1.25]" />
-                  </div>
-                  <div className="text-[26px] font-light uppercase tracking-[0.3em] text-white/95">Reliability</div>
+            <div>
+              <h2 className="text-4xl font-extrabold text-primary mb-8 leading-tight font-headline">
+                Defining the Standards of Structural Precision
+              </h2>
+              <p className="text-lg text-secondary leading-relaxed mb-12">
+                For over three decades, Alliance Engineering has stood at the
+                intersection of architectural clarity and industrial performance.
+                We don't just manufacture components; we engineer the
+                foundations of modern industry.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+                <div>
+                  <p className="text-3xl md:text-4xl font-extrabold text-primary mb-2 font-headline">30+</p>
+                  <p className="text-xs font-bold text-secondary uppercase tracking-widest">
+                    <strong>Years of Manufacturing Excellence</strong>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-4xl font-extrabold text-primary mb-2 font-headline">500+</p>
+                  <p className="text-xs font-bold text-secondary uppercase tracking-widest">
+                    <strong>Industrial Clients Served</strong>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-4xl font-extrabold text-primary mb-2 font-headline">20+</p>
+                  <p className="text-xs font-bold text-secondary uppercase tracking-widest">
+                    <strong>Product Variants Available</strong>
+                  </p>
                 </div>
               </div>
-            </aside>
-          </section>
-
-          <section className="py-10">
-            <div className="relative overflow-hidden rounded-[14px] border px-5 py-8 text-center sm:px-10 sm:py-12" style={{ borderColor: "var(--site-border-strong)", background: "linear-gradient(180deg, #203d5a 0%, #163049 100%)" }}>
-              <div className="absolute right-8 top-4 text-[82px] font-semibold italic text-white/10">AEC</div>
-              <h2 className="text-[24px] font-semibold text-white sm:text-[26px]">Request a Custom Configuration</h2>
-              <p className="mx-auto mt-4 max-w-[640px] text-[15px] leading-7 text-slate-100/85 sm:text-[17px] sm:leading-8">
-                Need a specific specification for your facility? Our engineering team can help you design a custom power solution tailored to your exact requirements.
-              </p>
-              <form className="mx-auto mt-8 flex max-w-[520px] flex-col items-center justify-center gap-3 sm:flex-row">
-                <input
-                  type="email"
-                  placeholder="Enter your business email"
-                  aria-label="Business email"
-                  className="h-12 w-full rounded-md border border-white/15 bg-white/10 px-4 text-sm text-white outline-none placeholder:text-white/55"
-                />
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 shrink-0 items-center rounded-md bg-white px-6 text-sm font-semibold"
-                  style={{ color: "var(--site-primary)" }}
-                >
-                  Get Consultation
-                </Link>
-              </form>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-surface-container-low">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
+              <div>
+                <h2 className="text-4xl font-extrabold text-primary mb-4 font-headline">
+                  What We Manufacture
+                </h2>
+                <p className="text-secondary max-w-2xl">
+                  From precision metering current transformers for HVPN and Powergrid substations, to rugged control transformers powering CNC and automation panels, Alliance Engineering delivers engineered reliability at every voltage level.
+                </p>
+              </div>
+              <Link
+                href="/products"
+                className="text-primary font-bold border-b-2 border-primary pb-1 flex items-center gap-2 group font-headline"
+              >
+                Browse All Categories
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg">
+                <img
+                  src="/stitch/transformers.jpg"
+                  alt="Current Transformers"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-all"></div>
+                <div className="absolute bottom-0 left-0 p-12 text-white">
+                  <h3 className="text-3xl font-bold mb-2 font-headline">Current Transformers</h3>
+                  <p className="opacity-80 max-w-sm">
+                    High-accuracy monitoring for power distribution networks.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg">
+                <img
+                  src="/stitch/monitoring.jpg"
+                  alt="Monitoring & Control"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-tertiary/60 group-hover:bg-tertiary/40 transition-all"></div>
+                <div className="absolute bottom-0 left-0 p-12 text-white">
+                  <h3 className="text-3xl font-bold mb-2 font-headline">Monitoring & Control</h3>
+                  <p className="opacity-80 max-w-sm">
+                    Intelligent command systems for automated industrial
+                    environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-surface overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
+              <div className="text-left">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 font-headline">
+                  Featured Products
+                </h2>
+                <p className="text-secondary max-w-2xl">
+                  Precision-matched equipment engineered for critical industrial systems.
+                </p>
+              </div>
+              <div className="flex gap-4 self-end md:self-auto">
+                <button
+                  onClick={() => scrollCarousel('left')}
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={() => scrollCarousel('right')}
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            <div
+              ref={carouselRef}
+              className="flex overflow-x-auto gap-8 snap-x snap-mandatory hide-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {[
+                {
+                  id: 1,
+                  name: "Solid State Meter",
+                  category: "Energy Systems",
+                  desc: "Advanced industrial power metering with real-time analytics and sub-0.1% accuracy.",
+                  img: "/stitch/meter.png"
+                },
+                {
+                  id: 2,
+                  name: "Digital Multimeter",
+                  category: "Test & Measurement",
+                  desc: "Professional engineering-grade testing equipment for labs and field diagnostics.",
+                  img: "/stitch/multimeter.png"
+                },
+                {
+                  id: 3,
+                  name: "Power Station Unit",
+                  category: "Power Control",
+                  desc: "Robust centralized control units designed for high-availability industrial facilities.",
+                  img: "/stitch/power_station.png"
+                },
+                {
+                  id: 4,
+                  name: "Oil Filtration Plant",
+                  category: "Oil Filtration",
+                  desc: "High-capacity mobile filtration reaching moisture levels below 5 PPM and BDV 70 kV.",
+                  img: "/assets/products/transformer-oil-filtration-plant/view-1.png",
+                  fallback: "/stitch/transformers.jpg"
+                }
+              ].map((product) => (
+                <div
+                  key={product.id}
+                  className="w-[85vw] md:w-[25vw] snap-start bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
+                >
+                  <div className="h-48 bg-surface-container rounded-lg mb-6 flex items-center justify-center p-8">
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className="max-h-full max-w-full object-contain"
+                      onError={(e) => {
+                        if (product.fallback) (e.target as HTMLImageElement).src = product.fallback;
+                      }}
+                    />
+                  </div>
+                  <p className="text-xs font-bold text-primary mb-2 uppercase tracking-widest font-label">
+                    {product.category}
+                  </p>
+                  <h3 className="text-xl font-extrabold text-primary mb-3 font-headline line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-secondary text-sm mb-8 leading-relaxed line-clamp-2">
+                    {product.desc}
+                  </p>
+                  <button className="w-full py-4 border border-outline-variant/50 text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-md font-headline mt-auto">
+                    View Specifications
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* Why Us Section */}
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-primary text-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 md:mb-8 leading-tight font-headline">
+                  Why Industrial Buyers Choose Alliance Engineering
+                </h2>
+                <p className="text-xl opacity-80 mb-12">
+                  We don't just manufacture components; we engineer foundations of
+                  modern industry that exceed the most stringent Indian and international standards.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-12 md:gap-y-16">
+                  <div className="flex flex-col gap-4">
+                    <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 font-headline">ISO Quality Testing</h4>
+                      <p className="text-sm opacity-60">In-house testing facility ensuring IS 2705 / IS 3156 compliance.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center">
+                      <Truck className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 font-headline">North India’s Fastest</h4>
+                      <p className="text-sm opacity-60">Streamlined manufacturing process designed for rapid deployment.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center">
+                      <ShieldCheck className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 font-headline">MSME Pricing Advantage</h4>
+                      <p className="text-sm opacity-60">Direct manufacturer pricing without compromising on industrial-grade reliability.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center">
+                      <Headphones className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 font-headline">Custom Engineering</h4>
+                      <p className="text-sm opacity-60">Built-to-spec transformers for non-standard requirements and legacy panels.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative hidden md:block">
+                <img
+                  src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=1200&auto=format&fit=crop"
+                  alt="Technical Excellence"
+                  className="rounded-2xl shadow-3xl grayscale opacity-40 mix-blend-screen"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Custom Configuration Section */}
+        <section className="px-6 md:px-12 bg-surface py-20 md:py-32">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 md:mb-8 leading-tight font-headline">
+                Request a Technical<br className="hidden md:block" />Consultation
+              </h2>
+              <p className="text-lg text-secondary mb-12 leading-relaxed max-w-lg">
+                Need a custom electrical solution? Our engineering team provides
+                detailed consultation for large-scale industrial projects. Fill
+                out the form and we'll reach out within 24 business hours.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                      Email Us
+                    </p>
+                    <p className="font-bold text-on-surface">sales@allianceengineering.in</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                      Direct Line
+                    </p>
+                    <p className="font-bold text-on-surface">+91 (172) 400 1234</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:w-1/2 w-full mt-10 md:mt-0">
+              <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-6 sm:p-8 md:p-12">
+                <form className="space-y-6 md:space-y-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="John Doe"
+                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Engineering Solutions Ltd."
+                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                      Product Interest
+                    </label>
+                    <div className="relative">
+                      <select className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm appearance-none outline-none">
+                        <option>Current Transformer</option>
+                        <option>Control Transformer</option>
+                        <option>Battery Charger</option>
+                        <option>Potential Transformer</option>
+                        <option>Tender</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                      Message / Technical Requirements *
+                    </label>
+                    <textarea
+                      placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity, delivery location..."
+                      rows={5}
+                      className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none resize-none"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-5 bg-primary text-white font-bold rounded text-sm transition-all hover:opacity-90 active:scale-[0.98] font-headline"
+                  >
+                    Submit Inquiry
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -1,0 +1,1 @@
+const fs=require('fs'); const pdf=require('C:/windows/temp/pdfreader/node_modules/pdf-parse'); const db=fs.readFileSync('C:/Users/acer/Desktop/Aryan/website/public/content_seo.pdf'); pdf(db).then(data => { fs.writeFileSync('pdf_output.txt', data.text); console.log('Done'); }).catch(e => console.error(e));

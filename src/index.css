@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,7 +34,7 @@
     --input: 208 23% 85%;
     --ring: 208 48% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 204 33% 97%;
     --sidebar-foreground: 210 35% 20%;
@@ -45,26 +45,27 @@
     --sidebar-border: 208 23% 85%;
     --sidebar-ring: 208 48% 38%;
 
-    --site-bg: #f3f6f9;
-    --site-bg-soft: #edf3f8;
-    --site-panel: #e9f0f5;
+    /* Industrial Precision Tokens */
+    --site-bg: #f8f9fb;
+    --site-bg-soft: #f2f4f6;
+    --site-panel: #eceef0;
     --site-surface: #ffffff;
-    --site-surface-muted: #f6f9fc;
-    --site-surface-strong: #dde8f0;
-    --site-text: #294154;
-    --site-text-soft: #6c8091;
-    --site-heading: #193349;
-    --site-border: #d4e0ea;
-    --site-border-strong: #bccfdd;
-    --site-primary: #163049;
-    --site-primary-hover: #24435f;
-    --site-primary-contrast: #f8fbfd;
-    --site-secondary: #eef4f8;
-    --site-secondary-hover: #e1ebf2;
-    --site-accent: #d5a54a;
-    --site-radial: rgba(125, 154, 178, 0.22);
-    --site-hero-overlay: rgba(243, 246, 249, 0.58);
-    --site-shadow: 0 16px 38px rgba(32, 58, 79, 0.08);
+    --site-surface-muted: #f8f9fb;
+    --site-surface-strong: #e6e8ea;
+    --site-text: #43474d;
+    --site-text-soft: #73777e;
+    --site-heading: #00162a;
+    --site-border: #c3c6ce;
+    --site-border-strong: #73777e;
+    --site-primary: #00162a;
+    --site-primary-hover: #0d2b45;
+    --site-primary-contrast: #ffffff;
+    --site-secondary: #48626e;
+    --site-secondary-hover: #304a55;
+    --site-accent: #b2885a;
+    --site-radial: rgba(0, 22, 42, 0.04);
+    --site-hero-overlay: rgba(248, 249, 251, 0.5);
+    --site-shadow: 0px 10px 40px rgba(25, 28, 30, 0.06);
   }
 
   .dark {
@@ -135,9 +136,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .font-manrope {
+    font-family: 'Manrope', sans-serif;
   }
 }
 

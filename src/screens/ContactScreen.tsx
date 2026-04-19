@@ -1,62 +1,222 @@
-import { Suspense } from "react";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-
-const contactInfo = [
-  { icon: MapPin, label: "Address", value: "1234 Industrial Park Drive\nSuite 200, Houston, TX 77001" },
-  { icon: Phone, label: "Phone", value: "+1 (713) 555-0142" },
-  { icon: Mail, label: "Email", value: "sales@powergridsolutions.com" },
-  { icon: Clock, label: "Business Hours", value: "Mon - Fri: 8:00 AM - 6:00 PM CST\nSat: 9:00 AM - 1:00 PM CST" },
-];
+import Footer from "@/components/Footer";
 
 export default function ContactScreen() {
   return (
-    <div className="site-page min-h-screen">
+    <div className="bg-surface text-on-surface font-body">
       <Navbar />
 
-      <main className="site-main">
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="site-heading text-4xl font-bold">Get In Touch</h1>
-          <p className="site-copy mt-2 text-lg">
-            Have a question or need a quote? We'd love to hear from you.
-          </p>
-
-          <div className="mt-10 grid gap-10 lg:grid-cols-2">
-            <div className="space-y-6">
-              {contactInfo.map((item) => (
-                <div key={item.label} className="site-card flex gap-4 rounded-xl border p-5">
-                  <div className="site-card-soft flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border">
-                    <item.icon className="h-5 w-5" style={{ color: "var(--site-primary)" }} />
+      <main className="pt-16 min-h-screen">
+        {/* Contact Hero Section */}
+        <section className="px-6 md:px-8 py-16 lg:py-32 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-primary tracking-tighter mb-6 lg:mb-8 leading-[1.1] font-headline">
+                Get in Touch
+              </h1>
+              <p className="text-xl text-secondary mb-12 max-w-md font-body leading-relaxed">
+                Partner with our engineering team to bring structural integrity and industrial precision to your next global project.
+              </p>
+              
+              <div className="space-y-8">
+                {/* Contact Tiles */}
+                <div className="flex items-center gap-6 group">
+                  <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span className="material-symbols-outlined">call</span>
                   </div>
                   <div>
-                    <h3 className="site-heading text-sm font-semibold">{item.label}</h3>
-                    <p className="site-copy mt-1 whitespace-pre-line text-sm">{item.value}</p>
+                    <p className="text-xs font-bold text-outline uppercase tracking-widest mb-1">Direct Line</p>
+                    <p className="text-xl font-headline font-bold text-tertiary">+91 172 555 0192</p>
                   </div>
                 </div>
-              ))}
+                
+                <div className="flex items-center gap-6 group">
+                  <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span className="material-symbols-outlined">mail</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-outline uppercase tracking-widest mb-1">Inquiries</p>
+                    <p className="text-xl font-headline font-bold text-tertiary">sales@allianceengineering.in</p>
+                  </div>
+                </div>
+                
+                {/* Certification Badges */}
+                <div className="pt-8 flex flex-wrap gap-4">
+                  <div className="px-4 py-2 bg-surface-container-low rounded-full flex items-center gap-2 border border-outline-variant/10">
+                    <span className="material-symbols-outlined text-sm text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                    <span className="text-xs font-bold text-secondary uppercase tracking-tight">ISO 9001:2015 Certified</span>
+                  </div>
+                  <div className="px-4 py-2 bg-surface-container-low rounded-full flex items-center gap-2 border border-outline-variant/10">
+                    <span className="material-symbols-outlined text-sm text-primary">support_agent</span>
+                    <span className="text-xs font-bold text-secondary uppercase tracking-tight">24/7 Technical Support</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="site-card rounded-xl border p-6 md:p-8">
-              <h2 className="site-heading mb-6 text-xl font-semibold">Send Us a Message</h2>
-              <Suspense fallback={<div className="site-card-soft h-96 animate-pulse rounded-lg border" />}>
-                <ContactForm />
-              </Suspense>
+            {/* Contact Form Card */}
+            <div className="bg-surface-container-lowest p-6 sm:p-8 lg:p-12 rounded-xl border border-outline-variant/20 shadow-[0_20px_40px_rgba(39,38,116,0.04)]">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Full Name *</label>
+                    <input 
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
+                      placeholder="John Doe" 
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Company Name *</label>
+                    <input 
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
+                      placeholder="Engineering Ltd." 
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Email Address *</label>
+                    <input 
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
+                      placeholder="john@example.com" 
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Phone Number *</label>
+                    <input 
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
+                      placeholder="+91 98765 43210" 
+                      type="tel"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Product Category *</label>
+                  <div className="relative">
+                    <select className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all appearance-none cursor-pointer" required>
+                      <option>Current Transformer</option>
+                      <option>Control Transformer</option>
+                      <option>Battery Charger</option>
+                      <option>Potential Transformer</option>
+                      <option>Tender/Bulk Order</option>
+                      <option>Other</option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">
+                      <span className="material-symbols-outlined">expand_more</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Technical Requirements / Message *</label>
+                  <textarea 
+                    className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all resize-none placeholder:opacity-50" 
+                    placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity..." 
+                    rows={4}
+                    required
+                  ></textarea>
+                </div>
+                <button 
+                  className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10" 
+                  type="submit"
+                >
+                  Send Message
+                  <span className="material-symbols-outlined">send</span>
+                </button>
+              </form>
             </div>
           </div>
+        </section>
 
-          <div className="mt-12 overflow-hidden rounded-xl border" style={{ borderColor: "var(--site-border)" }}>
-            <div className="site-band site-copy flex h-64 items-center justify-center">
-              <div className="text-center">
-                <MapPin className="mx-auto mb-2 h-8 w-8" style={{ color: "var(--site-primary)" }} />
-                <p className="text-sm">1234 Industrial Park Drive, Houston, TX 77001</p>
+        {/* Office Locations Section */}
+        <section className="bg-surface-container-low py-16 md:py-24 px-6 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12 md:mb-16">
+              <h2 className="text-3xl font-black text-primary tracking-tighter mb-4 font-headline uppercase">Global Headquarters</h2>
+              <div className="w-20 h-1 bg-primary"></div>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-4 space-y-8">
+                <div className="p-8 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10">
+                  <h3 className="text-2xl font-black text-tertiary mb-4 font-headline">Chandigarh, India</h3>
+                  <p className="text-secondary mb-6 leading-relaxed">
+                    Plot No.: 417, Industrial Area Phase -2,<br />
+                    Chandigarh, 160002,<br />
+                    India
+                  </p>
+                  <div className="flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase cursor-pointer hover:opacity-70 transition-opacity font-headline">
+                    <span className="material-symbols-outlined">directions</span>
+                    Get Directions
+                  </div>
+                </div>
+                <div className="p-8 border border-outline-variant/30 rounded-xl bg-surface/50">
+                  <h4 className="text-sm font-bold text-outline uppercase tracking-widest mb-2">Technical Support</h4>
+                  <p className="text-tertiary font-bold font-headline">Available Monday — Friday</p>
+                  <p className="text-tertiary font-bold font-headline opacity-70">09:00 - 18:00 IST</p>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-8 h-[350px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl relative group cursor-crosshair">
+                <img 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100" 
+                  alt="architectural 3D map rendering of Chandigarh industrial zone" 
+                  src="/stitch/contact_map.png"
+                />
+                <div className="absolute inset-0 bg-primary/10 pointer-events-none mix-blend-overlay"></div>
+                <div className="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-2xl flex items-center gap-4 border border-outline-variant/10">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-outline uppercase">Alliance HQ</p>
+                    <p className="font-headline font-black text-tertiary">Industrial Area Phase 2</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Trust & Certification Section */}
+        <section className="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div className="space-y-4 group">
+              <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-6">
+                <span className="material-symbols-outlined text-4xl">architecture</span>
+              </div>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Architectural Precision</h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
+                Engineered with absolute geometric accuracy for large-scale industrial infrastructure.
+              </p>
+            </div>
+            
+            <div className="space-y-4 group">
+              <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:-rotate-6">
+                <span className="material-symbols-outlined text-4xl">security</span>
+              </div>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Data Integrity</h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
+                Your project blueprints and communications are protected by industry-standard security protocols.
+              </p>
+            </div>
+            
+            <div className="space-y-4 group">
+              <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-6">
+                <span className="material-symbols-outlined text-4xl">public</span>
+              </div>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Global Delivery</h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
+                Coordinating complex engineering solutions across continents with local expertise.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

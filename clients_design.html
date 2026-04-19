@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "primary-fixed": "#e2dfff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#656464",
+                    "tertiary-fixed": "#e4e2e2",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "tertiary": "#303131",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-surface-variant": "#464651",
+                    "background": "#f9f9f9",
+                    "surface-container-high": "#e8e8e8",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "on-primary-fixed-variant": "#3d3d8b",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "tertiary-container": "#474747",
+                    "on-tertiary-container": "#b6b5b5",
+                    "surface-container-highest": "#e2e2e2",
+                    "outline": "#777682",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "outline-variant": "#c7c5d3",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed": "#0f095f",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-variant": "#e2e2e2",
+                    "primary": "#272674",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "on-primary-container": "#aeafff",
+                    "primary-container": "#3e3e8c",
+                    "surface-tint": "#5556a5",
+                    "primary-fixed-dim": "#c1c1ff",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-fixed": "#e4e2e1",
+                    "secondary": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#c1c1ff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#272674]">Alliance Engineering</div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] tracking-tight">
+<a class="text-[#5f5e5e] hover:text-[#272674] transition-colors duration-200" href="#">Home</a>
+<a class="text-[#5f5e5e] hover:text-[#272674] transition-colors duration-200" href="#">About</a>
+<a class="text-[#5f5e5e] hover:text-[#272674] transition-colors duration-200" href="#">Products</a>
+<a class="text-[#272674] font-bold border-b-2 border-[#272674] pb-1" href="#">Clients</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium scale-95 active:opacity-80 transition-all hover:bg-primary-container">
+                Contact Us
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section with Analytics -->
+<section class="relative py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Global Impact</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-primary leading-tight mb-8">
+                            Built on Trust &amp; <br/>Engineering Excellence.
+                        </h1>
+<p class="text-secondary text-lg max-w-xl leading-relaxed mb-12">
+                            For over three decades, Alliance Engineering has partnered with industry leaders and government institutions to deliver critical infrastructure solutions across the globe.
+                        </p>
+</div>
+<!-- Analytics Bento Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-end h-48">
+<span class="text-4xl font-extrabold text-primary mb-2">500+</span>
+<span class="text-secondary font-medium uppercase tracking-wider text-xs">Total Clients Served</span>
+</div>
+<div class="bg-primary-container p-8 rounded-xl flex flex-col justify-end h-48 text-on-primary">
+<span class="text-4xl font-extrabold mb-2">20+</span>
+<span class="text-primary-fixed opacity-80 font-medium uppercase tracking-wider text-xs">Countries Reached</span>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-end h-48 col-span-2">
+<div class="flex items-center gap-4">
+<span class="text-5xl font-extrabold text-tertiary">30+</span>
+<div class="h-10 w-[1px] bg-outline-variant/30"></div>
+<span class="text-secondary font-medium uppercase tracking-wider text-xs leading-tight">Years of<br/>Excellence</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Aesthetic Blueprint Background Element -->
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<defs>
+<pattern height="10" id="grid" patternunits="userSpaceOnUse" width="10">
+<path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100" width="100"></rect>
+</svg>
+</div>
+</section>
+<!-- Clients Grid Sections -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<!-- Public Organizations -->
+<div class="mb-24">
+<div class="flex items-center gap-6 mb-12">
+<h2 class="text-3xl font-bold text-tertiary tracking-tight">Public Organizations &amp; Government Sector</h2>
+<div class="h-[2px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+<!-- Logos are represented as clean white cards with consistent sizing -->
+<div class="bg-surface-container-lowest h-32 rounded-xl flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all group">
+<img class="max-h-full max-w-full object-contain" data-alt="Official logo of PowerGrid Corporation on a clean white corporate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqwuD9srzgzxjgP8HNmriOBzazPp5xY_A_dicHXyWoufSMFLCkwpMXzfhGw-8XJmXLMRQ4YHcgO4cYB_HoTDOr0D4vcDGIA-AIRHzBH_cY-N0EbbrjgKQUkrPRA9cTi7qttByGS4c2-Htc7QiX1oE5cdW6YxLEt8gGiVIfgAsrMHtjXmR-aSindYPG3Ae7lUmg_lU_xplVAQxf6wKpKubFQGNnK4w24xinMZdc4xYMnN1VfSUYVnh2ns3YTceFWc8wG6VBVjf3dds"/>
+</div>
+<div class="bg-surface-container-lowest h-32 rounded-xl flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+<img class="max-h-full max-w-full object-contain" data-alt="Official logo of Haryana Vidyut Prasaran Nigam on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD35LR08BxYcN2XvPM8A3rdnhQ7m60O8InrYAQ0GHQ9MByhToHmsCFdYDTXFbkstERiCs7ao2I0NKU5GnUCld5OlkLvWF1-hAxw6YcMd71g0AsjoLNA-hcGCWEWmHak_l0uo7H9GZ5bnf4Q8nSyHFTD4CFXO7_Ij2vCiQZ1FrEzRb9kmq0y8-QCBKOiVNfubkcJiFFUItlENg0JFe5FRH1r8f-IQue3Gk1Wbe6V_XWVRTF9k1zqakgCMa9CKLFw-o98hANl9HlMhfk"/>
+</div>
+<div class="bg-surface-container-lowest h-32 rounded-xl flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+<img class="max-h-full max-w-full object-contain" data-alt="Official logo of Bharat Heavy Electricals Limited on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4HFy-vZwNMUc1K2FanEqlk8wcLrbgpmx80hZtr95ZHZ-dD1gMkBQmDzDFelRwvUeAqwTr09NHsMpdfFSKr09pQftqxaZsK-iMLBFpM6SpBRzS7zlKWG6W4aHINGRa2Uobrt0ZOuhkv-cFWZv-ciMk1K4D_uA2skEK6EP_d_kBFNFdVwa9SCi0zOw1wCjekCG7hDshXXzTc6Y63xCGemmwgMbQ-6W-qLYFmHL7poRAvvaEBzzCtIBr3lnPhIevzTnUiFmIuHa7KvI"/>
+</div>
+<div class="bg-surface-container-lowest h-32 rounded-xl flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+<img class="max-h-full max-w-full object-contain" data-alt="Official logo of NTPC Limited energy corporation on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZI6Ol3HOPM0M3Tni8u4vg9GNy1RCXPiyKnBp6TagYppV8jhmRJc5wRdQKjQ1uTWIlO32g0Upch96HtO0uYhr2Ug3z-h5hqJpzXDysyNoI3UuCRcaptOQEzHCfyZYaw7urIpBL-z7dPxGyC32P1DqeuScCPgvhc3R-e553nikTwyUYK5sEd7PVMi5UMpsvTBbEVmsXVA8ybKsMef1w0s87S0j9eEjQ9h9OoFWUJ6HOeI9J6xv6zvGYivuUFCtHugvscycwTiTVSCI"/>
+</div>
+<div class="bg-surface-container-lowest h-32 rounded-xl flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+<img class="max-h-full max-w-full object-contain" data-alt="Official logo of NHPC Limited hydroelectric power corporation on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbg10y7wE1oY5LMU7ghj88ifd9ZtCRm4ceP2xIUif4tQZIHFn19QzAGdKIRGTax5Cbn9LJhU3XgpxLxzTJLIRnh3ZRXWDIYAmn2PieKUbvWi754UBWFiYt0XWoWUrM8M5fye4gL1rk2iJB6cg0-MEPR2C8aGaavESetMn8SIUc_6yyqwE9PWbuxZEC5gHGMSkwaREFLVJDvQJeTZsJ6hq06uG5cJiP5svnTyGGnr2yPHXyeT233oHoCBCcIYnTlTClMAkhKtmbPPU"/>
+</div>
+</div>
+</div>
+<!-- Private Sector -->
+<div class="mb-24">
+<div class="flex items-center gap-6 mb-12">
+<h2 class="text-3xl font-bold text-tertiary tracking-tight">Private Sector &amp; Industrial Enterprise</h2>
+<div class="h-[2px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all shadow-sm">
+<img class="max-h-full max-w-full object-contain" data-alt="JSW Group corporate logo displayed cleanly in a professional industrial context" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8gVJKv0onMzKTydPLNZzIesOxTbqQLk06xF4xonYcArSymK6if6CsMqtriH5ozH2umdmNZDOw7_1CPlCLKvf9tmYzgzga42FjeI9QmBrTsLzdiKHclNp9YNYawXu64t_wusRmD6bjBzwcdq_VjumtwI7jVW1J4GI7VStZXjCvHSvv96ti_43bsZb-SoP7qhiDnxU-bP2DpP709LfwYNkPBDdkQmxrNQbBbF1vSfxQmMrjysPOV-vg09zII4Mna1Z-xVEVigmt1WE"/>
+</div>
+<div class="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all shadow-sm">
+<img class="max-h-full max-w-full object-contain" data-alt="HDFC Bank financial institution logo on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACRyprP5QaNmY4lYkwARbEo7iMXy-XkjY_ehEKKZhP6D-mtLo-XFv7lntPYQpkOYn-LhZCJ9jNdqiON7px8z5Sf17xn32FN5SX6Q0mogk1hl6bcu1Hf1JeWcJt3vZAVIewRBOEocSCrfnfxKYbrFWSVCYGmrqd2967375OMV0J45vcw0gLFJoSu04ZfhaOyuhuqutYWpiM87oktTjW6JjuzGns7tnjlUHJmQL_90kCnfaO5oArEF7FfEk6baM4nH7gEW9fAzA0CKk"/>
+</div>
+<div class="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all shadow-sm">
+<img class="max-h-full max-w-full object-contain" data-alt="Reliance Jio telecommunications logo presented in a high-end corporate style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_WvxTk-M_anOxVBnPDDbfRznn6Bn6SpnwBoPXQM-tJfLWrnFXDdpJiVrEfK7ZhsZEKXa56F7ASrlFQjta-u3R6TUc9JtzbFzxODLPK5N_Lj_gvhntEpWnm3socY45rAM7IyZnsOKH-k3Xh56IRzzSZjfhGvz6z77G-dAIw0Xssd79I9ixdFG4el9lG3HUcHCtgJzwQz1ik0po1EnYLEDISLYJknUNeddQe13OucOVw-tjGviFkawQZ7I6oyBTFokeiAIarcJ8uZs"/>
+</div>
+<div class="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all shadow-sm">
+<img class="max-h-full max-w-full object-contain" data-alt="ESAB welding and cutting equipment manufacturer logo on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-Xqgn_cU8OVFTHlIyKSTLxDSjFmPpe-6IjjlvzXDmWbG90A406vGuD_Pl8UOpmgPX7dxtg5Z4vfF9gtE4m9ZCnDpre3b77pRb4nk8l0BUCgNBZuHOW42uFqk0wqYgrjc_Yh3oPTq-MTC-e9ccIq8lqbCMlqhIfnpKVghoS5XLncl6_KQyN0zKWaAJ-M2SRW5PAIBrcjLv-ph2juTXn0kLpgHiT8HO2TOAdcE6ZcHWj1SKf5QzAbzrGSJskn7fQw5Hy7BdIQ6RRg"/>
+</div>
+</div>
+</div>
+<!-- Educational & Research -->
+<div>
+<div class="flex items-center gap-6 mb-12">
+<h2 class="text-3xl font-bold text-tertiary tracking-tight">Educational &amp; Research Institutions</h2>
+<div class="h-[2px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/20 transition-all group">
+<div class="h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<img class="max-h-full object-contain" data-alt="Official seal of Panjab University academic institution on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNgGsRbr4tN-sWgAj1ZJhfuu26M4TCzzomWkrEi49plQE6WYRVgK7Va4NiBqv2gGnuneEo9LEWQX5tEjlCLHWCVj71VBl7TRivT2soQ4DTtKWSGY_2_FV3xUHuaY8GdE86IAhVE8BgibFYofuPY6mIuY3di3UEqtZeoQiAUC_jX_16b3vWXpC-fza-_Ppx3wYcMMRjclRI6D4WPU7284KLCK-_tWoCQKHYlaz2o8wqPJr2_ooqGNyKOWaE2bMmgs6ar-Hqa5msyw"/>
+</div>
+<h3 class="text-center font-bold text-primary group-hover:text-tertiary transition-colors">Panjab University</h3>
+<p class="text-center text-secondary text-sm mt-2 font-['Inter']">Structural Analysis &amp; Design Partner</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/20 transition-all group">
+<div class="h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<img class="max-h-full object-contain" data-alt="Official logo of Thapar Institute of Engineering and Technology on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuK1oAHt1divFjrX9z9E9BmfoEe4OYciIE4aXv5ZdgxdEw0RPNfvKQOi-3XnqVtTu5rt5cEUfg7Q7Uzc5qoj3YtgnldMZHKAI4BE5zV8U7c3mNJQs5DH0kYIl7dUStqa4XPJxUBf5IRfRy31CIQ1UG_JFQh3bojIq1eqdygidVqOf5G8xyuOrYCAgmwrRnTCiAqP9hiJnyvokk4qe_IhnXSZjFTMCQ3ZnRETKEgMHpS6VQ3Bm0znYHJkZHliidnrKDDqIm1zeYpas"/>
+</div>
+<h3 class="text-center font-bold text-primary group-hover:text-tertiary transition-colors">Thapar University</h3>
+<p class="text-center text-secondary text-sm mt-2 font-['Inter']">Research &amp; Testing Laboratory Collaboration</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/20 transition-all group">
+<div class="h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<img class="max-h-full object-contain" data-alt="Indian School of Business ISB logo on a clean white professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbt9wPeikLoFXR2RiYyFlwqXYGFwuQxC-rSqniC-B18lPzg_xD7j8cYRDeOGtLhYkzimVSPHph9uCp2RJNfqGE8FTGV-hk-Rt5N39Feu1ALSYsqweZfapQcZ3N5v-uRrcD_7RNNXU81DFmT5HLpDrdjhblnkXCbmtjKU2_qx1DzRkeoDoXHcxWyTVTG_HHgZK_Yt3kSW9zhs08LSc7Ar-7o3F0bQUSFeTy8Re993ChvV0HpbN1IHYbDrZ0Vz1yDanUw2H7H-Y4AVs"/>
+</div>
+<h3 class="text-center font-bold text-primary group-hover:text-tertiary transition-colors">Indian School of Business</h3>
+<p class="text-center text-secondary text-sm mt-2 font-['Inter']">Infrastructure Strategic Planning</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<h2 class="text-4xl font-extrabold text-primary mb-6 tracking-tight">Ready to build the future together?</h2>
+<p class="text-secondary text-lg mb-10 max-w-2xl mx-auto">Join our network of prestigious clients and experience the precision of Alliance Engineering.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-xl hover:shadow-primary/20 transition-all">Start a Project</button>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-lg font-bold hover:bg-surface-container-high transition-all">Request Case Studies</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#c7c5d3]/20 bg-[#f3f3f3] text-sm font-['Inter']">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-12 py-16 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="space-y-6">
+<div class="text-lg font-black text-[#303131]">Alliance Engineering</div>
+<p class="text-[#5f5e5e] leading-relaxed max-w-xs">
+                    Pioneering structural integrity and precision engineering for over 30 years. Delivering excellence across government and private sectors.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="space-y-6">
+<h4 class="font-bold text-[#272674] uppercase tracking-widest text-xs">Resources</h4>
+<ul class="space-y-4 text-[#5f5e5e]">
+<li><a class="hover:text-[#272674] transition-colors" href="#">Solutions</a></li>
+<li><a class="hover:text-[#272674] transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-[#272674] transition-colors" href="#">Offices</a></li>
+</ul>
+</div>
+<!-- Contact Column -->
+<div class="space-y-6">
+<h4 class="font-bold text-[#272674] uppercase tracking-widest text-xs">Contact</h4>
+<p class="text-[#5f5e5e]">Corporate Headquarters<br/>Industrial Zone 45<br/>Building Alpha, Suite 200</p>
+<div class="pt-2">
+<a class="text-[#272674] font-medium underline" href="mailto:info@alliance.eng">info@alliance.eng</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 py-8 border-t border-outline-variant/10 text-center md:text-left text-[#5f5e5e] opacity-90">
+            © 2024 Alliance Engineering. All rights reserved.
+        </div>
+</footer>
+</body></html>

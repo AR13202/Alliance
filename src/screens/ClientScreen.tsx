@@ -1,198 +1,226 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-type ClientEntry = {
-  name: string;
-  logo?: string;
-};
-
-type ClientCategory = {
-  title: string;
-  eyebrow: string;
-  description: string;
-  clients: ClientEntry[];
-};
-
-const clientCategories: ClientCategory[] = [
-  {
-    title: "Government Sector",
-    eyebrow: "Public Organizations",
-    description:
-      "Public utilities, institutions, and government-linked organizations that rely on dependable electrical infrastructure.",
-    clients: [
-      {
-        name: "Power Grid Corporation of India Ltd.",
-        logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg",
-      },
-      {
-        name: "Haryana Vidyut Prasaran Nigam Limited",
-        logo: "/client_logos/hvpn.jpeg",
-      },
-      {
-        name: "Uttar Haryana Bijli Vitran Nigam",
-        logo: "/client_logos/uhbvn.png",
-      },
-      {
-        name: "Chandigarh Power Distribution Limited",
-        logo: "/client_logos/Chandigarh_Power_Distribution_Limited.png",
-      },
-      { name: "Panjab University", logo: "/client_logos/pu_logo.png" }
-    ],
-  },
-  {
-    title: "Private Sector",
-    eyebrow: "Industry & Enterprise",
-    description:
-      "Industrial groups, manufacturers, enterprises, infrastructure companies, and commercial organizations served across India.",
-    clients: [
-      { name: "JSW Group", logo: "/client_logos/JSW_Group_Logo.png" },
-      { name: "ESAB India", logo: "/client_logos/esab_logo.png" },
-      { name: "Cheema Boilers", logo: "/client_logos/cbl.png" },
-      { name: "HMT Machine Tools", logo: "/client_logos/hmt_india_logo.png" },
-      { name: "Emco Switchgear", logo: "/client_logos/emco.png" },
-      { name: "JayVee Industries", logo: "/client_logos/jaybee.jpg" },
-      {
-        name: "Taalin Machinery and Robotics Pvt. Ltd.",
-        logo: "/client_logos/taalin.png",
-      },
-      { name: "Van Norman Machine", logo: "/client_logos/van_norman.webp" },
-      { name: "Solken Power", logo: "/client_logos/solken.png" },
-      { name: "GAC Energy & Automation", logo: "/client_logos/GAC.png" },
-      { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
-      { name: "Reliance Jio", logo: "/client_logos/jio.png" },
-      { name: "ABS Fujitsu General Pvt. Ltd.", logo: "/client_logos/ABS.webp" },
-      { name: "Damcosoft", logo: "/client_logos/damcosoft.png" },
-      { name: "JLPL Infrastructure Pvt. Ltd.", logo: "/client_logos/JIPL-logo.png" },
-      { name: "Gilco India Pvt. Ltd.", logo: "/client_logos/Gilco.png" },
-      { name: "PCCL Agro Division", logo: "/client_logos/pccl.png" },
-      { name: "Thapar University", logo: "/client_logos/thapar.png" },
-      {
-        name: "Chandigarh University",
-        logo: "/client_logos/chandigarh-university.webp",
-      },
-      { name: "Lovely Professional University", logo: "/client_logos/lpu.svg" },
-      { name: "Chitkara University", logo: "/client_logos/chitkara-university.webp" },
-      { name: "Indian School of Business", logo: "/client_logos/isb.svg" }
-    ],
-  },
-];
-
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
-}
-
 export default function ClientScreen() {
-  const totalClients = clientCategories.reduce(
-    (sum, category) => sum + category.clients.length,
-    0,
-  );
+  const publicClients = [
+    { name: "POWERGRID", logo: "/stitch/clients/powergrid.png" },
+    { name: "HVPN (Haryana Vidyut Prasaran Nigam)", logo: "/client_logos/hvpn.jpeg" },
+    { name: "DHBVN (Dakshin Haryana Bijli Vitran Nigam)" },
+    { name: "BBMB (Bhakra Beas Management Board)" },
+    { name: "Indian Railways" },
+    { name: "BHEL (Bharat Heavy Electricals Ltd.)", logo: "/stitch/clients/bhel.png" },
+    { name: "UHBVN (Uttar Haryana Bijli Vitran Nigam)", logo: "/client_logos/uhbvn.png" },
+    { name: "Chandigarh Power Distribution Limited", logo: "/client_logos/Chandigarh_Power_Distribution_Limited.png" },
+    { name: "NTPC Limited", logo: "/stitch/clients/ntpc.png" },
+    { name: "NHPC Limited", logo: "/stitch/clients/nhpc.png" },
+  ];
+
+  const privateClients = [
+    { name: "JSW", logo: "/client_logos/JSW_Group_Logo.png" },
+    { name: "L&T (Larsen & Toubro)" },
+    { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
+    { name: "Reliance Jio", logo: "/client_logos/jio.png" },
+    { name: "ESAB India", logo: "/client_logos/esab_logo.png" },
+    { name: "ABS Fujitsu General", logo: "/client_logos/ABS.webp" },
+    { name: "GAC Energy & Automation", logo: "/client_logos/GAC.png" },
+    { name: "Gilco India Pvt. Ltd.", logo: "/client_logos/Gilco.png" },
+    { name: "JIPL Infrastructure", logo: "/client_logos/JIPL-logo.png" },
+    { name: "Cheema Boilers", logo: "/client_logos/cbl.png" },
+    { name: "Damcosoft", logo: "/client_logos/damcosoft.png" },
+    { name: "Emco Switchgear", logo: "/client_logos/emco.png" },
+    { name: "HMT Machine Tools", logo: "/client_logos/hmt_india_logo.png" },
+    { name: "JayVee Industries", logo: "/client_logos/jaybee.jpg" },
+    { name: "PCCL Agro Division", logo: "/client_logos/pccl.png" },
+    { name: "Solken Power", logo: "/client_logos/solken.png" },
+    { name: "Taalin Machinery and Robotics", logo: "/client_logos/taalin.png" },
+    { name: "Van Norman Machine", logo: "/client_logos/van_norman.webp" },
+  ];
+
+  const educationClients = [
+    { name: "Panjab University", logo: "/client_logos/pu_logo.png", desc: "Structural Analysis & Design Partner" },
+    { name: "Thapar University", logo: "/client_logos/thapar.png", desc: "Research & Testing Laboratory Collaboration" },
+    { name: "Indian School of Business (ISB)", logo: "/client_logos/isb.svg", desc: "Infrastructure Strategic Planning" },
+    { name: "Chandigarh University", logo: "/client_logos/chandigarh-university.webp", desc: "Academic Infrastructure Development" },
+    { name: "Chitkara University", logo: "/client_logos/chitkara-university.webp", desc: "Technical Partnership" },
+    { name: "Lovely Professional University (LPU)", logo: "/client_logos/lpu.svg", desc: "Institutional Grid Solutions" },
+  ];
 
   return (
-    <div className="site-page min-h-screen">
+    <div className="bg-surface text-on-surface font-body">
       <Navbar />
 
-      <main className="site-main">
-        <section className="border-b" style={{ borderColor: "var(--site-border)" }}>
-          <div className="container mx-auto px-4 py-14 sm:px-5 lg:px-6 lg:py-18">
-            <div className="max-w-3xl">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300/80">
-                Client Portfolio
+      <main className="pt-16 min-h-screen">
+        {/* Hero Section with Analytics */}
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
+                  Our Global Impact
+                </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tighter text-primary leading-tight mb-6 lg:mb-8 font-headline">
+                  Built on Trust & <br /> Engineering Excellence.
+                </h1>
+                <p className="text-secondary text-lg max-w-xl leading-relaxed mb-12">
+                  For over three decades, Alliance Engineering has partnered with industry leaders and government institutions to deliver critical infrastructure solutions across the globe.
+                </p>
               </div>
-              <h1 className="mt-4 text-[2.4rem] font-semibold leading-tight text-white sm:text-[3.2rem]">
-                Organizations we have proudly served
-              </h1>
-              <p className="site-copy mt-4 max-w-2xl text-[15px] leading-8">
-                Our work supports utilities, industrial groups, institutions,
-                enterprises, and infrastructure developments across India.
-              </p>
+              {/* Analytics Bento Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-end h-48 shadow-sm">
+                  <span className="text-4xl font-extrabold text-primary mb-2">500+</span>
+                  <span className="text-secondary font-medium uppercase tracking-wider text-xs">
+                    Total Clients Served
+                  </span>
+                </div>
+                <div className="bg-primary-container p-8 rounded-xl flex flex-col justify-end h-48 text-white shadow-lg">
+                  <span className="text-4xl font-extrabold mb-2 text-on-primary">20+</span>
+                  <span className="opacity-80 font-medium uppercase tracking-wider text-xs text-on-primary">
+                    Countries Reached
+                  </span>
+                </div>
+                <div className="bg-surface-container-low p-8 rounded-xl flex flex-col justify-end h-48 col-span-2 shadow-sm border border-outline-variant/10">
+                  <div className="flex items-center gap-4">
+                    <span className="text-5xl font-extrabold text-tertiary">30+</span>
+                    <div className="h-10 w-[1px] bg-outline-variant/30"></div>
+                    <span className="text-secondary font-medium uppercase tracking-wider text-xs leading-tight">
+                      Years of
+                      <br />
+                      Excellence
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Aesthetic Blueprint Background Element */}
+          <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+            <svg height="100%" preserveAspectRatio="none" viewBox="0 0 100 100" width="100%">
+              <defs>
+                <pattern height="10" id="grid" patternUnits="userSpaceOnUse" width="10">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"></path>
+                </pattern>
+              </defs>
+              <rect fill="url(#grid)" height="100" width="100"></rect>
+            </svg>
+          </div>
+        </section>
+
+        {/* Clients Grid Sections */}
+        <section className="bg-surface-container-low py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            {/* Public Organizations */}
+            <div className="mb-16 md:mb-24">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-8 md:mb-12 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-3xl font-bold text-tertiary tracking-tight font-headline">
+                  Public Organizations & Government Sector
+                </h2>
+                <div className="h-[2px] w-12 sm:w-auto sm:flex-grow bg-outline-variant/20"></div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                {publicClients.map((client) => (
+                  <div
+                    key={client.name}
+                    className="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-6 transition-all border border-transparent hover:border-primary/10 hover:shadow-md group relative overflow-hidden"
+                  >
+                    {client.logo ? (
+                      <img
+                        className="max-h-full max-w-full object-contain"
+                        alt={client.name}
+                        src={client.logo}
+                      />
+                    ) : (
+                      <span className="font-bold text-center text-primary/80 font-headline">{client.name}</span>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-white text-[8px] text-center py-1 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-xl px-1">
+                      {client.name}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="site-card rounded-[12px] border px-5 py-6">
-                <div className="text-[28px] font-semibold text-white">
-                  {totalClients}+
-                </div>
-                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
-                  Client Organizations
-                </p>
+            {/* Private Sector */}
+            <div className="mb-16 md:mb-24">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-8 md:mb-12 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-3xl font-bold text-tertiary tracking-tight font-headline">
+                  Private Sector & Industrial Enterprise
+                </h2>
+                <div className="h-[2px] w-12 sm:w-auto sm:flex-grow bg-outline-variant/20"></div>
               </div>
-              <div className="site-card rounded-[12px] border px-5 py-6">
-                <div className="text-[28px] font-semibold text-white">
-                  {clientCategories.length}
-                </div>
-                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
-                  Industry Segments
-                </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {privateClients.map((client) => (
+                  <div
+                    key={client.name}
+                    className="bg-surface-container-lowest h-36 rounded-xl flex items-center justify-center p-4 transition-all shadow-sm border border-transparent hover:border-primary/10 hover:shadow-lg group relative overflow-hidden"
+                  >
+                    {client.logo ? (
+                      <img
+                        className="max-h-full max-w-full object-contain"
+                        alt={client.name}
+                        src={client.logo}
+                      />
+                    ) : (
+                      <span className="font-bold text-center text-primary/80 text-sm font-headline">{client.name}</span>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-white text-[7px] text-center py-1 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-xl px-1">
+                      {client.name}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="site-card rounded-[12px] border px-5 py-6">
-                <div className="text-[28px] font-semibold text-white">
-                  India
-                </div>
-                <p className="site-copy mt-2 text-[12px] uppercase tracking-[0.14em]">
-                  Primary Market
-                </p>
+            </div>
+
+            {/* Educational & Research */}
+            <div>
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-8 md:mb-12 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-3xl font-bold text-tertiary tracking-tight font-headline">
+                  Educational & Research Institutions
+                </h2>
+                <div className="h-[2px] w-12 sm:w-auto sm:flex-grow bg-outline-variant/20"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {educationClients.map((client) => (
+                  <div
+                    key={client.name}
+                    className="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 hover:border-primary/20 transition-all group hover:shadow-xl"
+                  >
+                    <div className="h-28 mb-6 flex items-center justify-center transition-all">
+                      <img
+                        className="max-h-full object-contain"
+                        alt={client.name}
+                        src={client.logo}
+                      />
+                    </div>
+                    <h3 className="text-center font-bold text-primary group-hover:text-tertiary transition-colors font-headline">
+                      {client.name}
+                    </h3>
+                    <p className="text-center text-secondary text-sm mt-2 font-body">
+                      {client.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <div className="container mx-auto px-4 py-12 sm:px-5 lg:px-6 lg:py-16">
-            <div className="space-y-10">
-              {clientCategories.map((category) => (
-                <section
-                  key={category.title}
-                  className="site-card rounded-[20px] border p-6 sm:p-8"
-                >
-                  <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-                    <div className="max-w-2xl">
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-300/75">
-                        {category.eyebrow}
-                      </div>
-                      <h2 className="mt-2 text-[1.7rem] font-semibold text-white sm:text-[2rem]">
-                        {category.title}
-                      </h2>
-                      <p className="site-copy mt-3 text-sm leading-7">
-                        {category.description}
-                      </p>
-                    </div>
-                    <div className="site-copy text-[11px] uppercase tracking-[0.16em]">
-                      {category.clients.length} organizations
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                    {category.clients.map((client) => (
-                      <div
-                        key={client.name}
-                        className="site-card group rounded-[14px] border p-4 transition-colors"
-                      >
-                        <div className="flex h-24 items-center justify-center rounded-[12px] bg-white p-4">
-                          {client.logo ? (
-                            <img
-                              src={client.logo}
-                              alt={`${client.name} logo`}
-                              className="h-full w-full object-contain"
-                            />
-                          ) : (
-                            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[linear-gradient(135deg,#dbeafe_0%,#f8fafc_100%)] text-[1.4rem] font-semibold tracking-[0.18em]" style={{ color: "var(--site-primary)" }}>
-                              {getInitials(client.name)}
-                            </div>
-                          )}
-                        </div>
-                        <div className="site-heading mt-4 text-sm font-medium leading-6">
-                          {client.name}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              ))}
+        {/* CTA Section */}
+        <section className="py-16 md:py-24 bg-surface">
+          <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 sm:mb-6 tracking-tight font-headline">
+              Ready to build the future together?
+            </h2>
+            <p className="text-secondary text-lg mb-10 max-w-2xl mx-auto">
+              Join our network of prestigious clients and experience the precision of Alliance Engineering.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-xl hover:shadow-primary/20 transition-all active:scale-95 text-white">
+                Start a Project
+              </button>
+              <button className="bg-secondary-container text-primary px-10 py-4 rounded-lg font-bold hover:bg-surface-container-high transition-all active:scale-95">
+                Request Case Studies
+              </button>
             </div>
           </div>
         </section>
