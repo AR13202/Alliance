@@ -33,6 +33,12 @@ export default function ProductsScreen() {
   const searchQuery = searchParams?.get("query")?.trim() ?? "";
   
   const [currentPage, setCurrentPage] = useState(1);
+  const [localSearch, setLocalSearch] = useState(searchQuery);
+
+  useEffect(() => {
+    setLocalSearch(searchQuery);
+  }, [searchQuery]);
+
   const itemsPerPage = 8;
 
   // Filter products based on category and search query
@@ -79,17 +85,28 @@ export default function ProductsScreen() {
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const query = formData.get("search")?.toString().trim();
-    
     const params = new URLSearchParams(searchParams?.toString() || "");
-    if (query) {
-      params.set("query", query);
+    if (localSearch.trim()) {
+      params.set("query", localSearch.trim());
     } else {
       params.delete("query");
     }
     setCurrentPage(1);
     router.push(`${pathname}?${params.toString()}`);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setLocalSearch(value);
+    
+    const params = new URLSearchParams(searchParams?.toString() || "");
+    if (value.trim()) {
+      params.set("query", value.trim());
+    } else {
+      params.delete("query");
+    }
+    setCurrentPage(1);
+    router.replace(`${pathname}?${params.toString()}`);
   };
 
   return (
@@ -123,7 +140,8 @@ export default function ProductsScreen() {
               <Search className="absolute left-5 w-5 h-5 text-outline group-focus-within:text-primary transition-colors" />
               <input 
                 name="search"
-                defaultValue={searchQuery}
+                value={localSearch}
+                onChange={handleSearchChange}
                 className="w-full pl-14 pr-6 py-5 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline/50 text-lg transition-all shadow-sm" 
                 placeholder="Search catalog for components, systems, or specifications..." 
                 type="text"
@@ -157,22 +175,19 @@ export default function ProductsScreen() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedProducts.length > 0 ? (
             displayedProducts.map((product) => {
-              const voltageSpec = product.specs.find(s => s.parameter.toLowerCase().includes("voltage"))?.specification || "Multiple Ratings";
-              const constructionSpec = product.specs.find(s => s.parameter.toLowerCase().includes("construction"))?.specification || "Industrial Grade";
-
               return (
-                <Link 
+                <div 
                   key={product.id}
-                  href={`/products/${product.id}`}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full border border-outline-variant/10 group"
+                  onClick={() => router.push(`/products/${product.id}`)}
+                  className="bg-white  cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full border border-outline-variant/10 group"
                 >
-                  <div className="relative w-full aspect-[4/3] bg-gradient-to-b from-[#eef2ff] to-white flex items-center justify-center p-8 overflow-hidden">
-                    <span className="absolute top-4 left-4 bg-tertiary text-white text-[9px] font-black px-3 py-1 rounded-full tracking-[0.2em] shadow-lg transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="relative w-full aspect-[4/3] bg-gradient-to-b from-[#eef2ff] to-white flex items-center justify-center overflow-hidden">
+                    {/* <span className="absolute top-4 left-4 bg-tertiary text-white text-[9px] font-black px-3 py-1 rounded-full tracking-[0.2em] shadow-lg transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500 z-10">
                       TOP RATED
-                    </span>
+                    </span> */}
                     <img 
                       alt={product.name} 
-                      className="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+                      className="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
                       src={product.image}
                     />
                     <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -182,28 +197,33 @@ export default function ProductsScreen() {
                       {product.name}
                     </h3>
                     <p className="text-[10px] text-outline font-black uppercase tracking-[0.15em] mb-4">
-                      {constructionSpec} | VOLTAGE: {voltageSpec}
+                      Category: {product.category}
                     </p>
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3 text-secondary text-sm font-medium">
                         <Sparkles className="w-4 h-4 text-primary opacity-40" />
-                        <span>Accuracy Class: {product.specs[0]?.specification}</span>
+                        <span>{product.specs[0]?.parameter}: {product.specs[0]?.specification}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-secondary text-sm font-medium">
+                      {/* <div className="flex items-center gap-3 text-secondary text-sm font-medium">
                         <Sparkles className="w-4 h-4 text-primary opacity-40" />
                         <span>Compliance Certified</span>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="mt-auto pt-6 border-t border-outline-variant/30 flex justify-between items-center">
-                      <button className="text-primary font-black text-[11px] tracking-widest uppercase hover:underline decoration-2 underline-offset-4">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          router.push(`/products/${product.id}#inquiry`);
+                        }}
+                        className="text-primary font-black text-[11px] tracking-widest uppercase hover:underline decoration-2 underline-offset-4">
                         Custom Quote
                       </button>
-                      <button className="text-outline font-black text-[10px] uppercase tracking-[0.2em] group-hover:text-primary transition-colors">
+                      <Link href={`/products/${product.id}`} className="text-outline font-black text-[10px] uppercase tracking-[0.2em] group-hover:text-primary transition-colors">
                         View Product
-                      </button>
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               );
             })
           ) : (

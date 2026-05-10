@@ -28,11 +28,31 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/transformer-oil-filtration-plant/view-1.png",
-            "alt": "Transformer Oil Filtration Plant View 1",
+            "id": "img-qe11ywu",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334159/product-catalog-editor/uxduiaoh4bf6bxeqcrxo.jpg",
+            "alt": "Transformer Oil Filtration Plant",
             "isPrimary": true,
-            "label": "Transformer Oil Filtration Plant View 1"
+            "label": "multimeter",
+            "publicId": "product-catalog-editor/uxduiaoh4bf6bxeqcrxo",
+            "source": "cloudinary"
+          },
+          {
+            "id": "img-uaz4gxo",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334164/product-catalog-editor/erliicsgilbodtvqajhi.png",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": false,
+            "label": "section-2",
+            "publicId": "product-catalog-editor/erliicsgilbodtvqajhi",
+            "source": "cloudinary"
+          },
+          {
+            "id": "img-gt6f989",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334166/product-catalog-editor/vf7rlt5merexcpciz2ij.jpg",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": false,
+            "label": "solid-state-meter",
+            "publicId": "product-catalog-editor/vf7rlt5merexcpciz2ij",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -225,7 +245,8 @@
           "IEC 60296",
           "substation maintenance"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "transformer-oil-filtration-machine",
@@ -245,11 +266,13 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/transformer-oil-filtration-machine/view-1.png",
-            "alt": "Transformer Oil Filtration Machine View 1",
+            "id": "img-uavvsnk",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394014/product-catalog-editor/b5tm5vbgmdj0hqhp4ff9.jpg",
+            "alt": "Transformer Oil Filtration Machine",
             "isPrimary": true,
-            "label": "Transformer Oil Filtration Machine View 1"
+            "label": "img-2",
+            "publicId": "product-catalog-editor/b5tm5vbgmdj0hqhp4ff9",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -420,7 +443,8 @@
           "IEC 60296",
           "on-site maintenance"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "control-transformers",
@@ -441,11 +465,13 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/control-transformers/view-1.png",
-            "alt": "Control Transformers View 1",
+            "id": "img-zigfn4t",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394216/product-catalog-editor/inzir2thsvlx9ooigzxt.png",
+            "alt": "Control Transformers",
             "isPrimary": true,
-            "label": "Control Transformers View 1"
+            "label": "Container",
+            "publicId": "product-catalog-editor/inzir2thsvlx9ooigzxt",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -647,7 +673,8 @@
           "CNC transformer",
           "panel transformer"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "ring-type-current-transformer",
@@ -667,32 +694,13 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/ring-ct/view-1.png",
-            "alt": "Ring Type Current Transformer View 1",
-            "isPrimary": false,
-            "label": "Ring Type Current Transformer View 1"
-          },
-          {
-            "id": "img-2",
-            "url": "/assets/products/ring-ct/view-2.png",
-            "alt": "Ring Type Current Transformer View 2",
-            "isPrimary": false,
-            "label": "Ring Type Current Transformer View 2"
-          },
-          {
-            "id": "img-3",
-            "url": "/assets/products/ring-ct/view-3.png",
-            "alt": "Ring Type Current Transformer View 3",
+            "id": "img-y8rnfx2",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394243/product-catalog-editor/v6y7krgnaxeytuidfijo.png",
+            "alt": "Ring Type Current Transformer",
             "isPrimary": true,
-            "label": "Ring Type Current Transformer View 3"
-          },
-          {
-            "id": "img-4",
-            "url": "/assets/products/ring-ct/view-4.png",
-            "alt": "Ring Type Current Transformer View 4",
-            "isPrimary": false,
-            "label": "Ring Type Current Transformer View 4"
+            "label": "home-section-why-us",
+            "publicId": "product-catalog-editor/v6y7krgnaxeytuidfijo",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -860,7 +868,8 @@
           "metering",
           "protection relay"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "bar-type-current-transformer",
@@ -880,11 +889,13 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/bar-ct/view-1.png",
-            "alt": "Bar Type Current Transformer View 1",
+            "id": "img-icehxrm",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394316/product-catalog-editor/rh6wttjim4g7oz2oagvy.jpg",
+            "alt": "Bar Type Current Transformer",
             "isPrimary": true,
-            "label": "Bar Type Current Transformer View 1"
+            "label": "solid-state-meter",
+            "publicId": "product-catalog-editor/rh6wttjim4g7oz2oagvy",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -1051,7 +1062,8 @@
           "IEC 61869-2",
           "protection CT"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "window-type-current-transformer",
@@ -1071,11 +1083,13 @@
       "media": {
         "images": [
           {
-            "id": "img-1",
-            "url": "/assets/products/window-ct/view-1.png",
-            "alt": "Window Type Current Transformer View 1",
+            "id": "img-nuz1bfu",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394347/product-catalog-editor/zqemlbspe10wbnkub0mj.png",
+            "alt": "Window Type Current Transformer",
             "isPrimary": true,
-            "label": "Window Type Current Transformer View 1"
+            "label": "multimeter",
+            "publicId": "product-catalog-editor/zqemlbspe10wbnkub0mj",
+            "source": "cloudinary"
           }
         ],
         "datasheet": {
@@ -1242,7 +1256,8 @@
           "IEC 61869-2",
           "busbar monitoring"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "wound-type-current-transformer",
@@ -1266,7 +1281,8 @@
             "url": "/assets/products/wound-ct/view-1.png",
             "alt": "Wound Type Current Transformer View 1",
             "isPrimary": true,
-            "label": "Wound Type Current Transformer View 1"
+            "label": "Wound Type Current Transformer View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -1457,7 +1473,8 @@
             "url": "/assets/products/battery-chargers/view-1.png",
             "alt": "Battery Chargers View 1",
             "isPrimary": true,
-            "label": "Battery Chargers View 1"
+            "label": "Battery Chargers View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -1667,7 +1684,8 @@
             "url": "/assets/products/buzzer-hooter-siren/view-1.png",
             "alt": "Buzzer Hooter Siren View 1",
             "isPrimary": true,
-            "label": "Buzzer Hooter Siren View 1"
+            "label": "Buzzer Hooter Siren View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -1875,7 +1893,8 @@
             "url": "/assets/products/digital-analog-meters/view-1.png",
             "alt": "Digital & Analog Meters View 1",
             "isPrimary": true,
-            "label": "Digital & Analog Meters View 1"
+            "label": "Digital & Analog Meters View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -2082,7 +2101,8 @@
             "url": "/assets/products/dc-shunts/view-1.png",
             "alt": "DC Shunts View 1",
             "isPrimary": true,
-            "label": "DC Shunts View 1"
+            "label": "DC Shunts View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -2279,7 +2299,8 @@
             "url": "/assets/products/dimmers-variacs/view-1.png",
             "alt": "Dimmers Variable Transformers Variacs View 1",
             "isPrimary": true,
-            "label": "Dimmers Variable Transformers Variacs View 1"
+            "label": "Dimmers Variable Transformers Variacs View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -2473,7 +2494,8 @@
             "url": "/assets/products/dc-power-pack/view-1.png",
             "alt": "DC Power Pack View 1",
             "isPrimary": true,
-            "label": "DC Power Pack View 1"
+            "label": "DC Power Pack View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -2647,7 +2669,8 @@
             "url": "/assets/products/bus-bar-insulators/view-1.png",
             "alt": "Bus-Bar Insulators View 1",
             "isPrimary": true,
-            "label": "Bus-Bar Insulators View 1"
+            "label": "Bus-Bar Insulators View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {
@@ -2859,7 +2882,8 @@
             "url": "/assets/products/led-indicator/view-1.png",
             "alt": "LED Indicator View 1",
             "isPrimary": true,
-            "label": "LED Indicator View 1"
+            "label": "LED Indicator View 1",
+            "source": "manual"
           }
         ],
         "datasheet": {

@@ -79,13 +79,13 @@ export default function ProductDetailScreen({
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 mb-20">
             {/* Gallery */}
             <div className="space-y-6">
-              <div className="relative aspect-[4/3] bg-gradient-to-br from-[#f8fafc] to-[#eef2ff] rounded-2xl border border-outline-variant/10 overflow-hidden flex items-center justify-center p-12 group">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-[#f8fafc] to-[#eef2ff] rounded-2xl border border-outline-variant/10 overflow-hidden flex items-center justify-center group">
                 <div className="absolute top-6 left-6 flex flex-col gap-2">
-                  <span className="bg-primary text-white text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] shadow-lg">
+                  <span className="bg-primary text-white text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] shadow-lg z-10">
                     {product.status}
                   </span>
                   {product.standard && (
-                    <span className="bg-white/80 backdrop-blur-sm text-secondary text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] border border-outline-variant/20">
+                    <span className="bg-white/80 backdrop-blur-sm text-secondary text-[9px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] border border-outline-variant/20 z-10">
                       {product.standard}
                     </span>
                   )}
@@ -94,7 +94,7 @@ export default function ProductDetailScreen({
                 <img
                   src={allImages[selectedImg]}
                   alt={product.name}
-                  className="max-h-full max-w-full object-contain drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

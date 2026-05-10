@@ -78,6 +78,7 @@ const ContactForm = () => {
             className="h-10 w-full rounded-md border border-border bg-secondary px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder={`Enter your ${label.toLowerCase()}`}
             maxLength={field === "name" ? 100 : 255}
+            required={required}
           />
           {errors[field] && (
             <p className="mt-1 text-xs text-destructive">{errors[field]}</p>
@@ -110,6 +111,7 @@ const ContactForm = () => {
           className="w-full rounded-md border border-border bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none"
           placeholder="Tell us about your requirements..."
           maxLength={2000}
+          required
         />
         {errors.message && (
           <p className="mt-1 text-xs text-destructive">{errors.message}</p>

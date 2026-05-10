@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import {Product, products} from '@/data/products'
 export default function HomeScreen() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -16,6 +16,9 @@ export default function HomeScreen() {
       carouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
   };
+
+  const featuredProducts = products.filter(product => product.isFeaturedProduct).slice(0, 8); // Get top 8 featured products
+
   return (
     <div className="min-h-screen bg-surface selection:bg-primary selection:text-white">
       <Navbar />
@@ -109,7 +112,7 @@ export default function HomeScreen() {
             <div className="relative">
               <div className="aspect-square bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/stitch/about.jpg"
+                  src="/section-2.png"
                   alt="Industrial Precision Component"
                   className="w-full h-full object-cover"
                 />
@@ -242,48 +245,18 @@ export default function HomeScreen() {
               className="flex overflow-x-auto gap-8 snap-x snap-mandatory hide-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              {[
-                {
-                  id: 1,
-                  name: "Solid State Meter",
-                  category: "Energy Systems",
-                  desc: "Advanced industrial power metering with real-time analytics and sub-0.1% accuracy.",
-                  img: "/stitch/meter.png"
-                },
-                {
-                  id: 2,
-                  name: "Digital Multimeter",
-                  category: "Test & Measurement",
-                  desc: "Professional engineering-grade testing equipment for labs and field diagnostics.",
-                  img: "/stitch/multimeter.png"
-                },
-                {
-                  id: 3,
-                  name: "Power Station Unit",
-                  category: "Power Control",
-                  desc: "Robust centralized control units designed for high-availability industrial facilities.",
-                  img: "/stitch/power_station.png"
-                },
-                {
-                  id: 4,
-                  name: "Oil Filtration Plant",
-                  category: "Oil Filtration",
-                  desc: "High-capacity mobile filtration reaching moisture levels below 5 PPM and BDV 70 kV.",
-                  img: "/assets/products/transformer-oil-filtration-plant/view-1.png",
-                  fallback: "/stitch/transformers.jpg"
-                }
-              ].map((product) => (
+              {featuredProducts.map((product) => (
                 <div
                   key={product.id}
                   className="w-[85vw] md:w-[25vw] snap-start bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
                 >
-                  <div className="h-48 bg-surface-container rounded-lg mb-6 flex items-center justify-center p-8">
+                  <div className="h-48 bg-surface-container rounded-lg mb-6 flex items-center justify-center">
                     <img
-                      src={product.img}
+                      src={product.image}
                       alt={product.name}
-                      className="max-h-full max-w-full object-contain"
+                      className="h-full w-full object-cover rounded-md"
                       onError={(e) => {
-                        if (product.fallback) (e.target as HTMLImageElement).src = product.fallback;
+                        if (product.serialNumber) (e.target as HTMLImageElement).src = product.serialNumber;
                       }}
                     />
                   </div>
@@ -294,11 +267,11 @@ export default function HomeScreen() {
                     {product.name}
                   </h3>
                   <p className="text-secondary text-sm mb-8 leading-relaxed line-clamp-2">
-                    {product.desc}
+                    {product.description}
                   </p>
-                  <button className="w-full py-4 border border-outline-variant/50 text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-md font-headline mt-auto">
+                  <Link href={`/products/${product.slug}`} className="text-center w-full py-4 border border-outline-variant/50 text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-md font-headline mt-auto">
                     View Specifications
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -333,8 +306,8 @@ export default function HomeScreen() {
                       <Truck className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">North India’s Fastest</h4>
-                      <p className="text-sm opacity-60">Streamlined manufacturing process designed for rapid deployment.</p>
+                      <h4 className="font-bold text-lg mb-1 font-headline">GeM & IREPS Registered</h4>
+                      <p className="text-sm opacity-60">Pre-registered for government procurement.</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-4">
@@ -359,7 +332,7 @@ export default function HomeScreen() {
               </div>
               <div className="relative hidden md:block">
                 <img
-                  src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=1200&auto=format&fit=crop"
+                  src="/home-section-why-us.png"
                   alt="Technical Excellence"
                   className="rounded-2xl shadow-3xl grayscale opacity-40 mix-blend-screen"
                 />
@@ -412,14 +385,28 @@ export default function HomeScreen() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                        Full Name
+                        Full Name *
                       </label>
                       <input
                         type="text"
                         placeholder="John Doe"
                         className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
+                        required
                       />
                     </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
                         Company Name
@@ -454,6 +441,7 @@ export default function HomeScreen() {
                       placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity, delivery location..."
                       rows={5}
                       className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none resize-none"
+                      required
                     ></textarea>
                   </div>
                   <button

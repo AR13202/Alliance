@@ -42,6 +42,7 @@ export interface Product {
   serialNumber: string;
   modelId: string;
   standard: string;
+  isFeaturedProduct:boolean;
   status: string;
   name: string;
   shortDescription: string;
@@ -159,6 +160,7 @@ function mapProduct(product: RawProduct, index: number): Product {
     modelId: product.modelId,
     standard: product.standard,
     status: product.status,
+    isFeaturedProduct: product.isFeaturedProduct || false,
 
     // Content
     name: product.name,

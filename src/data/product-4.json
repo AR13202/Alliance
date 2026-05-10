@@ -1,0 +1,3080 @@
+{
+  "sourceFile": "Alliance_Catalog_v2.xlsx",
+  "catalogTitle": "Alliance Engineering Company Product Catalog",
+  "categories": [
+    "Manufactured Products",
+    "ALECS Brand Products",
+    "Current Transformers",
+    "Voltage Transformers",
+    "Control Systems",
+    "Other Electrical Products"
+  ],
+  "products": [
+    {
+      "id": "transformer-oil-filtration-plant",
+      "slug": "transformer-oil-filtration-plant",
+      "serialNumber": "1",
+      "modelId": "TRANSFORMER-OIL-FILTRATION-PLANT",
+      "standard": "IS 6034-1989",
+      "status": "IN STOCK",
+      "name": "Transformer Oil Filtration Plant",
+      "shortDescription": "Industrial-grade transformer oil filtration plant for power plants, substations, and refineries.",
+      "description": "High-capacity Transformer Oil Filtration Plant engineered for Power Plants, Substations, Transformer OEMs, Oil Refineries, and Steel/Cement industries. Achieves BDV of 70 kV and moisture below 5 PPM.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Other Electrical Products"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-7fsmeey",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334130/product-catalog-editor/jts7lwnyd8cgckzm6rds.jpg",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": true,
+            "label": "hero_section",
+            "publicId": "product-catalog-editor/jts7lwnyd8cgckzm6rds",
+            "source": "cloudinary"
+          },
+          {
+            "id": "img-qe11ywu",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334159/product-catalog-editor/uxduiaoh4bf6bxeqcrxo.jpg",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": false,
+            "label": "multimeter",
+            "publicId": "product-catalog-editor/uxduiaoh4bf6bxeqcrxo",
+            "source": "cloudinary"
+          },
+          {
+            "id": "img-uaz4gxo",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334164/product-catalog-editor/erliicsgilbodtvqajhi.png",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": false,
+            "label": "section-2",
+            "publicId": "product-catalog-editor/erliicsgilbodtvqajhi",
+            "source": "cloudinary"
+          },
+          {
+            "id": "img-gt6f989",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778334166/product-catalog-editor/vf7rlt5merexcpciz2ij.jpg",
+            "alt": "Transformer Oil Filtration Plant",
+            "isPrimary": false,
+            "label": "solid-state-meter",
+            "publicId": "product-catalog-editor/vf7rlt5merexcpciz2ij",
+            "source": "cloudinary"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/transformer-oil-filtration-plant.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/transformer-oil-filtration-plant.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Flow",
+          "value": "500–10,000 LPH"
+        },
+        {
+          "label": "BDV",
+          "value": "70 kV"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Flow",
+          "specification": "500–10,000 LPH",
+          "unit": null
+        },
+        {
+          "parameter": "Filtration",
+          "specification": "1 micron",
+          "unit": null
+        },
+        {
+          "parameter": "BDV",
+          "specification": "70 kV",
+          "unit": null
+        },
+        {
+          "parameter": "PPM",
+          "specification": "5",
+          "unit": null
+        },
+        {
+          "parameter": "NAS",
+          "specification": "<5",
+          "unit": null
+        },
+        {
+          "parameter": "Dissolved Gas",
+          "specification": "0.1% V/V",
+          "unit": null
+        },
+        {
+          "parameter": "Passes",
+          "specification": "2–3",
+          "unit": null
+        },
+        {
+          "parameter": "Power",
+          "specification": "415V 3Ph 50Hz",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 6034-1989",
+        "IS 335-1993",
+        "IEC 60296",
+        "CE Mark"
+      ],
+      "applications": [
+        {
+          "label": "Power Plants",
+          "verified": true
+        },
+        {
+          "label": "Substations",
+          "verified": true
+        },
+        {
+          "label": "Transformer OEMs",
+          "verified": true
+        },
+        {
+          "label": "Oil Refineries",
+          "verified": true
+        },
+        {
+          "label": "Steel/Cement",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial oil filtration and transformer maintenance installations.",
+      "relatedProducts": [
+        "transformer-oil-filtration-machine",
+        "control-transformers",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Mounting Type",
+          "description": "Skid / Vehicle-Mounted / Trolley-Mounted / Stationary",
+          "details": [
+            "Trolley: 4-wheel heavy-duty steel",
+            "Vehicle: truck/trailer mounted for site use",
+            "Skid: fixed floor skid with lifting lugs",
+            "Stationary: bolted floor mount"
+          ],
+          "standards": [
+            "ISO 4406 (particle count)"
+          ],
+          "applications": [
+            "On-site substation servicing",
+            "Mobile maintenance teams"
+          ]
+        },
+        {
+          "option": "Enclosure",
+          "description": "Weatherproof / Open Type",
+          "details": [
+            "Weatherproof: IP55 GI enclosure, gasket-sealed",
+            "Open: cost-effective, indoor use only",
+            "Material: powder-coated MS or SS304"
+          ],
+          "standards": [
+            "IEC 60529 IP55"
+          ],
+          "applications": [
+            "Outdoor substations",
+            "Indoor workshop use"
+          ]
+        },
+        {
+          "option": "Separator",
+          "description": "Stack Disc Separator (for excess water removal)",
+          "details": [
+            "Removes free/dissolved water below 5 ppm",
+            "Disc stack centrifuge + vacuum dehydration",
+            "For heavily contaminated or flooded transformer oil"
+          ],
+          "standards": [
+            "IS 335-1993"
+          ],
+          "applications": [
+            "Aged transformers",
+            "Flood-affected units",
+            "Oil refineries"
+          ]
+        },
+        {
+          "option": "Flow Capacity",
+          "description": "500 / 1000 / 2000 / 5000 / 10,000 LPH (custom)",
+          "details": [
+            "500 LPH: portable, 1-man operation",
+            "2000 LPH: standard substation use",
+            "10,000 LPH: bulk refinery/plant use",
+            "All capacities available in single/double stage"
+          ],
+          "standards": [
+            "Custom engineering per order"
+          ],
+          "applications": [
+            "All power utility sizes"
+          ]
+        },
+        {
+          "option": "Oil Type",
+          "description": "Transformer Oil / Insulating Oil / Hydraulic Oil",
+          "details": [
+            "Transformer & Insulating oil: mineral-based, IEC 60296",
+            "Hydraulic oil: ISO VG 32–100 grade",
+            "Different filter media per oil type — specify at order"
+          ],
+          "standards": [
+            "IEC 60296",
+            "ISO VG grades"
+          ],
+          "applications": [
+            "Transformer maintenance",
+            "Hydraulic systems"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Transformer Oil Filtration Plant | Alliance Engineering Company",
+        "metaDescription": "Industrial Transformer Oil Filtration Plant achieving BDV 70 kV and PPM 5. IS 6034-1989 and IEC 60296 compliant.",
+        "keywords": [
+          "transformer oil filtration plant",
+          "oil purifier",
+          "BDV",
+          "IEC 60296",
+          "substation maintenance"
+        ]
+      }
+    },
+    {
+      "id": "transformer-oil-filtration-machine",
+      "slug": "transformer-oil-filtration-machine",
+      "serialNumber": "2",
+      "modelId": "TRANSFORMER-OIL-FILTRATION-MACHINE",
+      "standard": "IS 6034-1989",
+      "status": "IN STOCK",
+      "name": "Transformer Oil Filtration Machine",
+      "shortDescription": "Portable and stationary transformer oil filtration machine for on-site and plant use.",
+      "description": "Transformer Oil Filtration Machine available in portable and stationary configurations for Power Plants, Substations, OEMs, and on-site maintenance. Achieves BDV 70 kV with vacuum below -760 mmHg.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Other Electrical Products"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/transformer-oil-filtration-machine/view-1.png",
+            "alt": "Transformer Oil Filtration Machine View 1",
+            "isPrimary": true,
+            "label": "Transformer Oil Filtration Machine View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/transformer-oil-filtration-machine.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/transformer-oil-filtration-machine.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Flow",
+          "value": "500–10,000 LPH"
+        },
+        {
+          "label": "Vacuum",
+          "value": "-760 mmHg"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Flow",
+          "specification": "500–10,000 LPH",
+          "unit": null
+        },
+        {
+          "parameter": "Filtration",
+          "specification": "1–5 micron",
+          "unit": null
+        },
+        {
+          "parameter": "BDV",
+          "specification": "70 kV",
+          "unit": null
+        },
+        {
+          "parameter": "PPM",
+          "specification": "≤5",
+          "unit": null
+        },
+        {
+          "parameter": "Vacuum",
+          "specification": "-760 mmHg",
+          "unit": null
+        },
+        {
+          "parameter": "Dissolved Gas",
+          "specification": "0.1% V/V",
+          "unit": null
+        },
+        {
+          "parameter": "Passes",
+          "specification": "2",
+          "unit": null
+        },
+        {
+          "parameter": "Power",
+          "specification": "415V 3Ph 50Hz",
+          "unit": null
+        },
+        {
+          "parameter": "Noise",
+          "specification": "<80 dB",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 6034-1989",
+        "IEC 60296",
+        "CE Mark"
+      ],
+      "applications": [
+        {
+          "label": "Power Plants",
+          "verified": true
+        },
+        {
+          "label": "Substations",
+          "verified": true
+        },
+        {
+          "label": "OEMs",
+          "verified": true
+        },
+        {
+          "label": "On-site maintenance",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for on-site and plant-based oil filtration and maintenance.",
+      "relatedProducts": [
+        "transformer-oil-filtration-plant",
+        "control-transformers",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Type",
+          "description": "Portable / Stationary",
+          "details": [
+            "Portable: trolley-mounted, <500 kg, 2-wheel handle",
+            "Stationary: floor-bolted, higher flow, larger filter chambers"
+          ],
+          "standards": [
+            "IEC 60529"
+          ],
+          "applications": [
+            "Field service teams",
+            "Fixed plant rooms"
+          ]
+        },
+        {
+          "option": "Stage",
+          "description": "Single Stage / Double Stage",
+          "details": [
+            "Single stage: coarse + fine filtration, up to 5 micron",
+            "Double stage: two vacuum chambers, achieves BDV 70 kV in fewer passes, better moisture removal"
+          ],
+          "standards": [
+            "IEC 60296"
+          ],
+          "applications": [
+            "Standard maintenance",
+            "Heavily degraded oil"
+          ]
+        },
+        {
+          "option": "Control",
+          "description": "Manual / PLC-Controlled / SCADA-Compatible",
+          "details": [
+            "Manual: local switches, analog gauges",
+            "PLC: automatic sequence, alarms, interlocks, HMI touchscreen",
+            "SCADA: Modbus/RS485 output for remote monitoring"
+          ],
+          "standards": [
+            "IEC 61131-3 (PLC)"
+          ],
+          "applications": [
+            "Automated substations",
+            "Remote/unmanned sites"
+          ]
+        },
+        {
+          "option": "Flow Rate",
+          "description": "500 / 1000 / 2000 / 3000 / 5000 / 10,000 LPH",
+          "details": [
+            "Variable flow via VFD/valve control",
+            "Larger ratings require 3-phase 415V supply",
+            "All models include bypass valve for emergency"
+          ],
+          "standards": [
+            "Custom engineering"
+          ],
+          "applications": [
+            "Utilities",
+            "OEM plants"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Transformer Oil Filtration Machine | Alliance Engineering Company",
+        "metaDescription": "Portable and stationary transformer oil filtration machine. BDV 70 kV, vacuum -760 mmHg. IS 6034-1989 and IEC 60296 compliant.",
+        "keywords": [
+          "transformer oil filtration machine",
+          "portable oil purifier",
+          "IEC 60296",
+          "on-site maintenance"
+        ]
+      }
+    },
+    {
+      "id": "control-transformers",
+      "slug": "control-transformers",
+      "serialNumber": "3",
+      "modelId": "CONTROL-TRANSFORMERS",
+      "standard": "IEC 60076",
+      "status": "IN STOCK",
+      "name": "Control Transformers",
+      "shortDescription": "Single and three-phase control transformers for panels, CNC machines, and industrial equipment.",
+      "description": "Control Transformers engineered for Control Panels, Machine Tools, CNC, and Electroplating applications. Available from 25 VA to 25 kVA with Class B/F/H insulation.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Voltage Transformers",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/control-transformers/view-1.png",
+            "alt": "Control Transformers View 1",
+            "isPrimary": true,
+            "label": "Control Transformers View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/control-transformers.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/control-transformers.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Capacity",
+          "value": "25 VA–25 kVA"
+        },
+        {
+          "label": "Efficiency",
+          "value": ">95%"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Capacity",
+          "specification": "25 VA–25 kVA",
+          "unit": null
+        },
+        {
+          "parameter": "Primary",
+          "specification": "415V/230V",
+          "unit": null
+        },
+        {
+          "parameter": "Secondary",
+          "specification": "12–230V",
+          "unit": null
+        },
+        {
+          "parameter": "Insulation Class",
+          "specification": "Class B/F/H",
+          "unit": null
+        },
+        {
+          "parameter": "Efficiency",
+          "specification": ">95%",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤50°C",
+          "unit": null
+        },
+        {
+          "parameter": "Frequency",
+          "specification": "50 Hz",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 1180",
+        "IS 2026",
+        "IEC 60076",
+        "BIS",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Control Panels",
+          "verified": true
+        },
+        {
+          "label": "Machine Tools",
+          "verified": true
+        },
+        {
+          "label": "CNC",
+          "verified": true
+        },
+        {
+          "label": "Electroplating",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial control panel and machine tool applications.",
+      "relatedProducts": [
+        "ring-type-current-transformer",
+        "dimmers-variable-transformers-variacs",
+        "dc-power-pack"
+      ],
+      "customizations": [
+        {
+          "option": "VA Rating",
+          "description": "25 VA / 50 VA / 100 VA / 250 VA / 500 VA / 1 kVA / 5 kVA / 10 kVA / 25 kVA (custom)",
+          "details": [
+            "Smaller VA for relay/pilot circuits",
+            "Larger kVA for motor control panels",
+            "Custom windings for non-standard ratios"
+          ],
+          "standards": [
+            "IS 1180"
+          ],
+          "applications": [
+            "All panel sizes"
+          ]
+        },
+        {
+          "option": "Phase",
+          "description": "Single-Phase / Three-Phase",
+          "details": [
+            "1Ph: most control circuits, 230V secondary",
+            "3Ph: 415V primary, multi-secondary, for large panels",
+            "Auto-transformer variant for ±10% step-up/down"
+          ],
+          "standards": [
+            "IS 2026"
+          ],
+          "applications": [
+            "Standard panels",
+            "Large switchgear"
+          ]
+        },
+        {
+          "option": "Winding Material",
+          "description": "Copper / Aluminium",
+          "details": [
+            "Copper: lower losses, smaller size, better conductivity (preferred)",
+            "Aluminium: lighter weight, lower cost",
+            "Both options fully specified at order"
+          ],
+          "standards": [
+            "IS 1180"
+          ],
+          "applications": [
+            "Standard duty",
+            "Budget builds"
+          ]
+        },
+        {
+          "option": "Enclosure",
+          "description": "Open Type / Enclosed (Sheet Metal) / Resin Cast / Oil-Cooled",
+          "details": [
+            "Open: lowest cost, indoor protected use",
+            "Enclosed MS box: IP21–IP54",
+            "Resin cast: moisture-proof, IP64, outdoor-capable",
+            "Oil-cooled: for higher kVA ratings"
+          ],
+          "standards": [
+            "IEC 60076",
+            "IEC 60529"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor kiosks",
+            "High-duty"
+          ]
+        },
+        {
+          "option": "Insulation Class",
+          "description": "Class B (130°C) / Class F (155°C) / Class H (180°C)",
+          "details": [
+            "Class B: standard use, ambient ≤40°C",
+            "Class F: elevated ambient, VFD panels",
+            "Class H: high-duty, tropical/desert environments"
+          ],
+          "standards": [
+            "IEC 60085"
+          ],
+          "applications": [
+            "Tropical climates",
+            "VFD panels"
+          ]
+        },
+        {
+          "option": "Type",
+          "description": "Fixed Ratio / Variable (Dimmer/Variac)",
+          "details": [
+            "Fixed ratio: standard 2-winding",
+            "Variable: auto-wound 0–270V output, hand-wheel or motorised",
+            "Motorised: remote 0–10V or 4–20 mA control input"
+          ],
+          "standards": [
+            "IS 5142",
+            "IEC 61558"
+          ],
+          "applications": [
+            "Lab",
+            "Electroplating",
+            "Testing"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Control Transformers | Alliance Engineering Company",
+        "metaDescription": "Control Transformers from 25 VA to 25 kVA for panels, CNC, and electroplating. IS 1180, IEC 60076 compliant.",
+        "keywords": [
+          "control transformer",
+          "IS 1180",
+          "IEC 60076",
+          "CNC transformer",
+          "panel transformer"
+        ]
+      }
+    },
+    {
+      "id": "ring-type-current-transformer",
+      "slug": "ring-type-current-transformer",
+      "serialNumber": "4A",
+      "modelId": "RING-TYPE-CURRENT-TRANSFORMER",
+      "standard": "IEC 60044",
+      "status": "IN STOCK",
+      "name": "Ring Type Current Transformer",
+      "shortDescription": "Ring Type Current Transformer engineered for Panels, Substations.",
+      "description": "Ring Type Current Transformer engineered for Panels, Substations. Core Type: Ring: slip-over busbar, no primary winding | Secondary: 1A or 5A.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Current Transformers"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/ring-ct/view-1.png",
+            "alt": "Ring Type Current Transformer View 1",
+            "isPrimary": false,
+            "label": "Ring Type Current Transformer View 1",
+            "source": "manual"
+          },
+          {
+            "id": "img-2",
+            "url": "/assets/products/ring-ct/view-2.png",
+            "alt": "Ring Type Current Transformer View 2",
+            "isPrimary": false,
+            "label": "Ring Type Current Transformer View 2",
+            "source": "manual"
+          },
+          {
+            "id": "img-3",
+            "url": "/assets/products/ring-ct/view-3.png",
+            "alt": "Ring Type Current Transformer View 3",
+            "isPrimary": true,
+            "label": "Ring Type Current Transformer View 3",
+            "source": "manual"
+          },
+          {
+            "id": "img-4",
+            "url": "/assets/products/ring-ct/view-4.png",
+            "alt": "Ring Type Current Transformer View 4",
+            "isPrimary": false,
+            "label": "Ring Type Current Transformer View 4",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/ring-type-current-transformer.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/ring-type-current-transformer.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Core Type",
+          "value": "Ring"
+        },
+        {
+          "label": "Secondary",
+          "value": "1A or 5A"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Core Type",
+          "specification": "Ring: slip-over busbar, no primary winding",
+          "unit": null
+        },
+        {
+          "parameter": "Secondary",
+          "specification": "1A or 5A",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "0.1–5P",
+          "unit": null
+        },
+        {
+          "parameter": "Burden",
+          "specification": "1.5–60 VA",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage Class",
+          "specification": "0.66–11 kV",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤50°C",
+          "unit": null
+        },
+        {
+          "parameter": "Short-time",
+          "specification": "25 kA/1s",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 2705 (Pts 1–4)",
+        "IEC 61869-2",
+        "BIS",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Panels",
+          "verified": true
+        },
+        {
+          "label": "Substations",
+          "verified": true
+        },
+        {
+          "label": "Energy Metering",
+          "verified": true
+        },
+        {
+          "label": "All switchgear types",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial distribution and metering installations.",
+      "relatedProducts": [
+        "bar-type-current-transformer",
+        "window-type-current-transformer",
+        "wound-type-current-transformer",
+        "transformer-oil-filtration-plant"
+      ],
+      "customizations": [
+        {
+          "option": "Accuracy Class",
+          "description": "0.1 / 0.2 / 0.5 / 1.0 (Metering) | 5P / 10P / 15P (Protection)",
+          "details": [
+            "0.1/0.2: revenue metering, energy billing",
+            "0.5/1.0: general panel metering",
+            "5P10/10P10: overcurrent/earth fault protection",
+            "Accuracy class must match relay/meter specs"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "Revenue meters",
+            "Protection relays"
+          ]
+        },
+        {
+          "option": "CT Ratio",
+          "description": "Standard (e.g. 100/5, 200/5, 400/1) or Custom ratio on request",
+          "details": [
+            "Standard ratios in stock",
+            "Non-standard ratios (e.g. 750/5, 1200/1) manufactured on order — 2–3 week lead time",
+            "Multi-ratio CTs (tapped secondary) available"
+          ],
+          "standards": [
+            "IS 2705"
+          ],
+          "applications": [
+            "Replacement CTs",
+            "Unusual loads"
+          ]
+        },
+        {
+          "option": "Voltage Class",
+          "description": "0.66 kV / 3.3 kV / 6.6 kV / 11 kV",
+          "details": [
+            "0.66 kV: LV panels (most common)",
+            "3.3/6.6/11 kV: MV switchgear, must use HV CT with proper BIL rating",
+            "Always specify system voltage at order"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "LV/MV switchgear"
+          ]
+        },
+        {
+          "option": "Installation",
+          "description": "Indoor / Outdoor",
+          "details": [
+            "Indoor: standard resin-cast, IP20",
+            "Outdoor: UV-stabilised resin, weatherproof housing IP54, suitable for kiosk/pole-mount",
+            "Silicon rubber-based housing for polluted environments"
+          ],
+          "standards": [
+            "IEC 60529 IP54"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor kiosks"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Ring Type Current Transformer | Alliance Engineering Company",
+        "metaDescription": "Ring Type Current Transformer engineered for Panels, Substations. Core Type: Ring, Secondary: 1A or 5A. IEC 60044 compliant.",
+        "keywords": [
+          "ring type current transformer",
+          "CT",
+          "IEC 60044",
+          "metering",
+          "protection relay"
+        ]
+      }
+    },
+    {
+      "id": "bar-type-current-transformer",
+      "slug": "bar-type-current-transformer",
+      "serialNumber": "4B",
+      "modelId": "BAR-TYPE-CURRENT-TRANSFORMER",
+      "standard": "IEC 61869-2",
+      "status": "IN STOCK",
+      "name": "Bar Type Current Transformer",
+      "shortDescription": "Bar Type Current Transformer with single-turn primary for high accuracy metering and protection.",
+      "description": "Bar Type Current Transformer with single-turn primary, engineered for Panels, Protection, Energy Metering, and all switchgear types. Secondary: 1A or 5A.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Current Transformers"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/bar-ct/view-1.png",
+            "alt": "Bar Type Current Transformer View 1",
+            "isPrimary": true,
+            "label": "Bar Type Current Transformer View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/bar-type-current-transformer.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/bar-type-current-transformer.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Core Type",
+          "value": "Bar"
+        },
+        {
+          "label": "Secondary",
+          "value": "1A or 5A"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Core Type",
+          "specification": "Bar: single-turn primary, high accuracy",
+          "unit": null
+        },
+        {
+          "parameter": "Secondary",
+          "specification": "1A or 5A",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "0.1–5P",
+          "unit": null
+        },
+        {
+          "parameter": "Burden",
+          "specification": "1.5–60 VA",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage Class",
+          "specification": "0.66–11 kV",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤50°C",
+          "unit": null
+        },
+        {
+          "parameter": "Short-time",
+          "specification": "25 kA/1s",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 2705 (Pts 1–4)",
+        "IEC 61869-2",
+        "BIS",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Panels",
+          "verified": true
+        },
+        {
+          "label": "Protection",
+          "verified": true
+        },
+        {
+          "label": "Energy Metering",
+          "verified": true
+        },
+        {
+          "label": "All switchgear types",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for high-accuracy industrial metering and protection applications.",
+      "relatedProducts": [
+        "ring-type-current-transformer",
+        "window-type-current-transformer",
+        "wound-type-current-transformer",
+        "transformer-oil-filtration-plant"
+      ],
+      "customizations": [
+        {
+          "option": "Accuracy Class",
+          "description": "0.1 / 0.2 / 0.5 / 1.0 (Metering) | 5P / 10P / 15P (Protection)",
+          "details": [
+            "0.1/0.2: revenue metering, energy billing",
+            "0.5/1.0: general panel metering",
+            "5P10/10P10: overcurrent/earth fault protection",
+            "Accuracy class must match relay/meter specs"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "Revenue meters",
+            "Protection relays"
+          ]
+        },
+        {
+          "option": "CT Ratio",
+          "description": "Standard (e.g. 100/5, 200/5, 400/1) or Custom ratio on request",
+          "details": [
+            "Standard ratios in stock",
+            "Non-standard ratios (e.g. 750/5, 1200/1) manufactured on order — 2–3 week lead time",
+            "Multi-ratio CTs (tapped secondary) available"
+          ],
+          "standards": [
+            "IS 2705"
+          ],
+          "applications": [
+            "Replacement CTs",
+            "Unusual loads"
+          ]
+        },
+        {
+          "option": "Voltage Class",
+          "description": "0.66 kV / 3.3 kV / 6.6 kV / 11 kV",
+          "details": [
+            "0.66 kV: LV panels (most common)",
+            "3.3/6.6/11 kV: MV switchgear, must use HV CT with proper BIL rating",
+            "Always specify system voltage at order"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "LV/MV switchgear"
+          ]
+        },
+        {
+          "option": "Installation",
+          "description": "Indoor / Outdoor",
+          "details": [
+            "Indoor: standard resin-cast, IP20",
+            "Outdoor: UV-stabilised resin, weatherproof housing IP54, suitable for kiosk/pole-mount",
+            "Silicon rubber-based housing for polluted environments"
+          ],
+          "standards": [
+            "IEC 60529 IP54"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor kiosks"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Bar Type Current Transformer | Alliance Engineering Company",
+        "metaDescription": "Bar Type Current Transformer with single-turn primary for high accuracy metering and protection. IEC 61869-2 compliant.",
+        "keywords": [
+          "bar type current transformer",
+          "single-turn CT",
+          "IEC 61869-2",
+          "protection CT"
+        ]
+      }
+    },
+    {
+      "id": "window-type-current-transformer",
+      "slug": "window-type-current-transformer",
+      "serialNumber": "4C",
+      "modelId": "WINDOW-TYPE-CURRENT-TRANSFORMER",
+      "standard": "IEC 61869-2",
+      "status": "IN STOCK",
+      "name": "Window Type Current Transformer",
+      "shortDescription": "Window Type Current Transformer with rectangular window for flat busbar installations.",
+      "description": "Window Type Current Transformer with rectangular window for flat busbars, engineered for Panels, Substations, Busbar monitoring, and all switchgear types. Secondary: 1A or 5A.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Current Transformers"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/window-ct/view-1.png",
+            "alt": "Window Type Current Transformer View 1",
+            "isPrimary": true,
+            "label": "Window Type Current Transformer View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/window-type-current-transformer.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/window-type-current-transformer.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Core Type",
+          "value": "Window"
+        },
+        {
+          "label": "Secondary",
+          "value": "1A or 5A"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Core Type",
+          "specification": "Window: rectangular window for flat busbars",
+          "unit": null
+        },
+        {
+          "parameter": "Secondary",
+          "specification": "1A or 5A",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "0.1–5P",
+          "unit": null
+        },
+        {
+          "parameter": "Burden",
+          "specification": "1.5–60 VA",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage Class",
+          "specification": "0.66–11 kV",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤50°C",
+          "unit": null
+        },
+        {
+          "parameter": "Short-time",
+          "specification": "25 kA/1s",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 2705 (Pts 1–4)",
+        "IEC 61869-2",
+        "BIS",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Panels",
+          "verified": true
+        },
+        {
+          "label": "Substations",
+          "verified": true
+        },
+        {
+          "label": "Busbar monitoring",
+          "verified": true
+        },
+        {
+          "label": "All switchgear types",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for flat busbar and switchgear monitoring installations.",
+      "relatedProducts": [
+        "ring-type-current-transformer",
+        "bar-type-current-transformer",
+        "wound-type-current-transformer",
+        "transformer-oil-filtration-plant"
+      ],
+      "customizations": [
+        {
+          "option": "Accuracy Class",
+          "description": "0.1 / 0.2 / 0.5 / 1.0 (Metering) | 5P / 10P / 15P (Protection)",
+          "details": [
+            "0.1/0.2: revenue metering, energy billing",
+            "0.5/1.0: general panel metering",
+            "5P10/10P10: overcurrent/earth fault protection",
+            "Accuracy class must match relay/meter specs"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "Revenue meters",
+            "Protection relays"
+          ]
+        },
+        {
+          "option": "CT Ratio",
+          "description": "Standard (e.g. 100/5, 200/5, 400/1) or Custom ratio on request",
+          "details": [
+            "Standard ratios in stock",
+            "Non-standard ratios (e.g. 750/5, 1200/1) manufactured on order — 2–3 week lead time",
+            "Multi-ratio CTs (tapped secondary) available"
+          ],
+          "standards": [
+            "IS 2705"
+          ],
+          "applications": [
+            "Replacement CTs",
+            "Unusual loads"
+          ]
+        },
+        {
+          "option": "Voltage Class",
+          "description": "0.66 kV / 3.3 kV / 6.6 kV / 11 kV",
+          "details": [
+            "0.66 kV: LV panels (most common)",
+            "3.3/6.6/11 kV: MV switchgear, must use HV CT with proper BIL rating",
+            "Always specify system voltage at order"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "LV/MV switchgear"
+          ]
+        },
+        {
+          "option": "Installation",
+          "description": "Indoor / Outdoor",
+          "details": [
+            "Indoor: standard resin-cast, IP20",
+            "Outdoor: UV-stabilised resin, weatherproof housing IP54, suitable for kiosk/pole-mount",
+            "Silicon rubber-based housing for polluted environments"
+          ],
+          "standards": [
+            "IEC 60529 IP54"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor kiosks"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Window Type Current Transformer | Alliance Engineering Company",
+        "metaDescription": "Window Type Current Transformer for flat busbar installations. IEC 61869-2 and IS 2705 compliant.",
+        "keywords": [
+          "window type current transformer",
+          "flat busbar CT",
+          "IEC 61869-2",
+          "busbar monitoring"
+        ]
+      }
+    },
+    {
+      "id": "wound-type-current-transformer",
+      "slug": "wound-type-current-transformer",
+      "serialNumber": "4D",
+      "modelId": "WOUND-TYPE-CURRENT-TRANSFORMER",
+      "standard": "IEC 61869-2",
+      "status": "IN STOCK",
+      "name": "Wound Type Current Transformer",
+      "shortDescription": "Wound Type Current Transformer with multiple-turn design for small primary current measurement.",
+      "description": "Wound Type Current Transformer with multiple-turn primary for very small primary currents, engineered for Precision Metering, Protection, Low-current circuits, and all switchgear types.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Current Transformers"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/wound-ct/view-1.png",
+            "alt": "Wound Type Current Transformer View 1",
+            "isPrimary": true,
+            "label": "Wound Type Current Transformer View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/wound-type-current-transformer.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/wound-type-current-transformer.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Core Type",
+          "value": "Wound"
+        },
+        {
+          "label": "Secondary",
+          "value": "1A or 5A"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Core Type",
+          "specification": "Wound: multiple-turn, for very small primary currents",
+          "unit": null
+        },
+        {
+          "parameter": "Secondary",
+          "specification": "1A or 5A",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "0.1–5P",
+          "unit": null
+        },
+        {
+          "parameter": "Burden",
+          "specification": "1.5–60 VA",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage Class",
+          "specification": "0.66–11 kV",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤50°C",
+          "unit": null
+        },
+        {
+          "parameter": "Short-time",
+          "specification": "25 kA/1s",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 2705 (Pts 1–4)",
+        "IEC 61869-2",
+        "BIS",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Precision metering",
+          "verified": true
+        },
+        {
+          "label": "Protection",
+          "verified": true
+        },
+        {
+          "label": "Low-current circuits",
+          "verified": true
+        },
+        {
+          "label": "All switchgear types",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for precision low-current metering and protection installations.",
+      "relatedProducts": [
+        "ring-type-current-transformer",
+        "bar-type-current-transformer",
+        "window-type-current-transformer",
+        "transformer-oil-filtration-plant"
+      ],
+      "customizations": [
+        {
+          "option": "Accuracy Class",
+          "description": "0.1 / 0.2 / 0.5 / 1.0 (Metering) | 5P / 10P / 15P (Protection)",
+          "details": [
+            "0.1/0.2: revenue metering, energy billing",
+            "0.5/1.0: general panel metering",
+            "5P10/10P10: overcurrent/earth fault protection",
+            "Accuracy class must match relay/meter specs"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "Revenue meters",
+            "Protection relays"
+          ]
+        },
+        {
+          "option": "CT Ratio",
+          "description": "Standard (e.g. 100/5, 200/5, 400/1) or Custom ratio on request",
+          "details": [
+            "Standard ratios in stock",
+            "Non-standard ratios (e.g. 750/5, 1200/1) manufactured on order — 2–3 week lead time",
+            "Multi-ratio CTs (tapped secondary) available"
+          ],
+          "standards": [
+            "IS 2705"
+          ],
+          "applications": [
+            "Replacement CTs",
+            "Unusual loads"
+          ]
+        },
+        {
+          "option": "Voltage Class",
+          "description": "0.66 kV / 3.3 kV / 6.6 kV / 11 kV",
+          "details": [
+            "0.66 kV: LV panels (most common)",
+            "3.3/6.6/11 kV: MV switchgear, must use HV CT with proper BIL rating",
+            "Always specify system voltage at order"
+          ],
+          "standards": [
+            "IEC 61869-2",
+            "IS 2705"
+          ],
+          "applications": [
+            "LV/MV switchgear"
+          ]
+        },
+        {
+          "option": "Installation",
+          "description": "Indoor / Outdoor",
+          "details": [
+            "Indoor: standard resin-cast, IP20",
+            "Outdoor: UV-stabilised resin, weatherproof housing IP54, suitable for kiosk/pole-mount",
+            "Silicon rubber-based housing for polluted environments"
+          ],
+          "standards": [
+            "IEC 60529 IP54"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor kiosks"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Wound Type Current Transformer | Alliance Engineering Company",
+        "metaDescription": "Wound Type Current Transformer for small primary current measurement. IEC 61869-2 and IS 2705 compliant.",
+        "keywords": [
+          "wound type current transformer",
+          "low current CT",
+          "IEC 61869-2",
+          "precision metering CT"
+        ]
+      }
+    },
+    {
+      "id": "battery-chargers",
+      "slug": "battery-chargers",
+      "serialNumber": "5",
+      "modelId": "BATTERY-CHARGERS",
+      "standard": "IS 8320",
+      "status": "IN STOCK",
+      "name": "Battery Chargers",
+      "shortDescription": "Industrial battery chargers for substations, telecom, solar, and UPS applications.",
+      "description": "Industrial Battery Chargers with Float + Boost + CCCV modes for Substations, Telecom, UPS, Solar, and Genset Panels. Input: 220–240V AC, Output: 12/24/48V DC.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/battery-chargers/view-1.png",
+            "alt": "Battery Chargers View 1",
+            "isPrimary": true,
+            "label": "Battery Chargers View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/battery-chargers.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/battery-chargers.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Output",
+          "value": "12/24/48V DC"
+        },
+        {
+          "label": "Efficiency",
+          "value": "≥88%"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Input",
+          "specification": "220–240V AC, 50 Hz",
+          "unit": null
+        },
+        {
+          "parameter": "Output",
+          "specification": "12/24/48V DC",
+          "unit": null
+        },
+        {
+          "parameter": "Current",
+          "specification": "5–100A",
+          "unit": null
+        },
+        {
+          "parameter": "Modes",
+          "specification": "Float + Boost + CCCV",
+          "unit": null
+        },
+        {
+          "parameter": "Efficiency",
+          "specification": "≥88%",
+          "unit": null
+        },
+        {
+          "parameter": "Protections",
+          "specification": "OVP/UVP/OCP/Reverse polarity/OTP",
+          "unit": null
+        },
+        {
+          "parameter": "MTBF",
+          "specification": "≥50,000h",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 8320",
+        "IEC 60068",
+        "CE",
+        "RoHS"
+      ],
+      "applications": [
+        {
+          "label": "Substations",
+          "verified": true
+        },
+        {
+          "label": "Telecom",
+          "verified": true
+        },
+        {
+          "label": "UPS",
+          "verified": true
+        },
+        {
+          "label": "Solar",
+          "verified": true
+        },
+        {
+          "label": "Genset Panels",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial substation, telecom, and renewable energy installations.",
+      "relatedProducts": [
+        "dc-power-pack",
+        "digital-analog-meters",
+        "dc-shunts"
+      ],
+      "customizations": [
+        {
+          "option": "Output Voltage",
+          "description": "12V / 24V / 36V / 48V / 72V / 110V DC",
+          "details": [
+            "12V: car batteries, small UPS",
+            "24V: industrial controls, telecom",
+            "48V: solar/telecom standard",
+            "72V: traction/EV",
+            "110V DC: railway, substation",
+            "Custom voltages on request"
+          ],
+          "standards": [
+            "IS 8320"
+          ],
+          "applications": [
+            "All battery systems"
+          ]
+        },
+        {
+          "option": "Charging Current",
+          "description": "5A / 10A / 20A / 30A / 50A / 100A (adjustable)",
+          "details": [
+            "Adjustable current via front-panel pot or DIP switch",
+            "Higher current = faster charge but requires larger wire and fuse",
+            "Set to C/10 rate for trickle/float, C/5 for boost"
+          ],
+          "standards": [
+            "IEC 60623"
+          ],
+          "applications": [
+            "Battery bank sizing"
+          ]
+        },
+        {
+          "option": "Type",
+          "description": "Manual (Transformer-based) / Automatic SMPS / Float-Boost Automatic",
+          "details": [
+            "Manual: simple, no auto-cutoff, low cost",
+            "Automatic SMPS: PFC, regulated, auto float/boost switch",
+            "Float-Boost: two-stage constant current then constant voltage, safest for battery life"
+          ],
+          "standards": [
+            "IEC 60896-21"
+          ],
+          "applications": [
+            "Long-life battery systems"
+          ]
+        },
+        {
+          "option": "Mounting",
+          "description": "Panel Mount / Wall Mount / Floor Stand / Rack Mount",
+          "details": [
+            "Panel: 19-inch rackmount (1U/2U) or DIN rail",
+            "Wall bracket with safety enclosure",
+            "Floor: for >50A chargers with ventilation",
+            "All options with lockable door available"
+          ],
+          "standards": [
+            "IEC 60439"
+          ],
+          "applications": [
+            "Telecom racks",
+            "Substation panels"
+          ]
+        },
+        {
+          "option": "Display",
+          "description": "No Display / LED Indicators / Digital Ammeter+Voltmeter / LCD Status Panel",
+          "details": [
+            "LED: MAINS ON / BOOST / FLOAT / FAULT 3-LED strip",
+            "Digital: 4-digit LED voltmeter + ammeter",
+            "LCD: state of charge %, timer, fault log"
+          ],
+          "standards": [
+            "—"
+          ],
+          "applications": [
+            "Site monitoring",
+            "Unattended operation"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Battery Chargers | Alliance Engineering Company",
+        "metaDescription": "Industrial battery chargers with Float+Boost+CCCV modes. IS 8320, IEC 60068, CE, RoHS compliant.",
+        "keywords": [
+          "battery charger",
+          "IS 8320",
+          "float boost charger",
+          "substation battery charger",
+          "SMPS charger"
+        ]
+      }
+    },
+    {
+      "id": "buzzer-hooter-siren",
+      "slug": "buzzer-hooter-siren",
+      "serialNumber": "6",
+      "modelId": "BUZZER-HOOTER-SIREN",
+      "standard": "IEC 60849",
+      "status": "IN STOCK",
+      "name": "Buzzer, Hooter & Siren",
+      "shortDescription": "Industrial buzzers, hooters, and sirens for control panels, emergency, and factory alarm systems.",
+      "description": "Industrial Buzzer, Hooter & Siren range for Control Panels, Emergency, Fire Alarm, and Factory applications. Operating voltage: 12–415V AC/DC, Sound: 85–115 dB.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/buzzer-hooter-siren/view-1.png",
+            "alt": "Buzzer Hooter Siren View 1",
+            "isPrimary": true,
+            "label": "Buzzer Hooter Siren View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/buzzer-hooter-siren.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/buzzer-hooter-siren.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Sound",
+          "value": "85–115 dB @ 1m"
+        },
+        {
+          "label": "Voltage",
+          "value": "12–415V AC/DC"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Voltage",
+          "specification": "12–415V AC/DC",
+          "unit": null
+        },
+        {
+          "parameter": "Sound",
+          "specification": "85–115 dB @ 1m",
+          "unit": null
+        },
+        {
+          "parameter": "Range",
+          "specification": "50–500m",
+          "unit": null
+        },
+        {
+          "parameter": "IP Rating",
+          "specification": "IP20–IP65",
+          "unit": null
+        },
+        {
+          "parameter": "Temp",
+          "specification": "0–60°C",
+          "unit": null
+        },
+        {
+          "parameter": "Body",
+          "specification": "ABS/PVC/Metal",
+          "unit": null
+        },
+        {
+          "parameter": "Mounting",
+          "specification": "Panel/Surface/Wall",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 9000",
+        "IEC 60849",
+        "IP55/IP65"
+      ],
+      "applications": [
+        {
+          "label": "Control Panels",
+          "verified": true
+        },
+        {
+          "label": "Emergency",
+          "verified": true
+        },
+        {
+          "label": "Fire Alarm",
+          "verified": true
+        },
+        {
+          "label": "Factories",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial alarm, emergency, and fire detection installations.",
+      "relatedProducts": [
+        "led-indicator",
+        "digital-analog-meters",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Type",
+          "description": "Electronic Buzzer / Electronic Hooter / Motor Siren / Bell",
+          "details": [
+            "Buzzer: piezo, 85–95 dB, low current (<50 mA)",
+            "Electronic Hooter: 95–105 dB, panel cutout 72×72 mm",
+            "Motor Siren: 110–120 dB, high-range outdoor",
+            "Bell: mechanical, 85 dB"
+          ],
+          "standards": [
+            "IEC 60849"
+          ],
+          "applications": [
+            "Light alarm",
+            "Medium",
+            "Industrial outdoor"
+          ]
+        },
+        {
+          "option": "Operating Voltage",
+          "description": "12V DC / 24V DC / 48V DC / 110V AC / 230V AC / 415V AC",
+          "details": [
+            "Must match panel control voltage exactly",
+            "DC models: polarity-sensitive, mark +/- terminals",
+            "AC models: neutral + phase, no polarity",
+            "415V 3Ph: motor siren type only"
+          ],
+          "standards": [
+            "IEC 60664"
+          ],
+          "applications": [
+            "All panel voltages"
+          ]
+        },
+        {
+          "option": "Tone",
+          "description": "Single-Tone / Multi-Tone / Pulsed / Wailing (Siren)",
+          "details": [
+            "Single-tone: 1000 Hz continuous",
+            "Multi-tone: up to 8 programmable tones",
+            "Pulsed: on/off 0.5s cycle, intermittent alarm",
+            "Wailing: frequency sweep 500–1500 Hz, emergency"
+          ],
+          "standards": [
+            "EN 457 (audible signals)"
+          ],
+          "applications": [
+            "Different alarm priorities"
+          ]
+        },
+        {
+          "option": "Mounting",
+          "description": "Panel Cutout / Surface Mount / Wall Mount / DIN Rail",
+          "details": [
+            "Panel cutout: 72×72 or 96×96 mm standard",
+            "Surface: screw-boss base plate",
+            "Wall: bracket mount, outdoor use",
+            "DIN rail: electronic buzzer clip-on type"
+          ],
+          "standards": [
+            "DIN 43700"
+          ],
+          "applications": [
+            "Indoor panels",
+            "Outdoor"
+          ]
+        },
+        {
+          "option": "Option",
+          "description": "With / Without Flasher Light | With / Without Acknowledgement Switch",
+          "details": [
+            "Flasher: built-in 10W red LED strobe, 1–2 Hz",
+            "Ack switch: latching contact to silence alarm while fault persists — mandatory for process plants",
+            "Waterproof ack switch option"
+          ],
+          "standards": [
+            "IEC 60947-5-1"
+          ],
+          "applications": [
+            "Process plants",
+            "OSHA requirement"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Buzzer, Hooter & Siren | Alliance Engineering Company",
+        "metaDescription": "Industrial buzzers, hooters and sirens 85–115 dB for panels, emergency and fire alarm. IS 9000, IEC 60849 compliant.",
+        "keywords": [
+          "industrial buzzer",
+          "hooter",
+          "siren",
+          "IEC 60849",
+          "panel alarm"
+        ]
+      }
+    },
+    {
+      "id": "digital-analog-meters",
+      "slug": "digital-analog-meters",
+      "serialNumber": "7",
+      "modelId": "DIGITAL-ANALOG-METERS",
+      "standard": "IS 1248",
+      "status": "IN STOCK",
+      "name": "Digital & Analog Meters",
+      "shortDescription": "Panel-mount digital and analog meters for voltage, current, frequency, and power factor measurement.",
+      "description": "Digital and Analog Meters for Panels, Electricity Boards, Solar, and OEM applications. Types include Ammeter, Voltmeter, Frequency, VAF, kV, DPM. Accuracy Class 0.5–2.5.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "ALECS Brand Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/digital-analog-meters/view-1.png",
+            "alt": "Digital & Analog Meters View 1",
+            "isPrimary": true,
+            "label": "Digital & Analog Meters View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/digital-analog-meters.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/digital-analog-meters.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Accuracy",
+          "value": "Class 0.5–2.5"
+        },
+        {
+          "label": "Sizes",
+          "value": "48×48 to 144×144 mm"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Types",
+          "specification": "Ammeter/Voltmeter/Hz/VAF/KV/DPM",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "Class 0.5–2.5",
+          "unit": null
+        },
+        {
+          "parameter": "Sizes",
+          "specification": "48×48 / 72×72 / 96×96 / 144×144 mm",
+          "unit": null
+        },
+        {
+          "parameter": "Standard",
+          "specification": "IS 1248",
+          "unit": null
+        },
+        {
+          "parameter": "Input",
+          "specification": "CT (5A) or direct",
+          "unit": null
+        },
+        {
+          "parameter": "Temp",
+          "specification": "-10 to +55°C",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 1248",
+        "IEC 60051",
+        "IS 13779",
+        "CE",
+        "BIS"
+      ],
+      "applications": [
+        {
+          "label": "Panels",
+          "verified": true
+        },
+        {
+          "label": "Electricity Boards",
+          "verified": true
+        },
+        {
+          "label": "Solar",
+          "verified": true
+        },
+        {
+          "label": "OEM",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for panel metering, solar monitoring, and OEM integration.",
+      "relatedProducts": [
+        "dc-shunts",
+        "ring-type-current-transformer",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Display Type",
+          "description": "Analog Moving Iron / Analog Moving Coil / Digital LED / Digital LCD with Bargraph",
+          "details": [
+            "Analog MI: rugged, no aux power, AC only",
+            "Analog MC: DC only, mirror scale",
+            "Digital LED: 4-digit, bright, visible 10m",
+            "LCD Bargraph: compact, multi-parameter, backlit"
+          ],
+          "standards": [
+            "IS 1248",
+            "IEC 60051"
+          ],
+          "applications": [
+            "All panel types"
+          ]
+        },
+        {
+          "option": "Meter Function",
+          "description": "Voltmeter / Ammeter / Frequency Meter / VAF (3-in-1) / kV Meter / Power Factor Meter",
+          "details": [
+            "Voltmeter: 0–600V range",
+            "Ammeter: 0–5A (via CT) or direct 0–100A",
+            "Frequency: 45–65 Hz",
+            "VAF: voltage + ampere + frequency in one unit",
+            "kV: for HT panels (via PT)"
+          ],
+          "standards": [
+            "IS 1248"
+          ],
+          "applications": [
+            "Standard panels",
+            "HT panels"
+          ]
+        },
+        {
+          "option": "Panel Size",
+          "description": "48×48 / 72×72 / 96×96 / 144×144 mm (DIN standard)",
+          "details": [
+            "48×48: sub-panel, compact retrofit",
+            "72×72: standard small panel",
+            "96×96: most common, best visibility",
+            "144×144: large switchboard, analog preferred"
+          ],
+          "standards": [
+            "DIN 43700",
+            "IS 1248"
+          ],
+          "applications": [
+            "All panel sizes"
+          ]
+        },
+        {
+          "option": "Phase",
+          "description": "Single Phase / Three Phase (3Ph 3W / 3Ph 4W)",
+          "details": [
+            "1Ph: simple circuits, 230V",
+            "3Ph 3W: balanced industrial loads",
+            "3Ph 4W: unbalanced loads with neutral — most industrial panels use this"
+          ],
+          "standards": [
+            "IS 13779"
+          ],
+          "applications": [
+            "Industrial panels"
+          ]
+        },
+        {
+          "option": "Communication",
+          "description": "No Comm / RS485 Modbus RTU (digital models only)",
+          "details": [
+            "Modbus RTU: read V/A/Hz/PF remotely from PLC/SCADA",
+            "Baud rate: 1200–9600 bps",
+            "Address: user-programmable 1–247",
+            "Requires 2-wire RS485 + GND"
+          ],
+          "standards": [
+            "Modbus RTU",
+            "EIA-485"
+          ],
+          "applications": [
+            "SCADA integration",
+            "BMS"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Digital & Analog Meters | Alliance Engineering Company",
+        "metaDescription": "Panel-mount digital and analog meters for voltage, current, frequency. IS 1248, IEC 60051 compliant.",
+        "keywords": [
+          "digital meter",
+          "analog meter",
+          "IS 1248",
+          "ammeter",
+          "voltmeter",
+          "panel meter"
+        ]
+      }
+    },
+    {
+      "id": "dc-shunts",
+      "slug": "dc-shunts",
+      "serialNumber": "8",
+      "modelId": "DC-SHUNTS",
+      "standard": "IEC 60051",
+      "status": "IN STOCK",
+      "name": "DC Shunts",
+      "shortDescription": "Manganin alloy DC shunts for high-accuracy current measurement in industrial applications.",
+      "description": "Manganin alloy DC Shunts for Electroplating, Welding, DC Drives, Battery, and Solar applications. Current range: 10A–10,000A, mV Output: 50/75/100 mV.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "ALECS Brand Products"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/dc-shunts/view-1.png",
+            "alt": "DC Shunts View 1",
+            "isPrimary": true,
+            "label": "DC Shunts View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/dc-shunts.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/dc-shunts.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Current",
+          "value": "10A–10,000A"
+        },
+        {
+          "label": "Accuracy",
+          "value": "0.2–1.0%"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Material",
+          "specification": "Manganin alloy",
+          "unit": null
+        },
+        {
+          "parameter": "Current",
+          "specification": "10A–10,000A",
+          "unit": null
+        },
+        {
+          "parameter": "mV Output",
+          "specification": "50/75/100 mV",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "0.2–1.0%",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Coeff",
+          "specification": "≤15 ppm/°C",
+          "unit": null
+        },
+        {
+          "parameter": "Max Temp",
+          "specification": "125°C",
+          "unit": null
+        },
+        {
+          "parameter": "Rated Load",
+          "specification": "≤66% continuous",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IEC 60051",
+        "DIN 43703",
+        "IEC 60477",
+        "IS 1248"
+      ],
+      "applications": [
+        {
+          "label": "Electroplating",
+          "verified": true
+        },
+        {
+          "label": "Welding",
+          "verified": true
+        },
+        {
+          "label": "DC Drives",
+          "verified": true
+        },
+        {
+          "label": "Battery",
+          "verified": true
+        },
+        {
+          "label": "Solar",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for high-current DC measurement in industrial and solar installations.",
+      "relatedProducts": [
+        "digital-analog-meters",
+        "battery-chargers",
+        "dc-power-pack"
+      ],
+      "customizations": [
+        {
+          "option": "Current Rating",
+          "description": "10A / 25A / 50A / 100A / 200A / 500A / 1000A / 2000A / 5000A / 10,000A",
+          "details": [
+            "Lower ratings (10–50A): small PCB/panel shunts",
+            "100–500A: standard industrial",
+            "1000A+: busbar-mounted, large copper sections",
+            "All ratings for 50/75/100 mV output"
+          ],
+          "standards": [
+            "IEC 60051",
+            "DIN 43703"
+          ],
+          "applications": [
+            "All DC current measurement"
+          ]
+        },
+        {
+          "option": "Millivolt Drop",
+          "description": "50 mV / 75 mV / 100 mV at rated current",
+          "details": [
+            "50 mV: lowest power loss, preferred for high-current",
+            "75 mV: DIN standard, most common",
+            "100 mV: highest signal, better for cheap meters",
+            "All compatible with ALECS digital meters"
+          ],
+          "standards": [
+            "DIN 43703"
+          ],
+          "applications": [
+            "Power loss sensitive",
+            "Standard",
+            "Meter compatibility"
+          ]
+        },
+        {
+          "option": "Accuracy Class",
+          "description": "Class 0.2 / Class 0.5 / Class 1.0",
+          "details": [
+            "Class 0.2: precision lab/test use",
+            "Class 0.5: revenue metering, solar",
+            "Class 1.0: general industrial monitoring",
+            "Higher accuracy = tighter alloy tolerance, higher cost"
+          ],
+          "standards": [
+            "IEC 60051"
+          ],
+          "applications": [
+            "Precision vs. cost trade-off"
+          ]
+        },
+        {
+          "option": "Mounting",
+          "description": "Panel / Busbar Direct / Insulated Base / External (floor-standing for >2000A)",
+          "details": [
+            "Panel mount: enclosed, terminals inside panel",
+            "Busbar direct: bolt-on for busbars >500A",
+            "Insulated base: 1000V isolation from chassis",
+            "Floor-standing: for 5000A+ with forced cooling"
+          ],
+          "standards": [
+            "IEC 60529"
+          ],
+          "applications": [
+            "Panel vs busbar installation"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "DC Shunts | Alliance Engineering Company",
+        "metaDescription": "Manganin alloy DC Shunts 10A–10,000A with 50/75/100 mV output. IEC 60051, DIN 43703 compliant.",
+        "keywords": [
+          "DC shunt",
+          "manganin shunt",
+          "IEC 60051",
+          "DIN 43703",
+          "current measurement shunt"
+        ]
+      }
+    },
+    {
+      "id": "dimmers-variable-transformers-variacs",
+      "slug": "dimmers-variable-transformers-variacs",
+      "serialNumber": "9",
+      "modelId": "DIMMERS-VARIABLE-TRANSFORMERS-VARIACS",
+      "standard": "IEC 61558",
+      "status": "IN STOCK",
+      "name": "Dimmers (Variable Transformers / Variacs) - abcxyz",
+      "shortDescription": "Single and three-phase variable transformers (variacs) for lab, electroplating, and heating applications.",
+      "description": "Variable Transformers (Variacs/Dimmers) for Lab, Electroplating, Heating, and Motor Testing applications. Output: 0–270V AC, Rating: 0.5–20 kVA.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Voltage Transformers",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/dimmers-variacs/view-1.png",
+            "alt": "Dimmers Variable Transformers Variacs View 1",
+            "isPrimary": true,
+            "label": "Dimmers Variable Transformers Variacs View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/dimmers-variable-transformers-variacs.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/dimmers-variable-transformers-variacs.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Output",
+          "value": "0–270V AC"
+        },
+        {
+          "label": "Rating",
+          "value": "0.5–20 kVA"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Input",
+          "specification": "230V AC 1Ph / 415V 3Ph 50 Hz",
+          "unit": null
+        },
+        {
+          "parameter": "Output",
+          "specification": "0–270V AC",
+          "unit": null
+        },
+        {
+          "parameter": "Rating",
+          "specification": "0.5–20 kVA",
+          "unit": null
+        },
+        {
+          "parameter": "Efficiency",
+          "specification": ">95%",
+          "unit": null
+        },
+        {
+          "parameter": "Duty",
+          "specification": "Continuous",
+          "unit": null
+        },
+        {
+          "parameter": "Rotation",
+          "specification": "300°",
+          "unit": null
+        },
+        {
+          "parameter": "Temp Rise",
+          "specification": "≤55°C",
+          "unit": null
+        },
+        {
+          "parameter": "Insulation Class",
+          "specification": "Class B/F",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 5142",
+        "IEC 61558",
+        "BIS"
+      ],
+      "applications": [
+        {
+          "label": "Lab",
+          "verified": true
+        },
+        {
+          "label": "Electroplating",
+          "verified": true
+        },
+        {
+          "label": "Heating",
+          "verified": true
+        },
+        {
+          "label": "Motor Testing",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for laboratory, electroplating, and industrial heating applications.",
+      "relatedProducts": [
+        "control-transformers",
+        "dc-power-pack",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Rating",
+          "description": "1A / 2A / 5A / 10A / 20A / 50A / 100A | 0.5 kVA to 20 kVA",
+          "details": [
+            "1–2A: bench lab use",
+            "5–10A: electroplating small tanks",
+            "20–50A: heating elements",
+            "100A: large industrial loads",
+            "Stack multiple units for higher ratings"
+          ],
+          "standards": [
+            "IS 5142"
+          ],
+          "applications": [
+            "All lab/industrial sizes"
+          ]
+        },
+        {
+          "option": "Phase",
+          "description": "Single Phase / Three Phase",
+          "details": [
+            "1Ph (230V): most applications",
+            "3Ph (415V): balanced 3-phase loads, furnaces, 3-phase motor testing",
+            "3Ph unit = 3× single-phase stacked on common shaft"
+          ],
+          "standards": [
+            "IS 5142"
+          ],
+          "applications": [
+            "Single vs 3-phase loads"
+          ]
+        },
+        {
+          "option": "Enclosure",
+          "description": "Open Coil / Enclosed Metal Box / Panel Mount",
+          "details": [
+            "Open coil: lowest cost, IP00, bench use with guard",
+            "Enclosed metal box: IP21, dust protection",
+            "Panel mount: flush-mount knob with enclosed coil behind panel"
+          ],
+          "standards": [
+            "IEC 60529"
+          ],
+          "applications": [
+            "Lab bench",
+            "Industrial panels"
+          ]
+        },
+        {
+          "option": "Control",
+          "description": "Manual Knob / Motorised (Remote-Controlled)",
+          "details": [
+            "Manual: direct hand-wheel or knob",
+            "Motorised: AC motor drive, remote 0–10V / 4–20 mA input, full 0–100% range control from PLC/SCADA",
+            "Motorised adds ~30% cost"
+          ],
+          "standards": [
+            "IEC 61131"
+          ],
+          "applications": [
+            "PLC-controlled heating",
+            "Remote test stations"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Dimmers (Variable Transformers / Variacs) | Alliance Engineering Company",
+        "metaDescription": "Variable Transformers (Variacs) 0–270V AC, 0.5–20 kVA for lab, electroplating, and heating. IS 5142, IEC 61558 compliant.",
+        "keywords": [
+          "variac",
+          "variable transformer",
+          "dimmer",
+          "IS 5142",
+          "IEC 61558",
+          "autotransformer"
+        ]
+      }
+    },
+    {
+      "id": "dc-power-pack",
+      "slug": "dc-power-pack",
+      "serialNumber": "10",
+      "modelId": "DC-POWER-PACK",
+      "standard": "IEC 60439",
+      "status": "IN STOCK",
+      "name": "DC Power Pack",
+      "shortDescription": "DC power packs for battery charging, substation auxiliary supply, and lab applications.",
+      "description": "DC Power Pack for Battery Charging, Substation Auxiliary, Lab, and DC Control applications. Input: 220–240V AC, Output: adjustable/fixed DC, Current: 1–50A.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/dc-power-pack/view-1.png",
+            "alt": "DC Power Pack View 1",
+            "isPrimary": true,
+            "label": "DC Power Pack View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/dc-power-pack.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/dc-power-pack.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Current",
+          "value": "1–50A"
+        },
+        {
+          "label": "Input",
+          "value": "220–240V AC"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Input",
+          "specification": "220–240V AC 1Ph 50Hz",
+          "unit": null
+        },
+        {
+          "parameter": "Output",
+          "specification": "adjustable/fixed DC",
+          "unit": null
+        },
+        {
+          "parameter": "Current",
+          "specification": "1–50A",
+          "unit": null
+        },
+        {
+          "parameter": "AC Fuse",
+          "specification": "3–10A",
+          "unit": null
+        },
+        {
+          "parameter": "DC Fuse",
+          "specification": "10–20A",
+          "unit": null
+        },
+        {
+          "parameter": "Metering",
+          "specification": "AC voltmeter + DC ammeter",
+          "unit": null
+        },
+        {
+          "parameter": "Indicators",
+          "specification": "Mains/DC ON",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 13947",
+        "IEC 60439",
+        "CE"
+      ],
+      "applications": [
+        {
+          "label": "Battery Charging",
+          "verified": true
+        },
+        {
+          "label": "Substation Aux",
+          "verified": true
+        },
+        {
+          "label": "Lab",
+          "verified": true
+        },
+        {
+          "label": "DC Control",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for substation auxiliary, battery charging, and laboratory DC supply.",
+      "relatedProducts": [
+        "battery-chargers",
+        "dc-shunts",
+        "dimmers-variable-transformers-variacs"
+      ],
+      "customizations": [
+        {
+          "option": "Output Voltage",
+          "description": "Fixed (12V/24V/48V) or Adjustable (0–30V / 0–60V / 0–120V)",
+          "details": [
+            "Fixed: plug-and-play for known loads",
+            "Adjustable: versatile, for testing or variable loads",
+            "Wide-range 0–240V option for maximum flexibility"
+          ],
+          "standards": [
+            "IEC 60439"
+          ],
+          "applications": [
+            "Dedicated systems",
+            "Universal test supply"
+          ]
+        },
+        {
+          "option": "Current Range",
+          "description": "1A / 5A / 10A / 20A / 30A / 50A",
+          "details": [
+            "1–5A: control relays, small solenoids",
+            "10–20A: battery float charging",
+            "30–50A: heavy-duty charging, motor field supply",
+            "Higher currents add forced-air cooling fan"
+          ],
+          "standards": [
+            "IS 13947"
+          ],
+          "applications": [
+            "Light duty",
+            "Medium duty",
+            "Heavy duty"
+          ]
+        },
+        {
+          "option": "Enclosure",
+          "description": "Open Frame / Enclosed Metal Box / ALECS Branded Enclosure",
+          "details": [
+            "Open: for panel integration (customer provides enclosure)",
+            "Enclosed: standalone unit, ventilated MS box",
+            "ALECS branded: with logo plate, standard grey finish, standard sizes"
+          ],
+          "standards": [
+            "IEC 60439"
+          ],
+          "applications": [
+            "OEM integration",
+            "Standalone units"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "DC Power Pack | Alliance Engineering Company",
+        "metaDescription": "DC Power Pack 1–50A for battery charging, substation auxiliary, and lab. IS 13947, IEC 60439, CE compliant.",
+        "keywords": [
+          "DC power pack",
+          "battery charger",
+          "IS 13947",
+          "IEC 60439",
+          "substation DC supply"
+        ]
+      }
+    },
+    {
+      "id": "bus-bar-insulators",
+      "slug": "bus-bar-insulators",
+      "serialNumber": "11",
+      "modelId": "BUS-BAR-INSULATORS",
+      "standard": "IEC 60660",
+      "status": "IN STOCK",
+      "name": "Bus-Bar Insulators (ALECS Brand)",
+      "shortDescription": "Epoxy resin and SMC/DMC busbar insulators for LV and MV switchgear and panels.",
+      "description": "ALECS Brand Bus-Bar Insulators in Epoxy Resin, SMC, and DMC for Control Panels, Switchgear, Power Distribution, HV/LV applications. Voltage: 415V–11kV.",
+      "brand": "ALECS",
+      "categories": [
+        "ALECS Brand Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/bus-bar-insulators/view-1.png",
+            "alt": "Bus-Bar Insulators View 1",
+            "isPrimary": true,
+            "label": "Bus-Bar Insulators View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/bus-bar-insulators.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/bus-bar-insulators.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Voltage",
+          "value": "415V–11kV"
+        },
+        {
+          "label": "Material",
+          "value": "Epoxy / SMC / DMC"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Material",
+          "specification": "Epoxy resin / SMC / DMC",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage",
+          "specification": "415V–11kV",
+          "unit": null
+        },
+        {
+          "parameter": "Creepage",
+          "specification": "≥16 mm/kV",
+          "unit": null
+        },
+        {
+          "parameter": "Temp",
+          "specification": "-40 to +120°C",
+          "unit": null
+        },
+        {
+          "parameter": "Mechanical",
+          "specification": "4–20 kN",
+          "unit": null
+        },
+        {
+          "parameter": "Dielectric",
+          "specification": "≥10 kV/mm",
+          "unit": null
+        },
+        {
+          "parameter": "IP Rating",
+          "specification": "IP20–IP55",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IS 5516",
+        "IEC 60660",
+        "IEC 62217",
+        "RoHS"
+      ],
+      "applications": [
+        {
+          "label": "Control Panels",
+          "verified": true
+        },
+        {
+          "label": "Switchgear",
+          "verified": true
+        },
+        {
+          "label": "Power Distribution",
+          "verified": true
+        },
+        {
+          "label": "HV/LV",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for LV and MV panel busbar support and switchgear insulation.",
+      "relatedProducts": [
+        "led-indicator",
+        "digital-analog-meters",
+        "ring-type-current-transformer"
+      ],
+      "customizations": [
+        {
+          "option": "Material",
+          "description": "Epoxy Resin / SMC (Sheet Moulding Compound) / DMC (Dough Moulding Compound)",
+          "details": [
+            "Epoxy: highest strength, lowest tracking, best for HV",
+            "SMC: good mechanical, cost-effective for LV",
+            "DMC: complex shapes, intricate profiles, LV only",
+            "Specify for voltage class"
+          ],
+          "standards": [
+            "IEC 60660",
+            "IEC 62217"
+          ],
+          "applications": [
+            "HV: Epoxy",
+            "LV: SMC/DMC"
+          ]
+        },
+        {
+          "option": "Profile / Type",
+          "description": "Cap & Stud / Channel / Flat Cleat / Stand-off / Tank Clamp",
+          "details": [
+            "Cap & Stud: most common, vertical busbar support",
+            "Channel/L-shape: horizontal busbar run",
+            "Flat Cleat: bolt-on, double busbar",
+            "Stand-off: elevated mount, air clearance",
+            "Tank Clamp: transformer-to-busbar connection"
+          ],
+          "standards": [
+            "IS 5516"
+          ],
+          "applications": [
+            "All busbar configurations"
+          ]
+        },
+        {
+          "option": "Voltage Class",
+          "description": "415V (LV) / 1.1 kV / 3.3 kV / 6.6 kV / 11 kV",
+          "details": [
+            "415V: standard panel",
+            "1.1 kV: LV industrial, motor control",
+            "3.3/6.6/11 kV: MV switchgear, must specify correct BIL",
+            "Creepage and clearance increase with voltage class"
+          ],
+          "standards": [
+            "IEC 61869",
+            "IS 2705"
+          ],
+          "applications": [
+            "LV panels",
+            "MV switchgear"
+          ]
+        },
+        {
+          "option": "Colour",
+          "description": "Red / Black / Blue / Grey / Custom RAL",
+          "details": [
+            "Red: standard industry colour, L1/Phase",
+            "Black: N/neutral",
+            "Blue: DC+",
+            "Grey: enclosure blend",
+            "Colour helps phase identification — R/Y/B phase coding available"
+          ],
+          "standards": [
+            "IEC 60446 (colour identification)"
+          ],
+          "applications": [
+            "Phase colour coding"
+          ]
+        },
+        {
+          "option": "Stud / Hole Size",
+          "description": "M6 / M8 / M10 / M12 / M16 and custom hole pattern",
+          "details": [
+            "M6/M8: small panels, ≤100A busbars",
+            "M10/M12: standard LV panels 100–1000A",
+            "M16: heavy busbars 1000A+",
+            "Custom bolt circle patterns for OEM panel builders"
+          ],
+          "standards": [
+            "DIN 43673"
+          ],
+          "applications": [
+            "All busbar sizes"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Bus-Bar Insulators (ALECS Brand) | Alliance Engineering Company",
+        "metaDescription": "ALECS Brand Epoxy, SMC, DMC busbar insulators for LV/MV panels 415V–11kV. IS 5516, IEC 60660 compliant.",
+        "keywords": [
+          "busbar insulator",
+          "epoxy insulator",
+          "SMC insulator",
+          "IS 5516",
+          "IEC 60660",
+          "ALECS"
+        ]
+      }
+    },
+    {
+      "id": "led-indicator",
+      "slug": "led-indicator",
+      "serialNumber": "12",
+      "modelId": "LED-INDICATOR",
+      "standard": "IEC 60947-5-1",
+      "status": "IN STOCK",
+      "name": "LED Indicator (ALECS Brand)",
+      "shortDescription": "ALECS Brand LED indicators for control panels, machine tools, and process equipment.",
+      "description": "ALECS Brand LED Indicators for Control Panels, Machine Tools, and Process Equipment. Diameter: 8–30 mm, Voltage: 12–230V AC/DC, LED Life: >50,000h.",
+      "brand": "ALECS",
+      "categories": [
+        "ALECS Brand Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/led-indicator/view-1.png",
+            "alt": "LED Indicator View 1",
+            "isPrimary": true,
+            "label": "LED Indicator View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/led-indicator.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/led-indicator.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "LED Life",
+          "value": ">50,000h"
+        },
+        {
+          "label": "Voltage",
+          "value": "12–230V AC/DC"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Diameter",
+          "specification": "8–30 mm",
+          "unit": null
+        },
+        {
+          "parameter": "Voltage",
+          "specification": "12–230V AC/DC",
+          "unit": null
+        },
+        {
+          "parameter": "Colours",
+          "specification": "R/G/Y/B/W",
+          "unit": null
+        },
+        {
+          "parameter": "LED Life",
+          "specification": ">50,000h",
+          "unit": null
+        },
+        {
+          "parameter": "Power",
+          "specification": "<1W",
+          "unit": null
+        },
+        {
+          "parameter": "IP Rating",
+          "specification": "IP40/IP65",
+          "unit": null
+        },
+        {
+          "parameter": "Body",
+          "specification": "Zinc alloy/Nylon",
+          "unit": null
+        },
+        {
+          "parameter": "Brightness",
+          "specification": ">50 mcd",
+          "unit": null
+        }
+      ],
+      "standards": [
+        "IEC 60947-5-1",
+        "IS 13947",
+        "IP65",
+        "CE",
+        "RoHS"
+      ],
+      "applications": [
+        {
+          "label": "Control Panels",
+          "verified": true
+        },
+        {
+          "label": "Machine Tools",
+          "verified": true
+        },
+        {
+          "label": "Process Equipment",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for industrial panel indication and machine status monitoring.",
+      "relatedProducts": [
+        "buzzer-hooter-siren",
+        "bus-bar-insulators",
+        "digital-analog-meters"
+      ],
+      "customizations": [
+        {
+          "option": "Diameter",
+          "description": "8mm / 10mm / 16mm / 22mm / 25mm / 30mm",
+          "details": [
+            "8mm: sub-panel, space-constrained",
+            "16mm: compact panel",
+            "22mm: most common, standard panel cutout",
+            "30mm: large operator panel, easy visibility from distance"
+          ],
+          "standards": [
+            "DIN 43700"
+          ],
+          "applications": [
+            "All panel types"
+          ]
+        },
+        {
+          "option": "Colour",
+          "description": "Red / Green / Yellow / Blue / White",
+          "details": [
+            "Red: fault/alarm/stop",
+            "Green: run/OK/power on",
+            "Yellow/Amber: warning/standby",
+            "Blue: information",
+            "White: general purpose — always specify at order"
+          ],
+          "standards": [
+            "IEC 60073 (colour coding)"
+          ],
+          "applications": [
+            "Standardised alarm colour coding"
+          ]
+        },
+        {
+          "option": "Voltage",
+          "description": "12V DC / 24V DC / 48V DC / 110V AC / 230V AC",
+          "details": [
+            "Must exactly match control circuit voltage",
+            "DC models: observe polarity",
+            "230V AC: most common for panels",
+            "24V DC: PLC output standard",
+            "Never mix AC/DC voltages"
+          ],
+          "standards": [
+            "IEC 60664"
+          ],
+          "applications": [
+            "All panel voltages"
+          ]
+        },
+        {
+          "option": "Option",
+          "description": "Standard LED / With Integrated Buzzer",
+          "details": [
+            "Standard: visual only",
+            "With buzzer: audible + visual in one unit, 85 dB piezo",
+            "Saves panel space and wiring",
+            "Buzzer acknowledges via panel LED ack contact"
+          ],
+          "standards": [
+            "IEC 60947-5-1"
+          ],
+          "applications": [
+            "Dual-mode alarm indication"
+          ]
+        }
+      ],
+      "seo": {
+        "metaTitle": "LED Indicator (ALECS Brand) | Alliance Engineering Company",
+        "metaDescription": "ALECS Brand LED indicators 8–30mm, 12–230V AC/DC, >50,000h life. IEC 60947-5-1, CE, RoHS compliant.",
+        "keywords": [
+          "LED indicator",
+          "panel indicator",
+          "ALECS",
+          "IEC 60947-5-1",
+          "control panel LED"
+        ]
+      }
+    }
+  ]
+}

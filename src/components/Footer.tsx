@@ -19,10 +19,10 @@ const documentation = [
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-outline-variant/10 pt-16 md:pt-20 pb-8 md:pb-12 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20">
+      <div className="max-w-full mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-3 mb-20 justify-end">
           {/* Company Info Column */}
-          <div className="md:col-span-4 lg:col-span-3">
+          <div className="md:col-span-4">
             <div className="flex items-center gap-2 mb-8">
               <img
                 src="/logo.png"
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           {/* Products Column */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Products
             </h4>
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           {/* Documentation Column */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Documentation
             </h4>
@@ -73,7 +73,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-4">
+          <div className="lg:col-span-4">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Manufacturing Facility
             </h4>
@@ -81,8 +81,9 @@ export default function Footer() {
               <div>
                 <p className="font-bold text-sm text-primary mb-2">Chandigarh / Panchkula</p>
                 <p className="text-secondary text-sm leading-relaxed">
-                  Plot No.: 417, Industrial Area Phase -2<br />
-                  Chandigarh, Haryana, India — 134113
+                  Plot No.: 417, Industrial Area Phase -2
+                  Chandigarh, Haryana, <br/>
+                  India — 134113
                 </p>
                 <p className="text-secondary text-sm mt-2 flex items-center gap-2">
                   <Phone className="w-4 h-4" /> +91 172 400 1234
