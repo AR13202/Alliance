@@ -146,9 +146,10 @@ export default function ProductDetailScreen({
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                <button className="flex-1 bg-primary text-white font-black text-xs tracking-[0.2em] uppercase py-5 rounded-xl shadow-xl shadow-primary/20 hover:bg-secondary transition-colors group flex items-center justify-center gap-3">
-                  <Download className="w-4 h-4" />
-                  Request Datasheet
+                <button 
+                  onClick={() => document.getElementById('inquiry')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="flex-1 bg-primary text-white font-black text-xs tracking-[0.2em] uppercase py-5 rounded-xl shadow-xl shadow-primary/20 hover:bg-secondary transition-colors group flex items-center justify-center gap-3">
+                  Request a Quote
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="flex-1 border-2 border-outline-variant/10 text-secondary font-black text-xs tracking-[0.2em] uppercase py-5 rounded-xl hover:border-primary/30 transition-colors flex items-center justify-center gap-3">

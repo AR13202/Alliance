@@ -30,39 +30,30 @@
       "media": {
         "images": [
           {
-            "id": "img-ypywnbn",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037237/product-catalog-editor/qypq8yklih7l0ay220do.png",
+            "id": "img-tcwx024",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778502280/product-catalog-editor/yasirmhozlayltjzg2ph.webp",
             "alt": "Current Transformers",
             "isPrimary": false,
-            "label": "ct-1",
-            "publicId": "product-catalog-editor/qypq8yklih7l0ay220do",
+            "label": "lt-current-transformer-250x250",
+            "publicId": "product-catalog-editor/yasirmhozlayltjzg2ph",
             "source": "cloudinary"
           },
           {
-            "id": "img-5okrgti",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037240/product-catalog-editor/jgwx8onanemhxjvejk4b.png",
+            "id": "img-hqzfnvu",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778502281/product-catalog-editor/wwj0ei2pmnsmec2xrgmj.webp",
             "alt": "Current Transformers",
             "isPrimary": false,
-            "label": "ct-5",
-            "publicId": "product-catalog-editor/jgwx8onanemhxjvejk4b",
+            "label": "round-resin-cast-transformer-with-round-500x500",
+            "publicId": "product-catalog-editor/wwj0ei2pmnsmec2xrgmj",
             "source": "cloudinary"
           },
           {
-            "id": "img-3zcuxh0",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037247/product-catalog-editor/c8ylcoqwsrloyuypu2cx.png",
+            "id": "img-ms7sc7d",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778502282/product-catalog-editor/g81ou51zvt3pl7ev7joi.webp",
             "alt": "Current Transformers",
             "isPrimary": true,
-            "label": "ct-6",
-            "publicId": "product-catalog-editor/c8ylcoqwsrloyuypu2cx",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-gp7kiex",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037258/product-catalog-editor/lpjqgcm2gzb2vzgzxtoq.png",
-            "alt": "Current Transformers",
-            "isPrimary": false,
-            "label": "ct-7",
-            "publicId": "product-catalog-editor/lpjqgcm2gzb2vzgzxtoq",
+            "label": "lt-tape-wound-current-transformer-500x500",
+            "publicId": "product-catalog-editor/g81ou51zvt3pl7ev7joi",
             "source": "cloudinary"
           }
         ],
@@ -233,15 +224,8 @@
             "Dual ratio CTs available",
             "Suitable for LT and HT systems"
           ],
-          "standards": [
-            "IS 2705",
-            "IEC 61869-2"
-          ],
-          "applications": [
-            "Metering",
-            "Protection",
-            "Energy Monitoring"
-          ]
+          "standards": ["IS 2705", "IEC 61869-2"],
+          "applications": ["Metering", "Protection", "Energy Monitoring"]
         },
         {
           "option": "Accuracy Class",
@@ -252,13 +236,8 @@
             "Stable accuracy over operating range",
             "Suitable for utility and industrial installations"
           ],
-          "standards": [
-            "IS 2705"
-          ],
-          "applications": [
-            "Energy Metering",
-            "Panel Monitoring"
-          ]
+          "standards": ["IS 2705"],
+          "applications": ["Energy Metering", "Panel Monitoring"]
         },
         {
           "option": "Burden Rating",
@@ -269,13 +248,8 @@
             "15VA and 30VA for relay and protection systems",
             "Custom burden ratings available"
           ],
-          "standards": [
-            "IEC 61869-2"
-          ],
-          "applications": [
-            "Protection Relays",
-            "Industrial Metering"
-          ]
+          "standards": ["IEC 61869-2"],
+          "applications": ["Protection Relays", "Industrial Metering"]
         },
         {
           "option": "Mounting Type",
@@ -286,13 +260,8 @@
             "Compact panel mounting design",
             "Easy installation and maintenance"
           ],
-          "standards": [
-            "IEC 60044-1"
-          ],
-          "applications": [
-            "Control Panels",
-            "Switchgear"
-          ]
+          "standards": ["IEC 60044-1"],
+          "applications": ["Control Panels", "Switchgear"]
         }
       ],
       "seo": {
@@ -325,10 +294,7 @@
       "shortDescription": "Industrial-grade transformer oil filtration plant for power plants, substations, and refineries.",
       "description": "High-capacity Transformer Oil Filtration Plant engineered for Power Plants, Substations, Transformer OEMs, Oil Refineries, and Steel/Cement industries. Achieves BDV of 70 kV and moisture below 5 PPM.",
       "brand": "Alliance Engineering Company",
-      "categories": [
-        "Manufactured Products",
-        "Other Electrical Products"
-      ],
+      "categories": ["Manufactured Products", "Other Electrical Products"],
       "media": {
         "images": [
           {
@@ -420,12 +386,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 6034-1989",
-        "IS 335-1993",
-        "IEC 60296",
-        "CE Mark"
-      ],
+      "standards": ["IS 6034-1989", "IS 335-1993", "IEC 60296", "CE Mark"],
       "applications": [
         {
           "label": "Power Plants",
@@ -464,9 +425,7 @@
             "Skid: fixed floor skid with lifting lugs",
             "Stationary: bolted floor mount"
           ],
-          "standards": [
-            "ISO 4406 (particle count)"
-          ],
+          "standards": ["ISO 4406 (particle count)"],
           "applications": [
             "On-site substation servicing",
             "Mobile maintenance teams"
@@ -480,13 +439,8 @@
             "Open: cost-effective, indoor use only",
             "Material: powder-coated MS or SS304"
           ],
-          "standards": [
-            "IEC 60529 IP55"
-          ],
-          "applications": [
-            "Outdoor substations",
-            "Indoor workshop use"
-          ]
+          "standards": ["IEC 60529 IP55"],
+          "applications": ["Outdoor substations", "Indoor workshop use"]
         },
         {
           "option": "Separator",
@@ -496,9 +450,7 @@
             "Disc stack centrifuge + vacuum dehydration",
             "For heavily contaminated or flooded transformer oil"
           ],
-          "standards": [
-            "IS 335-1993"
-          ],
+          "standards": ["IS 335-1993"],
           "applications": [
             "Aged transformers",
             "Flood-affected units",
@@ -514,12 +466,8 @@
             "10,000 LPH: bulk refinery/plant use",
             "All capacities available in single/double stage"
           ],
-          "standards": [
-            "Custom engineering per order"
-          ],
-          "applications": [
-            "All power utility sizes"
-          ]
+          "standards": ["Custom engineering per order"],
+          "applications": ["All power utility sizes"]
         },
         {
           "option": "Oil Type",
@@ -529,14 +477,8 @@
             "Hydraulic oil: ISO VG 32–100 grade",
             "Different filter media per oil type — specify at order"
           ],
-          "standards": [
-            "IEC 60296",
-            "ISO VG grades"
-          ],
-          "applications": [
-            "Transformer maintenance",
-            "Hydraulic systems"
-          ]
+          "standards": ["IEC 60296", "ISO VG grades"],
+          "applications": ["Transformer maintenance", "Hydraulic systems"]
         }
       ],
       "seo": {
@@ -562,10 +504,7 @@
       "shortDescription": "Portable and stationary transformer oil filtration machine for on-site and plant use.",
       "description": "Transformer Oil Filtration Machine available in portable and stationary configurations for Power Plants, Substations, OEMs, and on-site maintenance. Achieves BDV 70 kV with vacuum below -760 mmHg.",
       "brand": "Alliance Engineering Company",
-      "categories": [
-        "Manufactured Products",
-        "Other Electrical Products"
-      ],
+      "categories": ["Manufactured Products", "Other Electrical Products"],
       "media": {
         "images": [
           {
@@ -644,11 +583,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 6034-1989",
-        "IEC 60296",
-        "CE Mark"
-      ],
+      "standards": ["IS 6034-1989", "IEC 60296", "CE Mark"],
       "applications": [
         {
           "label": "Power Plants",
@@ -681,13 +616,8 @@
             "Portable: trolley-mounted, <500 kg, 2-wheel handle",
             "Stationary: floor-bolted, higher flow, larger filter chambers"
           ],
-          "standards": [
-            "IEC 60529"
-          ],
-          "applications": [
-            "Field service teams",
-            "Fixed plant rooms"
-          ]
+          "standards": ["IEC 60529"],
+          "applications": ["Field service teams", "Fixed plant rooms"]
         },
         {
           "option": "Stage",
@@ -696,13 +626,8 @@
             "Single stage: coarse + fine filtration, up to 5 micron",
             "Double stage: two vacuum chambers, achieves BDV 70 kV in fewer passes, better moisture removal"
           ],
-          "standards": [
-            "IEC 60296"
-          ],
-          "applications": [
-            "Standard maintenance",
-            "Heavily degraded oil"
-          ]
+          "standards": ["IEC 60296"],
+          "applications": ["Standard maintenance", "Heavily degraded oil"]
         },
         {
           "option": "Control",
@@ -712,13 +637,8 @@
             "PLC: automatic sequence, alarms, interlocks, HMI touchscreen",
             "SCADA: Modbus/RS485 output for remote monitoring"
           ],
-          "standards": [
-            "IEC 61131-3 (PLC)"
-          ],
-          "applications": [
-            "Automated substations",
-            "Remote/unmanned sites"
-          ]
+          "standards": ["IEC 61131-3 (PLC)"],
+          "applications": ["Automated substations", "Remote/unmanned sites"]
         },
         {
           "option": "Flow Rate",
@@ -728,13 +648,8 @@
             "Larger ratings require 3-phase 415V supply",
             "All models include bypass valve for emergency"
           ],
-          "standards": [
-            "Custom engineering"
-          ],
-          "applications": [
-            "Utilities",
-            "OEM plants"
-          ]
+          "standards": ["Custom engineering"],
+          "applications": ["Utilities", "OEM plants"]
         }
       ],
       "seo": {
@@ -746,7 +661,8 @@
           "IEC 60296",
           "on-site maintenance"
         ]
-      }
+      },
+      "isFeaturedProduct": true
     },
     {
       "id": "control-transformers",
@@ -768,39 +684,30 @@
       "media": {
         "images": [
           {
-            "id": "img-p769ohw",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037398/product-catalog-editor/bpcb9hbirdflnh76naug.png",
-            "alt": "Control Transformers",
+            "id": "img-zigfn4t",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778394216/product-catalog-editor/inzir2thsvlx9ooigzxt.png",
+            "alt": "Control Transformers — Alliance Engineering Company",
             "isPrimary": true,
-            "label": "t-1",
-            "publicId": "product-catalog-editor/bpcb9hbirdflnh76naug",
+            "label": "Product Image",
+            "publicId": "product-catalog-editor/inzir2thsvlx9ooigzxt",
             "source": "cloudinary"
           },
           {
-            "id": "img-tzxavy1",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037403/product-catalog-editor/byn26fsydc8lhlirrwnd.png",
+            "id": "img-y48oum5",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778502671/product-catalog-editor/hfu9q2ook5gu3umh32uh.webp",
             "alt": "Control Transformers",
             "isPrimary": false,
-            "label": "t-2",
-            "publicId": "product-catalog-editor/byn26fsydc8lhlirrwnd",
+            "label": "control-transformer-500x500",
+            "publicId": "product-catalog-editor/hfu9q2ook5gu3umh32uh",
             "source": "cloudinary"
           },
           {
-            "id": "img-5zboyc3",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037408/product-catalog-editor/pedbsdkzh2jxr40i53sr.png",
+            "id": "img-xtt05zm",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1778502672/product-catalog-editor/ah8b1algwkajr0pkrmao.webp",
             "alt": "Control Transformers",
             "isPrimary": false,
-            "label": "t-7",
-            "publicId": "product-catalog-editor/pedbsdkzh2jxr40i53sr",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-vrlgxq6",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037411/product-catalog-editor/qxspvjrvvve7oe4skwen.png",
-            "alt": "Control Transformers",
-            "isPrimary": true,
-            "label": "t-8",
-            "publicId": "product-catalog-editor/qxspvjrvvve7oe4skwen",
+            "label": "product-jpeg-500x500",
+            "publicId": "product-catalog-editor/ah8b1algwkajr0pkrmao",
             "source": "cloudinary"
           }
         ],
@@ -1012,10 +919,7 @@
             "Custom intermediate KVA ratings engineered on request",
             "High inrush capacity factor (200–1000%) available for heavy contactor loads"
           ],
-          "standards": [
-            "IS 11171",
-            "IEC 61558-2-2"
-          ],
+          "standards": ["IS 11171", "IEC 61558-2-2"],
           "applications": [
             "All panel sizes",
             "Motor control centres",
@@ -1030,10 +934,7 @@
             "Three Phase: 415V primary, for large panels or multi-secondary configurations",
             "Auto-transformer variant available for ±10% step-up/step-down applications"
           ],
-          "standards": [
-            "IS 11171",
-            "IS 2026"
-          ],
+          "standards": ["IS 11171", "IS 2026"],
           "applications": [
             "Standard control panels",
             "Large switchgear",
@@ -1050,10 +951,7 @@
             "Custom voltage ratios engineered on request",
             "Voltage tappings: ±2.5% and ±5% of primary available"
           ],
-          "standards": [
-            "IS 11171",
-            "IEC 61558-1"
-          ],
+          "standards": ["IS 11171", "IEC 61558-1"],
           "applications": [
             "PLC panels",
             "Safety circuits",
@@ -1068,13 +966,8 @@
             "Aluminium: lighter weight, lower cost — suitable for budget-sensitive builds",
             "Both options fully specified and documented at order stage"
           ],
-          "standards": [
-            "IS 11171"
-          ],
-          "applications": [
-            "Standard duty",
-            "Budget panel builds"
-          ]
+          "standards": ["IS 11171"],
+          "applications": ["Standard duty", "Budget panel builds"]
         },
         {
           "option": "Insulation Class",
@@ -1085,9 +978,7 @@
             "Class H: high-duty continuous, tropical / desert environments, railway applications",
             "VPI (Vacuum Pressure Impregnation) treatment standard on Class F and H"
           ],
-          "standards": [
-            "IEC 60085"
-          ],
+          "standards": ["IEC 60085"],
           "applications": [
             "Tropical climates",
             "VFD panels",
@@ -1105,10 +996,7 @@
             "Oil-cooled: for higher KVA ratings requiring enhanced heat dissipation",
             "Stainless steel enclosure available for corrosive / chemical environments"
           ],
-          "standards": [
-            "IEC 60076",
-            "IEC 60529"
-          ],
+          "standards": ["IEC 60076", "IEC 60529"],
           "applications": [
             "Indoor panels",
             "Outdoor kiosks",
@@ -1124,10 +1012,7 @@
             "Variable (Variac): 0–270V output, hand-wheel or motorised control",
             "Motorised Variac: remote control via 0–10V or 4–20 mA signal input"
           ],
-          "standards": [
-            "IS 5142",
-            "IEC 61558"
-          ],
+          "standards": ["IS 5142", "IEC 61558"],
           "applications": [
             "Voltage correction",
             "Lab & testing",
@@ -1144,9 +1029,7 @@
             "Full protection package: primary MCB + secondary HRC fuse + thermal overload relay",
             "Railway-grade: primary and secondary fuse links as per RDSO specification"
           ],
-          "standards": [
-            "IEC 61558-1"
-          ],
+          "standards": ["IEC 61558-1"],
           "applications": [
             "Plug-and-play panels",
             "Railway",
@@ -1162,10 +1045,7 @@
             "Reduced-regulation design for voltage-sensitive loads",
             "High inrush capacity factor (HIC) design for heavy contactor panels"
           ],
-          "standards": [
-            "IS 11171",
-            "RDSO (in progress)"
-          ],
+          "standards": ["IS 11171", "RDSO (in progress)"],
           "applications": [
             "Indian Railways",
             "Metro Rail",
@@ -1214,35 +1094,7 @@
         "Industrial Power Systems"
       ],
       "media": {
-        "images": [
-          {
-            "id": "img-k1hr23f",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037476/product-catalog-editor/hcvandhgrbfh0pvgp0sg.png",
-            "alt": "Industrial Battery Chargers",
-            "isPrimary": false,
-            "label": "batter-charger-2",
-            "publicId": "product-catalog-editor/hcvandhgrbfh0pvgp0sg",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-e0n66o2",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037478/product-catalog-editor/an9ono8papebysr584o9.png",
-            "alt": "Industrial Battery Chargers",
-            "isPrimary": true,
-            "label": "battery-charger-1",
-            "publicId": "product-catalog-editor/an9ono8papebysr584o9",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-n520xsp",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037481/product-catalog-editor/iy0uhopgfhqeqmhbtdes.png",
-            "alt": "Industrial Battery Chargers",
-            "isPrimary": false,
-            "label": "battery-charger-3",
-            "publicId": "product-catalog-editor/iy0uhopgfhqeqmhbtdes",
-            "source": "cloudinary"
-          }
-        ],
+        "images": [],
         "datasheet": {
           "label": "Download Datasheet (PDF)",
           "url": "/assets/datasheets/industrial-battery-chargers.pdf"
@@ -1375,10 +1227,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 8320",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 8320", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Substation Battery Banks",
@@ -1430,14 +1279,8 @@
             "110V DC for substation and railway applications",
             "Custom output voltages available on request"
           ],
-          "standards": [
-            "IS 8320"
-          ],
-          "applications": [
-            "Substations",
-            "Telecom",
-            "Industrial UPS"
-          ]
+          "standards": ["IS 8320"],
+          "applications": ["Substations", "Telecom", "Industrial UPS"]
         },
         {
           "option": "Output Current Rating",
@@ -1448,9 +1291,7 @@
             "25A and 30A for heavy-duty industrial applications",
             "Custom ratings beyond 30A available on request"
           ],
-          "standards": [
-            "IS 8320"
-          ],
+          "standards": ["IS 8320"],
           "applications": [
             "Battery Maintenance",
             "Industrial Charging",
@@ -1466,9 +1307,7 @@
             "Lithium-Ion: precision CC/CV with BMS-compatible output",
             "Nickel Cadmium: dedicated charge termination logic"
           ],
-          "standards": [
-            "IS 8320"
-          ],
+          "standards": ["IS 8320"],
           "applications": [
             "Stationary Battery Banks",
             "Traction Batteries",
@@ -1484,9 +1323,7 @@
             "Free-standing MS cabinet for floor installation",
             "IP21 / IP42 enclosure rating options available"
           ],
-          "standards": [
-            "IS 8320"
-          ],
+          "standards": ["IS 8320"],
           "applications": [
             "Control Rooms",
             "Telecom Shelters",
@@ -1512,7 +1349,7 @@
           "CC CV battery charger India"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": false
     },
     {
       "id": "line-chokes",
@@ -1532,17 +1369,7 @@
         "Harmonic Filters"
       ],
       "media": {
-        "images": [
-          {
-            "id": "img-fsxz6pn",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037559/product-catalog-editor/rq8jknerghwt8vbcrmu3.png",
-            "alt": "Line Chokes",
-            "isPrimary": true,
-            "label": "t-5",
-            "publicId": "product-catalog-editor/rq8jknerghwt8vbcrmu3",
-            "source": "cloudinary"
-          }
-        ],
+        "images": [],
         "datasheet": {
           "label": "Download Datasheet (PDF)",
           "url": "/assets/datasheets/line-chokes.pdf"
@@ -1670,11 +1497,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 5553",
-        "IEC 61558",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 5553", "IEC 61558", "ISO 9001:2015"],
       "applications": [
         {
           "label": "VFD / Inverter Input Side",
@@ -1726,15 +1549,8 @@
             "Matched to VFD or load full-load ampere (FLA) rating",
             "Derated ratings available for high-ambient temperature sites"
           ],
-          "standards": [
-            "IS 5553",
-            "IEC 61558"
-          ],
-          "applications": [
-            "VFD Systems",
-            "Motor Drives",
-            "Industrial Panels"
-          ]
+          "standards": ["IS 5553", "IEC 61558"],
+          "applications": ["VFD Systems", "Motor Drives", "Industrial Panels"]
         },
         {
           "option": "Impedance Level",
@@ -1745,13 +1561,8 @@
             "4% and 5% for high harmonic distortion environments",
             "Custom impedance values available for specific system requirements"
           ],
-          "standards": [
-            "IEC 61558"
-          ],
-          "applications": [
-            "Harmonic Filtering",
-            "Power Factor Correction"
-          ]
+          "standards": ["IEC 61558"],
+          "applications": ["Harmonic Filtering", "Power Factor Correction"]
         },
         {
           "option": "Phase Configuration",
@@ -1762,9 +1573,7 @@
             "Balanced three-phase design for symmetrical impedance across all phases",
             "Common-mode and differential-mode variants available"
           ],
-          "standards": [
-            "IS 5553"
-          ],
+          "standards": ["IS 5553"],
           "applications": [
             "Single Phase Drives",
             "Three Phase VFDs",
@@ -1780,9 +1589,7 @@
             "Floor-standing MS enclosure for 100A and above",
             "IP21 / IP42 enclosure protection options available"
           ],
-          "standards": [
-            "IEC 61558"
-          ],
+          "standards": ["IEC 61558"],
           "applications": [
             "Control Panels",
             "Drive Cabinets",
@@ -1808,7 +1615,8 @@
           "Alliance Engineering line choke",
           "motor drive choke India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     },
     {
       "id": "automatic-voltage-stabilizers",
@@ -1830,30 +1638,12 @@
       "media": {
         "images": [
           {
-            "id": "img-alucjqt",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037586/product-catalog-editor/we6eun8oimy35hjgjk2q.png",
-            "alt": "Automatic Voltage Stabilizers",
+            "id": "img-avs001",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/product-catalog-editor/stabilizer-main.webp",
+            "alt": "Automatic Voltage Stabilizer 4 KVA",
             "isPrimary": true,
-            "label": "servo-voltage-stablizer-1",
-            "publicId": "product-catalog-editor/we6eun8oimy35hjgjk2q",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-bvj2a8z",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037588/product-catalog-editor/pqlvfpvsfefxjvf0zlgv.png",
-            "alt": "Automatic Voltage Stabilizers",
-            "isPrimary": false,
-            "label": "stablizer-1",
-            "publicId": "product-catalog-editor/pqlvfpvsfefxjvf0zlgv",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-7dlyvfg",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037590/product-catalog-editor/xggqjyxczzpxbiparoyq.png",
-            "alt": "Automatic Voltage Stabilizers",
-            "isPrimary": false,
-            "label": "stablizer-2",
-            "publicId": "product-catalog-editor/xggqjyxczzpxbiparoyq",
+            "label": "automatic-voltage-stabilizer-4kva",
+            "publicId": "product-catalog-editor/stabilizer-main",
             "source": "cloudinary"
           }
         ],
@@ -2014,10 +1804,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 9815",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 9815", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Air Conditioners and Refrigerators",
@@ -2069,9 +1856,7 @@
             "Higher ratings available on request for commercial loads",
             "Custom capacity matched to connected load requirements"
           ],
-          "standards": [
-            "IS 9815"
-          ],
+          "standards": ["IS 9815"],
           "applications": [
             "Home Appliances",
             "Office Equipment",
@@ -2087,9 +1872,7 @@
             "Custom input range available based on local grid conditions",
             "Suitable for rural feeders with extreme voltage sag"
           ],
-          "standards": [
-            "IS 9815"
-          ],
+          "standards": ["IS 9815"],
           "applications": [
             "Rural Areas",
             "Industrial Sites",
@@ -2105,9 +1888,7 @@
             "Output voltage adjustable via internal preset (on select models)",
             "Tight regulation variants (±5%) available for sensitive equipment"
           ],
-          "standards": [
-            "IS 9815"
-          ],
+          "standards": ["IS 9815"],
           "applications": [
             "Medical Equipment",
             "Laboratory Instruments",
@@ -2123,9 +1904,7 @@
             "Custom RAL colour finishes available on request",
             "Ventilation slots for thermal management on larger units"
           ],
-          "standards": [
-            "IS 9815"
-          ],
+          "standards": ["IS 9815"],
           "applications": [
             "Residential Installations",
             "Commercial Panels",
@@ -2151,7 +1930,7 @@
           "voltage regulator single phase"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": false
     },
     {
       "id": "frequency-meters",
@@ -2173,30 +1952,12 @@
       "media": {
         "images": [
           {
-            "id": "img-gr3d2vb",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037650/product-catalog-editor/aqmdzztxzeku3ud3ptdc.png",
-            "alt": "Frequency Meters",
-            "isPrimary": false,
-            "label": "pfm-1",
-            "publicId": "product-catalog-editor/aqmdzztxzeku3ud3ptdc",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-d3t0o1r",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037652/product-catalog-editor/uany9w3ljfwbgf7khiyl.png",
-            "alt": "Frequency Meters",
-            "isPrimary": false,
-            "label": "pfm-2",
-            "publicId": "product-catalog-editor/uany9w3ljfwbgf7khiyl",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-a84k2sm",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037654/product-catalog-editor/h6r7ndudc4cvqld6buxg.png",
-            "alt": "Frequency Meters",
+            "id": "img-pfm001",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/product-catalog-editor/frequency-meter-sr72.webp",
+            "alt": "Frequency Meter SR-72 Panel Mount",
             "isPrimary": true,
-            "label": "pfm-3",
-            "publicId": "product-catalog-editor/h6r7ndudc4cvqld6buxg",
+            "label": "frequency-meter-sr72-panel-mount",
+            "publicId": "product-catalog-editor/frequency-meter-sr72",
             "source": "cloudinary"
           }
         ],
@@ -2337,11 +2098,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 1248",
-        "IEC 60051",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 1248", "IEC 60051", "ISO 9001:2015"],
       "applications": [
         {
           "label": "DG Synchronization Panels",
@@ -2389,9 +2146,7 @@
             "Both voltage variants use the same 72mm housing",
             "Custom input voltage ratings available on request"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Single Phase Panels",
             "Three Phase Switchgear",
@@ -2407,9 +2162,7 @@
             "Narrow range variants (48–52 Hz) for tighter grid monitoring",
             "Scale markings at 2 Hz intervals for easy reading"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Indian Grid Monitoring",
             "Generator Synchronization",
@@ -2425,9 +2178,7 @@
             "SR-144: 144mm format for control room consoles",
             "All sizes use rear clamp flush-mount mechanism"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Compact Panels",
             "Standard Switchgear",
@@ -2452,7 +2203,8 @@
           "Alliance Engineering frequency meter",
           "switchgear panel instruments India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     },
     {
       "id": "industrial-buzzers",
@@ -2474,21 +2226,12 @@
       "media": {
         "images": [
           {
-            "id": "img-ukz750f",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037784/product-catalog-editor/mhvsa5zdqckwcuknxzrp.png",
-            "alt": "Industrial Buzzers",
-            "isPrimary": false,
-            "label": "buzzer-1",
-            "publicId": "product-catalog-editor/mhvsa5zdqckwcuknxzrp",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-lsjtmdo",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037786/product-catalog-editor/lht5pfxz3emtbu9m3aqj.png",
-            "alt": "Industrial Buzzers",
+            "id": "img-buz001",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/product-catalog-editor/industrial-buzzer.webp",
+            "alt": "Industrial Round Buzzer with LED Indicator",
             "isPrimary": true,
-            "label": "buzzer-2",
-            "publicId": "product-catalog-editor/lht5pfxz3emtbu9m3aqj",
+            "label": "industrial-round-buzzer-grey",
+            "publicId": "product-catalog-editor/industrial-buzzer",
             "source": "cloudinary"
           }
         ],
@@ -2604,10 +2347,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 13947",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 13947", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Switchgear and MCC Panels",
@@ -2655,14 +2395,8 @@
             "110V AC / 48V DC variants available on request",
             "Specify voltage at time of order"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "PLC Panels",
-            "Relay Panels",
-            "Substation Alarms"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["PLC Panels", "Relay Panels", "Substation Alarms"]
         },
         {
           "option": "Sound Type",
@@ -2673,14 +2407,8 @@
             "Multi-tone variants available for zone differentiation",
             "Sound level ≥ 85 dB at 1m on all variants"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "Fault Alarms",
-            "Process Alerts",
-            "Safety Systems"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["Fault Alarms", "Process Alerts", "Safety Systems"]
         },
         {
           "option": "Enclosure Colour",
@@ -2691,14 +2419,8 @@
             "Yellow for caution/warning zone installations",
             "Custom colours available on bulk orders"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "Fire Panels",
-            "Safety Zones",
-            "Industrial Plants"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["Fire Panels", "Safety Zones", "Industrial Plants"]
         }
       ],
       "seo": {
@@ -2716,7 +2438,8 @@
           "Alliance Engineering buzzer",
           "round buzzer industrial India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     },
     {
       "id": "electronic-hooters",
@@ -2738,21 +2461,12 @@
       "media": {
         "images": [
           {
-            "id": "img-2bwsypd",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037743/product-catalog-editor/fbealkc7gowqh6xzffje.png",
-            "alt": "Electronic Hooters",
+            "id": "img-hoot001",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/product-catalog-editor/electronic-hooter.webp",
+            "alt": "Electronic Hooter Panel Mount 72mm Alliance India",
             "isPrimary": true,
-            "label": "hooter-2",
-            "publicId": "product-catalog-editor/fbealkc7gowqh6xzffje",
-            "source": "cloudinary"
-          },
-          {
-            "id": "img-l5tg24a",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037745/product-catalog-editor/ahudyum3wksshm0q2eva.png",
-            "alt": "Electronic Hooters",
-            "isPrimary": false,
-            "label": "hooter-3",
-            "publicId": "product-catalog-editor/ahudyum3wksshm0q2eva",
+            "label": "electronic-hooter-72mm-panel-mount",
+            "publicId": "product-catalog-editor/electronic-hooter",
             "source": "cloudinary"
           }
         ],
@@ -2873,10 +2587,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 13947",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 13947", "ISO 9001:2015"],
       "applications": [
         {
           "label": "MCC and Switchgear Panels",
@@ -2924,14 +2635,8 @@
             "110V AC and 48V DC variants available on request",
             "Specify required voltage at time of order"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "PLC Panels",
-            "Relay Panels",
-            "Substation Control"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["PLC Panels", "Relay Panels", "Substation Control"]
         },
         {
           "option": "Panel Size",
@@ -2942,14 +2647,8 @@
             "All sizes use flush rear-clamp panel mounting",
             "Compatible with standard 68×68mm cutout panels"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "Standard Switchgear",
-            "MCC Panels",
-            "Control Rooms"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["Standard Switchgear", "MCC Panels", "Control Rooms"]
         },
         {
           "option": "Sound Type",
@@ -2960,14 +2659,8 @@
             "Multi-tone (dual or triple frequency) for zone identification",
             "Tone frequency and pattern customisable on request"
           ],
-          "standards": [
-            "IS 13947"
-          ],
-          "applications": [
-            "Fault Alarms",
-            "Zone Alarming",
-            "Process Safety"
-          ]
+          "standards": ["IS 13947"],
+          "applications": ["Fault Alarms", "Zone Alarming", "Process Safety"]
         }
       ],
       "seo": {
@@ -2987,7 +2680,185 @@
           "IS 13947 hooter"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": false
+    },
+    {
+      "id": "digital-analog-meters",
+      "slug": "digital-analog-meters",
+      "serialNumber": "7",
+      "modelId": "DIGITAL-ANALOG-METERS",
+      "standard": "IS 1248",
+      "status": "IN STOCK",
+      "name": "Digital & Analog Meters",
+      "shortDescription": "Panel-mount digital and analog meters for voltage, current, frequency, and power factor measurement.",
+      "description": "Digital and Analog Meters for Panels, Electricity Boards, Solar, and OEM applications. Types include Ammeter, Voltmeter, Frequency, VAF, kV, DPM. Accuracy Class 0.5–2.5.",
+      "brand": "Alliance Engineering Company",
+      "categories": [
+        "Manufactured Products",
+        "ALECS Brand Products",
+        "Control Systems"
+      ],
+      "media": {
+        "images": [
+          {
+            "id": "img-1",
+            "url": "/assets/products/digital-analog-meters/view-1.png",
+            "alt": "Digital & Analog Meters View 1",
+            "isPrimary": true,
+            "label": "Digital & Analog Meters View 1",
+            "source": "manual"
+          }
+        ],
+        "datasheet": {
+          "label": "Download Datasheet",
+          "url": "/assets/datasheets/digital-analog-meters.pdf"
+        },
+        "brochure": {
+          "label": "View Brochure",
+          "url": "/assets/brochures/digital-analog-meters.pdf"
+        }
+      },
+      "highlights": [
+        {
+          "label": "Accuracy",
+          "value": "Class 0.5–2.5"
+        },
+        {
+          "label": "Sizes",
+          "value": "48×48 to 144×144 mm"
+        }
+      ],
+      "technicalSpecifications": [
+        {
+          "parameter": "Types",
+          "specification": "Ammeter/Voltmeter/Hz/VAF/KV/DPM",
+          "unit": null
+        },
+        {
+          "parameter": "Accuracy",
+          "specification": "Class 0.5–2.5",
+          "unit": null
+        },
+        {
+          "parameter": "Sizes",
+          "specification": "48×48 / 72×72 / 96×96 / 144×144 mm",
+          "unit": null
+        },
+        {
+          "parameter": "Standard",
+          "specification": "IS 1248",
+          "unit": null
+        },
+        {
+          "parameter": "Input",
+          "specification": "CT (5A) or direct",
+          "unit": null
+        },
+        {
+          "parameter": "Temp",
+          "specification": "-10 to +55°C",
+          "unit": null
+        }
+      ],
+      "standards": ["IS 1248", "IEC 60051", "IS 13779", "CE", "BIS"],
+      "applications": [
+        {
+          "label": "Panels",
+          "verified": true
+        },
+        {
+          "label": "Electricity Boards",
+          "verified": true
+        },
+        {
+          "label": "Solar",
+          "verified": true
+        },
+        {
+          "label": "OEM",
+          "verified": true
+        }
+      ],
+      "applicationNote": "Verified for panel metering, solar monitoring, and OEM integration.",
+      "relatedProducts": [
+        "dc-shunts",
+        "ring-type-current-transformer",
+        "battery-chargers"
+      ],
+      "customizations": [
+        {
+          "option": "Display Type",
+          "description": "Analog Moving Iron / Analog Moving Coil / Digital LED / Digital LCD with Bargraph",
+          "details": [
+            "Analog MI: rugged, no aux power, AC only",
+            "Analog MC: DC only, mirror scale",
+            "Digital LED: 4-digit, bright, visible 10m",
+            "LCD Bargraph: compact, multi-parameter, backlit"
+          ],
+          "standards": ["IS 1248", "IEC 60051"],
+          "applications": ["All panel types"]
+        },
+        {
+          "option": "Meter Function",
+          "description": "Voltmeter / Ammeter / Frequency Meter / VAF (3-in-1) / kV Meter / Power Factor Meter",
+          "details": [
+            "Voltmeter: 0–600V range",
+            "Ammeter: 0–5A (via CT) or direct 0–100A",
+            "Frequency: 45–65 Hz",
+            "VAF: voltage + ampere + frequency in one unit",
+            "kV: for HT panels (via PT)"
+          ],
+          "standards": ["IS 1248"],
+          "applications": ["Standard panels", "HT panels"]
+        },
+        {
+          "option": "Panel Size",
+          "description": "48×48 / 72×72 / 96×96 / 144×144 mm (DIN standard)",
+          "details": [
+            "48×48: sub-panel, compact retrofit",
+            "72×72: standard small panel",
+            "96×96: most common, best visibility",
+            "144×144: large switchboard, analog preferred"
+          ],
+          "standards": ["DIN 43700", "IS 1248"],
+          "applications": ["All panel sizes"]
+        },
+        {
+          "option": "Phase",
+          "description": "Single Phase / Three Phase (3Ph 3W / 3Ph 4W)",
+          "details": [
+            "1Ph: simple circuits, 230V",
+            "3Ph 3W: balanced industrial loads",
+            "3Ph 4W: unbalanced loads with neutral — most industrial panels use this"
+          ],
+          "standards": ["IS 13779"],
+          "applications": ["Industrial panels"]
+        },
+        {
+          "option": "Communication",
+          "description": "No Comm / RS485 Modbus RTU (digital models only)",
+          "details": [
+            "Modbus RTU: read V/A/Hz/PF remotely from PLC/SCADA",
+            "Baud rate: 1200–9600 bps",
+            "Address: user-programmable 1–247",
+            "Requires 2-wire RS485 + GND"
+          ],
+          "standards": ["Modbus RTU", "EIA-485"],
+          "applications": ["SCADA integration", "BMS"]
+        }
+      ],
+      "seo": {
+        "metaTitle": "Digital & Analog Meters | Alliance Engineering Company",
+        "metaDescription": "Panel-mount digital and analog meters for voltage, current, frequency. IS 1248, IEC 60051 compliant.",
+        "keywords": [
+          "digital meter",
+          "analog meter",
+          "IS 1248",
+          "ammeter",
+          "voltmeter",
+          "panel meter"
+        ]
+      }
     },
     {
       "id": "dimmerstat-primary-current-injector",
@@ -3009,12 +2880,12 @@
       "media": {
         "images": [
           {
-            "id": "img-i3eubff",
-            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1779037531/product-catalog-editor/p9fygweythtocmkczlbk.png",
-            "alt": "Dimmerstat / Primary Current Injector Set",
+            "id": "img-dim001",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/product-catalog-editor/dimmerstat-current-injector.webp",
+            "alt": "Dimmerstat Primary Current Injector Set Alliance Engineering",
             "isPrimary": true,
-            "label": "dimmerstat",
-            "publicId": "product-catalog-editor/p9fygweythtocmkczlbk",
+            "label": "dimmerstat-primary-current-injector-set",
+            "publicId": "product-catalog-editor/dimmerstat-current-injector",
             "source": "cloudinary"
           }
         ],
@@ -3150,10 +3021,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 5142",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 5142", "ISO 9001:2015"],
       "applications": [
         {
           "label": "CT Ratio and Burden Testing",
@@ -3201,9 +3069,7 @@
             "Custom output current ranges available on request",
             "Output current determined by injection transformer ratio"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "CT Testing",
             "Relay Commissioning",
@@ -3219,9 +3085,7 @@
             "Fine resolution control via precision rotary dial",
             "Custom voltage ranges available for special test requirements"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "Voltage Variation Testing",
             "Relay Pickup Testing",
@@ -3237,9 +3101,7 @@
             "ELCB / RCD option available for operator safety",
             "MCB brand substitution available on request"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "Operator Safety",
             "Lab Installations",
@@ -3255,9 +3117,7 @@
             "Trolley-mount variant for heavy current injection sets",
             "Custom enclosure dimensions available for higher KVA ratings"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "Laboratory Use",
             "Field Commissioning",
@@ -3283,7 +3143,7 @@
           "primary injection test set India"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": false
     },
     {
       "id": "bus-bar-insulators",
@@ -3296,10 +3156,7 @@
       "shortDescription": "Epoxy resin and SMC/DMC busbar insulators for LV and MV switchgear and panels.",
       "description": "ALECS Brand Bus-Bar Insulators in Epoxy Resin, SMC, and DMC for Control Panels, Switchgear, Power Distribution, HV/LV applications. Voltage: 415V–11kV.",
       "brand": "ALECS",
-      "categories": [
-        "ALECS Brand Products",
-        "Control Systems"
-      ],
+      "categories": ["ALECS Brand Products", "Control Systems"],
       "media": {
         "images": [
           {
@@ -3367,12 +3224,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 5516",
-        "IEC 60660",
-        "IEC 62217",
-        "RoHS"
-      ],
+      "standards": ["IS 5516", "IEC 60660", "IEC 62217", "RoHS"],
       "applications": [
         {
           "label": "Control Panels",
@@ -3407,14 +3259,8 @@
             "DMC: complex shapes, intricate profiles, LV only",
             "Specify for voltage class"
           ],
-          "standards": [
-            "IEC 60660",
-            "IEC 62217"
-          ],
-          "applications": [
-            "HV: Epoxy",
-            "LV: SMC/DMC"
-          ]
+          "standards": ["IEC 60660", "IEC 62217"],
+          "applications": ["HV: Epoxy", "LV: SMC/DMC"]
         },
         {
           "option": "Profile / Type",
@@ -3426,12 +3272,8 @@
             "Stand-off: elevated mount, air clearance",
             "Tank Clamp: transformer-to-busbar connection"
           ],
-          "standards": [
-            "IS 5516"
-          ],
-          "applications": [
-            "All busbar configurations"
-          ]
+          "standards": ["IS 5516"],
+          "applications": ["All busbar configurations"]
         },
         {
           "option": "Voltage Class",
@@ -3442,14 +3284,8 @@
             "3.3/6.6/11 kV: MV switchgear, must specify correct BIL",
             "Creepage and clearance increase with voltage class"
           ],
-          "standards": [
-            "IEC 61869",
-            "IS 2705"
-          ],
-          "applications": [
-            "LV panels",
-            "MV switchgear"
-          ]
+          "standards": ["IEC 61869", "IS 2705"],
+          "applications": ["LV panels", "MV switchgear"]
         },
         {
           "option": "Colour",
@@ -3461,12 +3297,8 @@
             "Grey: enclosure blend",
             "Colour helps phase identification — R/Y/B phase coding available"
           ],
-          "standards": [
-            "IEC 60446 (colour identification)"
-          ],
-          "applications": [
-            "Phase colour coding"
-          ]
+          "standards": ["IEC 60446 (colour identification)"],
+          "applications": ["Phase colour coding"]
         },
         {
           "option": "Stud / Hole Size",
@@ -3477,12 +3309,8 @@
             "M16: heavy busbars 1000A+",
             "Custom bolt circle patterns for OEM panel builders"
           ],
-          "standards": [
-            "DIN 43673"
-          ],
-          "applications": [
-            "All busbar sizes"
-          ]
+          "standards": ["DIN 43673"],
+          "applications": ["All busbar sizes"]
         }
       ],
       "seo": {
@@ -3509,10 +3337,7 @@
       "shortDescription": "ALECS Brand LED indicators for control panels, machine tools, and process equipment.",
       "description": "ALECS Brand LED Indicators for Control Panels, Machine Tools, and Process Equipment. Diameter: 8–30 mm, Voltage: 12–230V AC/DC, LED Life: >50,000h.",
       "brand": "ALECS",
-      "categories": [
-        "ALECS Brand Products",
-        "Control Systems"
-      ],
+      "categories": ["ALECS Brand Products", "Control Systems"],
       "media": {
         "images": [
           {
@@ -3585,13 +3410,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IEC 60947-5-1",
-        "IS 13947",
-        "IP65",
-        "CE",
-        "RoHS"
-      ],
+      "standards": ["IEC 60947-5-1", "IS 13947", "IP65", "CE", "RoHS"],
       "applications": [
         {
           "label": "Control Panels",
@@ -3622,12 +3441,8 @@
             "22mm: most common, standard panel cutout",
             "30mm: large operator panel, easy visibility from distance"
           ],
-          "standards": [
-            "DIN 43700"
-          ],
-          "applications": [
-            "All panel types"
-          ]
+          "standards": ["DIN 43700"],
+          "applications": ["All panel types"]
         },
         {
           "option": "Colour",
@@ -3639,12 +3454,8 @@
             "Blue: information",
             "White: general purpose — always specify at order"
           ],
-          "standards": [
-            "IEC 60073 (colour coding)"
-          ],
-          "applications": [
-            "Standardised alarm colour coding"
-          ]
+          "standards": ["IEC 60073 (colour coding)"],
+          "applications": ["Standardised alarm colour coding"]
         },
         {
           "option": "Voltage",
@@ -3656,12 +3467,8 @@
             "24V DC: PLC output standard",
             "Never mix AC/DC voltages"
           ],
-          "standards": [
-            "IEC 60664"
-          ],
-          "applications": [
-            "All panel voltages"
-          ]
+          "standards": ["IEC 60664"],
+          "applications": ["All panel voltages"]
         },
         {
           "option": "Option",
@@ -3672,12 +3479,8 @@
             "Saves panel space and wiring",
             "Buzzer acknowledges via panel LED ack contact"
           ],
-          "standards": [
-            "IEC 60947-5-1"
-          ],
-          "applications": [
-            "Dual-mode alarm indication"
-          ]
+          "standards": ["IEC 60947-5-1"],
+          "applications": ["Dual-mode alarm indication"]
         }
       ],
       "seo": {
@@ -3863,11 +3666,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 5142",
-        "IEC 61558-2-14",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 5142", "IEC 61558-2-14", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Laboratory Voltage Variation Tests",
@@ -3919,9 +3718,7 @@
             "20A for heavier loads and motor testing setups",
             "Custom ratings above 20A available — specify load requirements at time of order"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "Laboratory Testing",
             "Process Control",
@@ -3937,10 +3734,7 @@
             "Three-phase units available as three independent single-phase stacked or ganged on single shaft",
             "Balanced three-phase output on ganged shaft variant"
           ],
-          "standards": [
-            "IS 5142",
-            "IEC 61558-2-14"
-          ],
+          "standards": ["IS 5142", "IEC 61558-2-14"],
           "applications": [
             "Single Phase Testing",
             "Three Phase Motor Testing",
@@ -3956,14 +3750,8 @@
             "Panel-mount complete assembly with voltmeter, MCB, and pilot lamp",
             "Rack-mount variant available for 19-inch test equipment racks"
           ],
-          "standards": [
-            "IS 5142"
-          ],
-          "applications": [
-            "Bench Testing",
-            "Panel Integration",
-            "Rack Systems"
-          ]
+          "standards": ["IS 5142"],
+          "applications": ["Bench Testing", "Panel Integration", "Rack Systems"]
         },
         {
           "option": "Instrumentation and Protection",
@@ -3974,9 +3762,7 @@
             "Digital meter variant: digital voltmeter and ammeter with MCB",
             "Custom instrumentation available including output switch and hour meter"
           ],
-          "standards": [
-            "IS 5142"
-          ],
+          "standards": ["IS 5142"],
           "applications": [
             "Simple Voltage Control",
             "Monitored Test Benches",
@@ -4001,7 +3787,8 @@
           "Alliance Engineering dimmerstat",
           "variable transformer India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     },
     {
       "id": "analog-ammeters",
@@ -4159,11 +3946,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 1248",
-        "IEC 60051",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 1248", "IEC 60051", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Switchgear and MCC Panels",
@@ -4215,9 +3998,7 @@
             "Dual scale dials available for multi-ratio CT applications",
             "Custom full-scale deflection available on request"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Direct Measurement",
             "CT Operated Panels",
@@ -4233,10 +4014,7 @@
             "Both AC and DC variants available in same panel sizes",
             "Specify AC or DC at time of order"
           ],
-          "standards": [
-            "IS 1248",
-            "IEC 60051"
-          ],
+          "standards": ["IS 1248", "IEC 60051"],
           "applications": [
             "AC Switchgear",
             "DC Battery Systems",
@@ -4252,9 +4030,7 @@
             "144mm (SR-144): control room consoles and easy-read applications",
             "All sizes use flush rear-clamp panel mounting"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Compact Panels",
             "Standard Switchgear",
@@ -4270,9 +4046,7 @@
             "Class 2.5 economy variant available for non-critical indication",
             "Specify accuracy class at time of order"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "General Monitoring",
             "Precision Metering",
@@ -4297,7 +4071,8 @@
           "Alliance Engineering ammeter",
           "panel meter India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     },
     {
       "id": "analog-voltmeters",
@@ -4460,11 +4235,7 @@
           "unit": null
         }
       ],
-      "standards": [
-        "IS 1248",
-        "IEC 60051",
-        "ISO 9001:2015"
-      ],
+      "standards": ["IS 1248", "IEC 60051", "ISO 9001:2015"],
       "applications": [
         {
           "label": "Switchgear and MCC Panels",
@@ -4516,14 +4287,8 @@
             "PT operated: 11kV, 22kV, 33kV and above (110V PT secondary)",
             "Custom full-scale voltage available on request"
           ],
-          "standards": [
-            "IS 1248"
-          ],
-          "applications": [
-            "LT Panels",
-            "HT Substations",
-            "DC Battery Systems"
-          ]
+          "standards": ["IS 1248"],
+          "applications": ["LT Panels", "HT Substations", "DC Battery Systems"]
         },
         {
           "option": "Measurement Type",
@@ -4534,10 +4299,7 @@
             "Both types available in all panel sizes",
             "Specify AC or DC at time of order"
           ],
-          "standards": [
-            "IS 1248",
-            "IEC 60051"
-          ],
+          "standards": ["IS 1248", "IEC 60051"],
           "applications": [
             "AC Switchgear",
             "DC Battery Panels",
@@ -4553,9 +4315,7 @@
             "144mm (SR-144): control room consoles and easy-read dashboards",
             "All sizes use flush rear-clamp panel mounting"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "Compact Panels",
             "Standard Switchgear",
@@ -4571,9 +4331,7 @@
             "Class 2.5 economy variant for non-critical indication",
             "Specify accuracy class at time of order"
           ],
-          "standards": [
-            "IS 1248"
-          ],
+          "standards": ["IS 1248"],
           "applications": [
             "General Monitoring",
             "Precision Metering",
@@ -4598,7 +4356,8 @@
           "Alliance Engineering voltmeter",
           "panel meter India"
         ]
-      }
+      },
+      "isFeaturedProduct": false
     }
   ]
 }
