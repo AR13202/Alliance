@@ -5,9 +5,10 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {Product, products} from '@/data/products'
+import { Product, products } from '@/data/products'
 export default function HomeScreen() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const categoriesCarouselRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -17,7 +18,60 @@ export default function HomeScreen() {
     }
   };
 
+  const scrollCategoriesCarousel = (direction: 'left' | 'right') => {
+    if (categoriesCarouselRef.current) {
+      const { scrollLeft, clientWidth } = categoriesCarouselRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      categoriesCarouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
   const featuredProducts = products.filter(product => product.isFeaturedProduct).slice(0, 8); // Get top 8 featured products
+
+  const categoriesList = [
+    {
+      title: "Current Transformers",
+      description: "High-accuracy metering and protection CTs for substations.",
+      image: "/stitch/transformers.jpg",
+      bgClass: "bg-primary/40 group-hover:bg-primary/20",
+      href: "/products?category=Current Transformers",
+    },
+    {
+      title: "Control Transformers",
+      description: "Rugged step-down transformers powering industrial panels.",
+      image: "/stitch/transformers.jpg",
+      bgClass: "bg-primary/40 group-hover:bg-primary/20",
+      href: "/products?category=Control Transformers",
+    },
+    {
+      title: "Battery Chargers",
+      description: "Intelligent industrial chargers for automated DC backup systems.",
+      image: "/stitch/monitoring.jpg",
+      bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
+      href: "/products?category=Battery Chargers",
+    },
+    {
+      title: "Voltage Stabilizers",
+      description: "Servo-controlled stabilizers and automatic voltage regulators.",
+      image: "/stitch/monitoring.jpg",
+      bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
+      href: "/products?category=Voltage Stabilizers",
+    },
+    {
+      title: "Dimmers & Variacs",
+      description: "Continuously variable voltage regulators for test labs and panels.",
+      image: "/stitch/transformers.jpg",
+      bgClass: "bg-primary/40 group-hover:bg-primary/20",
+      href: "/products?category=Dimmers / Variable Transformers / Variacs",
+    },
+    {
+      title: "Digital & Analog Meters",
+      description: "Precision panel instruments for electrical parameter monitoring.",
+      image: "/stitch/monitoring.jpg",
+      bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
+      href: "/products?category=Digital / Analog Meters",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-surface selection:bg-primary selection:text-white">
@@ -28,7 +82,7 @@ export default function HomeScreen() {
         <section className="relative min-h-[100dvh] flex items-center px-6 md:px-12 py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              src="/stitch/hero.jpg"
+              src="/bg3.png"
               alt="Industrial Precision"
               className="w-full h-full object-cover"
             />
@@ -170,43 +224,55 @@ export default function HomeScreen() {
                   From precision metering current transformers for HVPN and Powergrid substations, to rugged control transformers powering CNC and automation panels, Alliance Engineering delivers engineered reliability at every voltage level.
                 </p>
               </div>
-              <Link
-                href="/products"
-                className="text-primary font-bold border-b-2 border-primary pb-1 flex items-center gap-2 group font-headline"
-              >
-                Browse All Categories
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg">
-                <img
-                  src="/stitch/transformers.jpg"
-                  alt="Current Transformers"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-all"></div>
-                <div className="absolute bottom-0 left-0 p-12 text-white">
-                  <h3 className="text-3xl font-bold mb-2 font-headline">Current Transformers</h3>
-                  <p className="opacity-80 max-w-sm">
-                    High-accuracy monitoring for power distribution networks.
-                  </p>
+              <div className="flex flex-wrap flex-col items-end gap-6 self-start md:self-auto shrink-0">
+                <Link
+                  href="/products"
+                  className="text-primary font-bold transition-all duration-50 hover:border-b-2 border-primary pb-1 flex items-center gap-2 group font-headline"
+                >
+                  Browse All Categories
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => scrollCategoriesCarousel('left')}
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => scrollCategoriesCarousel('right')}
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
                 </div>
               </div>
-              <div className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg">
-                <img
-                  src="/stitch/monitoring.jpg"
-                  alt="Monitoring & Control"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-tertiary/60 group-hover:bg-tertiary/40 transition-all"></div>
-                <div className="absolute bottom-0 left-0 p-12 text-white">
-                  <h3 className="text-3xl font-bold mb-2 font-headline">Monitoring & Control</h3>
-                  <p className="opacity-80 max-w-sm">
-                    Intelligent command systems for automated industrial
-                    environments.
-                  </p>
-                </div>
+            </div>
+            <div className="relative">
+              <div
+                ref={categoriesCarouselRef}
+                className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              >
+                {categoriesList.map((category, index) => (
+                  <Link
+                    key={index}
+                    href={category.href}
+                    className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg flex-none w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+                  >
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 transition-all ${category.bgClass}`}></div>
+                    <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-2 font-headline">{category.title}</h3>
+                      <p className="opacity-80 max-w-sm text-sm md:text-base leading-relaxed">
+                        {category.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -242,31 +308,28 @@ export default function HomeScreen() {
 
             <div
               ref={carouselRef}
-              className="flex overflow-x-auto gap-8 snap-x snap-mandatory hide-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0"
+              className="flex overflow-x-auto gap-4 snap-x snap-mandatory hide-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {featuredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[85vw] md:w-[25vw] snap-start bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
+                  className="w-[85vw] md:w-[20vw] snap-start bg-surface-container-lowest rounded-xl p-2 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
                 >
-                  <div className="h-48 bg-surface-container rounded-lg mb-6 flex items-center justify-center">
+                  <div className="h-56 border border-gray-200 bg-surface-container rounded-lg mb-3 flex items-center justify-center">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-full w-full object-cover rounded-md"
+                      className="h-full w-full object-contain bg-white rounded-md"
                       onError={(e) => {
                         if (product.serialNumber) (e.target as HTMLImageElement).src = product.serialNumber;
                       }}
                     />
                   </div>
-                  <p className="text-xs font-bold text-primary mb-2 uppercase tracking-widest font-label">
-                    {product.category}
-                  </p>
-                  <h3 className="text-xl font-extrabold text-primary mb-3 font-headline line-clamp-1">
+                  <h3 className="text-xl font-extrabold text-primary mb-3 font-headline line-clamp-1 px-2">
                     {product.name}
                   </h3>
-                  <p className="text-secondary text-sm mb-8 leading-relaxed line-clamp-2">
+                  <p className="text-secondary text-sm mb-8 leading-relaxed line-clamp-2 px-2">
                     {product.description}
                   </p>
                   <Link href={`/products/${product.slug}`} className="text-center w-full py-4 border border-outline-variant/50 text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-md font-headline mt-auto">

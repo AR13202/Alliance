@@ -1,51 +1,509 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contribution.usercontent.com - Coming Soon</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Current Transformers | Alliance Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "on-primary-fixed": "#141545",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "primary-fixed-dim": "#c1c1fc",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-background": "#131b2e",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#8384ba",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-container": "#838990",
+                        "surface-dim": "#d2d9f4",
+                        "surface-container": "#eaedff",
+                        "on-tertiary-fixed": "#161c22",
+                        "outline": "#777680",
+                        "primary": "#020135",
+                        "secondary-container": "#d2e0fc",
+                        "surface": "#faf8ff",
+                        "tertiary-container": "#1b2228",
+                        "on-secondary-container": "#55637b",
+                        "tertiary": "#050b10",
+                        "surface-bright": "#faf8ff",
+                        "surface-tint": "#585a8d",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#c1c1fc",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c8c5d0",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-fixed": "#d5e3ff",
+                        "secondary": "#515f76",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7e2",
+                        "tertiary-fixed": "#dde3eb",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "on-primary-fixed-variant": "#404273",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-fixed-variant": "#39475e",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e2e7ff",
+                        "on-surface-variant": "#46464f",
+                        "background": "#faf8ff",
+                        "primary-container": "#1a1b4b",
+                        "on-secondary-fixed": "#0d1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "technical-label": ["JetBrains Mono"],
+                        "caps-header": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "technical-label": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "caps-header": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
         }
-        .container {
-            background: white;
-            border-radius: 12px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
-            max-width: 600px;
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            word-break: break-word;
-        }
-        p {
-            color: #666;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .emoji {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c8c5d0; border-radius: 2px; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="emoji">🚀</div>
-        <h1>contribution.usercontent.com</h1>
-        <p>This domain is coming soon.</p>
-    </div>
-</body>
-</html>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed-dim">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-surface border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<span class="font-display-lg text-headline-md text-primary tracking-tight">Alliance Engineering</span>
+<div class="hidden md:flex gap-6">
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-caps-header text-caps-header text-primary border-b-2 border-primary pb-1" href="#">Products</a>
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">Clients</a>
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary text-on-primary font-caps-header text-caps-header px-6 py-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all">
+                    CONTACT US
+                </button>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-gutter">
+<!-- Hero Section -->
+<section class="py-section-gap grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Image Gallery -->
+<div class="space-y-6">
+<div class="aspect-square bg-white border border-outline-variant p-12 flex items-center justify-center relative group overflow-hidden">
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-technical-label text-technical-label uppercase tracking-widest z-10">IN STOCK</span>
+<img alt="Industrial Current Transformer" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuDmqNqUu6Nna1lqvshhAMlR4Zh-9o-Zfak46gBB3RXgxEJSdK6BqsptysIbP7u2nvpf4DuC2dlWPjItcT00JdMO0-_vfWZMQB51yAmBGUlZc91Ue_CEIHeqnXCFXmkN8cn0lEgu7-_V8uBJi_0-w3cJsukfaDZ6TBw-oslmGZqTPQBBvyg-dKScoHdh2SE7WVYLY8lDpdZgjTBaep_gZFT5rXpCreF1UAhjx5gJHM4wR-mEazOuOZW2aNIZdDZpUID93Ntaigv8g">
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square border-2 border-primary p-2 bg-white"><img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuDmqNqUu6Nna1lqvshhAMlR4Zh-9o-Zfak46gBB3RXgxEJSdK6BqsptysIbP7u2nvpf4DuC2dlWPjItcT00JdMO0-_vfWZMQB51yAmBGUlZc91Ue_CEIHeqnXCFXmkN8cn0lEgu7-_V8uBJi_0-w3cJsukfaDZ6TBw-oslmGZqTPQBBvyg-dKScoHdh2SE7WVYLY8lDpdZgjTBaep_gZFT5rXpCreF1UAhjx5gJHM4wR-mEazOuOZW2aNIZdDZpUID93Ntaigv8g"></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-colors bg-white"><div class="w-full h-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline">image</span></div></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-colors bg-white"><div class="w-full h-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline">image</span></div></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-colors bg-white"><div class="w-full h-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline">image</span></div></button>
+</div>
+</div>
+<!-- Product Info -->
+<div class="space-y-8">
+<div class="space-y-2">
+<span class="font-caps-header text-caps-header text-outline tracking-[0.2em] uppercase inline-block border-l-2 border-primary pl-3">Industrial Series</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Current Transformers</h1>
+<p class="font-technical-label text-body-md text-on-surface-variant">Model Ref: <span class="text-primary font-bold">CURRENT-TRANSFORMERS</span> | Alliance Engineering Company</p>
+</div>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                    Alliance Engineering Current Transformers are designed for accurate current measurement, metering, and protection in LT and HT electrical systems. Available in ratios up to 2500/5A with Class 0.5 and Class 1.0 accuracy.
+                </p>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container p-6 rounded-lg border border-outline-variant/30">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-1">Current Ratio</span>
+<span class="font-headline-md text-headline-md text-primary">Up to 2500/5A</span>
+</div>
+<div class="bg-surface-container p-6 rounded-lg border border-outline-variant/30">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-1">Accuracy Class</span>
+<span class="font-headline-md text-headline-md text-primary">0.5 / 1.0</span>
+</div>
+<div class="bg-surface-container p-6 rounded-lg border border-outline-variant/30">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-1">Burden</span>
+<span class="font-headline-md text-headline-md text-primary">Up to 30VA</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary font-caps-header text-caps-header px-10 py-4 rounded-lg flex items-center gap-3 hover:shadow-xl transition-all hover:-translate-y-1">
+                        REQUEST A QUOTE
+                        <span class="material-symbols-outlined text-body-lg">arrow_forward</span>
+</button>
+<button class="border border-outline text-on-surface font-caps-header text-caps-header px-10 py-4 rounded-lg flex items-center gap-3 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-body-lg">download</span>
+                        TECHNICAL BROCHURE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Technical Specifications -->
+<section class="py-section-gap">
+<div class="flex items-baseline justify-between mb-8 border-b-2 border-primary/10 pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical Specifications</h2>
+<span class="font-technical-label text-technical-label text-outline uppercase">Engineering Data Sheet REV.04</span>
+</div>
+<div class="overflow-hidden border border-outline-variant rounded-xl">
+<table class="w-full text-left border-collapse">
+<thead class="bg-primary text-on-primary">
+<tr>
+<th class="p-4 font-caps-header text-caps-header tracking-widest">PARAMETER</th>
+<th class="p-4 font-caps-header text-caps-header tracking-widest">SPECIFICATION</th>
+
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Standard</td>
+<td class="p-4 font-bold text-primary">IS 2705 / IEC 61869-2</td>
+
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Rated Primary Current</td>
+<td class="p-4 font-bold text-primary">5A to 2500A</td>
+
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Rated Secondary Current</td>
+<td class="p-4 font-bold text-primary">5A</td>
+
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Accuracy Class</td>
+<td class="p-4 font-bold text-primary">Class 0.5 / Class 1.0</td>
+
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Burden</td>
+<td class="p-4 font-bold text-primary">2.5VA / 5VA / 10VA / 15VA / 30VA</td>
+
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Rated Insulation Level</td>
+<td class="p-4 font-bold text-primary">0.72/3kV</td>
+
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Core Material</td>
+<td class="p-4 font-bold text-primary">CRGO Steel</td>
+
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant font-medium">Housing Material</td>
+<td class="p-4 font-bold text-primary">Epoxy Resin / Bakelite</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Applications & Compliance -->
+<section class="py-section-gap grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Verified Applications</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white border border-outline-variant p-4 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-caps-header text-caps-header uppercase text-on-surface-variant group-hover:text-primary">Switchgear Panels</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-caps-header text-caps-header uppercase text-on-surface-variant group-hover:text-primary">Substations</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-caps-header text-caps-header uppercase text-on-surface-variant group-hover:text-primary">APFC Panels</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-caps-header text-caps-header uppercase text-on-surface-variant group-hover:text-primary">Energy Monitoring</span>
+</div>
+</div>
+<div class="mt-6 p-4 bg-primary-container/10 border-l-4 border-primary rounded-r">
+<p class="text-body-md text-on-primary-container italic">"Suitable for indoor LT and HT panel applications requiring accurate current measurement and protection relay interfacing."</p>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Compliance &amp; Standards</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">IS 2705</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">Standard</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">IEC 61869</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">Standard</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">9001:2015</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">ISO Quality</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">ROHS</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">Compliant</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">CE</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">Certified</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border border-outline-variant bg-white text-center rounded hover:shadow-md transition-shadow">
+<span class="text-on-surface font-bold text-lg mb-1">IREPS</span>
+<span class="text-outline text-[10px] uppercase font-caps-header">Registered</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Customizations Section -->
+<section class="py-section-gap">
+<div class="bg-primary p-12 lg:p-16 rounded-3xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full object-cover" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M400 0L0 400M400 100L100 400M400 200L200 400M400 300L300 400" stroke="white" stroke-width="2"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-2xl mb-12">
+<span class="font-caps-header text-caps-header text-primary-fixed-dim uppercase tracking-widest block mb-4">Engineered Variations</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">Industrial Customizations</h2>
+<p class="text-on-primary/70 text-body-lg">Tailor this component to your infrastructure requirements with our modular engineering options. Speak with our experts for specialized configurations.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur hover:bg-white/10 transition-colors">
+<span class="text-primary-fixed-dim font-technical-label text-technical-label block mb-4">01</span>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wide">Current Ratio</h4>
+<p class="text-on-primary/50 text-sm">Available up to 2500/5A with primary wound or bar primary options.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur hover:bg-white/10 transition-colors">
+<span class="text-primary-fixed-dim font-technical-label text-technical-label block mb-4">02</span>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wide">Accuracy Class</h4>
+<p class="text-on-primary/50 text-sm">Precision metering classes from 0.2s up to standard industrial protection.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur hover:bg-white/10 transition-colors">
+<span class="text-primary-fixed-dim font-technical-label text-technical-label block mb-4">03</span>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wide">Burden Rating</h4>
+<p class="text-on-primary/50 text-sm">Optimized burden options up to 30VA for long-distance relay communication.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur hover:bg-white/10 transition-colors">
+<span class="text-primary-fixed-dim font-technical-label text-technical-label block mb-4">04</span>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wide">Mounting Type</h4>
+<p class="text-on-primary/50 text-sm">Busbar, Din-rail, or base-plate mounting systems for easy integration.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Consultation Form -->
+<section class="py-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-3xl overflow-hidden border border-outline-variant">
+<div class="lg:col-span-2 bg-primary p-12 flex flex-col justify-center text-on-primary">
+<h2 class="font-headline-lg text-headline-lg mb-6">Engineering Consultation</h2>
+<p class="text-on-primary/70 mb-8 text-body-lg">Speak with our technical specialists for bulk procurement or specific engineering requirements.</p>
+<div class="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary-fixed-dim">speed</span>
+<div>
+<span class="block font-caps-header text-[10px] uppercase text-primary-fixed-dim">Lead Time</span>
+<span class="font-bold">Standard 4-6 Weeks</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3 bg-white p-12">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-caps-header text-caps-header text-on-surface-variant uppercase">Full Name</label>
+<input class="w-full bg-surface-container border-none focus:ring-2 focus:ring-primary rounded-lg p-4" placeholder="e.g. Rahul Sharma" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-caps-header text-caps-header text-on-surface-variant uppercase">Business Email</label>
+<input class="w-full bg-surface-container border-none focus:ring-2 focus:ring-primary rounded-lg p-4" placeholder="name@company.com" type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-caps-header text-caps-header text-on-surface-variant uppercase">Technical Requirements</label>
+<textarea class="w-full bg-surface-container border-none focus:ring-2 focus:ring-primary rounded-lg p-4 resize-none" placeholder="Describe your specific specifications or project scope..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-caps-header text-caps-header py-4 rounded-lg hover:bg-on-surface transition-all tracking-widest">
+                            SUBMIT TECHNICAL INQUIRY
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Related Components -->
+<section class="py-section-gap">
+<div class="flex items-end justify-between mb-10">
+<div>
+<span class="font-caps-header text-caps-header text-outline tracking-widest uppercase block mb-2">Frequently Specified Together</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Related Components</h2>
+</div>
+<a class="text-primary font-caps-header text-caps-header flex items-center gap-2 group" href="#">
+                    VIEW CATALOG <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-square p-8 bg-surface-container-low relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="A professional close-up photograph of a heavy-duty industrial control transformer with copper windings and steel core plates. The lighting is crisp and cool, highlighting the metallic textures and industrial build quality. The background is a clean, neutral engineering laboratory. The aesthetic is corporate and modern, focusing on technical precision and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbOG-zPVmdaqDkNmbppdcaPBweVwWJ3kjLl2_dWV2dJQxPPC3S233Y2hioTEPAMA4eX2uDwmiv2-zMdosc6LqI9CZjH36qCFpewBgJnLxy-_5l7uj8l6mPynup9HrlBy6Xh9SnGX3bcdfQ-jnSTOeBxFZ8jfnyIIZRi3Iod5SJ5E6E1rPI9jAJENLrmvLfrf0I4wRxg5CtEnuuuQoBdZ3BMWmSIaplbG2QcgA9CLlpvst0TDPonfbOxeaV0RD8cfjHWTQTFHzlnew">
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-2">Control Transformers</span>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Standard Control Transformers</h4>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-error font-technical-label text-[10px] uppercase">Low Stock</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-square p-8 bg-surface-container-low relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="A high-quality industrial product photograph of a transformer oil filtration plant. The machine features intricate piping, steel tanks, and digital pressure gauges. The scene is shot in a clean, bright manufacturing facility with soft, diffused lighting that emphasizes the silver and slate grey metallic components. The overall mood is technological and professional, representing high-end engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlUszDY8a0R5svpXf8UWYF1sZUs4JSHZixpQQjVR0bw-Kc8aHgwoYW4yFvc47pWjbtsOG-K_Svsu0rB5AMq5UMheAYxkBMc4wMZQbzhSUdPxwq7ylWu9fByvjmbLujeCiBtuvcrfE5-ffq9_800YLpQDRVvaw7RLxZHQZ4t2X2aDB9ihhI_JaQldUaQmjDrSvYP7RAiVss-ofLLLtz5v9nx5er6WLITXrn4Lx8Cq67PhW5nlxNlrqNwMaedK4bjFqNEMY7PkLhcIA">
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-2">Auxiliary Systems</span>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Oil Filtration Plant</h4>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-green-600 font-technical-label text-[10px] uppercase">In Stock</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-square p-8 bg-surface-container-low relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="Close-up photograph of high-voltage industrial battery charging units in a clean room setting. The chargers are housed in high-quality white metal enclosures with digital LED status displays. Soft, studio-quality lighting creates professional highlights on the sharp edges. The aesthetic is extremely minimalist and corporate, emphasizing reliability and modern power management technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCydneT5B22QOzDpsABCZ9JqcQJG674BacpBjbZuY81_hgel_Ox0LT0s7cYXPclG2d3IcDTuLlYfQXNP7b5LGNnQsC1_yVnLkGQ-R3ORQH0TLfJUX_xCDW7b9KgB9NtYKZ3vj-kFdCX1Fk40MZBMY3bRWKnTlRM3iWfPr5wLwIbZXuqxMDCcyU6PO77NzAXnq11uTT_3PtDvgTxI8in-oOU8PN8e2wZhI9y-kLeSemskzq3Yv8QzTRVwVNTFHjBDz2LXtN1HZ07KXk">
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-2">Power Management</span>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Industrial Battery Chargers</h4>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-green-600 font-technical-label text-[10px] uppercase">In Stock</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-square p-8 bg-surface-container-low relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="A macro photograph of advanced electronic protection relays used in high-voltage industrial panels. The device features multiple connection points and clear technical labeling. The lighting is high-contrast, bringing out the depth of the components against a slate grey background. This professional image conveys the idea of precision, safety, and modern electrical engineering standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQbv-CmUJpQyvsC2ygdKw7gOciSuD0tgVFrqWKqCC6e8Wu0hB9YkKINSHTcS-qteDQdTrjOyz_U5XqbPqDmbMadSiSYqKH3H6HDQLGKseJuNCWYWElWdidZvh37SQ3Vo6HaZuG5-FWT4OIIEdWnPBOayt2jEVkge9MjDZPQMB4BibSTEpd01x8hHDKse-Lb-wDA4nNzzoo4-HBCGDIj36UI0sVE6sbq1rnQfPF9YEOZb9KS-X3LKTbYGpqC5x5FPB-hXaQGIEdWjc">
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[10px] text-outline uppercase block mb-2">Protection Devices</span>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Differential Protection Relay</h4>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-green-600 font-technical-label text-[10px] uppercase">In Stock</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant py-20 mt-section-gap">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1 space-y-6">
+<span class="font-display-lg text-headline-md text-primary block">Alliance Engineering</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">ISO 9001:2015 certified manufacturer of high-quality current transformers, control transformers, and industrial battery chargers since 1994.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="font-caps-header text-caps-header text-primary uppercase">Products</h5>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Current Transformers</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Control Transformers</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Battery Chargers</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Potential Transformers</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="font-caps-header text-caps-header text-primary uppercase">Documentation</h5>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">ISO Certification</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">GeM Registration</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Technical Datasheets</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">IREPS Approval</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="font-caps-header text-caps-header text-primary uppercase">Headquarters</h5>
+<div class="space-y-4 text-on-surface-variant text-sm">
+<p class="leading-relaxed">Plot No. 417, Industrial Area Phase-2<br>Chandigarh, India — 134113</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span> +91 172 400 1234</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> sales@allianceengineering.in</p>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-[10px] font-caps-header uppercase">© 2024 Alliance Engineering Company. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary text-[10px] font-caps-header uppercase transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary text-[10px] font-caps-header uppercase transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.98)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = '';
+            });
+        });
+    </script>
+
+
+</body></html>

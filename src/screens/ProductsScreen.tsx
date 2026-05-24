@@ -15,15 +15,6 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Product, products } from "@/data/products";
 
-// Map actual category data to the chip labels
-const categoryLabels = [
-  { label: "All Products", value: "all" },
-  { label: "Transformers", value: "Current Transformers" },
-  { label: "Electricals", value: "other-electrical-products" },
-  { label: "Switchgear", value: "Switchgear" },
-  { label: "Panels", value: "Panels" },
-];
-
 export default function ProductsScreen() {
   const router = useRouter();
   const pathname = usePathname();
@@ -31,9 +22,71 @@ export default function ProductsScreen() {
 
   const selectedCategoryValue = searchParams?.get("category") || "all";
   const searchQuery = searchParams?.get("query")?.trim() ?? "";
-  
+
   const [currentPage, setCurrentPage] = useState(1);
   const [localSearch, setLocalSearch] = useState(searchQuery);
+  const [showAllCategories, setShowAllCategories] = useState(false);
+
+  const categoriesList = useMemo(() => {
+    const order = [
+      "all",
+      "Current Transformers",
+      "Control Transformers",
+      "Battery Chargers",
+      "Dimmers / Variable Transformers / Variacs",
+      "Digital / Analog Meters",
+      "Transformer Oil Filtration Plant",
+      "Transformer Oil Filtration Machine",
+      "Ring Type Current Transformer",
+      "Bar Type Current Transformer",
+      "Window Type Current Transformer",
+      "Wound Type Current Transformer",
+      "Buzzer Hooter Siren",
+      "DC Shunts",
+      "DC Power Pack",
+      "Bus Bar Insulators",
+      "LED Indicator"
+    ];
+
+    const uniqueFromProducts = Array.from(new Set(products.map(p => p.category)));
+    const remaining = uniqueFromProducts.filter(cat => !order.includes(cat));
+    const finalOrder = [...order, ...remaining];
+
+    return finalOrder.map(val => {
+      if (val === "all") {
+        return { label: "All Products", value: "all" };
+      }
+      let label = val;
+      if (val === "Dimmers / Variable Transformers / Variacs") {
+        label = "Dimmers & Variacs";
+      } else if (val === "Digital / Analog Meters") {
+        label = "Digital & Meters";
+      } else if (val === "Transformer Oil Filtration Plant") {
+        label = "Filtration Plants";
+      } else if (val === "Transformer Oil Filtration Machine") {
+        label = "Filtration Machines";
+      } else if (val === "Ring Type Current Transformer") {
+        label = "Ring CTs";
+      } else if (val === "Bar Type Current Transformer") {
+        label = "Bar CTs";
+      } else if (val === "Window Type Current Transformer") {
+        label = "Window CTs";
+      } else if (val === "Wound Type Current Transformer") {
+        label = "Wound CTs";
+      } else if (val === "Buzzer Hooter Siren") {
+        label = "Buzzers & Hooters";
+      } else if (val === "Bus Bar Insulators") {
+        label = "Insulators";
+      } else if (val === "LED Indicator") {
+        label = "LED Indicators";
+      }
+      return { label, value: val };
+    });
+  }, []);
+
+  const visibleCategories = useMemo(() => {
+    return showAllCategories ? categoriesList : categoriesList.slice(0, 6);
+  }, [showAllCategories, categoriesList]);
 
   useEffect(() => {
     setLocalSearch(searchQuery);
@@ -151,7 +204,7 @@ export default function ProductsScreen() {
 
           {/* Categories Filter Bar */}
           <div className="flex flex-wrap items-center gap-3">
-            {categoryLabels.map((cat) => (
+            {visibleCategories.map((cat) => (
               <button 
                 key={cat.value}
                 onClick={() => setCategory(cat.value)}
@@ -164,9 +217,13 @@ export default function ProductsScreen() {
                 {cat.label}
               </button>
             ))}
-            <button className="flex items-center gap-1 px-4 py-2 text-primary text-[11px] font-black tracking-[0.15em] uppercase hover:opacity-70 transition-opacity">
-              Show More
-              <Plus className="w-4 h-4" />
+            <button 
+              type="button"
+              onClick={() => setShowAllCategories(!showAllCategories)}
+              className="flex items-center gap-1 px-4 py-2 text-primary text-[11px] font-black tracking-[0.15em] uppercase hover:opacity-70 transition-all duration-300"
+            >
+              {showAllCategories ? "Show Less" : "Show More"}
+              <Plus className={`w-4 h-4 transition-transform duration-300 ${showAllCategories ? "rotate-45" : ""}`} />
             </button>
           </div>
         </section>

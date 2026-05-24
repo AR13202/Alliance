@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Current Transformers | Alliance Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf8ff",
+                        "primary-fixed-dim": "#c1c1fc",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c8c5d0",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-fixed": "#d5e3ff",
+                        "on-tertiary-fixed": "#161c22",
+                        "surface-variant": "#dae2fd",
+                        "secondary-fixed-dim": "#b9c7e2",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "on-secondary-fixed-variant": "#39475e",
+                        "on-secondary-fixed": "#0d1c30",
+                        "surface-bright": "#faf8ff",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#c1c1fc",
+                        "on-tertiary-container": "#838990",
+                        "surface-tint": "#585a8d",
+                        "primary": "#1a1b4b",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-fixed": "#dde3eb",
+                        "tertiary-container": "#1b2228",
+                        "primary-container": "#1a1b4b",
+                        "surface-container-high": "#e2e7ff",
+                        "surface-container": "#eaedff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#141545",
+                        "inverse-surface": "#283044",
+                        "background": "#faf8ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#d2e0fc",
+                        "on-surface-variant": "#46464f",
+                        "error-container": "#ffdad6",
+                        "secondary": "#515f76",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "surface-dim": "#d2d9f4",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-container": "#55637b",
+                        "on-primary-fixed-variant": "#404273",
+                        "error": "#ba1a1a",
+                        "on-surface": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#8384ba",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#777680",
+                        "primary-fixed": "#e1e0ff",
+                        "tertiary": "#050b10",
+                        "on-background": "#131b2e",
+                        "slate-bg": "#f8fafc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "caps-header": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "technical-label": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "caps-header": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "technical-label": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c8c5d0; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed-dim">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
+<div class="flex items-center gap-12">
+<span class="font-display-lg text-2xl text-primary tracking-tight">Alliance Engineering</span>
+<div class="hidden md:flex gap-8">
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-caps-header text-caps-header text-primary border-b-2 border-primary pb-1" href="#">Products</a>
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">Clients</a>
+<a class="font-caps-header text-caps-header text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary text-on-primary font-caps-header text-caps-header px-6 py-3 rounded hover:shadow-lg transition-all active:scale-95">
+                    CONTACT US
+                </button>
+</div>
+</nav>
+</header>
+<main class="max-w-7xl mx-auto px-6">
+<!-- Hero Section - Refined Split Layout -->
+<section class="py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left: Image Gallery -->
+<div class="space-y-6">
+<div class="aspect-square bg-white border border-outline-variant rounded-lg p-12 flex items-center justify-center relative overflow-hidden">
+<span class="absolute top-6 left-6 bg-primary text-on-primary px-3 py-1 font-technical-label text-[10px] rounded uppercase tracking-widest z-10">IN STOCK</span>
+<img alt="Industrial Current Transformer" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuDmqNqUu6Nna1lqvshhAMlR4Zh-9o-Zfak46gBB3RXgxEJSdK6BqsptysIbP7u2nvpf4DuC2dlWPjItcT00JdMO0-_vfWZMQB51yAmBGUlZc91Ue_CEIHeqnXCFXmkN8cn0lEgu7-_V8uBJi_0-w3cJsukfaDZ6TBw-oslmGZqTPQBBvyg-dKScoHdh2SE7WVYLY8lDpdZgjTBaep_gZFT5rXpCreF1UAhjx5gJHM4wR-mEazOuOZW2aNIZdDZpUID93Ntaigv8g"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square border-2 border-primary p-2 bg-white rounded-lg shadow-sm"><img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuDmqNqUu6Nna1lqvshhAMlR4Zh-9o-Zfak46gBB3RXgxEJSdK6BqsptysIbP7u2nvpf4DuC2dlWPjItcT00JdMO0-_vfWZMQB51yAmBGUlZc91Ue_CEIHeqnXCFXmkN8cn0lEgu7-_V8uBJi_0-w3cJsukfaDZ6TBw-oslmGZqTPQBBvyg-dKScoHdh2SE7WVYLY8lDpdZgjTBaep_gZFT5rXpCreF1UAhjx5gJHM4wR-mEazOuOZW2aNIZdDZpUID93Ntaigv8g"/></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-all bg-white rounded-lg flex items-center justify-center group"><span class="material-symbols-outlined text-outline group-hover:text-primary">image</span></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-all bg-white rounded-lg flex items-center justify-center group"><span class="material-symbols-outlined text-outline group-hover:text-primary">image</span></button>
+<button class="aspect-square border border-outline-variant p-2 hover:border-primary transition-all bg-white rounded-lg flex items-center justify-center group"><span class="material-symbols-outlined text-outline group-hover:text-primary">image</span></button>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="flex flex-col h-full justify-start pt-4">
+<div class="space-y-2 mb-8">
+<div class="flex items-center gap-2">
+<span class="font-caps-header text-caps-header text-primary tracking-[0.2em] uppercase font-bold text-[11px]">Industrial Series</span>
+</div>
+<h1 class="font-display-lg text-4xl lg:text-5xl text-primary leading-tight font-bold">Current Transformers</h1>
+<p class="font-body-md text-on-surface-variant">Model Ref: <span class="text-primary font-bold">CURRENT-TRANSFORMERS</span> | Alliance Engineering Company</p>
+</div>
+<p class="text-body-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                    Alliance Engineering Current Transformers are designed for accurate current measurement, metering, and protection in LT and HT electrical systems. Engineered for high performance in ratios up to 2500/5A with precision accuracy classes.
+                </p>
+<div class="grid grid-cols-3 gap-8 mb-12 border-y border-outline-variant/30 py-8">
+<div class="space-y-1">
+<span class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Current Ratio</span>
+<p class="text-2xl font-bold text-primary">2500/5A</p>
+</div>
+<div class="space-y-1">
+<span class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Accuracy Class</span>
+<p class="text-2xl font-bold text-primary">0.5 / 1.0</p>
+</div>
+<div class="space-y-1">
+<span class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Burden</span>
+<p class="text-2xl font-bold text-primary">30VA Max</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary font-caps-header text-caps-header px-10 py-4 rounded flex items-center gap-4 hover:shadow-xl transition-all hover:-translate-y-0.5">
+                        REQUEST A QUOTE
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="border-2 border-outline-variant text-on-surface font-caps-header text-caps-header px-10 py-4 rounded flex items-center gap-4 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                        TECHNICAL BROCHURE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Technical Specifications - Engineering Data Sheet Aesthetic -->
+<section class="py-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h2 class="font-headline-lg text-2xl text-primary mb-1">Technical Specifications</h2>
+<p class="text-on-surface-variant text-sm">Validated industrial performance metrics for enterprise deployment.</p>
+</div>
+<div class="bg-primary/5 px-4 py-1.5 rounded border border-primary/10">
+<span class="font-technical-label text-[10px] text-primary uppercase font-bold tracking-widest">Engineering Data Sheet REV.04</span>
+</div>
+</div>
+<div class="overflow-hidden">
+<table class="w-full text-left border-collapse font-body-md">
+<thead>
+<tr class="border-b-2 border-primary/20">
+<th class="py-4 font-caps-header text-[11px] tracking-widest uppercase text-on-surface-variant font-bold">Parameter</th>
+<th class="py-4 font-caps-header text-[11px] tracking-widest uppercase text-on-surface-variant font-bold">Specification</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Standard</td>
+<td class="py-4 font-semibold text-primary">IS 2705 / IEC 61869-2</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Rated Primary Current</td>
+<td class="py-4 font-semibold text-primary">5A to 2500A</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Rated Secondary Current</td>
+<td class="py-4 font-semibold text-primary">5A</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Accuracy Class</td>
+<td class="py-4 font-semibold text-primary">Class 0.5 / Class 1.0</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Burden</td>
+<td class="py-4 font-semibold text-primary">2.5VA / 5VA / 10VA / 15VA / 30VA</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Rated Insulation Level</td>
+<td class="py-4 font-semibold text-primary">0.72/3kV</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Core Material</td>
+<td class="py-4 font-semibold text-primary">CRGO Steel</td>
+</tr>
+<tr class="hover:bg-slate-bg transition-colors">
+<td class="py-4 text-on-surface-variant font-medium">Housing Material</td>
+<td class="py-4 font-semibold text-primary">Epoxy Resin / Bakelite</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Applications & Compliance -->
+<section class="py-16 grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 rounded bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary">Verified Applications</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white border border-outline-variant/60 p-5 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-sm uppercase text-on-surface font-semibold tracking-wider">Switchgear Panels</span>
+</div>
+<div class="bg-white border border-outline-variant/60 p-5 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-sm uppercase text-on-surface font-semibold tracking-wider">Substations</span>
+</div>
+<div class="bg-white border border-outline-variant/60 p-5 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-sm uppercase text-on-surface font-semibold tracking-wider">APFC Panels</span>
+</div>
+<div class="bg-white border border-outline-variant/60 p-5 rounded flex items-center gap-3 group hover:border-primary transition-all">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-sm uppercase text-on-surface font-semibold tracking-wider">Energy Monitoring</span>
+</div>
+</div>
+<div class="mt-8 p-5 bg-slate-bg rounded border-l-4 border-primary">
+<p class="text-sm text-on-surface-variant italic leading-relaxed">"Optimized for indoor LT and HT panel environments requiring high-fidelity current measurement and seamless protection relay integration."</p>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 rounded bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">assignment_turned_in</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary">Compliance &amp; Standards</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">IS 2705</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">Indian Standard</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">IEC 61869</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">Intl. Standard</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">ISO 9001</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">Quality MGMT</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">ROHS</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">Environment</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">CE</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">EU Safety</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4 border border-outline-variant/60 bg-white text-center rounded hover:shadow-md hover:border-primary/30 transition-all group">
+<span class="text-primary font-bold text-base mb-1">IREPS</span>
+<span class="text-outline text-[9px] uppercase font-bold tracking-tighter">Railway Reg.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Industrial Customizations - Professional Break -->
+<section class="py-16">
+<div class="bg-primary p-12 lg:p-16 rounded-xl relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 100 L100 0 M10 100 L100 10 M20 100 L100 20 M30 100 L100 30" stroke="white" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-2xl mb-12">
+<div class="inline-flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="font-caps-header text-[10px] text-surface-variant uppercase tracking-widest font-bold">Precision Configurations</span>
+</div>
+<h2 class="font-headline-lg text-3xl text-on-primary mb-4">Industrial Customizations</h2>
+<p class="text-on-primary/70 text-body-md leading-relaxed">Our modular engineering workflow allows for specific adaptations to meet your site-specific infrastructure requirements. Consult with our technical team for bespoke builds.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+<div class="group bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-all duration-300">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center mb-6 text-on-primary font-bold text-xs">01</div>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wider text-sm">Current Ratio</h4>
+<p class="text-on-primary/60 text-[13px] leading-relaxed">Scalable up to 2500/5A with primary wound or high-capacity bar primary options.</p>
+</div>
+<div class="group bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-all duration-300">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center mb-6 text-on-primary font-bold text-xs">02</div>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wider text-sm">Accuracy Class</h4>
+<p class="text-on-primary/60 text-[13px] leading-relaxed">Precision-tuned classes from 0.2s for billing to rugged protection classes.</p>
+</div>
+<div class="group bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-all duration-300">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center mb-6 text-on-primary font-bold text-xs">03</div>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wider text-sm">Burden Rating</h4>
+<p class="text-on-primary/60 text-[13px] leading-relaxed">Enhanced burden capacities up to 30VA for long-lead relay cabling support.</p>
+</div>
+<div class="group bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-all duration-300">
+<div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center mb-6 text-on-primary font-bold text-xs">04</div>
+<h4 class="text-on-primary font-bold mb-2 uppercase tracking-wider text-sm">Mounting Type</h4>
+<p class="text-on-primary/60 text-[13px] leading-relaxed">Versatile mounting including busbar-through, DIN-rail, or custom plate fixes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Consultation Form - Modernized Integrated Layout -->
+<section class="py-16">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant shadow-lg grid grid-cols-1 lg:grid-cols-12">
+<div class="lg:col-span-5 bg-slate-bg p-12 flex flex-col justify-center border-r border-outline-variant/30">
+<h2 class="font-headline-lg text-2xl text-primary mb-6">Engineering Consultation</h2>
+<p class="text-on-surface-variant mb-10 text-body-md leading-relaxed">Connect with our technical desk for bulk specifications, tender support, or specialized engineering requests.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-5 p-5 rounded bg-white border border-outline-variant/40 shadow-sm">
+<div class="w-10 h-10 rounded bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div>
+<span class="block font-caps-header text-[9px] uppercase text-outline font-bold tracking-widest">Lead Time</span>
+<span class="font-bold text-on-surface text-base">Standard 4-6 Weeks</span>
+</div>
+</div>
+<div class="flex items-center gap-5 p-5 rounded bg-white border border-outline-variant/40 shadow-sm">
+<div class="w-10 h-10 rounded bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<div>
+<span class="block font-caps-header text-[9px] uppercase text-outline font-bold tracking-widest">Technical Support</span>
+<span class="font-bold text-on-surface text-base">24h Response Goal</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 p-12">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest px-1">Full Name</label>
+<input class="w-full bg-white border border-outline-variant/60 focus:ring-1 focus:ring-primary focus:border-primary rounded p-3 text-sm transition-all outline-none" placeholder="e.g. Rahul Sharma" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest px-1">Business Email</label>
+<input class="w-full bg-white border border-outline-variant/60 focus:ring-1 focus:ring-primary focus:border-primary rounded p-3 text-sm transition-all outline-none" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-caps-header text-[10px] text-on-surface-variant uppercase font-bold tracking-widest px-1">Technical Requirements</label>
+<textarea class="w-full bg-white border border-outline-variant/60 focus:ring-1 focus:ring-primary focus:border-primary rounded p-3 text-sm resize-none transition-all outline-none" placeholder="Outline your project scope or specific CT parameters required..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-caps-header text-caps-header py-4 rounded hover:shadow-xl transition-all tracking-widest font-bold uppercase active:scale-[0.99]">
+                            SUBMIT TECHNICAL INQUIRY
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Related Components -->
+<section class="py-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-caps-header text-caps-header text-primary tracking-[0.3em] uppercase block mb-2 font-bold text-[10px]">Ecosystem</span>
+<h2 class="font-headline-lg text-2xl text-primary">Related Components</h2>
+</div>
+<a class="text-primary font-caps-header text-[11px] font-bold tracking-widest flex items-center gap-2 group px-5 py-2.5 border border-primary rounded hover:bg-primary hover:text-on-primary transition-all" href="#">
+                    VIEW FULL CATALOG 
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant/60 rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="aspect-square p-8 bg-slate-bg flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbOG-zPVmdaqDkNmbppdcaPBweVwWJ3kjLl2_dWV2dJQxPPC3S233Y2hioTEPAMA4eX2uDwmiv2-zMdosc6LqI9CZjH36qCFpewBgJnLxy-_5l7uj8l6mPynup9HrlBy6Xh9SnGX3bcdfQ-jnSTOeBxFZ8jfnyIIZRi3Iod5SJ5E6E1rPI9jAJENLrmvLfrf0I4wRxg5CtEnuuuQoBdZ3BMWmSIaplbG2QcgA9CLlpvst0TDPonfbOxeaV0RD8cfjHWTQTFHzlnew"/>
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[9px] text-outline uppercase block mb-2 font-bold tracking-widest">Control Transformers</span>
+<h4 class="font-bold text-primary text-base group-hover:text-primary transition-colors leading-tight mb-4">Standard Control Transformers</h4>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-error font-technical-label text-[9px] uppercase font-bold tracking-widest px-2 py-1 bg-error/5 rounded">Low Stock</span>
+<span class="material-symbols-outlined text-primary text-xl cursor-pointer">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant/60 rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="aspect-square p-8 bg-slate-bg flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlUszDY8a0R5svpXf8UWYF1sZUs4JSHZixpQQjVR0bw-Kc8aHgwoYW4yFvc47pWjbtsOG-K_Svsu0rB5AMq5UMheAYxkBMc4wMZQbzhSUdPxwq7ylWu9fByvjmbLujeCiBtuvcrfE5-ffq9_800YLpQDRVvaw7RLxZHQZ4t2X2aDB9ihhI_JaQldUaQmjDrSvYP7RAiVss-ofLLLtz5v9nx5er6WLITXrn4Lx8Cq67PhW5nlxNlrqNwMaedK4bjFqNEMY7PkLhcIA"/>
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[9px] text-outline uppercase block mb-2 font-bold tracking-widest">Auxiliary Systems</span>
+<h4 class="font-bold text-primary text-base group-hover:text-primary transition-colors leading-tight mb-4">Oil Filtration Plant</h4>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-on-primary-container font-technical-label text-[9px] uppercase font-bold tracking-widest px-2 py-1 bg-primary/5 rounded text-primary">In Stock</span>
+<span class="material-symbols-outlined text-primary text-xl cursor-pointer">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant/60 rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="aspect-square p-8 bg-slate-bg flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCydneT5B22QOzDpsABCZ9JqcQJG674BacpBjbZuY81_hgel_Ox0LT0s7cYXPclG2d3IcDTuLlYfQXNP7b5LGNnQsC1_yVnLkGQ-R3ORQH0TLfJUX_xCDW7b9KgB9NtYKZ3vj-kFdCX1Fk40MZBMY3bRWKnTlRM3iWfPr5wLwIbZXuqxMDCcyU6PO77NzAXnq11uTT_3PtDvgTxI8in-oOU8PN8e2wZhI9y-kLeSemskzq3Yv8QzTRVwVNTFHjBDz2LXtN1HZ07KXk"/>
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[9px] text-outline uppercase block mb-2 font-bold tracking-widest">Power Management</span>
+<h4 class="font-bold text-primary text-base group-hover:text-primary transition-colors leading-tight mb-4">Industrial Battery Chargers</h4>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-on-primary-container font-technical-label text-[9px] uppercase font-bold tracking-widest px-2 py-1 bg-primary/5 rounded text-primary">In Stock</span>
+<span class="material-symbols-outlined text-primary text-xl cursor-pointer">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant/60 rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="aspect-square p-8 bg-slate-bg flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQbv-CmUJpQyvsC2ygdKw7gOciSuD0tgVFrqWKqCC6e8Wu0hB9YkKINSHTcS-qteDQdTrjOyz_U5XqbPqDmbMadSiSYqKH3H6HDQLGKseJuNCWYWElWdidZvh37SQ3Vo6HaZuG5-FWT4OIIEdWnPBOayt2jEVkge9MjDZPQMB4BibSTEpd01x8hHDKse-Lb-wDA4nNzzoo4-HBCGDIj36UI0sVE6sbq1rnQfPF9YEOZb9KS-X3LKTbYGpqC5x5FPB-hXaQGIEdWjc"/>
+</div>
+<div class="p-6">
+<span class="font-caps-header text-[9px] text-outline uppercase block mb-2 font-bold tracking-widest">Protection Devices</span>
+<h4 class="font-bold text-primary text-base group-hover:text-primary transition-colors leading-tight mb-4">Differential Protection Relay</h4>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-on-primary-container font-technical-label text-[9px] uppercase font-bold tracking-widest px-2 py-1 bg-primary/5 rounded text-primary">In Stock</span>
+<span class="material-symbols-outlined text-primary text-xl cursor-pointer">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-outline-variant py-16 mt-16">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4 space-y-6">
+<span class="font-display-lg text-2xl text-primary block">Alliance Engineering</span>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+                    ISO 9001:2015 certified manufacturer of high-quality industrial components. Delivering precision-engineered power solutions since 1994.
+                </p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+</a>
+</div>
+</div>
+<div class="md:col-span-2 space-y-6">
+<h5 class="font-caps-header text-[10px] text-primary uppercase font-bold tracking-widest">Products</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Current Transformers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Control Transformers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Battery Chargers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Potential Transformers</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-6">
+<h5 class="font-caps-header text-[10px] text-primary uppercase font-bold tracking-widest">Documentation</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">ISO Certification</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">GeM Registration</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Technical Datasheets</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">IREPS Approval</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 space-y-6">
+<h5 class="font-caps-header text-[10px] text-primary uppercase font-bold tracking-widest">Headquarters</h5>
+<div class="space-y-4 text-on-surface-variant text-sm">
+<p class="leading-relaxed">Plot No. 417, Industrial Area Phase-2<br/>Chandigarh, India — 134113</p>
+<div class="space-y-2">
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">phone</span> +91 172 400 1234</p>
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">mail</span> sales@allianceengineering.in</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-outline text-[9px] font-caps-header uppercase tracking-widest font-bold">© 2024 Alliance Engineering Company. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-outline hover:text-primary text-[9px] font-caps-header uppercase tracking-widest font-bold transition-colors" href="#">Privacy Policy</a>
+<a class="text-outline hover:text-primary text-[9px] font-caps-header uppercase tracking-widest font-bold transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                if (!button.classList.contains('active:scale-95')) {
+                    button.style.transform = 'scale(0.98)';
+                }
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = '';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = '';
+            });
+        });
+    </script>
+</body></html>
