@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import {
   Plus,
   Search,
@@ -26,6 +26,19 @@ export default function ProductsScreen() {
   const [currentPage, setCurrentPage] = useState(1);
   const [localSearch, setLocalSearch] = useState(searchQuery);
   const [showAllCategories, setShowAllCategories] = useState(false);
+  const [sortBy, setSortBy] = useState<"featured" | "name-asc" | "name-desc">("featured");
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const sortRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+        setShowSortDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const categoriesList = useMemo(() => {
     const order = [
@@ -94,7 +107,7 @@ export default function ProductsScreen() {
 
   const itemsPerPage = 8;
 
-  // Filter products based on category and search query
+  // Filter and sort products based on category, search query, and sort choice
   const filteredProducts = useMemo(() => {
     let result = products;
 
@@ -115,8 +128,14 @@ export default function ProductsScreen() {
       );
     }
 
+    if (sortBy === "name-asc") {
+      result = [...result].sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === "name-desc") {
+      result = [...result].sort((a, b) => b.name.localeCompare(a.name));
+    }
+
     return result;
-  }, [selectedCategoryValue, searchQuery]);
+  }, [selectedCategoryValue, searchQuery, sortBy]);
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const displayedProducts = filteredProducts.slice(
@@ -179,11 +198,38 @@ export default function ProductsScreen() {
                 Industrial precision for global infrastructure.
               </p>
             </div>
-            <div className="relative w-full md:w-auto mt-4 md:mt-0">
-              <button className="flex w-full md:w-auto justify-between md:justify-start items-center gap-2 px-6 py-3 bg-white border border-outline-variant/20 text-on-surface text-xs font-bold tracking-widest uppercase hover:bg-surface-container-low transition-all shadow-sm rounded-md">
-                Sort by: Featured
-                <ChevronDown className="w-4 h-4 text-primary" />
+            <div ref={sortRef} className="relative w-full md:w-auto mt-4 md:mt-0">
+              <button
+                onClick={() => setShowSortDropdown(!showSortDropdown)}
+                className="flex w-full md:w-auto justify-between md:justify-start items-center gap-2 px-6 py-3 bg-white border border-outline-variant/20 text-on-surface text-xs font-bold tracking-widest uppercase hover:bg-surface-container-low transition-all shadow-sm rounded-md"
+              >
+                Sort by: {sortBy === "featured" ? "Featured" : sortBy === "name-asc" ? "Name (A-Z)" : "Name (Z-A)"}
+                <ChevronDown className={`w-4 h-4 text-primary transition-transform duration-200 ${showSortDropdown ? "rotate-180" : ""}`} />
               </button>
+
+              {showSortDropdown && (
+                <div className="absolute right-0 mt-2 w-full md:w-48 bg-white border border-outline-variant/20 rounded-md shadow-lg z-20 py-1">
+                  {[
+                    { label: "Featured", value: "featured" },
+                    { label: "Name (A-Z)", value: "name-asc" },
+                    { label: "Name (Z-A)", value: "name-desc" },
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => {
+                        setSortBy(option.value as any);
+                        setShowSortDropdown(false);
+                        setCurrentPage(1);
+                      }}
+                      className={`w-full text-left px-6 py-3 text-xs font-bold tracking-widest uppercase hover:bg-surface-container-low transition-colors ${
+                        sortBy === option.value ? "text-primary bg-surface-container-lowest" : "text-secondary"
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -250,32 +296,29 @@ export default function ProductsScreen() {
                     <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-lg font-black text-primary leading-none mb-3 font-headline group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-black text-primary leading-none mb-4 font-headline group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-[10px] text-outline font-black uppercase tracking-[0.15em] mb-4">
-                      Category: {product.category}
-                    </p>
                     <div className="space-y-3 mb-6">
-                      <div className="flex items-center gap-3 text-secondary text-sm font-medium">
-                        <Sparkles className="w-4 h-4 text-primary opacity-40" />
-                        <span>{product.specs[0]?.parameter}: {product.specs[0]?.specification}</span>
-                      </div>
-                      {/* <div className="flex items-center gap-3 text-secondary text-sm font-medium">
-                        <Sparkles className="w-4 h-4 text-primary opacity-40" />
-                        <span>Compliance Certified</span>
-                      </div> */}
+                      {product.specs.slice(0, 2).map((spec, index) => (
+                        <div key={index} className="flex items-center gap-3 text-secondary text-sm font-medium">
+                          <Sparkles className="w-4 h-4 text-primary opacity-40 shrink-0" />
+                          <span className="line-clamp-1">{spec.parameter}: {spec.specification}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="mt-auto pt-6 border-t border-outline-variant/30 flex justify-between items-center">
+                    <div className="mt-auto pt-6 border-t border-outline-variant/30 flex gap-3 items-center">
                       <button 
                         onClick={(e) => {
                           e.stopPropagation();
                           router.push(`/products/${product.id}#inquiry`);
                         }}
-                        className="text-primary font-black text-[11px] tracking-widest uppercase hover:underline decoration-2 underline-offset-4">
+                        className="flex-1 text-center py-2.5 border border-primary text-primary font-black text-[10px] tracking-widest uppercase rounded hover:bg-primary/5 transition-all">
                         Custom Quote
                       </button>
-                      <Link href={`/products/${product.id}`} className="text-outline font-black text-[10px] uppercase tracking-[0.2em] group-hover:text-primary transition-colors">
+                      <Link 
+                        href={`/products/${product.id}`} 
+                        className="flex-1 text-center py-2.5 bg-primary border border-primary text-white font-black text-[10px] tracking-widest uppercase rounded hover:opacity-90 hover:shadow-lg transition-all shadow-md shadow-primary/10">
                         View Product
                       </Link>
                     </div>

@@ -425,7 +425,7 @@ export default function HomeScreen() {
                     <p className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
                       Email Us
                     </p>
-                    <p className="font-bold text-on-surface">sales@allianceengineering.in</p>
+                    <p className="font-bold text-on-surface">alliancemeters@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -436,7 +436,7 @@ export default function HomeScreen() {
                     <p className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
                       Direct Line
                     </p>
-                    <p className="font-bold text-on-surface">+91 (172) 400 1234</p>
+                    <p className="font-bold text-on-surface">+91-9417374546, +91-7589124094</p>
                   </div>
                 </div>
               </div>
@@ -469,7 +469,7 @@ export default function HomeScreen() {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                  <div className="grid grid-cols-1 gap-6 md:gap-8">
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
                         Company Name

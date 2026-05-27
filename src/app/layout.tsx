@@ -24,12 +24,12 @@ export default function RootLayout({
       "@type": "PostalAddress",
       "streetAddress": "Plot No.: 417, Industrial Area Phase -2",
       "addressLocality": "Chandigarh",
-      "postalCode": "134113",
+      "postalCode": "160002",
       "addressCountry": "IN"
     },
-    "telephone": "+91 172 400 1234",
-    "email": "sales@allianceengineering.in",
-    "url": "https://www.allianceengineering.in/"
+    "telephone": "+91-9417374546",
+    "email": "alliancemeters@gmail.com",
+    "url": "https://www.alliancenggco.com/"
   };
 
   return (

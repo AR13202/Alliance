@@ -17,7 +17,7 @@ export default function ContactScreen() {
               <p className="text-xl text-secondary mb-12 max-w-md font-body leading-relaxed">
                 Partner with our engineering team to bring structural integrity and industrial precision to your next global project.
               </p>
-              
+
               <div className="space-y-8">
                 {/* Contact Tiles */}
                 <div className="flex items-center gap-6 group">
@@ -26,20 +26,20 @@ export default function ContactScreen() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-outline uppercase tracking-widest mb-1">Direct Line</p>
-                    <p className="text-xl font-headline font-bold text-tertiary">+91 172 555 0192</p>
+                    <p className="text-xl font-headline font-bold text-tertiary">+91-9417374546, +91-7589124094</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-6 group">
                   <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                     <span className="material-symbols-outlined">mail</span>
                   </div>
                   <div>
                     <p className="text-xs font-bold text-outline uppercase tracking-widest mb-1">Inquiries</p>
-                    <p className="text-xl font-headline font-bold text-tertiary">sales@allianceengineering.in</p>
+                    <p className="text-xl font-headline font-bold text-tertiary">alliancemeters@gmail.com</p>
                   </div>
                 </div>
-                
+
                 {/* Certification Badges */}
                 <div className="pt-8 flex flex-wrap gap-4">
                   <div className="px-4 py-2 bg-surface-container-low rounded-full flex items-center gap-2 border border-outline-variant/10">
@@ -60,18 +60,18 @@ export default function ContactScreen() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Full Name *</label>
-                    <input 
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
-                      placeholder="John Doe" 
+                    <input
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
+                      placeholder="Your Name"
                       type="text"
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Company Name *</label>
-                    <input 
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
-                      placeholder="Engineering Ltd." 
+                    <input
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
+                      placeholder="Company Name"
                       type="text"
                       required
                     />
@@ -80,18 +80,18 @@ export default function ContactScreen() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Email Address *</label>
-                    <input 
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
-                      placeholder="john@example.com" 
+                    <input
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
+                      placeholder="email@example.com"
                       type="email"
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Phone Number *</label>
-                    <input 
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50" 
-                      placeholder="+91 98765 43210" 
+                    <input
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
+                      placeholder="+91 98xxxxxx10"
                       type="tel"
                       required
                     />
@@ -115,15 +115,15 @@ export default function ContactScreen() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Technical Requirements / Message *</label>
-                  <textarea 
-                    className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all resize-none placeholder:opacity-50" 
-                    placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity..." 
+                  <textarea
+                    className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all resize-none placeholder:opacity-50"
+                    placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity..."
                     rows={4}
                     required
                   ></textarea>
                 </div>
-                <button 
-                  className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10" 
+                <button
+                  className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10"
                   type="submit"
                 >
                   Send Message
@@ -150,10 +150,15 @@ export default function ContactScreen() {
                     Chandigarh, 160002,<br />
                     India
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase cursor-pointer hover:opacity-70 transition-opacity font-headline">
+                  <a
+                    href="https://www.google.com/maps/place/ALLIANCE+ENGINEERING+COMPANY/@30.696768,76.7816297,17z/data=!3m1!4b1!4m6!3m5!1s0x390fec8d1998fad9:0x2cc4e6be2d1f99cd!8m2!3d30.696768!4d76.7816297"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase hover:opacity-70 transition-opacity font-headline"
+                  >
                     <span className="material-symbols-outlined">directions</span>
                     Get Directions
-                  </div>
+                  </a>
                 </div>
                 <div className="p-8 border border-outline-variant/30 rounded-xl bg-surface/50">
                   <h4 className="text-sm font-bold text-outline uppercase tracking-widest mb-2">Technical Support</h4>
@@ -161,20 +166,26 @@ export default function ContactScreen() {
                   <p className="text-tertiary font-bold font-headline opacity-70">09:00 - 18:00 IST</p>
                 </div>
               </div>
-              
+
               <div className="lg:col-span-8 h-[350px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl relative group cursor-crosshair">
-                <img 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100" 
-                  alt="architectural 3D map rendering of Chandigarh industrial zone" 
-                  src="/stitch/contact_map.png"
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.199533838484!2d76.7816297!3d30.696768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec8d1998fad9%3A0x2cc4e6be2d1f99cd!2sALLIANCE%20ENGINEERING%20COMPANY!5e1!3m2!1sen!2sin!4v1779892391905!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100"
+                  title="Alliance Engineering Company Map Location"
                 />
                 <div className="absolute inset-0 bg-primary/10 pointer-events-none mix-blend-overlay"></div>
-                <div className="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-2xl flex items-center gap-4 border border-outline-variant/10">
+                <div className="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-2xl flex items-center gap-4 border border-outline-variant/10 pointer-events-none">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
                     <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-outline uppercase">Alliance HQ</p>
+                    <p className="text-xs font-bold text-outline uppercase">Alliance Engineering Company</p>
                     <p className="font-headline font-black text-tertiary">Industrial Area Phase 2</p>
                   </div>
                 </div>
@@ -195,7 +206,7 @@ export default function ContactScreen() {
                 Engineered with absolute geometric accuracy for large-scale industrial infrastructure.
               </p>
             </div>
-            
+
             <div className="space-y-4 group">
               <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:-rotate-6">
                 <span className="material-symbols-outlined text-4xl">security</span>
@@ -205,7 +216,7 @@ export default function ContactScreen() {
                 Your project blueprints and communications are protected by industry-standard security protocols.
               </p>
             </div>
-            
+
             <div className="space-y-4 group">
               <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-6">
                 <span className="material-symbols-outlined text-4xl">public</span>

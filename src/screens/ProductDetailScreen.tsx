@@ -63,7 +63,7 @@ export default function ProductDetailScreen({
 
   const related = getRelatedProducts(product.id, 4);
   const allImages = product.thumbnails.length > 0 ? product.thumbnails : [product.image];
-
+  console.log(allImages);
   const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(true);
@@ -93,21 +93,20 @@ export default function ProductDetailScreen({
                 <button
                   key={index}
                   onClick={() => setSelectedImg(index)}
-                  className={`aspect-square border-2 p-2 rounded-lg shadow-sm transition-colors duration-200 ${
-                    selectedImg === index ? "border-[#1a1b4b] bg-white" : "border-[#c8c5d0] hover:border-[#1a1b4b] bg-[#f8fafc]"
-                  }`}
+                  className={`aspect-square border-2 p-2 rounded-lg shadow-sm transition-colors duration-200 ${selectedImg === index ? "border-[#1a1b4b] bg-white" : "border-[#c8c5d0] hover:border-[#1a1b4b] bg-[#f8fafc]"
+                    }`}
                 >
                   <img className="w-full h-full object-contain" src={img} alt="" />
                 </button>
               ))}
-              {Array.from({ length: Math.max(0, 4 - allImages.length) }).map((_, idx) => (
+              {/* {Array.from({ length: Math.max(0, 4 - allImages.length) }).map((_, idx) => (
                 <div
                   key={idx}
                   className="aspect-square border border-[#c8c5d0] p-2 bg-[#f8fafc] rounded-lg flex items-center justify-center"
                 >
                   <span className="material-symbols-outlined text-[#777680]">image</span>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
 
@@ -123,7 +122,8 @@ export default function ProductDetailScreen({
                 {product.name}
               </h1>
               <p className="font-body-md text-[#46464f]">
-                Model Ref: <span className="text-[#1a1b4b] font-bold">{productCode}</span> | {product.brand || "Alliance Engineering Company"}
+                {/* Model Ref: <span className="text-[#1a1b4b] font-bold">{productCode}</span> |  */}
+                {product.brand || "Alliance Engineering Company"}
               </p>
             </div>
             <div className="space-y-4 mb-8">
@@ -131,7 +131,7 @@ export default function ProductDetailScreen({
                 {product.description}
               </p>
             </div>
-            
+
             {product.highlights && product.highlights.length > 0 && (
               <div className="mb-10 bg-[#f8fafc] border border-[#c8c5d0]/30 rounded-xl p-6 shadow-sm">
                 <h3 className="font-['Hanken_Grotesk'] text-[11px] text-[#1a1b4b] uppercase font-bold tracking-widest mb-4 flex items-center gap-2">
@@ -432,9 +432,6 @@ export default function ProductDetailScreen({
         <section className="py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="font-['Hanken_Grotesk'] font-bold text-xs text-[#1a1b4b] tracking-[0.3em] uppercase block mb-2 font-bold text-[10px]">
-                Ecosystem
-              </span>
               <h2 className="font-['Hanken_Grotesk'] font-semibold text-2xl text-[#1a1b4b]">
                 Related Components
               </h2>
@@ -456,7 +453,7 @@ export default function ProductDetailScreen({
                 key={relProduct.id}
                 className="bg-[#f8fafc] border border-[#c8c5d0]/50 rounded-xl overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               >
-                <div className="aspect-square p-8 bg-[#f2f3ff]/50 relative overflow-hidden flex items-center justify-center">
+                <div className="aspect-square bg-[#f2f3ff]/50 relative overflow-hidden flex items-center justify-center">
                   <img
                     className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
                     src={relProduct.image}
@@ -474,15 +471,17 @@ export default function ProductDetailScreen({
                   </div>
                   <div className="pt-4 border-t border-[#c8c5d0]/30 flex justify-between items-center">
                     <span
-                      className={`${
-                        relProduct.status === "Low Stock"
-                          ? "text-[#ba1a1a] bg-[#ba1a1a]/5"
-                          : "text-[#1a1b4b] bg-[#1a1b4b]/5"
-                      } font-['JetBrains_Mono'] text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded`}
+                      className={`${relProduct.status === "Low Stock"
+                        ? "text-[#ba1a1a] bg-[#ba1a1a]/5"
+                        : "text-[#1a1b4b] bg-[#1a1b4b]/5"
+                        } font-['JetBrains_Mono'] text-[9px] uppercase font-bold tracking-widest px-2 py-1 rounded`}
                     >
                       {relProduct.status || "In Stock"}
                     </span>
-                    <span className="material-symbols-outlined text-[#1a1b4b] text-xl">add_circle</span>
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1a1b4b] flex items-center gap-1 transition-opacity group-hover:opacity-75">
+                      View Product
+                      <span className="material-symbols-outlined text-[13px] font-black">arrow_forward</span>
+                    </span>
                   </div>
                 </div>
               </Link>
