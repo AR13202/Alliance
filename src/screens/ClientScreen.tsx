@@ -1,23 +1,17 @@
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function ClientScreen() {
   const publicClients = [
-    { name: "POWERGRID", logo: "/stitch/clients/powergrid.png" },
+    { name: "POWERGRID", logo: "/client_logos/Power_Grid_Corporation_of_India_Ltd..svg" },
     { name: "HVPN (Haryana Vidyut Prasaran Nigam)", logo: "/client_logos/hvpn.jpeg" },
-    { name: "DHBVN (Dakshin Haryana Bijli Vitran Nigam)" },
-    { name: "BBMB (Bhakra Beas Management Board)" },
-    { name: "Indian Railways" },
-    { name: "BHEL (Bharat Heavy Electricals Ltd.)", logo: "/stitch/clients/bhel.png" },
     { name: "UHBVN (Uttar Haryana Bijli Vitran Nigam)", logo: "/client_logos/uhbvn.png" },
     { name: "Chandigarh Power Distribution Limited", logo: "/client_logos/Chandigarh_Power_Distribution_Limited.png" },
-    { name: "NTPC Limited", logo: "/stitch/clients/ntpc.png" },
-    { name: "NHPC Limited", logo: "/stitch/clients/nhpc.png" },
   ];
 
   const privateClients = [
     { name: "JSW", logo: "/client_logos/JSW_Group_Logo.png" },
-    { name: "L&T (Larsen & Toubro)" },
     { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
     { name: "Reliance Jio", logo: "/client_logos/jio.png" },
     { name: "ESAB India", logo: "/client_logos/esab_logo.png" },
@@ -67,23 +61,23 @@ export default function ClientScreen() {
               </div>
               {/* Analytics Bento Grid */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-end h-48 shadow-sm">
-                  <span className="text-4xl font-extrabold text-primary mb-2">500+</span>
-                  <span className="text-secondary font-medium uppercase tracking-wider text-xs">
+                <div className="bg-surface-container-lowest p-4 sm:p-6 lg:p-8 rounded-xl flex flex-col justify-end h-36 sm:h-48 shadow-sm">
+                  <span className="text-3xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">500+</span>
+                  <span className="text-secondary font-semibold uppercase tracking-wider text-[10px] sm:text-xs">
                     Total Clients Served
                   </span>
                 </div>
-                <div className="bg-primary-container p-8 rounded-xl flex flex-col justify-end h-48 text-white shadow-lg">
-                  <span className="text-4xl font-extrabold mb-2 text-on-primary">20+</span>
-                  <span className="opacity-80 font-medium uppercase tracking-wider text-xs text-on-primary">
+                <div className="bg-primary-container p-4 sm:p-6 lg:p-8 rounded-xl flex flex-col justify-end h-36 sm:h-48 text-white shadow-lg">
+                  <span className="text-3xl sm:text-4xl font-extrabold mb-1 sm:mb-2 text-on-primary">20+</span>
+                  <span className="opacity-80 font-medium uppercase tracking-wider text-[10px] sm:text-xs text-on-primary">
                     Countries Reached
                   </span>
                 </div>
-                <div className="bg-surface-container-low p-8 rounded-xl flex flex-col justify-end h-48 col-span-2 shadow-sm border border-outline-variant/10">
+                <div className="bg-surface-container-low p-4 sm:p-6 lg:p-8 rounded-xl flex flex-col justify-end h-32 sm:h-48 col-span-2 shadow-sm border border-outline-variant/10">
                   <div className="flex items-center gap-4">
-                    <span className="text-5xl font-extrabold text-tertiary">30+</span>
+                    <span className="text-4xl sm:text-5xl font-extrabold text-tertiary">30+</span>
                     <div className="h-10 w-[1px] bg-outline-variant/30"></div>
-                    <span className="text-secondary font-medium uppercase tracking-wider text-xs leading-tight">
+                    <span className="text-secondary font-medium uppercase tracking-wider text-[10px] sm:text-xs leading-tight">
                       Years of
                       <br />
                       Excellence
@@ -105,7 +99,7 @@ export default function ClientScreen() {
             </svg>
           </div>
         </section>
-
+ 
         {/* Clients Grid Sections */}
         <section className="bg-surface-container-low py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -117,11 +111,11 @@ export default function ClientScreen() {
                 </h2>
                 <div className="h-[2px] w-12 sm:w-auto sm:flex-grow bg-outline-variant/20"></div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                 {publicClients.map((client) => (
                   <div
                     key={client.name}
-                    className="bg-surface-container-lowest h-40 rounded-xl flex items-center justify-center p-6 transition-all border border-transparent hover:border-primary/10 hover:shadow-md group relative overflow-hidden"
+                    className="bg-surface-container-lowest h-28 sm:h-40 rounded-xl flex items-center justify-center p-4 sm:p-6 transition-all border border-transparent hover:border-primary/10 hover:shadow-md group relative overflow-hidden"
                   >
                     {client.logo ? (
                       <img
@@ -139,7 +133,7 @@ export default function ClientScreen() {
                 ))}
               </div>
             </div>
-
+ 
             {/* Private Sector */}
             <div className="mb-16 md:mb-24">
               <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-8 md:mb-12 text-center sm:text-left">
@@ -152,7 +146,7 @@ export default function ClientScreen() {
                 {privateClients.map((client) => (
                   <div
                     key={client.name}
-                    className="bg-surface-container-lowest h-36 rounded-xl flex items-center justify-center p-4 transition-all shadow-sm border border-transparent hover:border-primary/10 hover:shadow-lg group relative overflow-hidden"
+                    className="bg-surface-container-lowest h-24 sm:h-36 rounded-xl flex items-center justify-center p-3 sm:p-4 transition-all shadow-sm border border-transparent hover:border-primary/10 hover:shadow-lg group relative overflow-hidden"
                   >
                     {client.logo ? (
                       <img
@@ -215,12 +209,18 @@ export default function ClientScreen() {
               Join our network of prestigious clients and experience the precision of Alliance Engineering.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-xl hover:shadow-primary/20 transition-all active:scale-95 text-white">
+              <Link
+                href="/contact?product=Start a Project"
+                className="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-xl hover:shadow-primary/20 transition-all active:scale-95 text-white text-center"
+              >
                 Start a Project
-              </button>
-              <button className="bg-secondary-container text-primary px-10 py-4 rounded-lg font-bold hover:bg-surface-container-high transition-all active:scale-95">
+              </Link>
+              <Link
+                href="/contact?product=Request Case Studies"
+                className="bg-secondary-container text-primary px-10 py-4 rounded-lg font-bold hover:bg-surface-container-high transition-all active:scale-95 text-center"
+              >
                 Request Case Studies
-              </button>
+              </Link>
             </div>
           </div>
         </section>

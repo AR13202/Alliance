@@ -18,7 +18,6 @@ const standardDescriptions: Record<string, string> = {
   "CE": "Conformity with health, safety, and environmental protection standards for the EEA.",
   "CE MARK": "Conformity with health, safety, and environmental protection standards for the EEA.",
   "CE Mark": "Conformity with health, safety, and environmental protection standards for the EEA.",
-  "IREPS": "Registered and approved vendor for Indian Railways e-Procurement System.",
   "IS 6034-1989": "Indian standard specification for transformer oil filtration plants.",
   "IS 6034": "Indian standard specification for transformer oil filtration plants.",
   "IS 335-1993": "Indian standard for new insulating oils for transformers and switchgear.",
@@ -73,7 +72,7 @@ export default function ProductDetailScreen({
     <div className="bg-white font-['Hanken_Grotesk'] text-[#131b2e] selection:bg-[#c1c1fc] min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="max-w-[1280px] mx-auto px-6 flex-grow">
+      <main className="max-w-7xl mx-auto px-6 md:px-8 flex-grow w-full">
         {/* Hero Section - Refined Split Layout */}
         <section className="py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Image Gallery */}
@@ -151,15 +150,15 @@ export default function ProductDetailScreen({
               </div>
             )}
 
-            <div className="flex flex-wrap gap-4 pt-4 border-t border-[#c8c5d0]/30">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-[#c8c5d0]/30">
               <button
                 onClick={() => document.getElementById("inquiry")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-[#1a1b4b] text-white font-['Hanken_Grotesk'] font-bold text-xs tracking-widest px-10 py-4 rounded flex items-center gap-4 hover:shadow-xl transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto justify-center bg-[#1a1b4b] text-white font-['Hanken_Grotesk'] font-bold text-xs tracking-widest px-8 py-4 rounded flex items-center gap-4 hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
                 REQUEST A QUOTE
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
-              <button className="bg-[#f8fafc] border-2 border-[#c8c5d0] text-[#131b2e] font-['Hanken_Grotesk'] font-bold text-xs tracking-widest px-10 py-4 rounded flex items-center gap-4 hover:bg-[#f2f3ff] transition-all shadow-sm">
+              <button className="w-full sm:w-auto justify-center bg-[#f8fafc] border-2 border-[#c8c5d0] text-[#131b2e] font-['Hanken_Grotesk'] font-bold text-xs tracking-widest px-8 py-4 rounded flex items-center gap-4 hover:bg-[#f2f3ff] transition-all shadow-sm">
                 <span className="material-symbols-outlined text-lg">download</span>
                 TECHNICAL BROCHURE
               </button>
@@ -183,8 +182,8 @@ export default function ProductDetailScreen({
             </div>
           </div>
           <div className="bg-[#f8fafc] border border-[#c8c5d0]/30 rounded-xl p-6 lg:p-8 shadow-sm">
-            <div className="overflow-hidden">
-              <table className="w-full text-left border-collapse font-['Hanken_Grotesk']">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse font-['Hanken_Grotesk'] min-w-[500px] md:min-w-0">
                 <thead>
                   <tr className="border-b border-[#1a1b4b]/20">
                     <th className="py-4 px-4 font-['Hanken_Grotesk'] font-bold text-[11px] tracking-widest uppercase text-[#46464f]">
@@ -301,7 +300,7 @@ export default function ProductDetailScreen({
         {/* Consultation Form */}
         <section id="inquiry" className="py-16">
           <div className="bg-white rounded-xl overflow-hidden border border-[#c8c5d0] shadow-lg grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-5 bg-[#f8fafc] p-12 flex flex-col justify-center border-r border-[#c8c5d0]/30">
+            <div className="lg:col-span-5 bg-[#f8fafc] p-6 sm:p-10 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-[#c8c5d0]/30">
               <h2 className="font-['Hanken_Grotesk'] font-semibold text-2xl text-[#1a1b4b] mb-6">
                 Engineering Consultation
               </h2>
@@ -334,7 +333,7 @@ export default function ProductDetailScreen({
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-7 p-12">
+            <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-10">
                   <div className="w-20 h-20 rounded-full bg-[#1a1b4b]/10 flex items-center justify-center">

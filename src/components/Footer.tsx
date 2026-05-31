@@ -32,7 +32,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-secondary text-sm leading-relaxed max-w-xs">
-              ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers. GeM & IREPS registered.
+              ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers. GeM registered.
             </p>
             <div className="flex items-center gap-3 mt-6">
               {/* IndiaMART */}
@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
 
           {/* Products Column */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-2 lg:col-span-2">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Products
             </h4>
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
 
           {/* Documentation Column */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-2 lg:col-span-2">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Ouick Links
             </h4>
@@ -123,7 +123,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="md:col-span-4 lg:col-span-4">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
               Manufacturing Facility
             </h4>
@@ -153,13 +153,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-10">
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-secondary text-[12px] hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms-of-service"
               className="text-secondary text-[12px] hover:text-primary transition-colors"
             >
               Terms of Service

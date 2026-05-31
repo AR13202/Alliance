@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Alliance Engineering Company",
     default: "Current Transformer Manufacturer in India | Alliance Engineering Company",
   },
-  description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM & IREPS registered. 30+ years of precision manufacturing.",
+  description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
 };
 
 export default function RootLayout({

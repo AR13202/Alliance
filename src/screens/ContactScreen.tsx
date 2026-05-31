@@ -180,13 +180,13 @@ export default function ContactScreen() {
                   title="Alliance Engineering Company Map Location"
                 />
                 <div className="absolute inset-0 bg-primary/10 pointer-events-none mix-blend-overlay"></div>
-                <div className="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-2xl flex items-center gap-4 border border-outline-variant/10 pointer-events-none">
-                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:bottom-8 sm:right-8 bg-white p-4 rounded-lg shadow-2xl flex items-center gap-4 border border-outline-variant/10 pointer-events-none">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white shrink-0">
                     <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-outline uppercase">Alliance Engineering Company</p>
-                    <p className="font-headline font-black text-tertiary">Industrial Area Phase 2</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-outline uppercase leading-tight">Alliance Engineering Company</p>
+                    <p className="font-headline font-black text-tertiary text-sm sm:text-base leading-tight">Industrial Area Phase 2</p>
                   </div>
                 </div>
               </div>

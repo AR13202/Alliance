@@ -32,42 +32,42 @@ export default function HomeScreen() {
     {
       title: "Current Transformers",
       description: "High-accuracy metering and protection CTs for substations.",
-      image: "/stitch/transformers.jpg",
+      image: "/current_transformer_bg.png",
       bgClass: "bg-primary/40 group-hover:bg-primary/20",
       href: "/products?category=Current Transformers",
     },
     {
       title: "Control Transformers",
-      description: "Rugged step-down transformers powering industrial panels.",
-      image: "/stitch/transformers.jpg",
+      description: "transformers powering industrial panels.",
+      image: "/control_transformer_bg.png",
       bgClass: "bg-primary/40 group-hover:bg-primary/20",
       href: "/products?category=Control Transformers",
     },
     {
       title: "Battery Chargers",
       description: "Intelligent industrial chargers for automated DC backup systems.",
-      image: "/stitch/monitoring.jpg",
+      image: "/battery_charger_bg.png",
       bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
       href: "/products?category=Battery Chargers",
     },
     {
       title: "Voltage Stabilizers",
       description: "Servo-controlled stabilizers and automatic voltage regulators.",
-      image: "/stitch/monitoring.jpg",
+      image: "/voltage_stabilizer_bg.png",
       bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
       href: "/products?category=Voltage Stabilizers",
     },
     {
       title: "Dimmers & Variacs",
       description: "Continuously variable voltage regulators for test labs and panels.",
-      image: "/stitch/transformers.jpg",
+      image: "/dimmer_variac_bg.png",
       bgClass: "bg-primary/40 group-hover:bg-primary/20",
       href: "/products?category=Dimmers / Variable Transformers / Variacs",
     },
     {
       title: "Digital & Analog Meters",
       description: "Precision panel instruments for electrical parameter monitoring.",
-      image: "/stitch/monitoring.jpg",
+      image: "/meter_instrument_bg.png",
       bgClass: "bg-tertiary/60 group-hover:bg-tertiary/40",
       href: "/products?category=Digital / Analog Meters",
     },
@@ -99,10 +99,10 @@ export default function HomeScreen() {
             <p className="text-xl text-secondary max-w-2xl mb-12 leading-relaxed">
               Current transformers, control transformers & battery chargers — IS & IEC compliant, manufactured in India, trusted globally.
             </p>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-primary text-on-primary rounded-md font-bold transition-all hover:translate-y-[-2px] shadow-xl shadow-primary/20 font-headline"
+                className="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary rounded-md font-bold transition-all hover:translate-y-[-2px] shadow-xl shadow-primary/20 font-headline text-center"
               >
                 Request a Quote →
               </Link>
@@ -115,7 +115,6 @@ export default function HomeScreen() {
             </div>
             <div className="mt-12 flex flex-wrap gap-4 items-center text-sm font-bold text-secondary">
               <span>GeM Registered</span><span className="opacity-30">|</span>
-              <span>IREPS Registered</span><span className="opacity-30">|</span>
               <span>Udyam MSME</span><span className="opacity-30">|</span>
               <span>ISO 9001:2015</span><span className="opacity-30">|</span>
               <span>30+ Years</span>
@@ -134,9 +133,6 @@ export default function HomeScreen() {
                 { name: "JSW Group", logo: "/client_logos/JSW_Group_Logo.png" },
                 { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
                 { name: "Reliance Jio", logo: "/client_logos/jio.png" },
-                { name: "BHEL", logo: "/stitch/clients/bhel.png" },
-                { name: "NTPC", logo: "/stitch/clients/ntpc.png" },
-                { name: "NHPC", logo: "/stitch/clients/nhpc.png" },
                 { name: "ESAB", logo: "/client_logos/esab_logo.png" },
                 { name: "Panjab University", logo: "/client_logos/pu_logo.png" },
                 { name: "ISB", logo: "/client_logos/isb.svg" },
@@ -145,9 +141,6 @@ export default function HomeScreen() {
                 { name: "JSW Group", logo: "/client_logos/JSW_Group_Logo.png" },
                 { name: "HDFC Bank", logo: "/client_logos/hdfc_bank_logo.svg" },
                 { name: "Reliance Jio", logo: "/client_logos/jio.png" },
-                { name: "BHEL", logo: "/stitch/clients/bhel.png" },
-                { name: "NTPC", logo: "/stitch/clients/ntpc.png" },
-                { name: "NHPC", logo: "/stitch/clients/nhpc.png" },
                 { name: "ESAB", logo: "/client_logos/esab_logo.png" },
                 { name: "Panjab University", logo: "/client_logos/pu_logo.png" },
                 { name: "ISB", logo: "/client_logos/isb.svg" },
@@ -171,11 +164,11 @@ export default function HomeScreen() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 md:-bottom-12 md:-right-12 p-6 md:p-8 bg-primary text-white rounded-xl shadow-2xl">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-12 md:-right-12 p-4 md:p-8 bg-primary text-white rounded-xl shadow-2xl">
                 <p className="text-[10px] md:text-sm font-label uppercase tracking-widest mb-1 md:mb-2 opacity-80">
                   Established
                 </p>
-                <p className="text-3xl md:text-5xl font-extrabold font-headline">1992</p>
+                <p className="text-2xl md:text-5xl font-extrabold font-headline">1992</p>
               </div>
             </div>
             <div>
@@ -224,7 +217,7 @@ export default function HomeScreen() {
                   From precision metering current transformers for HVPN and Powergrid substations, to rugged control transformers powering CNC and automation panels, Alliance Engineering delivers engineered reliability at every voltage level.
                 </p>
               </div>
-              <div className="flex flex-wrap flex-col items-end gap-6 self-start md:self-auto shrink-0">
+              <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-end gap-6 self-stretch md:self-auto shrink-0 w-full md:w-auto">
                 <Link
                   href="/products"
                   className="text-primary font-bold transition-all duration-50 hover:border-b-2 border-primary pb-1 flex items-center gap-2 group font-headline"
@@ -257,17 +250,20 @@ export default function HomeScreen() {
                   <Link
                     key={index}
                     href={category.href}
-                    className="group relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg flex-none w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+                    className="group relative aspect-[4/3] md:aspect-[16/9] rounded-xl overflow-hidden cursor-pointer shadow-lg flex-none w-[85%] sm:w-[45%] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
                   >
                     <img
                       src={category.image}
                       alt={category.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className={`absolute inset-0 transition-all ${category.bgClass}`}></div>
-                    <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white">
-                      <h3 className="text-2xl md:text-3xl font-bold mb-2 font-headline">{category.title}</h3>
-                      <p className="opacity-80 max-w-sm text-sm md:text-base leading-relaxed">
+                    <div className={`absolute inset-0 transition-all z-10 ${category.bgClass}`}></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-95 group-hover:opacity-90 transition-opacity duration-300 z-10"></div>
+                    <div className="absolute bottom-0 left-0 p-6 sm:p-8 md:p-10 text-white z-20 w-full">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 font-headline line-clamp-2 leading-tight">
+                        {category.title}
+                      </h3>
+                      <p className="hidden sm:block opacity-85 max-w-sm text-xs sm:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">
                         {category.description}
                       </p>
                     </div>
@@ -314,9 +310,9 @@ export default function HomeScreen() {
               {featuredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[85vw] md:w-[20vw] snap-start bg-surface-container-lowest rounded-xl p-2 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
+                  className="w-[80vw] sm:w-[45vw] md:w-[30vw] lg:w-[22vw] snap-start bg-surface-container-lowest rounded-xl p-2 shadow-sm border border-outline-variant/10 flex-shrink-0 flex flex-col"
                 >
-                  <div className="h-56 border border-gray-200 bg-surface-container rounded-lg mb-3 flex items-center justify-center">
+                  <div className="h-48 sm:h-56 border border-gray-200 bg-surface-container rounded-lg mb-3 flex items-center justify-center">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -369,7 +365,7 @@ export default function HomeScreen() {
                       <Truck className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">GeM & IREPS Registered</h4>
+                      <h4 className="font-bold text-lg mb-1 font-headline">GeM Registered</h4>
                       <p className="text-sm opacity-60">Pre-registered for government procurement.</p>
                     </div>
                   </div>

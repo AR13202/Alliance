@@ -10,8 +10,8 @@ interface Props {
 
 const SpecTable = ({ specs }: Props) => {
   return (
-    <div className="overflow-hidden rounded-lg border border-border">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="w-full text-sm min-w-[500px] md:min-w-0">
         <thead>
           <tr className="bg-secondary">
             <th className="px-4 py-3 text-left font-semibold text-foreground">Parameter</th>
