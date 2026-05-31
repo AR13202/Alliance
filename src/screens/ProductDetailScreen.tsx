@@ -61,8 +61,15 @@ export default function ProductDetailScreen({
   }
 
   const related = getRelatedProducts(product.id, 4);
-  const allImages = product.thumbnails.length > 0 ? product.thumbnails : [product.image];
-  console.log(allImages);
+  const allImages = useMemo(() => {
+    const list = [product.image];
+    product.thumbnails.forEach((img) => {
+      if (img !== product.image && !list.includes(img)) {
+        list.push(img);
+      }
+    });
+    return list;
+  }, [product.image, product.thumbnails]);
   const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(true);
