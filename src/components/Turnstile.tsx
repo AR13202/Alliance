@@ -14,6 +14,15 @@ export default function Turnstile({ onVerify, onExpire }: TurnstileProps) {
 
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
+  // Use refs to store callback functions to keep them stable and prevent re-renders
+  const onVerifyRef = useRef(onVerify);
+  const onExpireRef = useRef(onExpire);
+
+  useEffect(() => {
+    onVerifyRef.current = onVerify;
+    onExpireRef.current = onExpire;
+  });
+
   useEffect(() => {
     if (!siteKey) {
       console.warn("NEXT_PUBLIC_TURNSTILE_SITE_KEY environment variable is not defined.");
@@ -25,9 +34,9 @@ export default function Turnstile({ onVerify, onExpire }: TurnstileProps) {
         try {
           const id = window.turnstile.render(containerRef.current, {
             sitekey: siteKey,
-            callback: (token: string) => onVerify(token),
+            callback: (token: string) => onVerifyRef.current(token),
             "expired-callback": () => {
-              if (onExpire) onExpire();
+              if (onExpireRef.current) onExpireRef.current();
             },
           });
           widgetIdRef.current = id;
@@ -53,7 +62,7 @@ export default function Turnstile({ onVerify, onExpire }: TurnstileProps) {
         widgetIdRef.current = null;
       }
     };
-  }, [siteKey, onVerify, onExpire]);
+  }, [siteKey]);
 
   if (!siteKey) {
     return null;
