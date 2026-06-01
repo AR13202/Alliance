@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { products } from "@/data/products";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.alliancenggco.com";
+  const baseUrl = "https://www.allianceengineeringco.com";
 
   // Dynamic products sitemap entries
   const productEntries = products.map((product) => ({
