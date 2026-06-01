@@ -5,6 +5,9 @@ import { FormEvent, useMemo, useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { getProductById, getRelatedProducts } from "@/data/products";
+import { Loader2 } from "lucide-react";
+import { sendContactEmail } from "@/app/actions";
+import SuccessPopover from "@/components/SuccessPopover";
 
 const standardDescriptions: Record<string, string> = {
   "IS 2705": "Adherence to Indian standards for current transformer specifications.",
@@ -34,13 +37,15 @@ export default function ProductDetailScreen({
 }) {
   const product = getProductById(productId);
   const [selectedImg, setSelectedImg] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const productCode = useMemo(
     () => product?.id.toUpperCase().replace(/-/g, "-"),
@@ -70,9 +75,37 @@ export default function ProductDetailScreen({
     });
     return list;
   }, [product.image, product.thumbnails]);
-  const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleInquirySubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setSubmitError("Please fill in all required fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      const response = await sendContactEmail({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        subject: `Product Inquiry: ${product.name}`,
+        message: form.message,
+        formType: "product-detail",
+      });
+
+      if (response.success) {
+        setIsSuccessOpen(true);
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setSubmitError(response.error || "Failed to submit inquiry. Please try again.");
+      }
+    } catch (err) {
+      console.error("Product inquiry submit error:", err);
+      setSubmitError("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -341,33 +374,12 @@ export default function ProductDetailScreen({
               </div>
             </div>
             <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12">
-              {submitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-10">
-                  <div className="w-20 h-20 rounded-full bg-[#1a1b4b]/10 flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[#1a1b4b] text-4xl">
-                      check_circle
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-['Hanken_Grotesk'] font-semibold text-[#131b2e] tracking-tight">
-                      Inquiry Received
-                    </h3>
-                    <p className="text-[#131b2e]/50 font-medium mt-2">
-                      Reference ID: {productCode?.slice(0, 8)}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({ name: "", email: "", phone: "", message: "" });
-                    }}
-                    className="text-[#1a1b4b] font-['Hanken_Grotesk'] font-bold text-xs tracking-widest uppercase hover:underline"
-                  >
-                    Send Another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleInquirySubmit} className="space-y-6">
+              <form onSubmit={handleInquirySubmit} className="space-y-6">
+                  {submitError && (
+                    <div className="bg-red-50 text-red-600 text-sm p-4 rounded border border-red-100">
+                      {submitError}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
                     <div className="space-y-2">
                       <label className="font-['Hanken_Grotesk'] font-bold text-[10px] text-[#46464f] uppercase tracking-widest px-1">
@@ -375,11 +387,12 @@ export default function ProductDetailScreen({
                       </label>
                       <input
                         required
-                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e]"
+                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e] disabled:opacity-60"
                         placeholder="e.g. Rahul Sharma"
                         type="text"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -388,11 +401,12 @@ export default function ProductDetailScreen({
                       </label>
                       <input
                         required
-                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e]"
+                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e] disabled:opacity-60"
                         placeholder="name@company.com"
                         type="email"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -401,11 +415,12 @@ export default function ProductDetailScreen({
                       </label>
                       <input
                         required
-                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e]"
+                        className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm transition-all outline-none text-[#131b2e] disabled:opacity-60"
                         placeholder="+91 XXXXX XXXXX"
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -415,21 +430,29 @@ export default function ProductDetailScreen({
                     </label>
                     <textarea
                       required
-                      className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm resize-none transition-all outline-none text-[#131b2e]"
+                      className="w-full bg-[#f8fafc] border border-[#c8c5d0]/60 focus:bg-white focus:ring-1 focus:ring-[#1a1b4b] focus:border-[#1a1b4b] rounded p-3 text-sm resize-none transition-all outline-none text-[#131b2e] disabled:opacity-60"
                       placeholder="Outline your project scope or specific CT parameters required..."
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      disabled={isSubmitting}
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#1a1b4b] text-white font-['Hanken_Grotesk'] font-bold text-xs tracking-widest py-4 rounded hover:shadow-xl transition-all uppercase active:scale-[0.99]"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#1a1b4b] text-white font-['Hanken_Grotesk'] font-bold text-xs tracking-widest py-4 rounded hover:shadow-xl transition-all uppercase active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
                   >
-                    SUBMIT TECHNICAL INQUIRY
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        SUBMITTING...
+                      </>
+                    ) : (
+                      "SUBMIT TECHNICAL INQUIRY"
+                    )}
                   </button>
                 </form>
-              )}
             </div>
           </div>
         </section>
@@ -497,6 +520,7 @@ export default function ProductDetailScreen({
       </main>
 
       <Footer />
+      <SuccessPopover isOpen={isSuccessOpen} onClose={() => setIsSuccessOpen(false)} />
     </div>
   );
 }

@@ -1,7 +1,65 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Loader2 } from "lucide-react";
+import { sendContactEmail } from "@/app/actions";
+import SuccessPopover from "@/components/SuccessPopover";
 
 export default function ContactScreen() {
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    category: "Current Transformer",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.company.trim() || !form.email.trim() || !form.phone.trim() || !form.message.trim()) {
+      setSubmitError("Please fill in all required fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      const response = await sendContactEmail({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        company: form.company,
+        subject: form.category,
+        message: form.message,
+        formType: "contact-screen",
+      });
+
+      if (response.success) {
+        setIsSuccessOpen(true);
+        setForm({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          category: "Current Transformer",
+          message: "",
+        });
+      } else {
+        setSubmitError(response.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("Contact screen form submit error:", err);
+      setSubmitError("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="bg-surface text-on-surface font-body">
       <Navbar />
@@ -56,80 +114,116 @@ export default function ContactScreen() {
 
             {/* Contact Form Card */}
             <div className="bg-surface-container-lowest p-6 sm:p-8 lg:p-12 rounded-xl border border-outline-variant/20 shadow-[0_20px_40px_rgba(39,38,116,0.04)]">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Full Name *</label>
-                    <input
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
-                      placeholder="Your Name"
-                      type="text"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Company Name *</label>
-                    <input
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
-                      placeholder="Company Name"
-                      type="text"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Email Address *</label>
-                    <input
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
-                      placeholder="email@example.com"
-                      type="email"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Phone Number *</label>
-                    <input
-                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50"
-                      placeholder="+91 98xxxxxx10"
-                      type="tel"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Product Category *</label>
-                  <div className="relative">
-                    <select className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all appearance-none cursor-pointer" required>
-                      <option>Current Transformer</option>
-                      <option>Control Transformer</option>
-                      <option>Battery Charger</option>
-                      <option>Potential Transformer</option>
-                      <option>Tender/Bulk Order</option>
-                      <option>Other</option>
-                    </select>
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">
-                      <span className="material-symbols-outlined">expand_more</span>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                  {submitError && (
+                    <div className="bg-red-50 text-red-600 text-sm p-4 rounded border border-red-100">
+                      {submitError}
+                    </div>
+                  )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Full Name *</label>
+                      <input
+                        className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50 disabled:opacity-60"
+                        placeholder="Your Name"
+                        type="text"
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        disabled={isSubmitting}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Company Name *</label>
+                      <input
+                        className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50 disabled:opacity-60"
+                        placeholder="Company Name"
+                        type="text"
+                        value={form.company}
+                        onChange={(e) => setForm({ ...form, company: e.target.value })}
+                        disabled={isSubmitting}
+                        required
+                      />
                     </div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Technical Requirements / Message *</label>
-                  <textarea
-                    className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all resize-none placeholder:opacity-50"
-                    placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity..."
-                    rows={4}
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10"
-                  type="submit"
-                >
-                  Send Message
-                  <span className="material-symbols-outlined">send</span>
-                </button>
-              </form>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Email Address *</label>
+                      <input
+                        className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50 disabled:opacity-60"
+                        placeholder="email@example.com"
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        disabled={isSubmitting}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Phone Number *</label>
+                      <input
+                        className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all placeholder:opacity-50 disabled:opacity-60"
+                        placeholder="+91 98xxxxxx10"
+                        type="tel"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        disabled={isSubmitting}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Product Category *</label>
+                    <div className="relative">
+                      <select
+                        className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all appearance-none cursor-pointer disabled:opacity-60"
+                        value={form.category}
+                        onChange={(e) => setForm({ ...form, category: e.target.value })}
+                        disabled={isSubmitting}
+                        required
+                      >
+                        <option>Current Transformer</option>
+                        <option>Control Transformer</option>
+                        <option>Battery Charger</option>
+                        <option>Potential Transformer</option>
+                        <option>Tender/Bulk Order</option>
+                        <option>Other</option>
+                      </select>
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">
+                        <span className="material-symbols-outlined">expand_more</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-secondary uppercase tracking-wider px-1">Technical Requirements / Message *</label>
+                    <textarea
+                      className="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary outline-none px-4 py-3 text-on-surface transition-all resize-none placeholder:opacity-50 disabled:opacity-60"
+                      placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity..."
+                      rows={4}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      disabled={isSubmitting}
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10 disabled:opacity-75 disabled:cursor-not-allowed"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <span className="material-symbols-outlined">send</span>
+                      </>
+                    )}
+                  </button>
+                </form>
             </div>
           </div>
         </section>
@@ -231,6 +325,7 @@ export default function ContactScreen() {
       </main>
 
       <Footer />
+      <SuccessPopover isOpen={isSuccessOpen} onClose={() => setIsSuccessOpen(false)} />
     </div>
   );
 }

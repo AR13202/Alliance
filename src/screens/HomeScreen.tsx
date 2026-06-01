@@ -1,14 +1,67 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Product, products } from '@/data/products'
+import { Product, products } from '@/data/products';
+import { sendContactEmail } from "@/app/actions";
+import SuccessPopover from "@/components/SuccessPopover";
 export default function HomeScreen() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const categoriesCarouselRef = useRef<HTMLDivElement>(null);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    product: "Current Transformer",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setSubmitError("Please fill in all required fields.");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      const response = await sendContactEmail({
+        name: form.name,
+        email: form.email,
+        phone: "",
+        company: form.company,
+        subject: form.product,
+        message: form.message,
+        formType: "home-screen",
+      });
+
+      if (response.success) {
+        setIsSuccessOpen(true);
+        setForm({
+          name: "",
+          email: "",
+          company: "",
+          product: "Current Transformer",
+          message: "",
+        });
+      } else {
+        setSubmitError(response.error || "Failed to submit inquiry. Please try again.");
+      }
+    } catch (err) {
+      console.error("Home form submit error:", err);
+      setSubmitError("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const scrollCarousel = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -440,76 +493,106 @@ export default function HomeScreen() {
 
             <div className="md:w-1/2 w-full mt-10 md:mt-0">
               <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-6 sm:p-8 md:p-12">
-                <form className="space-y-6 md:space-y-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+                    {submitError && (
+                      <div className="bg-red-50 text-red-600 text-sm p-4 rounded border border-red-100">
+                        {submitError}
+                      </div>
+                    )}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="John Doe"
+                          value={form.name}
+                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          disabled={isSubmitting}
+                          className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none disabled:opacity-60"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          placeholder="john@example.com"
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          disabled={isSubmitting}
+                          className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none disabled:opacity-60"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 gap-6 md:gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Engineering Solutions Ltd."
+                          value={form.company}
+                          onChange={(e) => setForm({ ...form, company: e.target.value })}
+                          disabled={isSubmitting}
+                          className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none disabled:opacity-60"
+                        />
+                      </div>
+                    </div>
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                        Full Name *
+                        Product Interest
                       </label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
+                      <div className="relative">
+                        <select
+                          value={form.product}
+                          onChange={(e) => setForm({ ...form, product: e.target.value })}
+                          disabled={isSubmitting}
+                          className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm appearance-none outline-none disabled:opacity-60"
+                        >
+                          <option>Current Transformer</option>
+                          <option>Control Transformer</option>
+                          <option>Battery Charger</option>
+                          <option>Potential Transformer</option>
+                          <option>Tender</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
+                        Message / Technical Requirements *
+                      </label>
+                      <textarea
+                        placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity, delivery location..."
+                        rows={5}
+                        value={form.message}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        disabled={isSubmitting}
+                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none resize-none disabled:opacity-60"
                         required
-                      />
+                      ></textarea>
                     </div>
-                    <div className="space-y-3">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="john@example.com"
-                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 gap-6 md:gap-8">
-                    <div className="space-y-3">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                        Company Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Engineering Solutions Ltd."
-                        className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                      Product Interest
-                    </label>
-                    <div className="relative">
-                      <select className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm appearance-none outline-none">
-                        <option>Current Transformer</option>
-                        <option>Control Transformer</option>
-                        <option>Battery Charger</option>
-                        <option>Potential Transformer</option>
-                        <option>Tender</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
-                      Message / Technical Requirements *
-                    </label>
-                    <textarea
-                      placeholder="Describe your product requirements, CT ratio, burden, accuracy class, quantity, delivery location..."
-                      rows={5}
-                      className="w-full bg-[#f1f1f1] border-none rounded py-4 px-6 text-sm placeholder:text-black/60 outline-none resize-none"
-                      required
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full py-5 bg-primary text-white font-bold rounded text-sm transition-all hover:opacity-90 active:scale-[0.98] font-headline"
-                  >
-                    Submit Inquiry
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-5 bg-primary text-white font-bold rounded text-sm transition-all hover:opacity-90 active:scale-[0.98] font-headline flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        "Submit Inquiry"
+                      )}
+                    </button>
+                  </form>
               </div>
             </div>
           </div>
@@ -517,6 +600,7 @@ export default function HomeScreen() {
       </main>
 
       <Footer />
+      <SuccessPopover isOpen={isSuccessOpen} onClose={() => setIsSuccessOpen(false)} />
     </div>
   );
 }

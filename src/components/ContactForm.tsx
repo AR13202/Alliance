@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
+import { sendContactEmail } from "@/app/actions";
+import SuccessPopover from "@/components/SuccessPopover";
 
 const ContactForm = () => {
   const searchParams = useSearchParams();
@@ -16,7 +18,9 @@ const ContactForm = () => {
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     if (!prefilledProduct) return;
@@ -34,98 +38,140 @@ const ContactForm = () => {
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
+    setSubmitError("");
+
     if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
+      setIsSubmitting(true);
+      try {
+        const response = await sendContactEmail({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message,
+          formType: "contact-form",
+        });
+
+        if (response.success) {
+          setIsSuccessOpen(true);
+          setForm({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        } else {
+          setSubmitError(response.error || "Failed to send message. Please try again.");
+        }
+      } catch (err) {
+        console.error("Submit error:", err);
+        setSubmitError("An unexpected error occurred. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
   const update = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
+    if (submitError) setSubmitError("");
   };
 
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-10 text-center">
-        <CheckCircle className="mb-4 h-12 w-12 text-primary" />
-        <h3 className="text-xl font-semibold text-foreground">Thank You!</h3>
-        <p className="mt-2 text-muted-foreground">
-          We've received your message and will get back to you shortly.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      {[
-        { label: "Name", field: "name", type: "text", required: true },
-        { label: "Email", field: "email", type: "email", required: true },
-        { label: "Phone Number", field: "phone", type: "tel", required: false },
-      ].map(({ label, field, type, required }) => (
-        <div key={field}>
+    <>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {submitError && (
+          <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive border border-destructive/20 font-body">
+            {submitError}
+          </div>
+        )}
+
+        {[
+          { label: "Name", field: "name", type: "text", required: true },
+          { label: "Email", field: "email", type: "email", required: true },
+          { label: "Phone Number", field: "phone", type: "tel", required: false },
+        ].map(({ label, field, type, required }) => (
+          <div key={field}>
+            <label className="mb-1.5 block text-sm font-medium text-foreground">
+              {label} {required && <span className="text-primary">*</span>}
+            </label>
+            <input
+              type={type}
+              value={form[field as keyof typeof form]}
+              onChange={(e) => update(field, e.target.value)}
+              disabled={isSubmitting}
+              className="h-10 w-full rounded-md border border-border bg-secondary px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-55"
+              placeholder={`Enter your ${label.toLowerCase()}`}
+              maxLength={field === "name" ? 100 : 255}
+              required={required}
+            />
+            {errors[field] && (
+              <p className="mt-1 text-xs text-destructive font-body">{errors[field]}</p>
+            )}
+          </div>
+        ))}
+
+        <div>
           <label className="mb-1.5 block text-sm font-medium text-foreground">
-            {label} {required && <span className="text-primary">*</span>}
+            Subject / Product of Interest
           </label>
           <input
-            type={type}
-            value={form[field as keyof typeof form]}
-            onChange={(e) => update(field, e.target.value)}
-            className="h-10 w-full rounded-md border border-border bg-secondary px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder={`Enter your ${label.toLowerCase()}`}
-            maxLength={field === "name" ? 100 : 255}
-            required={required}
+            type="text"
+            value={form.subject}
+            onChange={(e) => update("subject", e.target.value)}
+            disabled={isSubmitting}
+            className="h-10 w-full rounded-md border border-border bg-secondary px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-55"
+            placeholder="e.g. CT 50/5 Current Transformer"
+            maxLength={200}
           />
-          {errors[field] && (
-            <p className="mt-1 text-xs text-destructive">{errors[field]}</p>
+        </div>
+
+        <div>
+          <label className="mb-1.5 block text-sm font-medium text-foreground">
+            Message <span className="text-primary">*</span>
+          </label>
+          <textarea
+            value={form.message}
+            onChange={(e) => update("message", e.target.value)}
+            disabled={isSubmitting}
+            rows={5}
+            className="w-full rounded-md border border-border bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-55"
+            placeholder="Tell us about your requirements..."
+            maxLength={2000}
+            required
+          />
+          {errors.message && (
+            <p className="mt-1 text-xs text-destructive font-body">{errors.message}</p>
           )}
         </div>
-      ))}
 
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-foreground">
-          Subject / Product of Interest
-        </label>
-        <input
-          type="text"
-          value={form.subject}
-          onChange={(e) => update("subject", e.target.value)}
-          className="h-10 w-full rounded-md border border-border bg-secondary px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          placeholder="e.g. CT 50/5 Current Transformer"
-          maxLength={200}
-        />
-      </div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" />
+              Send Message
+            </>
+          )}
+        </button>
+      </form>
 
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-foreground">
-          Message <span className="text-primary">*</span>
-        </label>
-        <textarea
-          value={form.message}
-          onChange={(e) => update("message", e.target.value)}
-          rows={5}
-          className="w-full rounded-md border border-border bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none"
-          placeholder="Tell us about your requirements..."
-          maxLength={2000}
-          required
-        />
-        {errors.message && (
-          <p className="mt-1 text-xs text-destructive">{errors.message}</p>
-        )}
-      </div>
-
-      <button
-        type="submit"
-        className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
-      >
-        <Send className="h-4 w-4" />
-        Send Message
-      </button>
-    </form>
+      <SuccessPopover isOpen={isSuccessOpen} onClose={() => setIsSuccessOpen(false)} />
+    </>
   );
 };
 
