@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Loader2 } from "lucide-react";
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
+import Turnstile from "@/components/Turnstile";
 
 export default function ContactScreen() {
   const [form, setForm] = useState({
@@ -19,9 +20,17 @@ export default function ContactScreen() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+      setSubmitError("Please complete the security check.");
+      return;
+    }
+
     if (!form.name.trim() || !form.company.trim() || !form.email.trim() || !form.phone.trim() || !form.message.trim()) {
       setSubmitError("Please fill in all required fields.");
       return;
@@ -38,6 +47,7 @@ export default function ContactScreen() {
         subject: form.category,
         message: form.message,
         formType: "contact-screen",
+        turnstileToken,
       });
 
       if (response.success) {
@@ -50,6 +60,8 @@ export default function ContactScreen() {
           category: "Current Transformer",
           message: "",
         });
+        setTurnstileToken("");
+        setTurnstileKey((prev) => prev + 1);
       } else {
         setSubmitError(response.error || "Failed to send message. Please try again.");
       }
@@ -206,6 +218,13 @@ export default function ContactScreen() {
                       required
                     ></textarea>
                   </div>
+                  <Turnstile
+                    key={turnstileKey}
+                    onVerify={(token) => {
+                      setTurnstileToken(token);
+                      setSubmitError("");
+                    }}
+                  />
                   <button
                     className="w-full bg-primary text-white font-headline font-bold py-4 rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] shadow-lg shadow-primary/10 disabled:opacity-75 disabled:cursor-not-allowed"
                     type="submit"

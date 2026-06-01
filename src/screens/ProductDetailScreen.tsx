@@ -8,6 +8,7 @@ import { getProductById, getRelatedProducts } from "@/data/products";
 import { Loader2 } from "lucide-react";
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
+import Turnstile from "@/components/Turnstile";
 
 const standardDescriptions: Record<string, string> = {
   "IS 2705": "Adherence to Indian standards for current transformer specifications.",
@@ -46,6 +47,8 @@ export default function ProductDetailScreen({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const productCode = useMemo(
     () => product?.id.toUpperCase().replace(/-/g, "-"),
@@ -77,6 +80,12 @@ export default function ProductDetailScreen({
   }, [product.image, product.thumbnails]);
   const handleInquirySubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+      setSubmitError("Please complete the security check.");
+      return;
+    }
+
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setSubmitError("Please fill in all required fields.");
       return;
@@ -92,11 +101,14 @@ export default function ProductDetailScreen({
         subject: `Product Inquiry: ${product.name}`,
         message: form.message,
         formType: "product-detail",
+        turnstileToken,
       });
 
       if (response.success) {
         setIsSuccessOpen(true);
         setForm({ name: "", email: "", phone: "", message: "" });
+        setTurnstileToken("");
+        setTurnstileKey((prev) => prev + 1);
       } else {
         setSubmitError(response.error || "Failed to submit inquiry. Please try again.");
       }
@@ -438,6 +450,13 @@ export default function ProductDetailScreen({
                       disabled={isSubmitting}
                     ></textarea>
                   </div>
+                  <Turnstile
+                    key={turnstileKey}
+                    onVerify={(token) => {
+                      setTurnstileToken(token);
+                      setSubmitError("");
+                    }}
+                  />
                   <button
                     type="submit"
                     disabled={isSubmitting}

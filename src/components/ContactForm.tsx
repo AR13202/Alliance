@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Send, Loader2 } from "lucide-react";
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
+import Turnstile from "@/components/Turnstile";
 
 const ContactForm = () => {
   const searchParams = useSearchParams();
@@ -21,6 +22,8 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   useEffect(() => {
     if (!prefilledProduct) return;
@@ -40,6 +43,12 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+      setSubmitError("Please complete the security check.");
+      return;
+    }
+
     const errs = validate();
     setErrors(errs);
     setSubmitError("");
@@ -54,6 +63,7 @@ const ContactForm = () => {
           subject: form.subject,
           message: form.message,
           formType: "contact-form",
+          turnstileToken,
         });
 
         if (response.success) {
@@ -65,6 +75,8 @@ const ContactForm = () => {
             subject: "",
             message: "",
           });
+          setTurnstileToken("");
+          setTurnstileKey((prev) => prev + 1);
         } else {
           setSubmitError(response.error || "Failed to send message. Please try again.");
         }
@@ -150,6 +162,14 @@ const ContactForm = () => {
             <p className="mt-1 text-xs text-destructive font-body">{errors.message}</p>
           )}
         </div>
+
+        <Turnstile
+          key={turnstileKey}
+          onVerify={(token) => {
+            setTurnstileToken(token);
+            setSubmitError("");
+          }}
+        />
 
         <button
           type="submit"

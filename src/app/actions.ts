@@ -12,12 +12,38 @@ interface ContactInput {
   subject?: string;
   message: string;
   formType: "contact-form" | "contact-screen" | "home-screen" | "product-detail";
+  turnstileToken?: string;
 }
 
 export async function sendContactEmail(data: ContactInput) {
   if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL || !process.env.RESEND_TO_EMAIL) {
     console.error("RESEND_API_KEY, RESEND_FROM_EMAIL, or RESEND_TO_EMAIL is not defined in environment variables.");
     return { success: false, error: "Email service is currently unavailable. Please try again later." };
+  }
+
+  // Verify Cloudflare Turnstile token if secret key is present in environment variables
+  if (process.env.TURNSTILE_SECRET_KEY) {
+    if (!data.turnstileToken) {
+      return { success: false, error: "Security check failed. Please verify you are human." };
+    }
+
+    try {
+      const verifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+      const response = await fetch(verifyUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${encodeURIComponent(process.env.TURNSTILE_SECRET_KEY)}&response=${encodeURIComponent(data.turnstileToken)}`,
+      });
+
+      const outcome = await response.json() as { success: boolean; "error-codes"?: string[] };
+      if (!outcome.success) {
+        console.error("Turnstile verification failed:", outcome);
+        return { success: false, error: "Security check failed. Please try again." };
+      }
+    } catch (err) {
+      console.error("Turnstile fetch error:", err);
+      return { success: false, error: "Unable to verify security credentials. Please try again." };
+    }
   }
 
   // Basic server-side validation

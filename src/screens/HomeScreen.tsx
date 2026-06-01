@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { Product, products } from '@/data/products';
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
+import Turnstile from "@/components/Turnstile";
 export default function HomeScreen() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const categoriesCarouselRef = useRef<HTMLDivElement>(null);
@@ -22,9 +23,17 @@ export default function HomeScreen() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+      setSubmitError("Please complete the security check.");
+      return;
+    }
+
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setSubmitError("Please fill in all required fields.");
       return;
@@ -41,6 +50,7 @@ export default function HomeScreen() {
         subject: form.product,
         message: form.message,
         formType: "home-screen",
+        turnstileToken,
       });
 
       if (response.success) {
@@ -52,6 +62,8 @@ export default function HomeScreen() {
           product: "Current Transformer",
           message: "",
         });
+        setTurnstileToken("");
+        setTurnstileKey((prev) => prev + 1);
       } else {
         setSubmitError(response.error || "Failed to submit inquiry. Please try again.");
       }
@@ -578,6 +590,13 @@ export default function HomeScreen() {
                         required
                       ></textarea>
                     </div>
+                    <Turnstile
+                      key={turnstileKey}
+                      onVerify={(token) => {
+                        setTurnstileToken(token);
+                        setSubmitError("");
+                      }}
+                    />
                     <button
                       type="submit"
                       disabled={isSubmitting}
