@@ -93,8 +93,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
-        {/* cloudflare script */}
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7dcc8ea8dc4644c88c90b32e4f5abfa2"}'></script>
       </head>
       <body className="bg-background text-foreground antialiased font-outline" suppressHydrationWarning>
         <Providers>
@@ -102,6 +100,8 @@ export default function RootLayout({
           <SpeedInsights />
           <Analytics />
         </Providers>
+        {/* cloudflare script */}
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7dcc8ea8dc4644c88c90b32e4f5abfa2"}'></script>
       </body>
     </html>
   );
