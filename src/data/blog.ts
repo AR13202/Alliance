@@ -40,12 +40,12 @@ The CT ratio is expressed as **Primary Current (Ip) / Secondary Current (Is)**. 
 
 ---
 
-## 2. Choosing the Primary Current Rating ($I_p$)
+## 2. Choosing the Primary Current Rating (Ip)
 The primary current rating of the CT should be chosen based on the full-load current of the circuit, future expansion plans, and standard industry ratios.
 
 ### The 120% Rule of Thumb
 For standard metering applications, the primary current of the CT should be selected to be **approximately 110% to 120% of the maximum nominal load current** of the circuit.
-$$I_p \approx I_{max} \times 1.20$$
+$$Ip ≈ Imax × 1.20$$
 
 *   **If the nominal current is too low** relative to the CT primary rating, the CT will operate in the lower, less accurate part of its curve.
 *   **If the nominal current is too high** relative to the CT primary rating, the CT may saturate during peak load, leading to inaccurate readings and overheating.
@@ -57,13 +57,13 @@ Always round up your calculated primary current to the nearest standard CT ratin
 
 ---
 
-## 3. Selecting the Secondary Current Rating ($I_s$): 1A vs 5A
+## 3. Selecting the Secondary Current Rating (Is): 1A vs 5A
 Standard secondary current ratings are **1 Ampere** and **5 Amperes**. The choice between them is primarily determined by the physical distance between the CT and the metering/protection devices.
 
 | Feature | 5A Secondary | 1A Secondary |
 | :--- | :--- | :--- |
 | **Typical Distance** | Very short (inside the same panel). | Long (CT in substation yard, meter in control room). |
-| **Lead Burden (Losses)** | High lead wire losses ($I^2R = 25 \times R$). | Low lead wire losses ($I^2R = 1 \times R$). |
+| **Lead Burden (Losses)** | High lead wire losses (I²R = 25 × R). | Low lead wire losses (I²R = 1 × R). |
 | **Cable Size** | Requires thicker copper conductors. | Allows thinner, cost-effective wiring. |
 
 *   **Choose 5A** if the meters and CTs are housed within the same panel suite (lead length < 10 meters).
@@ -82,7 +82,7 @@ A common mistake is using a single CT for both billing-grade metering and protec
 ### Protection CTs (Overcurrent/Fault Focus)
 *   **Goal:** Maintain linearity and avoid saturation during severe short-circuit conditions so protective relays can accurately trip the breakers.
 *   **Saturation behavior:** Must not saturate until currents reach **10x, 15x, or 20x** the nominal rating (referred to as **Accuracy Limit Factor, ALF**).
-*   **Accuracy Classes:** 5P10, 5P20, 10P10, 10P20 (e.g., 5P20 means $\pm5\%$ composite error at 20 times the rated primary current).
+*   **Accuracy Classes:** 5P10, 5P20, 10P10, 10P20 (e.g., 5P20 means ±5% composite error at 20 times the rated primary current).
 
 ---
 
@@ -94,13 +94,13 @@ The total burden is the sum of:
 2.  **Lead Burden:** The resistance of the copper wire connecting the CT secondary terminals to the devices.
 
 ### Formula for Lead Resistance Burden
-$$\text{VA}_{\text{lead}} = I_s^2 \times R_{\text{wire}}$$
+$$VA_lead = Is² × R_wire$$
 Where:
-*   $I_s$ is the secondary current (1A or 5A).
-*   $R_{\text{wire}}$ is the total loop resistance (go and return path) of the connection cables.
+*   *Is* is the secondary current (1A or 5A).
+*   *R_wire* is the total loop resistance (go and return path) of the connection cables.
 
-For a 5A secondary CT with a loop resistance of $0.2\,\Omega$:
-$$\text{VA}_{\text{lead}} = 5^2 \times 0.2 = 25 \times 0.2 = 5\text{ VA}$$
+For a 5A secondary CT with a loop resistance of 0.2 Ω:
+$$VA_lead = 5² × 0.2 = 25 × 0.2 = 5 VA$$
 
 If the total burden (meters + leads) is **7.5 VA**, you should choose a standard CT rated for **10 VA** or **15 VA** burden. Selecting a burden that is too high (e.g., using a 30 VA CT for a 2 VA load) can actually reduce accuracy under light loads.
 
@@ -108,13 +108,13 @@ If the total burden (meters + leads) is **7.5 VA**, you should choose a standard
 
 ## Summary Checklist for Panel Engineers
 
-1.  **Calculate maximum nominal load current ($I_{max}$).**
-2.  **Determine Primary Current ($I_p$):** Round $I_{max} \times 1.2$ up to the nearest standard primary rating.
-3.  **Choose Secondary Current ($I_s$):** Use 5A for local panel installations; use 1A for long-distance outdoor yards.
+1.  **Calculate maximum nominal load current (Imax).**
+2.  **Determine Primary Current (Ip):** Round Imax × 1.2 up to the nearest standard primary rating.
+3.  **Choose Secondary Current (Is):** Use 5A for local panel installations; use 1A for long-distance outdoor yards.
 4.  **Confirm the CT Role:** Specify Class 0.5S/0.5/0.2 for metering, and Class 5P10/5P20 for protective relays.
 5.  **Calculate Connected Burden (VA):** Factor in meter specs and round up to standard VA ratings (e.g. 5VA, 10VA, 15VA, 30VA).
 
-Need built-to-spec current transformers for your upcoming project? The Alliance Engineering design team specializes in manufacturing custom LT and HT CTs up to 2500/5A with Class 0.5 accuracy. Contact our Chandigarh facility at [info@allianceengineeringco.com](mailto:info@allianceengineeringco.com) for drawing validations.
+Need built-to-spec current transformers for your upcoming project? The Alliance Engineering design team specializes in manufacturing custom LT and HT CTs up to 2500/5A with Class 0.5 accuracy. Contact our Chandigarh facility at [alliancemeters@gmail.com](mailto:alliancemeters@gmail.com) for drawing validations.
 `
   },
   {
@@ -148,7 +148,7 @@ While both standards cover the same physical equipment, they diverge in definiti
 ### A. Core Classification and Terminology
 One of the most notable differences lies in how special application cores (like differential and restricted earth fault protection) are designated:
 
-*   **IS 2705 Part 4** defines these as **Class PS** (Protection Special) current transformers, defined by Knee Point Voltage ($V_k$) and exciting current ($I_e$).
+*   **IS 2705 Part 4** defines these as **Class PS** (Protection Special) current transformers, defined by Knee Point Voltage (Vk) and exciting current (Ie).
 *   **IEC 61869-2** replaces this nomenclature with **Class PX** (and Class PXR). The parameters defining the cores are mathematically aligned, but the testing conventions are harmonized globally.
 
 ### B. Accuracy Classes and Limits
@@ -164,7 +164,7 @@ Both standards specify similar accuracy limits for metering CTs (Class 0.1, 0.2,
 
 ---
 
-## 3. Knee Point Voltage ($V_k$) and Excitation Curves
+## 3. Knee Point Voltage (Vk) and Excitation Curves
 For protection and differential cores, the Knee Point Voltage calculation is crucial to prevent protection blindspots during short circuits.
 
 *   Under **IS 2705**, the knee point is defined as the point on the excitation curve where a **10% increase in secondary voltage results in a 50% increase in exciting current**.
@@ -196,7 +196,7 @@ When specifying current transformers for new projects, refer to this guidelines 
 *   For **local commercial and industrial projects**, standard **IS 2705 Class 0.5 / 1.0** remains widely accepted and cost-effective.
 *   For **utility sub-stations, PowerGrid projects, and international exports**, specify **IEC 61869-2 Class 0.2S / 0.5S** for metering, and **Class 5P20 / PX** for protection.
 
-At our ISO 9001:2015 certified facility in Chandigarh, Alliance Engineering manufactures current transformers that are fully compliant with both IS 2705 and IEC 61869-2 standards. We routine-test every unit in-house to verify accuracy curves and knee-point voltages before dispatch. Contact our sales engineers at [info@allianceengineeringco.com](mailto:info@allianceengineeringco.com) for drawing validation and engineering support.
+At our ISO 9001:2015 certified facility in Chandigarh, Alliance Engineering manufactures current transformers that are fully compliant with both IS 2705 and IEC 61869-2 standards. We routine-test every unit in-house to verify accuracy curves and knee-point voltages before dispatch. Contact our sales engineers at [alliancemeters@gmail.com](mailto:alliancemeters@gmail.com) for drawing validation and engineering support.
 `
   }
 ];

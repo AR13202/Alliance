@@ -108,63 +108,43 @@ function parseInlineMarkdown(text: string): React.ReactNode {
 }
 
 function renderMarkdown(content: string) {
-  return content.split("\n\n").map((block, index) => {
-    const trimmed = block.trim();
-    if (!trimmed) return null;
-    
-    if (trimmed.startsWith("## ")) {
-      return (
-        <h2 key={index} className="text-2xl sm:text-3xl font-extrabold text-primary font-headline mt-12 mb-6 tracking-tight border-b border-outline-variant/20 pb-3">
-          {trimmed.slice(3)}
-        </h2>
+  const lines = content.replace(/\r\n/g, "\n").split("\n");
+  const elements: React.ReactNode[] = [];
+  
+  let currentList: { type: "ul" | "ol"; items: string[] } | null = null;
+  let currentBlockquote: string[] | null = null;
+  let currentTable: string[] | null = null;
+  let currentMath: string[] | null = null;
+  let currentParagraph: string[] | null = null;
+
+  const flush = (key: string | number) => {
+    if (currentList) {
+      const ListTag = currentList.type;
+      const listClass = currentList.type === "ul" 
+        ? "list-disc pl-6 space-y-3 my-6 text-secondary leading-relaxed font-body"
+        : "list-decimal pl-6 space-y-3 my-6 text-secondary leading-relaxed font-body";
+      elements.push(
+        <ListTag key={`list-${key}`} className={listClass}>
+          {currentList.items.map((item, i) => (
+            <li key={i}>{parseInlineMarkdown(item)}</li>
+          ))}
+        </ListTag>
       );
+      currentList = null;
     }
-    if (trimmed.startsWith("### ")) {
-      return (
-        <h3 key={index} className="text-xl sm:text-2xl font-bold text-tertiary font-headline mt-8 mb-4 tracking-tight">
-          {trimmed.slice(4)}
-        </h3>
-      );
-    }
-    
-    if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
-      const items = trimmed.split(/\n[\*\-]\s+/);
-      return (
-        <ul key={index} className="list-disc pl-6 space-y-3 my-6 text-secondary leading-relaxed font-body">
-          {items.map((item, i) => {
-            const text = item.replace(/^[\*\-]\s+/, "");
-            return <li key={i}>{parseInlineMarkdown(text)}</li>;
-          })}
-        </ul>
-      );
-    }
-    
-    if (/^\d+\.\s+/.test(trimmed)) {
-      const items = trimmed.split(/\n\d+\.\s+/);
-      return (
-        <ol key={index} className="list-decimal pl-6 space-y-3 my-6 text-secondary leading-relaxed font-body">
-          {items.map((item, i) => {
-            const text = item.replace(/^\d+\.\s+/, "");
-            return <li key={i}>{parseInlineMarkdown(text)}</li>;
-          })}
-        </ol>
-      );
-    }
-    
-    if (trimmed.startsWith("> ")) {
-      return (
-        <blockquote key={index} className="border-l-4 border-primary bg-surface-container-low px-6 py-5 rounded-r-lg my-8 text-secondary italic text-base sm:text-lg leading-relaxed shadow-sm">
-          {parseInlineMarkdown(trimmed.replace(/^>\s+/, ""))}
+    if (currentBlockquote) {
+      elements.push(
+        <blockquote key={`quote-${key}`} className="border-l-4 border-primary bg-surface-container-low px-6 py-5 rounded-r-lg my-8 text-secondary italic text-base sm:text-lg leading-relaxed shadow-sm">
+          {parseInlineMarkdown(currentBlockquote.join(" "))}
         </blockquote>
       );
+      currentBlockquote = null;
     }
-    
-    if (trimmed.startsWith("|")) {
-      const lines = trimmed.split("\n");
-      const headers = lines[0].split("|").map(h => h.trim()).filter(Boolean);
-      const rows = lines.slice(2).map(line => line.split("|").map(c => c.trim()).filter(Boolean));
-      return (
-        <div key={index} className="overflow-x-auto my-8 border border-outline-variant/20 rounded-xl shadow-sm">
+    if (currentTable) {
+      const headers = currentTable[0].split("|").map(h => h.trim()).filter(Boolean);
+      const rows = currentTable.slice(2).map(line => line.split("|").map(c => c.trim()).filter(Boolean));
+      elements.push(
+        <div key={`table-${key}`} className="overflow-x-auto my-8 border border-outline-variant/20 rounded-xl shadow-sm">
           <table className="min-w-full divide-y divide-outline-variant/20 text-sm">
             <thead className="bg-surface-container-low">
               <tr>
@@ -189,22 +169,142 @@ function renderMarkdown(content: string) {
           </table>
         </div>
       );
+      currentTable = null;
     }
-
-    if (trimmed.startsWith("$$") && trimmed.endsWith("$$")) {
-      return (
-        <div key={index} className="my-8 py-6 px-8 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center font-mono text-primary font-bold text-lg sm:text-xl shadow-inner">
-          {trimmed.slice(2, -2)}
+    if (currentMath) {
+      elements.push(
+        <div key={`math-${key}`} className="my-8 py-6 px-8 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center font-mono text-primary font-bold text-lg sm:text-xl shadow-inner">
+          {currentMath.join(" ")}
         </div>
       );
+      currentMath = null;
     }
-    
-    return (
-      <p key={index} className="text-secondary text-base sm:text-lg leading-relaxed mb-6 font-body">
-        {parseInlineMarkdown(trimmed)}
-      </p>
-    );
-  });
+    if (currentParagraph) {
+      elements.push(
+        <p key={`p-${key}`} className="text-secondary text-base sm:text-lg leading-relaxed mb-6 font-body">
+          {parseInlineMarkdown(currentParagraph.join(" "))}
+        </p>
+      );
+      currentParagraph = null;
+    }
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    // 1. Math block start/end
+    if (trimmed.startsWith("$$") && trimmed.endsWith("$$") && trimmed.length > 2) {
+      flush(i);
+      elements.push(
+        <div key={`math-${i}`} className="my-8 py-6 px-8 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center font-mono text-primary font-bold text-lg sm:text-xl shadow-inner">
+          {trimmed.slice(2, -2).trim()}
+        </div>
+      );
+      continue;
+    }
+    if (trimmed.startsWith("$$")) {
+      if (currentMath) {
+        flush(i);
+      } else {
+        flush(i);
+        currentMath = [];
+      }
+      continue;
+    }
+    if (currentMath !== null) {
+      currentMath.push(trimmed);
+      continue;
+    }
+
+    // 2. Empty line flushes everything
+    if (!trimmed) {
+      flush(i);
+      continue;
+    }
+
+    // 3. Horizontal Rule
+    if (trimmed === "---") {
+      flush(i);
+      elements.push(<hr key={`hr-${i}`} className="border-outline-variant/20 my-10" />);
+      continue;
+    }
+
+    // 4. Headings
+    if (trimmed.startsWith("## ")) {
+      flush(i);
+      elements.push(
+        <h2 key={`h2-${i}`} className="text-2xl sm:text-3xl font-extrabold text-primary font-headline mt-12 mb-6 tracking-tight border-b border-outline-variant/20 pb-3">
+          {trimmed.slice(3)}
+        </h2>
+      );
+      continue;
+    }
+    if (trimmed.startsWith("### ")) {
+      flush(i);
+      elements.push(
+        <h3 key={`h3-${i}`} className="text-xl sm:text-2xl font-bold text-tertiary font-headline mt-8 mb-4 tracking-tight">
+          {trimmed.slice(4)}
+        </h3>
+      );
+      continue;
+    }
+
+    // 5. Blockquote
+    if (trimmed.startsWith("> ")) {
+      if (!currentBlockquote) {
+        flush(i);
+        currentBlockquote = [];
+      }
+      currentBlockquote.push(trimmed.slice(2));
+      continue;
+    }
+
+    // 6. Bullet lists
+    if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
+      if (!currentList || currentList.type !== "ul") {
+        flush(i);
+        currentList = { type: "ul", items: [] };
+      }
+      currentList.items.push(trimmed.slice(2).trim());
+      continue;
+    }
+
+    // 7. Numbered lists
+    if (/^\d+\.\s+/.test(trimmed)) {
+      const match = trimmed.match(/^\d+\.\s+/);
+      const listContent = trimmed.slice(match![0].length).trim();
+      if (!currentList || currentList.type !== "ol") {
+        flush(i);
+        currentList = { type: "ol", items: [] };
+      }
+      currentList.items.push(listContent);
+      continue;
+    }
+
+    // 8. Tables
+    if (trimmed.startsWith("|")) {
+      if (!currentTable) {
+        flush(i);
+        currentTable = [];
+      }
+      currentTable.push(trimmed);
+      continue;
+    }
+
+    // 9. Standard paragraphs
+    if (currentList || currentBlockquote || currentTable) {
+      flush(i);
+    }
+    if (!currentParagraph) {
+      currentParagraph = [];
+    }
+    currentParagraph.push(trimmed);
+  }
+
+  flush("final");
+
+  return elements;
 }
 
 // ─── Component Entry ─────────────────────────────────────────────────────────
