@@ -117,7 +117,7 @@ export default function AboutScreen() {
                 <div className="aspect-square bg-surface-container rounded-xl overflow-hidden">
                   <img
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    alt="sophisticated electrical components"
+                    alt="high-accuracy current transformer metering and protection cores assembly"
                     src="/stitch/about_history.png"
                   />
                 </div>

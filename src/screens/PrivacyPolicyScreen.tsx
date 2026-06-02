@@ -108,7 +108,7 @@ export default function PrivacyPolicyScreen() {
                   Plot No.: 417, Industrial Area Phase -2, Chandigarh, 160002, India
                 </p>
                 <p className="text-secondary text-sm">
-                  Email: <a href="mailto:alliancemeters@gmail.com" className="text-primary font-semibold hover:underline">alliancemeters@gmail.com</a>
+                  Email: <a href="mailto:info@allianceengineeringco.com" className="text-primary font-semibold hover:underline">info@allianceengineeringco.com</a>
                 </p>
                 <p className="text-secondary text-sm">
                   Phone: +91-9417374546, +91-7589124094

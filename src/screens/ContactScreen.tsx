@@ -106,7 +106,7 @@ export default function ContactScreen() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-outline uppercase tracking-widest mb-1">Inquiries</p>
-                    <p className="text-xl font-headline font-bold text-tertiary">alliancemeters@gmail.com</p>
+                    <p className="text-xl font-headline font-bold text-tertiary">info@allianceengineeringco.com</p>
                   </div>
                 </div>
 

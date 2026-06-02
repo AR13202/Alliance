@@ -14,7 +14,7 @@ const documentation = [
   { name: "Our Products", href: "/products" },
   { name: "About Us", href: "/about" },
   { name: "Our Clients", href: "/client" },
-  { name: "Our Certifications", href: "#" },
+  { name: "Blog / Resources", href: "/blog" },
 ];
 
 export default function Footer() {
@@ -139,7 +139,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4" /> +91-9417374546, +91-7589124094
                 </p>
                 <p className="text-secondary text-sm mt-1 flex items-center gap-2">
-                  <Mail className="w-4 h-4" /> <a href="mailto:alliancemeters@gmail.com">alliancemeters@gmail.com</a>
+                  <Mail className="w-4 h-4" /> <a href="mailto:info@allianceengineeringco.com">info@allianceengineeringco.com</a>
                 </p>
               </div>
             </div>

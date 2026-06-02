@@ -148,7 +148,7 @@ export default function HomeScreen() {
           <div className="absolute inset-0 z-0">
             <img
               src="/bg3.png"
-              alt="Industrial Precision"
+              alt="LT current transformer 2500/5A Class 0.5 for switchgear panels"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
@@ -225,7 +225,7 @@ export default function HomeScreen() {
               <div className="aspect-square bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="/section-2.png"
-                  alt="Industrial Precision Component"
+                  alt="CRGO silicon steel transformer core laminations"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -457,7 +457,7 @@ export default function HomeScreen() {
               <div className="relative hidden md:block">
                 <img
                   src="/home-section-why-us.png"
-                  alt="Technical Excellence"
+                  alt="ISO 9001:2015 B2B quality testing facility for current transformers"
                   className="rounded-2xl shadow-3xl grayscale opacity-40 mix-blend-screen"
                 />
               </div>
@@ -486,7 +486,7 @@ export default function HomeScreen() {
                     <p className="text-[10px] font-bold uppercase tracking-widest text-secondary font-label">
                       Email Us
                     </p>
-                    <p className="font-bold text-on-surface">alliancemeters@gmail.com</p>
+                    <p className="font-bold text-on-surface">info@allianceengineeringco.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

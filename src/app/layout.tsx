@@ -4,11 +4,33 @@ import "../index.css";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.allianceengineeringco.com"),
   title: {
     template: "%s | Alliance Engineering Company",
     default: "Current Transformer Manufacturer in India | Alliance Engineering Company",
   },
   description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
+  openGraph: {
+    type: "website",
+    siteName: "Alliance Engineering Company",
+    title: "Current Transformer Manufacturer in India | Alliance Engineering Company",
+    description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
+    url: "https://www.allianceengineeringco.com/",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Alliance Engineering Company Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Current Transformer Manufacturer in India | Alliance Engineering Company",
+    description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -16,21 +38,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const schemaData = {
+  const schemaGraph = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Organization", "ManufacturingBusiness"],
-    "name": "Alliance Engineering Company",
-    "description": "ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Plot No.: 417, Industrial Area Phase -2",
-      "addressLocality": "Chandigarh",
-      "postalCode": "160002",
-      "addressCountry": "IN"
-    },
-    "telephone": "+91-9417374546",
-    "email": "alliancemeters@gmail.com",
-    "url": "https://www.alliancenggco.com/"
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness", "ManufacturingBusiness"],
+        "@id": "https://www.allianceengineeringco.com/#organization",
+        "name": "Alliance Engineering Company",
+        "url": "https://www.allianceengineeringco.com",
+        "logo": "https://www.allianceengineeringco.com/logo.png",
+        "description": "ISO 9001:2015 certified manufacturer of current transformers, control transformers and industrial battery chargers. Established 1992. GeM registered. Chandigarh, India.",
+        "foundingDate": "1992",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plot No. 417, Industrial Area Phase 2",
+          "addressLocality": "Chandigarh",
+          "postalCode": "160002",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9417374546",
+        "email": "info@allianceengineeringco.com",
+        "hasMap": "https://maps.google.com/?q=Plot+417+Industrial+Area+Phase+2+Chandigarh",
+        "sameAs": [
+          "https://www.indiamart.com/alliance-engg-co/",
+          "https://www.linkedin.com/company/alliance-engg-co/",
+          "https://www.exportersindia.com/allianceenggco/"
+        ],
+        "knowsAbout": [
+          "Current Transformers",
+          "Control Transformers",
+          "Industrial Battery Chargers",
+          "Voltage Stabilizers",
+          "IS 2705",
+          "IEC 61869-2"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.allianceengineeringco.com/#website",
+        "url": "https://www.allianceengineeringco.com",
+        "name": "Alliance Engineering Company",
+        "publisher": { "@id": "https://www.allianceengineeringco.com/#organization" }
+      }
+    ]
   };
 
   return (
@@ -40,7 +90,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Alliance" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
       </head>
       <body className="bg-background text-foreground antialiased font-outline" suppressHydrationWarning>
