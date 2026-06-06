@@ -26,10 +26,10 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 backdrop-blur-md">
       <nav className="flex justify-between items-center w-full px-4 md:px-8 py-2 mx-auto">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" aria-label="Alliance Engineering Company">
             <img
               src="/logo.png"
-              alt="Alliance Engineering Logo"
+              alt="Alliance Engineering Company"
               className="h-8 w-auto"
             />
           </Link>

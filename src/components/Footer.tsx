@@ -28,7 +28,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-8">
               <img
                 src="/logo.png"
-                alt="Alliance Engineering Logo"
+                alt="Alliance Engineering Company"
                 className="h-10 w-auto"
               />
             </div>

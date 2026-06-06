@@ -79,6 +79,7 @@ export default function RootLayout({
         "@id": "https://www.allianceengineeringco.com/#website",
         "url": "https://www.allianceengineeringco.com",
         "name": "Alliance Engineering Company",
+        "alternateName": ["Alliance Engineering", "Alliance Engineering Co", "Alliance Engineering Company Chandigarh"],
         "publisher": { "@id": "https://www.allianceengineeringco.com/#organization" }
       }
     ]
