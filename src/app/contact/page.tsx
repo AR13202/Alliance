@@ -2,16 +2,16 @@ import ContactScreen from "@/screens/ContactScreen";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Alliance Engineering Company — Get a Quote | Chandigarh, India",
-  description: "Contact Alliance Engineering for current transformers, control transformers & battery chargers. Request a quote, custom specifications, or bulk procurement inquiry. Plot 417, Industrial Area Phase 2, Chandigarh.",
+  title: "Contact Us & Request a Quote | Chandigarh",
+  description: "Get in touch with Alliance Engineering Company. Request a technical quote, custom product drawings, or submit a bulk procurement inquiry for current/control transformers.",
   openGraph: {
     type: "website",
-    title: "Contact Alliance Engineering Company — Get a Quote | Chandigarh, India",
-    description: "Contact Alliance Engineering for current transformers, control transformers & battery chargers. Request a quote, custom specifications, or bulk procurement inquiry. Plot 417, Industrial Area Phase 2, Chandigarh.",
+    title: "Contact Us & Request a Quote | Chandigarh | Alliance Engineering Company",
+    description: "Get in touch with Alliance Engineering Company. Request a technical quote, custom product drawings, or submit a bulk procurement inquiry for current/control transformers.",
     url: "https://www.allianceengineeringco.com/contact",
     images: [
       {
-        url: "/logo.png",
+        url: "/alliance_factory_og.png",
         width: 1200,
         height: 630,
         alt: "Contact Alliance Engineering Company",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Alliance Engineering Company — Get a Quote | Chandigarh, India",
-    description: "Contact Alliance Engineering for current transformers, control transformers & battery chargers. Request a quote, custom specifications, or bulk procurement inquiry. Plot 417, Industrial Area Phase 2, Chandigarh.",
-    images: ["/logo.png"],
+    title: "Contact Us & Request a Quote | Chandigarh | Alliance Engineering Company",
+    description: "Get in touch with Alliance Engineering Company. Request a technical quote, custom product drawings, or submit a bulk procurement inquiry for current/control transformers.",
+    images: ["/alliance_factory_og.png"],
   },
 };
 

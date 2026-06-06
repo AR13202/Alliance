@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://www.allianceengineeringco.com/",
     images: [
       {
-        url: "/logo.png",
+        url: "/alliance_factory_og.png",
         width: 1200,
         height: 630,
         alt: "Alliance Engineering Company Logo",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Current Transformer Manufacturer in India | Alliance Engineering Company",
     description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
-    images: ["/logo.png"],
+    images: ["/alliance_factory_og.png"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/bg3.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/lt-current-transformer-panel.webp" as="image" type="image/webp" />
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@200..800&family=Inter:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <meta name="apple-mobile-web-app-title" content="Alliance" />
         <script

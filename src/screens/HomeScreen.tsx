@@ -152,7 +152,7 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
         <section className="relative min-h-[100dvh] flex items-center px-6 md:px-12 py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              src="/bg3.webp"
+              src="/lt-current-transformer-panel.webp"
               alt="LT current transformer 2500/5A Class 0.5 for switchgear panels"
               className="w-full h-full object-cover"
             />

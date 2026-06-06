@@ -3,16 +3,16 @@ import type { Metadata } from "next";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Electrical Products — Transformers, Battery Chargers & Meters | Alliance Engineering",
-  description: "Browse Alliance Engineering's full product range: LT current transformers, control transformers, industrial battery chargers, voltage stabilizers, variacs and panel meters. IS & IEC compliant. Chandigarh, India.",
+  title: "Industrial Electrical Products Catalog",
+  description: "Explore our B2B electrical product catalog including low-voltage current transformers, custom control transformers, automatic Float-Cum-Boost battery chargers, and servo stabilizers. Manufactured by Alliance Engineering Company.",
   openGraph: {
     type: "website",
-    title: "Electrical Products — Transformers, Battery Chargers & Meters | Alliance Engineering",
-    description: "Browse Alliance Engineering's full product range: LT current transformers, control transformers, industrial battery chargers, voltage stabilizers, variacs and panel meters. IS & IEC compliant. Chandigarh, India.",
+    title: "Industrial Electrical Products Catalog | Alliance Engineering Company",
+    description: "Explore our B2B electrical product catalog including low-voltage current transformers, custom control transformers, automatic Float-Cum-Boost battery chargers, and servo stabilizers. Manufactured by Alliance Engineering Company.",
     url: "https://www.allianceengineeringco.com/products",
     images: [
       {
-        url: "/logo.png",
+        url: "/alliance_factory_og.png",
         width: 1200,
         height: 630,
         alt: "Alliance Engineering Products",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electrical Products — Transformers, Battery Chargers & Meters | Alliance Engineering",
-    description: "Browse Alliance Engineering's full product range: LT current transformers, control transformers, industrial battery chargers, voltage stabilizers, variacs and panel meters. IS & IEC compliant. Chandigarh, India.",
-    images: ["/logo.png"],
+    title: "Industrial Electrical Products Catalog | Alliance Engineering Company",
+    description: "Explore our B2B electrical product catalog including low-voltage current transformers, custom control transformers, automatic Float-Cum-Boost battery chargers, and servo stabilizers. Manufactured by Alliance Engineering Company.",
+    images: ["/alliance_factory_og.png"],
   },
 };
 

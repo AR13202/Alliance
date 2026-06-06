@@ -2,16 +2,16 @@ import AboutScreen from "@/screens/AboutScreen";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Alliance Engineering Company — 30+ Years of Transformer Manufacturing, Chandigarh",
-  description: "Established in 1992 in Chandigarh, Alliance Engineering is an ISO 9001:2015 certified, GeM-registered manufacturer of instrument & control transformers trusted by PSUs, Railways and heavy industry across India.",
+  title: "About Our 30+ Years of Manufacturing Expertise",
+  description: "Learn about Alliance Engineering Company's history since 1992, our ISO 9001:2015 certified manufacturing facility in Chandigarh, and our dedication to precision instrument and control transformers.",
   openGraph: {
     type: "website",
-    title: "About Alliance Engineering Company — 30+ Years of Transformer Manufacturing, Chandigarh",
-    description: "Established in 1992 in Chandigarh, Alliance Engineering is an ISO 9001:2015 certified, GeM-registered manufacturer of instrument & control transformers trusted by PSUs, Railways and heavy industry across India.",
+    title: "About Our 30+ Years of Manufacturing Expertise | Alliance Engineering Company",
+    description: "Learn about Alliance Engineering Company's history since 1992, our ISO 9001:2015 certified manufacturing facility in Chandigarh, and our dedication to precision instrument and control transformers.",
     url: "https://www.allianceengineeringco.com/about",
     images: [
       {
-        url: "/logo.png",
+        url: "/alliance_factory_og.png",
         width: 1200,
         height: 630,
         alt: "About Alliance Engineering Company",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Alliance Engineering Company — 30+ Years of Transformer Manufacturing, Chandigarh",
-    description: "Established in 1992 in Chandigarh, Alliance Engineering is an ISO 9001:2015 certified, GeM-registered manufacturer of instrument & control transformers trusted by PSUs, Railways and heavy industry across India.",
-    images: ["/logo.png"],
+    title: "About Our 30+ Years of Manufacturing Expertise | Alliance Engineering Company",
+    description: "Learn about Alliance Engineering Company's history since 1992, our ISO 9001:2015 certified manufacturing facility in Chandigarh, and our dedication to precision instrument and control transformers.",
+    images: ["/alliance_factory_og.png"],
   },
 };
 

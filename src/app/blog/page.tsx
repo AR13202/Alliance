@@ -6,16 +6,16 @@ import type { Metadata } from "next";
 import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Electrical Resources & Engineering Blog | Alliance Engineering",
+  title: "Technical Engineering Blog & Resources",
   description: "Technical guides, standard comparisons, and expert articles on current transformers, control transformers & industrial power systems for panel builders and engineers.",
   openGraph: {
     type: "website",
-    title: "Electrical Resources & Engineering Blog | Alliance Engineering",
+    title: "Technical Engineering Blog & Resources | Alliance Engineering Company",
     description: "Technical guides, standard comparisons, and expert articles on current transformers, control transformers & industrial power systems for panel builders and engineers.",
     url: "https://www.allianceengineeringco.com/blog",
     images: [
       {
-        url: "/logo.png",
+        url: "/alliance_factory_og.png",
         width: 1200,
         height: 630,
         alt: "Alliance Engineering Technical Blog",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electrical Resources & Engineering Blog | Alliance Engineering",
+    title: "Technical Engineering Blog & Resources | Alliance Engineering Company",
     description: "Technical guides, standard comparisons, and expert articles on current transformers, control transformers & industrial power systems for panel builders and engineers.",
-    images: ["/logo.png"],
+    images: ["/alliance_factory_og.png"],
   },
 };
 
@@ -60,7 +60,7 @@ export default function BlogIndexPage() {
 
         {/* Blog Listing Grid */}
         <section className="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {blogPosts.map((post) => (
               <article 
                 key={post.slug}
@@ -79,9 +79,9 @@ export default function BlogIndexPage() {
                 </div>
 
                 {/* Article Info */}
-                <div className="p-6 md:p-8 flex-grow flex flex-col">
+                <div className="p-6 flex-grow flex flex-col">
                   {/* Meta Row */}
-                  <div className="flex flex-wrap gap-4 text-secondary text-xs mb-4 font-medium">
+                  <div className="flex flex-wrap gap-x-4 gap-y-2 text-secondary text-[11px] mb-4 font-medium">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 opacity-65" />
                       {post.date}
@@ -90,13 +90,13 @@ export default function BlogIndexPage() {
                       <Clock className="w-3.5 h-3.5 opacity-65" />
                       {post.readingTime}
                     </span>
-                    <span className="flex items-center gap-1.5">
+                    <span className="flex items-center gap-1.5 font-bold">
                       <User className="w-3.5 h-3.5 opacity-65" />
                       {post.author}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-primary font-headline mb-4 leading-tight group-hover:text-primary-container transition-colors">
+                  <h2 className="text-lg xl:text-xl font-bold text-primary font-headline mb-4 leading-tight group-hover:text-primary-container transition-colors">
                     <Link href={`/blog/${post.slug}`} className="hover:underline">
                       {post.title}
                     </Link>
