@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.allianceengineeringco.com";
@@ -41,15 +42,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  // Blog posts sitemap entries
-  const blogSlugs = [
-    "how-to-choose-the-right-ct-ratio",
-    "is-2705-vs-iec-61869-2-explained"
-  ];
-  
-  const blogEntries = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
+  // Blog posts sitemap entries dynamically generated
+  const blogEntries = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
