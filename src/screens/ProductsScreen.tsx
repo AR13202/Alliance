@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, useRef } from "react";
 import {
   Plus,
@@ -13,15 +13,20 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Product, products } from "@/data/products";
+import type { Product } from "@/data/products";
 
-export default function ProductsScreen() {
+interface ProductsScreenProps {
+  products: Product[];
+  initialCategory?: string;
+  initialQuery?: string;
+}
+
+export default function ProductsScreen({ products, initialCategory, initialQuery }: ProductsScreenProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
-  const selectedCategoryValue = searchParams?.get("category") || "all";
-  const searchQuery = searchParams?.get("query")?.trim() ?? "";
+  const selectedCategoryValue = initialCategory || "all";
+  const searchQuery = initialQuery?.trim() ?? "";
 
   const [currentPage, setCurrentPage] = useState(1);
   const [localSearch, setLocalSearch] = useState(searchQuery);
@@ -144,7 +149,7 @@ export default function ProductsScreen() {
   );
 
   const setCategory = (value: string) => {
-    const params = new URLSearchParams(searchParams?.toString() || "");
+    const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
     if (value === "all") {
       params.delete("category");
     } else {
@@ -157,7 +162,7 @@ export default function ProductsScreen() {
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const params = new URLSearchParams(searchParams?.toString() || "");
+    const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
     if (localSearch.trim()) {
       params.set("query", localSearch.trim());
     } else {
@@ -171,7 +176,7 @@ export default function ProductsScreen() {
     const value = e.target.value;
     setLocalSearch(value);
     
-    const params = new URLSearchParams(searchParams?.toString() || "");
+    const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
     if (value.trim()) {
       params.set("query", value.trim());
     } else {

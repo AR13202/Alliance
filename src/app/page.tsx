@@ -1,4 +1,5 @@
 import HomeScreen from "@/screens/HomeScreen";
+import { products } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,5 +28,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomeScreen />;
+  const featuredProducts = products.filter(p => p.isFeaturedProduct).slice(0, 8);
+  return <HomeScreen featuredProducts={featuredProducts} />;
 }

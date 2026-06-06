@@ -114,7 +114,7 @@ If the total burden (meters + leads) is **7.5 VA**, you should choose a standard
 4.  **Confirm the CT Role:** Specify Class 0.5S/0.5/0.2 for metering, and Class 5P10/5P20 for protective relays.
 5.  **Calculate Connected Burden (VA):** Factor in meter specs and round up to standard VA ratings (e.g. 5VA, 10VA, 15VA, 30VA).
 
-Need built-to-spec current transformers for your upcoming project? The Alliance Engineering design team specializes in manufacturing custom LT and HT CTs up to 2500/5A with Class 0.5 accuracy. Contact our Chandigarh facility at [alliancemeters@gmail.com](mailto:alliancemeters@gmail.com) for drawing validations.
+Need built-to-spec current transformers for your upcoming project? The Alliance Engineering design team specializes in manufacturing custom LT and HT CTs up to 2500/5A with Class 0.5 accuracy. Contact our Chandigarh facility at [info@allianceengineeringco.com](mailto:info@allianceengineeringco.com) for drawing validations.
 `
   },
   {
@@ -196,7 +196,7 @@ When specifying current transformers for new projects, refer to this guidelines 
 *   For **local commercial and industrial projects**, standard **IS 2705 Class 0.5 / 1.0** remains widely accepted and cost-effective.
 *   For **utility sub-stations, PowerGrid projects, and international exports**, specify **IEC 61869-2 Class 0.2S / 0.5S** for metering, and **Class 5P20 / PX** for protection.
 
-At our ISO 9001:2015 certified facility in Chandigarh, Alliance Engineering manufactures current transformers that are fully compliant with both IS 2705 and IEC 61869-2 standards. We routine-test every unit in-house to verify accuracy curves and knee-point voltages before dispatch. Contact our sales engineers at [alliancemeters@gmail.com](mailto:alliancemeters@gmail.com) for drawing validation and engineering support.
+At our ISO 9001:2015 certified facility in Chandigarh, Alliance Engineering manufactures current transformers that are fully compliant with both IS 2705 and IEC 61869-2 standards. We routine-test every unit in-house to verify accuracy curves and knee-point voltages before dispatch. Contact our sales engineers at [info@allianceengineeringco.com](mailto:info@allianceengineeringco.com) for drawing validation and engineering support.
 `
   }
 ];

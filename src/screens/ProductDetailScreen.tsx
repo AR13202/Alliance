@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { getProductById, getRelatedProducts } from "@/data/products";
+import type { Product } from "@/data/products";
 import { Loader2 } from "lucide-react";
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
@@ -32,11 +32,12 @@ const standardDescriptions: Record<string, string> = {
 };
 
 export default function ProductDetailScreen({
-  productId,
+  product,
+  relatedProducts,
 }: {
-  productId: string;
+  product: Product;
+  relatedProducts: Product[];
 }) {
-  const product = getProductById(productId);
   const [selectedImg, setSelectedImg] = useState(0);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [form, setForm] = useState({
@@ -68,7 +69,7 @@ export default function ProductDetailScreen({
     );
   }
 
-  const related = getRelatedProducts(product.id, 4);
+  const related = relatedProducts;
   const allImages = useMemo(() => {
     const list = [product.image];
     product.thumbnails.forEach((img) => {

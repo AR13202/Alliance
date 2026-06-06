@@ -262,7 +262,7 @@ export default function AboutScreen() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {/* Card 1: ISO 9001 */}
               <a
-                href="/certifications/3050260317150q - alliance engineering company - iso 9001-2015.pdf"
+                href="/certifications/alliance-engineering-company-iso-9001-2015.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 hover:border-white/30 hover:bg-white/15 transition-all group hover:-translate-y-1 duration-300 flex flex-col justify-between"
@@ -290,7 +290,7 @@ export default function AboutScreen() {
 
               {/* Card 2: CE Certification */}
               <a
-                href="/certifications/alliance engineering company ce-mark CE- 7724.pdf"
+                href="/certifications/alliance-engineering-company-ce-mark-ce-7724.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 hover:border-white/30 hover:bg-white/15 transition-all group hover:-translate-y-1 duration-300 flex flex-col justify-between"
@@ -318,7 +318,7 @@ export default function AboutScreen() {
 
               {/* Card 3: Importer-Exporter Code */}
               <a
-                href="/certifications/IEC code Alliance 2026.pdf"
+                href="/certifications/iec-code-alliance-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 hover:border-white/30 hover:bg-white/15 transition-all group hover:-translate-y-1 duration-300 flex flex-col justify-between"

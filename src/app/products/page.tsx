@@ -1,6 +1,6 @@
-import { Suspense } from "react";
 import ProductsScreen from "@/screens/ProductsScreen";
 import type { Metadata } from "next";
+import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Electrical Products — Transformers, Battery Chargers & Meters | Alliance Engineering",
@@ -27,10 +27,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0c1017]" />}>
-      <ProductsScreen />
-    </Suspense>
-  );
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
+  const category = typeof resolvedParams.category === "string" ? resolvedParams.category : undefined;
+  const query = typeof resolvedParams.query === "string" ? resolvedParams.query : undefined;
+
+  return <ProductsScreen products={products} initialCategory={category} initialQuery={query} />;
 }

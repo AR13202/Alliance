@@ -5,11 +5,16 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Product, products } from '@/data/products';
+import type { Product } from '@/data/products';
 import { sendContactEmail } from "@/app/actions";
 import SuccessPopover from "@/components/SuccessPopover";
 import Turnstile from "@/components/Turnstile";
-export default function HomeScreen() {
+
+interface HomeScreenProps {
+  featuredProducts: Product[];
+}
+
+export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const categoriesCarouselRef = useRef<HTMLDivElement>(null);
 
@@ -91,7 +96,7 @@ export default function HomeScreen() {
     }
   };
 
-  const featuredProducts = products.filter(product => product.isFeaturedProduct).slice(0, 8); // Get top 8 featured products
+
 
   const categoriesList = [
     {
@@ -147,7 +152,7 @@ export default function HomeScreen() {
         <section className="relative min-h-[100dvh] flex items-center px-6 md:px-12 py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              src="/bg3.png"
+              src="/bg3.webp"
               alt="LT current transformer 2500/5A Class 0.5 for switchgear panels"
               className="w-full h-full object-cover"
             />

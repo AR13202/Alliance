@@ -87,6 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preload" href="/bg3.webp" as="image" type="image/webp" />
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@200..800&family=Inter:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <meta name="apple-mobile-web-app-title" content="Alliance" />
         <script

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getProductById, products } from "@/data/products";
+import { getProductById, getRelatedProducts, products } from "@/data/products";
 import ProductDetailScreen from "@/screens/ProductDetailScreen";
 import type { Metadata } from "next";
 
@@ -61,6 +61,8 @@ export default async function ProductDetailPage({
     notFound();
   }
 
+  const related = getRelatedProducts(product.id, 4);
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -94,7 +96,7 @@ export default async function ProductDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
-      <ProductDetailScreen productId={id} />
+      <ProductDetailScreen product={product} relatedProducts={related} />
     </>
   );
 }

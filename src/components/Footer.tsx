@@ -14,6 +14,7 @@ const documentation = [
   { name: "Our Products", href: "/products" },
   { name: "About Us", href: "/about" },
   { name: "Our Clients", href: "/client" },
+  { name: "Our Certifications", href: "/about#certifications" },
   { name: "Blog / Resources", href: "/blog" },
 ];
 
@@ -65,11 +66,7 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-secondary hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all duration-300"
                 title="LinkedIn Page"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+                <span className="font-bold tracking-tighter text-[11px] lowercase font-sans">in</span>
               </a>
 
               {/* ExportersIndia */}
@@ -107,7 +104,7 @@ export default function Footer() {
           {/* Documentation Column */}
           <div className="md:col-span-2 lg:col-span-2">
             <h4 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary mb-8">
-              Ouick Links
+              Quick Links
             </h4>
             <ul className="space-y-4">
               {documentation.map((item) => (

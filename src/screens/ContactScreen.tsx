@@ -85,7 +85,7 @@ export default function ContactScreen() {
                 Get in Touch
               </h1>
               <p className="text-xl text-secondary mb-12 max-w-md font-body leading-relaxed">
-                Partner with our engineering team to bring structural integrity and industrial precision to your next global project.
+                Partner with our engineering team to design and manufacture custom current and control transformers tailored to your precise electrical specifications.
               </p>
 
               <div className="space-y-8">
@@ -118,7 +118,7 @@ export default function ContactScreen() {
                   </div>
                   <div className="px-4 py-2 bg-surface-container-low rounded-full flex items-center gap-2 border border-outline-variant/10">
                     <span className="material-symbols-outlined text-sm text-primary">support_agent</span>
-                    <span className="text-xs font-bold text-secondary uppercase tracking-tight">24/7 Technical Support</span>
+                    <span className="text-xs font-bold text-secondary uppercase tracking-tight">Technical Support</span>
                   </div>
                 </div>
               </div>
@@ -312,31 +312,31 @@ export default function ContactScreen() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="space-y-4 group">
               <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-6">
-                <span className="material-symbols-outlined text-4xl">architecture</span>
+                <span className="material-symbols-outlined text-4xl">engineering</span>
               </div>
-              <h3 className="font-headline font-bold text-xl text-tertiary">Architectural Precision</h3>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Engineering Precision</h3>
               <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
-                Engineered with absolute geometric accuracy for large-scale industrial infrastructure.
+                Designed to IS 2705 and IEC 61869 specifications with 30+ years of manufacturing expertise.
               </p>
             </div>
 
             <div className="space-y-4 group">
               <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:-rotate-6">
-                <span className="material-symbols-outlined text-4xl">security</span>
+                <span className="material-symbols-outlined text-4xl">verified</span>
               </div>
-              <h3 className="font-headline font-bold text-xl text-tertiary">Data Integrity</h3>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Quality Assurance</h3>
               <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
-                Your project blueprints and communications are protected by industry-standard security protocols.
+                Every current and control transformer is routine-tested in-house to guarantee accuracy curves.
               </p>
             </div>
 
             <div className="space-y-4 group">
               <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-6">
-                <span className="material-symbols-outlined text-4xl">public</span>
+                <span className="material-symbols-outlined text-4xl">local_shipping</span>
               </div>
-              <h3 className="font-headline font-bold text-xl text-tertiary">Global Delivery</h3>
+              <h3 className="font-headline font-bold text-xl text-tertiary">Reliable Turnaround</h3>
               <p className="text-secondary text-sm leading-relaxed max-w-xs mx-auto">
-                Coordinating complex engineering solutions across continents with local expertise.
+                North India's fastest turnaround and secure dispatch to power utilities, railways, and B2B clients.
               </p>
             </div>
           </div>
