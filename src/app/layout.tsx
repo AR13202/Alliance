@@ -95,6 +95,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
+        <title>Alliance Engineering Company</title>
       </head>
       <body className="bg-background text-foreground antialiased font-outline" suppressHydrationWarning>
         <Providers>

@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Current Transformer Manufacturer in India",
+  title: "Alliance Engineering Company | Current Transformer Manufacturer in India",
   description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
   openGraph: {
     type: "website",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const featuredProducts = products.filter(p => p.isFeaturedProduct).slice(0, 8);
-  
+
   const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
