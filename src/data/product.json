@@ -1022,15 +1022,15 @@
         },
         {
           "label": "Output Voltage",
-          "value": "12V / 24V / 48V / 110V DC"
+          "value": "12V / 24VDC"
         },
         {
           "label": "Battery Compatibility",
-          "value": "Lead Acid / VRLA / Li-Ion / NiCd"
+          "value": "Lead Acid"
         },
         {
           "label": "Charging Topology",
-          "value": "CC / CV"
+          "value": "Constant Voltage"
         },
         {
           "label": "Input Supply",
@@ -1059,7 +1059,7 @@
         },
         {
           "parameter": "Output Voltage",
-          "specification": "12V / 24V / 48V / 110V DC",
+          "specification": "12V / 24V  DC",
           "unit": null
         },
         {
@@ -1069,12 +1069,12 @@
         },
         {
           "parameter": "Charging Topology",
-          "specification": "Constant Current / Constant Voltage (CC/CV)",
+          "specification": "Constant Voltage (CV)",
           "unit": null
         },
         {
           "parameter": "Battery Compatibility",
-          "specification": "Lead Acid, VRLA/SMF, Lithium-Ion, Nickel Cadmium",
+          "specification": "Lead Acid",
           "unit": null
         },
         {
