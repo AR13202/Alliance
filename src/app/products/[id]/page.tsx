@@ -81,13 +81,7 @@ export default async function ProductDetailPage({
       "@type": "PropertyValue",
       "name": h.label,
       "value": h.value
-    })),
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "seller": { "@id": "https://www.allianceengineeringco.com/#organization" }
-    }
+    }))
   };
 
   return (
