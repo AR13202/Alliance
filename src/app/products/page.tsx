@@ -5,6 +5,19 @@ import { products } from "@/data/products";
 export const metadata: Metadata = {
   title: "Industrial Electrical Products Catalog",
   description: "Explore our B2B electrical product catalog including low-voltage current transformers, custom control transformers, automatic Float-Cum-Boost battery chargers, and servo stabilizers. Manufactured by Alliance Engineering Company.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com/products",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "Industrial Electrical Products Catalog | Alliance Engineering Company",

@@ -4,6 +4,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us & Request a Quote | Chandigarh",
   description: "Get in touch with Alliance Engineering Company. Request a technical quote, custom product drawings, or submit a bulk procurement inquiry for current/control transformers.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com/contact",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "Contact Us & Request a Quote | Chandigarh | Alliance Engineering Company",

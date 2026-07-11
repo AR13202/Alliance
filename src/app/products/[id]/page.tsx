@@ -26,6 +26,20 @@ export async function generateMetadata({
   return {
     title,
     description,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://www.allianceengineeringco.com/products/${id}`,
+    },
+    keywords: [
+      "Current Transformer Manufacturer",
+      "Control Transformer Manufacturer",
+      "Industrial Battery Charger",
+      "Current Transformer India",
+      ...(product.seo?.keywords || []),
+    ],
     openGraph: {
       type: "website",
       title,
@@ -81,13 +95,32 @@ export default async function ProductDetailPage({
       "@type": "PropertyValue",
       "name": h.label,
       "value": h.value
-    })),
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "seller": { "@id": "https://www.allianceengineeringco.com/#organization" }
-    }
+    }))
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.allianceengineeringco.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://www.allianceengineeringco.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.name,
+        "item": `https://www.allianceengineeringco.com/products/${id}`
+      }
+    ]
   };
 
   return (
@@ -95,6 +128,10 @@ export default async function ProductDetailPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ProductDetailScreen product={product} relatedProducts={related} />
     </>

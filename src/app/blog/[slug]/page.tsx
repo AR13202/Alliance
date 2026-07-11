@@ -27,6 +27,20 @@ export async function generateMetadata({
   return {
     title: post.seoTitle,
     description: post.seoDescription,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://www.allianceengineeringco.com/blog/${slug}`,
+    },
+    keywords: [
+      "Current Transformer Manufacturer",
+      "Control Transformer Manufacturer",
+      "Industrial Battery Charger",
+      "Current Transformer India",
+      ...(post.tags || []),
+    ],
     openGraph: {
       type: "article",
       title: post.seoTitle,
@@ -349,6 +363,31 @@ export default async function BlogPostPage({
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.allianceengineeringco.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.allianceengineeringco.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://www.allianceengineeringco.com/blog/${slug}`
+      }
+    ]
+  };
+
   return (
     <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col">
       <Navbar />
@@ -358,6 +397,10 @@ export default async function BlogPostPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
 
         {/* Article Container */}

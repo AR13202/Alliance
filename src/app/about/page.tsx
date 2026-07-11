@@ -4,6 +4,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Our 30+ Years of Manufacturing Expertise",
   description: "Learn about Alliance Engineering Company's history since 1992, our ISO 9001:2015 certified manufacturing facility in Chandigarh, and our dedication to precision instrument and control transformers.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com/about",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "About Our 30+ Years of Manufacturing Expertise | Alliance Engineering Company",

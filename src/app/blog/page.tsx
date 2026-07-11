@@ -8,6 +8,19 @@ import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 export const metadata: Metadata = {
   title: "Technical Engineering Blog & Resources",
   description: "Technical guides, standard comparisons, and expert articles on current transformers, control transformers & industrial power systems for panel builders and engineers.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com/blog",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "Technical Engineering Blog & Resources | Alliance Engineering Company",
@@ -60,7 +73,7 @@ export default function BlogIndexPage() {
 
         {/* Blog Listing Grid */}
         <section className="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
             {blogPosts.map((post) => (
               <article 
                 key={post.slug}
