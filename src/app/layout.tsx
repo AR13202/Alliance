@@ -2,7 +2,38 @@ import type { Metadata } from "next";
 import Providers from "./providers";
 import "../index.css";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { Inter, Manrope, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
+import Clarity from "@/components/Clarity";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-hanken-grotesk",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.allianceengineeringco.com"),
@@ -11,6 +42,22 @@ export const metadata: Metadata = {
     default: "Current Transformer Manufacturer in India | Alliance Engineering Company",
   },
   description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
+  appleWebApp: {
+    title: "Alliance",
+  },
   openGraph: {
     type: "website",
     siteName: "Alliance Engineering Company",
@@ -86,23 +133,34 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${manrope.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preload" href="/lt-current-transformer-panel.webp" as="image" type="image/webp" />
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@200..800&family=Inter:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-        <meta name="apple-mobile-web-app-title" content="Alliance" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
-        <title>Alliance Engineering Company</title>
       </head>
       <body className="bg-background text-foreground antialiased font-outline" suppressHydrationWarning>
         <Providers>
+          <Clarity />
           {children}
           <SpeedInsights />
           <Analytics />
         </Providers>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2PJ5KCGC98"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2PJ5KCGC98');
+          `}
+        </Script>
         {/* cloudflare script */}
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7dcc8ea8dc4644c88c90b32e4f5abfa2"}'></script>
       </body>

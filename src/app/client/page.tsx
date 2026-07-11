@@ -4,6 +4,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Trusted B2B Clients — Power Grid, PSU & Industrial Partners | Alliance Engineering",
   description: "Alliance Engineering's clients include leading PSUs, Indian Railways, state electricity boards, switchgear manufacturers, and heavy industries across India.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com/client",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "Our Trusted B2B Clients — Power Grid, PSU & Industrial Partners | Alliance Engineering",

@@ -20,7 +20,7 @@ const ProductCard = ({ product }: Props) => {
         <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
           {product.category}
         </span>
-        <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
+        <h2 className="text-lg font-semibold text-foreground">{product.name}</h2>
         <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
         <Link
           href={`/products/${product.id}`}

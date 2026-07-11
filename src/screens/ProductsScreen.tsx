@@ -301,9 +301,9 @@ export default function ProductsScreen({ products, initialCategory, initialQuery
                     <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-lg font-black text-primary leading-none mb-4 font-headline group-hover:text-primary transition-colors">
+                    <h2 className="text-lg font-black text-primary leading-none mb-4 font-headline group-hover:text-primary transition-colors">
                       {product.name}
-                    </h3>
+                    </h2>
                     <div className="space-y-3 mb-6">
                       {product.specs.slice(0, 2).map((spec, index) => (
                         <div key={index} className="flex items-center gap-3 text-secondary text-sm font-medium">

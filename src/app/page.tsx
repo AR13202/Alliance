@@ -5,6 +5,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Alliance Engineering Company | Current Transformer Manufacturer in India",
   description: "Alliance Engineering Company — ISO 9001:2015 certified manufacturer of current transformers, control transformers & industrial battery chargers in Chandigarh. GeM registered. 30+ years of precision manufacturing.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.allianceengineeringco.com",
+  },
+  keywords: [
+    "Current Transformer Manufacturer",
+    "Control Transformer Manufacturer",
+    "Industrial Battery Charger",
+    "Current Transformer India",
+  ],
   openGraph: {
     type: "website",
     title: "Current Transformer Manufacturer in India | Alliance Engineering Company",

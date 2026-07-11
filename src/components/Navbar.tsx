@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, Search, X } from "lucide-react";
 
@@ -27,9 +28,11 @@ export default function Navbar() {
       <nav className="flex justify-between items-center w-full px-4 md:px-8 py-2 mx-auto">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2" aria-label="Alliance Engineering Company">
-            <img
+            <Image
               src="/logo.png"
               alt="Alliance Engineering Company"
+              width={160}
+              height={32}
               className="h-8 w-auto"
             />
           </Link>
@@ -67,6 +70,7 @@ export default function Navbar() {
           <button
             className="lg:hidden p-2 text-primary"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle mobile menu"
           >
             {mobileOpen ? <X /> : <Menu />}
           </button>

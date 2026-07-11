@@ -15,9 +15,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        headline: ["Manrope", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        label: ["Inter", "sans-serif"],
+        headline: ["var(--font-manrope)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        label: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
+        'Hanken_Grotesk': ["var(--font-hanken-grotesk)", "sans-serif"],
+        'Hanken Grotesk': ["var(--font-hanken-grotesk)", "sans-serif"],
       },
       colors: {
         "inverse-on-surface": "#f1f1f1",

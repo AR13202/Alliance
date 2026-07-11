@@ -5,6 +5,8 @@ import { blogPosts } from "@/data/blog";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.allianceengineeringco.com";
 
+  const lastModifiedDate = new Date("2026-07-11");
+
   // Static pages with specific configuration from SEO recommendation
   const staticPages = [
     { route: "", priority: 1.0, changeFrequency: "monthly" as const },
@@ -17,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { route: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
-    lastModified: new Date(),
+    lastModified: lastModifiedDate,
     changeFrequency: item.changeFrequency,
     priority: item.priority,
   }));
@@ -36,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return {
       url: `${baseUrl}/products/${product.id}`,
-      lastModified: new Date(),
+      lastModified: lastModifiedDate,
       changeFrequency: "monthly" as const,
       priority,
     };

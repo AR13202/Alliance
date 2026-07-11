@@ -147,6 +147,7 @@ export default function ProductDetailScreen({
                   onClick={() => setSelectedImg(index)}
                   className={`aspect-square border-2 p-2 rounded-lg shadow-sm transition-colors duration-200 ${selectedImg === index ? "border-[#1a1b4b] bg-white" : "border-[#c8c5d0] hover:border-[#1a1b4b] bg-[#f8fafc]"
                     }`}
+                  aria-label={`Select product image preview ${index + 1}`}
                 >
                   <img className="w-full h-full object-contain" src={img} alt="" />
                 </button>
@@ -285,7 +286,7 @@ export default function ProductDetailScreen({
                   <div key={i} className="p-8 bg-[#f8fafc] border border-[#c8c5d0]/60 rounded-xl hover:bg-white hover:border-[#1a1b4b] hover:shadow-md transition-all duration-300 group">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="w-8 h-px bg-[#1a1b4b]/20 group-hover:w-12 transition-all"></span>
-                      <h4 className="font-bold text-[#1a1b4b] text-lg">{std}</h4>
+                      <h3 className="font-bold text-[#1a1b4b] text-lg">{std}</h3>
                     </div>
                     <p className="text-[#46464f] text-sm leading-relaxed">{desc}</p>
                   </div>
@@ -339,9 +340,9 @@ export default function ProductDetailScreen({
                     <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center mb-6 text-white font-bold text-xs">
                       0{i + 1}
                     </div>
-                    <h4 className="text-white font-bold mb-2 uppercase tracking-wider text-sm">
+                    <h3 className="text-white font-bold mb-2 uppercase tracking-wider text-sm">
                       {cust.option}
-                    </h4>
+                    </h3>
                     <p className="text-white/60 text-[13px] leading-relaxed">{cust.description}</p>
                   </div>
                 ))}
@@ -514,9 +515,9 @@ export default function ProductDetailScreen({
                     <span className="font-['Hanken_Grotesk'] font-bold text-[9px] text-[#777680] uppercase block mb-2 tracking-widest font-bold">
                       {relProduct.category}
                     </span>
-                    <h4 className="font-bold text-[#1a1b4b] group-hover:text-[#1a1b4b] transition-colors leading-tight mb-4 text-base line-clamp-2">
+                    <h3 className="font-bold text-[#1a1b4b] group-hover:text-[#1a1b4b] transition-colors leading-tight mb-4 text-base line-clamp-2">
                       {relProduct.name}
-                    </h4>
+                    </h3>
                   </div>
                   <div className="pt-4 border-t border-[#c8c5d0]/30 flex justify-between items-center">
                     <span

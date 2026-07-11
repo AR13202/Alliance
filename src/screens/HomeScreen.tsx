@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ShieldCheck, Truck, Headphones, Clock, Mail, Phone, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -151,9 +152,12 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
         {/* Hero Section */}
         <section className="relative min-h-[100dvh] flex items-center px-6 md:px-12 py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               src="/lt-current-transformer-panel.webp"
               alt="LT current transformer 2500/5A Class 0.5 for switchgear panels"
+              fill
+              priority
+              sizes="100vw"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
@@ -299,12 +303,14 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                   <button
                     onClick={() => scrollCategoriesCarousel('left')}
                     className="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                    aria-label="Scroll categories left"
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
                   <button
                     onClick={() => scrollCategoriesCarousel('right')}
                     className="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                    aria-label="Scroll categories right"
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
@@ -360,12 +366,14 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                 <button
                   onClick={() => scrollCarousel('left')}
                   className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                  aria-label="Scroll featured products left"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={() => scrollCarousel('right')}
                   className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 text-primary hover:bg-surface-container transition-all"
+                  aria-label="Scroll featured products right"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
@@ -426,7 +434,7 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                       <ShieldCheck className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">ISO Quality Testing</h4>
+                      <h3 className="font-bold text-lg mb-1 font-headline">ISO Quality Testing</h3>
                       <p className="text-sm opacity-60">In-house testing facility ensuring IS 2705 / IS 3156 compliance.</p>
                     </div>
                   </div>
@@ -435,7 +443,7 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                       <Truck className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">GeM Registered</h4>
+                      <h3 className="font-bold text-lg mb-1 font-headline">GeM Registered</h3>
                       <p className="text-sm opacity-60">Pre-registered for government procurement.</p>
                     </div>
                   </div>
@@ -444,7 +452,7 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                       <ShieldCheck className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">MSME Pricing Advantage</h4>
+                      <h3 className="font-bold text-lg mb-1 font-headline">MSME Pricing Advantage</h3>
                       <p className="text-sm opacity-60">Direct manufacturer pricing without compromising on industrial-grade reliability.</p>
                     </div>
                   </div>
@@ -453,7 +461,7 @@ export default function HomeScreen({ featuredProducts }: HomeScreenProps) {
                       <Headphones className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 font-headline">Custom Engineering</h4>
+                      <h3 className="font-bold text-lg mb-1 font-headline">Custom Engineering</h3>
                       <p className="text-sm opacity-60">Built-to-spec transformers for non-standard requirements and legacy panels.</p>
                     </div>
                   </div>

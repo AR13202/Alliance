@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const products = [
@@ -26,9 +27,11 @@ export default function Footer() {
           {/* Company Info Column */}
           <div className="md:col-span-4">
             <div className="flex items-center gap-2 mb-8">
-              <img
+              <Image
                 src="/logo.png"
                 alt="Alliance Engineering Company"
+                width={160}
+                height={40}
                 className="h-10 w-auto"
               />
             </div>

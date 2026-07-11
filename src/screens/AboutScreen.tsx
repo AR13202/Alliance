@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -11,10 +12,13 @@ export default function AboutScreen() {
         <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[716px] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
-            <img
+            <Image
               className="w-full h-full object-cover"
               alt="architectural blueprint overlaying a modern industrial facility"
               src="/stitch/about_hero.png"
+              fill
+              priority
+              sizes="100vw"
             />
           </div>
           <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-20 w-full">
@@ -65,9 +69,9 @@ export default function AboutScreen() {
                       1992
                     </span>
                     <div>
-                      <h4 className="text-lg font-bold text-primary mb-2 font-headline">
+                      <h3 className="text-lg font-bold text-primary mb-2 font-headline">
                         The Foundation
-                      </h4>
+                      </h3>
                       <p className="text-secondary text-sm">
                         Inception in Chandigarh with a focus on regional electrical contracting and design precision.
                       </p>
@@ -80,9 +84,9 @@ export default function AboutScreen() {
                       2005
                     </span>
                     <div>
-                      <h4 className="text-lg font-bold text-primary mb-2 font-headline">
+                      <h3 className="text-lg font-bold text-primary mb-2 font-headline">
                         Industrial Pivot
-                      </h4>
+                      </h3>
                       <p className="text-secondary text-sm">
                         Expansion into large-scale industrial projects and specialized electrical automation systems.
                       </p>
@@ -95,9 +99,9 @@ export default function AboutScreen() {
                       2015
                     </span>
                     <div>
-                      <h4 className="text-lg font-bold text-primary mb-2 font-headline">
+                      <h3 className="text-lg font-bold text-primary mb-2 font-headline">
                         Quality Benchmark
-                      </h4>
+                      </h3>
                       <p className="text-secondary text-sm">
                         Achieved ISO 9001:2015 certification, setting a new standard for operational excellence in the sector.
                       </p>
@@ -176,9 +180,9 @@ export default function AboutScreen() {
                   <span className="material-symbols-outlined text-primary text-4xl mb-6">
                     verified
                   </span>
-                  <h4 className="text-xl font-bold text-primary mb-4 font-headline">
+                  <h3 className="text-xl font-bold text-primary mb-4 font-headline">
                     Uncompromising Quality
-                  </h4>
+                  </h3>
                   <p className="text-secondary text-sm">
                     ISO 9001:2015 certified manufacturing. Quality is not a goal; it is our operational baseline.
                   </p>
@@ -192,7 +196,7 @@ export default function AboutScreen() {
                   >
                     engineering
                   </span>
-                  <h4 className="text-xl font-bold mb-4 font-headline">Customer-Centric Engineering</h4>
+                  <h3 className="text-xl font-bold mb-4 font-headline">Customer-Centric Engineering</h3>
                   <p className="text-on-primary-container text-sm opacity-90">
                     Custom built-to-spec transformers designed for non-standard requirements and legacy panels.
                   </p>
@@ -203,9 +207,9 @@ export default function AboutScreen() {
                   <span className="material-symbols-outlined text-primary text-4xl mb-6">
                     bolt
                   </span>
-                  <h4 className="text-xl font-bold text-primary mb-4 font-headline">
+                  <h3 className="text-xl font-bold text-primary mb-4 font-headline">
                     Timely Execution
-                  </h4>
+                  </h3>
                   <p className="text-secondary text-sm">
                     North India's fastest turnaround. Streamlined manufacturing designed for rapid deployment.
                   </p>
@@ -218,9 +222,9 @@ export default function AboutScreen() {
                   </span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-primary mb-2 font-headline">
+                  <h3 className="text-xl font-bold text-primary mb-2 font-headline">
                     Integrity & Transparency
-                  </h4>
+                  </h3>
                   <p className="text-secondary text-sm">
                     We build partnerships, not just projects. Honest communication and transparent operations.
                   </p>
