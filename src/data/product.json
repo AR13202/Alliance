@@ -3074,7 +3074,17 @@
         "Switchgear Instruments"
       ],
       "media": {
-        "images": [],
+        "images": [
+          {
+            "id": "img-bua74bw",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1783848244/product-catalog-editor/kdhsdbflbe5ldvxsoqti.png",
+            "alt": "Analog Ammeters",
+            "isPrimary": true,
+            "label": "ammeter-1",
+            "publicId": "product-catalog-editor/kdhsdbflbe5ldvxsoqti",
+            "source": "cloudinary"
+          }
+        ],
         "datasheet": {
           "label": "Download Datasheet (PDF)",
           "url": "/assets/datasheets/analog-ammeters.pdf"
@@ -3370,7 +3380,17 @@
         "Switchgear Instruments"
       ],
       "media": {
-        "images": [],
+        "images": [
+          {
+            "id": "img-tydbjr7",
+            "url": "https://res.cloudinary.com/dtwvp2iro/image/upload/v1783848266/product-catalog-editor/dvtbxizj8xh3lhl99ksw.png",
+            "alt": "Analog Voltmeters",
+            "isPrimary": true,
+            "label": "voltmeter-1",
+            "publicId": "product-catalog-editor/dvtbxizj8xh3lhl99ksw",
+            "source": "cloudinary"
+          }
+        ],
         "datasheet": {
           "label": "Download Datasheet (PDF)",
           "url": "/assets/datasheets/analog-voltmeters.pdf"
