@@ -312,7 +312,12 @@
           "Alliance Engineering CT"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 200,
+        "highPrice": 25000,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "transformer-oil-filtration-machine",
@@ -518,6 +523,11 @@
           "IEC 60296",
           "on-site maintenance"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 100000,
+        "highPrice": 1500000,
+        "priceCurrency": "INR"
       }
     },
     {
@@ -965,7 +975,12 @@
           "Alliance Engineering transformer"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 500,
+        "highPrice": 150000,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "industrial-battery-chargers",
@@ -1283,7 +1298,12 @@
           "CC CV battery charger India"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 2000,
+        "highPrice": 15000,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "line-chokes",
@@ -1579,6 +1599,11 @@
           "Alliance Engineering line choke",
           "motor drive choke India"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 1500,
+        "highPrice": 65000,
+        "priceCurrency": "INR"
       }
     },
     {
@@ -1922,7 +1947,12 @@
           "voltage regulator single phase"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 3000,
+        "highPrice": 35000,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "frequency-meters",
@@ -2223,6 +2253,11 @@
           "Alliance Engineering frequency meter",
           "switchgear panel instruments India"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 650,
+        "highPrice": 850,
+        "priceCurrency": "INR"
       }
     },
     {
@@ -2487,6 +2522,11 @@
           "Alliance Engineering buzzer",
           "round buzzer industrial India"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 600,
+        "highPrice": 800,
+        "priceCurrency": "INR"
       }
     },
     {
@@ -2758,7 +2798,12 @@
           "IS 13947 hooter"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 600,
+        "highPrice": 700,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "dimmerstat-primary-current-injector",
@@ -3054,7 +3099,12 @@
           "primary injection test set India"
         ]
       },
-      "isFeaturedProduct": true
+      "isFeaturedProduct": true,
+      "priceRange": {
+        "lowPrice": 2000,
+        "highPrice": 250000,
+        "priceCurrency": "INR"
+      }
     },
     {
       "id": "analog-ammeters",
@@ -3360,6 +3410,11 @@
           "Alliance Engineering ammeter",
           "panel meter India"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 400,
+        "highPrice": 600,
+        "priceCurrency": "INR"
       }
     },
     {
@@ -3671,6 +3726,11 @@
           "Alliance Engineering voltmeter",
           "panel meter India"
         ]
+      },
+      "priceRange": {
+        "lowPrice": 400,
+        "highPrice": 600,
+        "priceCurrency": "INR"
       }
     }
   ]

@@ -88,6 +88,14 @@ export default function HomePage() {
         "brand": {
           "@type": "Brand",
           "name": "Alliance Engineering Company"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": "200",
+          "highPrice": "25000",
+          "offerCount": "1",
+          "availability": "https://schema.org/InStock"
         }
       }
     ]

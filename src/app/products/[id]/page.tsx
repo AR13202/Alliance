@@ -95,7 +95,17 @@ export default async function ProductDetailPage({
       "@type": "PropertyValue",
       "name": h.label,
       "value": h.value
-    }))
+    })),
+    ...(product.priceRange ? {
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": product.priceRange.priceCurrency || "INR",
+        "lowPrice": product.priceRange.lowPrice.toString(),
+        "highPrice": product.priceRange.highPrice.toString(),
+        "offerCount": "1",
+        "availability": "https://schema.org/InStock"
+      }
+    } : {})
   };
 
   const breadcrumbSchema = {

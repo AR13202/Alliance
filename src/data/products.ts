@@ -36,6 +36,12 @@ export interface ProductSeo {
   keywords: string[];
 }
 
+export interface ProductPriceRange {
+  lowPrice: number;
+  highPrice: number;
+  priceCurrency?: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -59,6 +65,7 @@ export interface Product {
   customizations: ProductCustomization[];
   relatedProducts: string[];
   seo: ProductSeo;
+  priceRange?: ProductPriceRange;
   // Legacy compat fields consumed by existing UI components
   image: string;
   thumbnails: string[];
@@ -194,6 +201,7 @@ function mapProduct(product: RawProduct, index: number): Product {
     // Related & SEO
     relatedProducts: product.relatedProducts,
     seo: product.seo,
+    priceRange: product.priceRange,
   };
 }
 
