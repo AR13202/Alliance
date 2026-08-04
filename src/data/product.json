@@ -3102,7 +3102,7 @@
       "isFeaturedProduct": true,
       "priceRange": {
         "lowPrice": 2000,
-        "highPrice": 250000,
+        "highPrice": 150000,
         "priceCurrency": "INR"
       }
     },
